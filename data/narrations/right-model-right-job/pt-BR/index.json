@@ -1,0 +1,36 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pt-BR",
+  "reels": [
+    {
+      "slug": "mas-eu-no-programo",
+      "title": "Mas Eu Não Programo",
+      "hook": "“Mas eu não sou desenvolvedor.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "no-s-uma-caixa-de-chat",
+      "title": "Não É Só uma Caixa de Chat",
+      "hook": "Uma janela de chat não é uma estratégia.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "caro-demais",
+      "title": "Caro Demais",
+      "hook": "“Claude é caro demais.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "20-minutos-de-trabalho-pesado",
+      "title": "20 Minutos de Trabalho Pesado",
+      "hook": "Vinte minutos de perfuração. Fatura zero.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "o-recibo",
+      "title": "O Recibo",
+      "hook": "O recibo.",
+      "sceneCount": 3
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "theme": "Elected By Rule",
+  "language": "de",
+  "reel": "zwei-fragen",
+  "title": "Zwei Fragen",
+  "hook": "Zwei Fragen. Zwei verschiedene Antworten.",
+  "stamp": "Über das Wetter geantwortet. Nicht auf die Frage.",
+  "next": "Weiter: Eine Trophäe ist kein Audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "einen Thread lesend",
+      "text": "Passagier fragt: Wer hat entschieden, dass es außerhalb unserer Zuständigkeit liegt, und bis wann werden Sie antworten? Antwort: „Ich habe um Prüfung gebeten.“",
+      "mood": "flat",
+      "panel": [
+        "gefragt: wer entschied? wann?",
+        "geantwortet: „wird geprüft“"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Monate später: Wurde die Anfrage an die Rechtsabteilung schriftlich gestellt? Welches Datum? An wen? Antwort: die formelle Antwort vom Dezember, wiederholt, plus eine neue Frage: Wo wurde das Ticket gekauft?",
+      "mood": "up",
+      "panel": [
+        "gefragt: schriftlich? Datum? an wen?",
+        "geantwortet: gleicher Text wie 3. Dez.",
+        "zurückgefragt: Ticket gekauft wo?"
+      ],
+      "holdMs": 1600,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "leise",
+      "text": "Er sagte: in Brasilien. Dann fragte er, wann und wie wir die Airline kontaktiert hätten. In den archivierten Nachrichten wartet diese Frage noch.",
+      "mood": "flat",
+      "panel": [
+        "ticket.bought_in = brasilien",
+        "Antwort im Archiv = keine"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

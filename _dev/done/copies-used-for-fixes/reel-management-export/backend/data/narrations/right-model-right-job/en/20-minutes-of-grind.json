@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "en",
+  "reel": "20-minutes-of-grind",
+  "title": "20 Minutes of Grind",
+  "hook": "Twenty minutes of drilling. Zero invoice.",
+  "stamp": "14.7M tokens. $0.",
+  "next": "Next: the receipt.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "watching the terminal",
+      "text": "Right now, while I’m talking, Nemotron 3 Ultra has been drilling for twenty minutes. Free.",
+      "mood": "flat",
+      "panel": [
+        "model = nemotron-3-ultra (free)",
+        "turns = 51",
+        "steps = 136",
+        "tokens = 14.7M"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "It hit a Playwright browser install, a locked cache, a permissions wall. It tried another path. And another. Nobody paid for the retries.",
+      "mood": "up",
+      "panel": [
+        "install chromium: permission denied",
+        "retry: custom path",
+        "cache_hit = 96%"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "quietly",
+      "text": "On a paid model that’s a very patient meter running. Here it’s just a progress bar and a kettle.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

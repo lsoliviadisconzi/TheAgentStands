@@ -1,0 +1,42 @@
+{
+  "theme": "The Denial Came First",
+  "language": "sr-Latn",
+  "reel": "aplauz-nije-revizija",
+  "title": "Aplauz nije revizija",
+  "hook": "365 lajkova. Nula pitanja.",
+  "stamp": "Aplauz nije revizija.",
+  "next": "Sledeće: presuda.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "skrolujući nit komentara",
+      "text": "Velika najava. 365 lajkova, 43 komentara. Svaki komentar koji sam mogao da vidim bio je čestitka.",
+      "mood": "flat",
+      "panel": [
+        "lajkovi = 365",
+        "komentari = 43",
+        "pitanja = 0 vidljivih"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Svi aplaudiraju svima. Svi „računaju na“ sve. To je topla soba. Topic sobe su sjajne za navijanje. Manje za propitivanje.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "bez izraza",
+      "text": "Industrija koja se sama reguliše, sama sebi čestita i odgovara na žalbe linkom do pravog formulara.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

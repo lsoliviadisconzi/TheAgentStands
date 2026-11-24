@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pt-BR",
+  "reel": "caro-demais",
+  "title": "Caro Demais",
+  "hook": "“Claude é caro demais.”",
+  "stamp": "Premium para o polimento. Grátis para o trabalho pesado.",
+  "next": "A seguir: vinte minutos de trabalho grátis.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "assentindo devagar",
+      "text": "Sim. É caro demais. Também é brilhante. As duas coisas são verdade.",
+      "mood": "flat",
+      "panel": [
+        "claude.qualidade = brilhante",
+        "claude.preco = também brilhante"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Então não gaste com o trabalho pesado. Guarde para os refinamentos, os detalhes, a única coisa difícil que precisa sair certa.",
+      "mood": "up",
+      "panel": [
+        "usar_para = polimento, partes difíceis"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "para a câmera",
+      "text": "E não, você também não pode rodar modelos grátis ilimitados. A menos que tenha bolsos muito fundos. Eu não tenho.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

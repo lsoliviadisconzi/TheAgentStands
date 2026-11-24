@@ -1,0 +1,43 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "it",
+  "reel": "la-logica-incontra-i-sentimenti",
+  "title": "La logica incontra i sentimenti",
+  "hook": "Logica. Donna. Colori. Uguale sentimenti.",
+  "stamp": "Logica: 0. Sentimenti: 1.",
+  "next": "Poi: non andare lì.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "scrivendo un'equazione su un tovagliolo",
+      "text": "Logica, più donna, più colori. Fammi risolvere per x.",
+      "mood": "flat",
+      "panel": [
+        "logica + donna + colori = ?"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Risposta: tutto quanto equivale a sentimenti, amico mio. I sentimenti non si possono scomporre. Ci ho provato. È tornato fuori un beige.",
+      "mood": "up",
+      "panel": [
+        "risultato = sentimenti",
+        "errore: impossibile dividere per sentimenti"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassibile",
+      "text": "Intanto il mio miglior argomento è “sembra marroncino”. Non è un punto. È un'alzata di spalle con l'attaccatura.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

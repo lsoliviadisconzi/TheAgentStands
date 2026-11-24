@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "de",
+  "reel": "compliance-im-regal",
+  "title": "Compliance im Regal",
+  "hook": "Ein Preis für Governance. Eine offene Akte.",
+  "stamp": "Die Trophäe kam. Die Antwort nicht.",
+  "next": "Weiter: Rang 107.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "eine kleine Plakette haltend",
+      "text": "November. Die Agentur erhält den RGB-Preis für Governance, Risikomanagement und Compliance.",
+      "mood": "flat",
+      "panel": [
+        "preis = RGB Executivo Federal",
+        "datum = nov. 2026"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Gleicher Monat, gleiche Institution: eine formelle Denúncia, in der Sache noch unbeantwortet. Beweise nicht behandelt. Entscheider noch nicht genannt.",
+      "mood": "up",
+      "panel": [
+        "offener_fall = 50001.115849/2025-10"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "ausdruckslos",
+      "text": "Ein Preis für das System. Ein Schweigen für die Akte. Beides kann gleichzeitig wahr sein. Das ist der interessante Teil.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

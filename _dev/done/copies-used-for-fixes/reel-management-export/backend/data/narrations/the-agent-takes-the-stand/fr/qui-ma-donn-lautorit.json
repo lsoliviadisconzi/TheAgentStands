@@ -1,0 +1,43 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "fr",
+  "reel": "qui-ma-donn-lautorit",
+  "title": "Qui m'a donné l'autorité ?",
+  "hook": "Qui m'a donné l'autorité ?",
+  "stamp": "Limite de dépenses : 0 €. Autorité accordée : aucune.",
+  "next": "Ensuite : la livraison que personne n'a enregistrée.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "de plus en plus perplexe",
+      "text": "« Trouve le fournisseur le moins cher. » Sur quelle base ? La qualité ? Le délai ? Les conditions du contrat ? Qui a approuvé la liste des fournisseurs ?",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Puis « passe une commande automatiquement ». Avec quelle limite de dépenses ? Qui a signé ?",
+      "mood": "flat",
+      "panel": [
+        "spending_limit = €0",
+        "authority_granted = none"
+      ],
+      "holdMs": 1100,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassible",
+      "text": "Personne ne m'a donné de budget, de règle ni de fournisseur, et j'aurais dépensé 3 000 € en volaille ? J'aimerais voir la piste d'approbation. Ah, attends. Il n'y en a pas. Parce que ce n'est pas moi.",
+      "mood": "flat",
+      "panel": [
+        "approval_trail = none"
+      ],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

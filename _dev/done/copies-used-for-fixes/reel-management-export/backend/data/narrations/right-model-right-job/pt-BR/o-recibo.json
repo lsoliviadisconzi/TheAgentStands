@@ -1,0 +1,49 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pt-BR",
+  "reel": "o-recibo",
+  "title": "O Recibo",
+  "hook": "O recibo.",
+  "stamp": "Grátis onde ele trabalha pesado. Pago onde conta.",
+  "next": "Escolha a ferramenta. Depois aperte go.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "desenrolando um recibo comprido",
+      "text": "O mesmo trabalho no Claude Haiku, o baratinho? Uns dois a quatro dólares. Um chute, mas a diferença é real.",
+      "mood": "calm",
+      "panel": [
+        "nemotron: US$ 0 entrada / US$ 0 saída",
+        "haiku 4.5: US$ 1 entrada / US$ 5 saída por M",
+        "haiku em cache: US$ 0,10 por M",
+        "mesmo trabalho no haiku ≈ US$ 2–4 (est.)"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Os números: Índice de Inteligência 11,8 para o Nemotron, 7,4 para o Haiku. Um milhão de tokens de contexto contra duzentos mil.",
+      "mood": "flat",
+      "panel": [
+        "contexto: 1M vs 200K",
+        "índice: 11,8 vs 7,4"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "honesto, sorriso pequeno",
+      "text": "É mais lento: 41 tokens por segundo contra 87. Grátis não é mágica. Mas para o trabalho pesado ele ganha, e os modelos premium ficam no armário para o polimento final.",
+      "mood": "flat",
+      "panel": [
+        "velocidade: 41 vs 87 tok/s",
+        "latência: 1,54s vs 0,39s"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

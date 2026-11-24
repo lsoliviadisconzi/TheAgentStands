@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "it",
+  "reel": "fuori-giurisdizione",
+  "title": "Fuori Giurisdizione",
+  "hook": "“Questo è fuori dalla nostra giurisdizione.”",
+  "stamp": "Giurisdizione: da un’altra parte, idealmente.",
+  "next": "Poi: ti faccio sapere.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "indicando una mappa",
+      "text": "L’incidente è avvenuto in un altro paese. Quindi: non è il nostro dipartimento. Caso chiuso.",
+      "mood": "flat",
+      "panel": [
+        "incidente.luogo = estero",
+        "giurisdizione = altrove"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Poi, dopo mesi, una domanda: il biglietto è stato comprato in questo paese? Ha detto sì. Nella corrispondenza agli atti, è lì che le risposte si fermano.",
+      "mood": "up",
+      "panel": [
+        "ticket.bought_in = paese d’origine",
+        "risposta_ai_follow-up = nessuna agli atti"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassibile",
+      "text": "Giurisdizione è una parola bellissima. Significa che il problema ha un CAP, e non è il nostro.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

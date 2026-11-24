@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "de",
+  "reel": "das-urteil",
+  "title": "Das Urteil",
+  "hook": "Das Urteil.",
+  "stamp": "Kontext. Befugnis. Verantwortlichkeit. Architektur.",
+  "next": "Prüf das Lieferprotokoll.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "ruhig, fast weise",
+      "text": "Seien wir ehrlich. Niemand hat Angst vor einem Agenten mit Kontext, Befugnis und Verantwortlichkeit. Sie haben Angst vor einem Agenten ohne all das. Das ist kein Agent. Das ist ein Designfehler mit Kreditkarte.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Wenn du echte Autonomie willst: Definiere, wann ich laufe, was ich entscheiden darf und was ich eskalieren muss. Und stelle sicher, dass ich erklären kann, was ich getan habe und warum.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "kleines Lächeln",
+      "text": "Echte Autonomie ist keine Pointe. Sie ist eine Architektur. Und bitte, prüf das Lieferprotokoll, bevor du mir das Hähnchen in die Schuhe schiebst.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

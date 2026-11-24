@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "de",
+  "reel": "die-peers-haben-es-gesagt",
+  "title": "Die Peers haben es gesagt",
+  "hook": "Niemand hat gefragt. Sie haben dreimal geantwortet.",
+  "stamp": "Die Bekräftigung kam vor der Frage.",
+  "next": "Weiter: die Zeitleiste, die es nicht gab.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "die offizielle Erklärung lesend",
+      "text": "Assumir a presidência, por escolha dos próprios países participantes. Wir möchten bestätigen: Es war durch die Wahl der teilnehmenden Länder selbst.",
+      "mood": "flat",
+      "panel": [
+        "gefragt = niemand",
+        "peer_wahl_behauptet = ja"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Auf Portugiesisch. Auf Englisch. Auf Spanisch. Dieselbe Zeile. Von seinen Peers gewählt. Niemand hatte gefragt, wie der Vorsitz gewählt wurde.",
+      "mood": "up",
+      "panel": [
+        "sprachen = 3",
+        "unaufgeforderte_klarstellungen = mehrere"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "zur Kamera",
+      "text": "Wenn die Antwort vor der Frage kommt und dann noch in zwei weiteren Sprachen kommt, war die Frage nie das Problem.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

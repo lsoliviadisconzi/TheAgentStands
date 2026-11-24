@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First",
+  "language": "fr",
+  "reel": "personne-na-demand",
+  "title": "Personne n’a demandé",
+  "hook": "Personne n’a demandé. Ils ont répondu quand même.",
+  "stamp": "Le démenti est arrivé avant la question.",
+  "next": "Ensuite : hors juridiction.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "lisant une déclaration que personne n’a demandée",
+      "text": "Personne n’a demandé si nous avions ignoré la plainte. Donc, pour être clair : nous n’avons pas ignoré la plainte.",
+      "mood": "flat",
+      "panel": [
+        "question_posée = aucune",
+        "démenti_émis = oui"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Personne n’a demandé si quelqu’un nous dirige. Nous souhaitons confirmer que personne ne nous dirige. Sans y être invités. Pour le compte rendu.",
+      "mood": "up",
+      "panel": [
+        "démentis_spontanés = 2"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "face caméra",
+      "text": "Il y a une vieille phrase sur le fait de protester trop. Nous appelons ça la communication. Règle de base : quand la réponse arrive avant la question, va vérifier la question.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

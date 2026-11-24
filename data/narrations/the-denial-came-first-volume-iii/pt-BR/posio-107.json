@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pt-BR",
+  "reel": "posio-107",
+  "title": "Posição 107",
+  "hook": "35 de 100. Segunda pior pontuação registrada.",
+  "stamp": "O número é público. O processo, não.",
+  "next": "A seguir: a trilha documental ainda ausente.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "lendo um ranking",
+      "text": "Índice de Percepção da Corrupção 2025. Brasil: 35 pontos. Posição 107 de 182. Segunda pior pontuação da série.",
+      "mood": "flat",
+      "panel": [
+        "cpi_2025 = 35",
+        "posição = 107/182"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Média global: 42. O país fica bem abaixo. A agência que regula os céus recebe um troféu de governança na mesma temporada.",
+      "mood": "up",
+      "panel": [
+        "média_global = 42",
+        "lacuna = visível"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "para a câmera",
+      "text": "Números não provam nenhum caso isolado. Mas deixam o silêncio mais alto.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "es",
+  "reel": "las-paletas",
+  "title": "Las paletas",
+  "hook": "Ocho crayones contra mil tonos.",
+  "stamp": "Hombres: 8 crayones. Ella: todos.",
+  "next": "Siguiente: la lógica entra en la sala.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "desenrollando dos cartulinas",
+      "text": "Mi paleta, según consta: rojo, azul, verde, amarillo, marrón, negro, blanco. Y “el otro”.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "rojo",
+          "#d33"
+        ],
+        [
+          "azul",
+          "#37d"
+        ],
+        [
+          "verde",
+          "#3a5"
+        ],
+        [
+          "amarillo",
+          "#fc3"
+        ],
+        [
+          "marrón",
+          "#764"
+        ],
+        [
+          "el otro",
+          "#a6a"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Su paleta: ceniza, miel, champán, trigo, champiñón, agua sucia, bronde, rosa empolvado, gris-beige, avena.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "ceniza",
+          "#b2aca0"
+        ],
+        [
+          "miel",
+          "#d9a441"
+        ],
+        [
+          "champán",
+          "#e8d3b0"
+        ],
+        [
+          "champiñón",
+          "#9a8b7e"
+        ],
+        [
+          "rosa empolvado",
+          "#c98b92"
+        ],
+        [
+          "gris-beige",
+          "#b5ad9f"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "a cámara",
+      "text": "No es que solo tengan más colores. Tienen todo un departamento ocular extra, y nadie nos lo dijo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

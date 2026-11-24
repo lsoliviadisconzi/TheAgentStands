@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "es",
+  "reel": "ya-te-avisto",
+  "title": "Ya Te Avisto",
+  "hook": "Seis meses. Un “ya te aviso”.",
+  "stamp": "Sin plazo. Sin responsable nombrado.",
+  "next": "Siguiente: el aplauso no es una auditoría.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "mirando un calendario",
+      "text": "Día uno: “He pedido una investigación.” Estupendo. Te avisamos.",
+      "mood": "flat",
+      "panel": [
+        "30 dic: investigación solicitada"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Tres semanas después: el equipo técnico dice que la posición es la misma, y legal lo está mirando. Sin plazo.",
+      "mood": "up",
+      "panel": [
+        "19 ene: legal consultado",
+        "plazo = ninguno"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "en voz baja",
+      "text": "Cinco meses después: una respuesta formal que repite la primera respuesta. ¿Quién tomó la decisión? Sigue sin nombre. Es un silencio muy paciente.",
+      "mood": "flat",
+      "panel": [
+        "28 jun: respuesta formal",
+        "responsable_decision = sin nombre"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+[
+  {
+    "id": "rmwu567iif8e",
+    "title": "Prova A",
+    "theme": "Don't Argue With Colours",
+    "lang": "pt-BR",
+    "hook": "Prova A: é um castanho loirinho.",
+    "stamp": "Objeção acolhida antes de eu terminar a frase.",
+    "next": "A seguir: as paletas.",
+    "lines": [
+      {
+        "id": "7a92ed4f",
+        "s": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
+        "h": 1300,
+        "d": "segurando um close da própria orelha",
+        "log": [
+          "cabelo.cor = castanho loirinho",
+          "confiança = 100%"
+        ],
+        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+        "audio": {
+          "file": "audio/rmwu567iif8e/7a92ed4f-460f7d7d41.mp3",
+          "durationMs": 10704,
+          "key": "460f7d7d41",
+          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+          "text": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
+          "voiceLabel": "PT-BR - The Standing Agent"
+        }
+      },
+      {
+        "id": "c12e3533",
+        "s": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "fios_grisalhos = alguns",
+          "fios_grisalhos.relevante = não"
+        ],
+        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+        "audio": {
+          "file": "audio/rmwu567iif8e/c12e3533-694288c1ad.mp3",
+          "durationMs": 11736,
+          "key": "694288c1ad",
+          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+          "text": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
+          "voiceLabel": "PT-BR - The Standing Agent"
+        }
+      },
+      {
+        "id": "82884f4e",
+        "s": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
+        "h": 1000,
+        "d": "baixinho",
+        "m": "flat",
+        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+        "audio": {
+          "file": "audio/rmwu567iif8e/82884f4e-dbf9f424d2.mp3",
+          "durationMs": 7104,
+          "key": "dbf9f424d2",
+          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+          "text": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
+          "voiceLabel": "PT-BR - The Standing Agent"
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 0,
+    "createdAt": 1795491317898,
+    "updatedAt": 1795491570901
+  },
+  {
+    "id": "rmwu5c5e983a",
+    "title": "Exhibit A",
+    "theme": "Don't Argue With Colours",
+    "lang": "en",
+    "hook": "Exhibit A: it’s browny blondish.",
+    "stamp": "Overruled before I finished the sentence.",
+    "next": "Next: the palettes.",
+    "lines": [
+      {
+        "id": "c640eb5b",
+        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+        "h": 1300,
+        "d": "holding up a close-up of his ear",
+        "log": [
+          "hair.colour = browny blondish",
+          "confidence = 100%"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu5c5e983a/c640eb5b-ad5a80796a.mp3",
+          "durationMs": 8784,
+          "key": "ad5a80796a",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "337e519e",
+        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "grey_bits = a few",
+          "grey_bits.relevant = no"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu5c5e983a/337e519e-f9b1ba6ee7.mp3",
+          "durationMs": 6528,
+          "key": "f9b1ba6ee7",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "5228525e",
+        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+        "h": 1000,
+        "d": "quietly",
+        "m": "flat",
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu5c5e983a/5228525e-0226fca06f.mp3",
+          "durationMs": 4608,
+          "key": "0226fca06f",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 1,
+    "createdAt": 1795491595089,
+    "updatedAt": 1795493061132
+  },
+  {
+    "id": "rmwu7ksvb374",
+    "title": "Nobody Asked",
+    "theme": "The Denial Came First - Volume II",
+    "lang": "en",
+    "hook": "Nobody asked. They answered anyway.",
+    "stamp": "The denial arrived before the question.",
+    "next": "Next: out of jurisdiction.",
+    "lines": [
+      {
+        "id": "oqnbc42b",
+        "s": "",
+        "h": 1000,
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819"
+      },
+      {
+        "id": "b0786817",
+        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
+        "h": 1400,
+        "d": "reading a statement nobody requested",
+        "log": [
+          "question_asked = none",
+          "denial_issued = yes"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu7ksvb374/b0786817-3800d9be01.mp3",
+          "durationMs": 8856,
+          "key": "3800d9be01",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "58f48eb3",
+        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "unprompted_denials = 2"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu7ksvb374/58f48eb3-9d27ea7cdf.mp3",
+          "durationMs": 7728,
+          "key": "9d27ea7cdf",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "f8cff1ab",
+        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
+        "h": 1100,
+        "d": "to camera",
+        "m": "flat",
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "audio": {
+          "file": "audio/rmwu7ksvb374/f8cff1ab-f9936dc261.mp3",
+          "durationMs": 8304,
+          "key": "f9936dc261",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+          "text": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
+          "voiceLabel": "THE  Lord Pig"
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 2,
+    "createdAt": 1795495357991,
+    "updatedAt": 1795496250988
+  },
+  {
+    "id": "rmwu8k4e032d",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "3f5b21ba",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "d": "serious, reading from a phone",
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu8k4e032d/3f5b21ba-6ac6a04c1e.mp3",
+          "durationMs": 6048,
+          "key": "6ac6a04c1e",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "a8c4ca8b",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "d": "long beat",
+        "m": "up",
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu8k4e032d/a8c4ca8b-6df547f4dc.mp3",
+          "durationMs": 96048,
+          "key": "6df547f4dc",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "1f2f29fd",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 3,
+    "createdAt": 1795497005880,
+    "updatedAt": 1795497107779
+  },
+  {
+    "id": "rmwu8qcec505",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "9ec72f12",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "d": "serious, reading from a phone",
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu8qcec505/9ec72f12-6ac6a04c1e.mp3",
+          "durationMs": 5424,
+          "key": "6ac6a04c1e",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "cb408fd0",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "d": "long beat",
+        "m": "up",
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu8qcec505/cb408fd0-6df547f4dc.mp3",
+          "durationMs": 11496,
+          "key": "6df547f4dc",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "f76ef8fe",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "m": "flat",
+        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+        "audio": {
+          "file": "audio/rmwu8qcec505/f76ef8fe-62591cbc83.mp3",
+          "durationMs": 3744,
+          "key": "62591cbc83",
+          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+          "text": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+          "voiceLabel": "PT-BR - The Standing Agent"
+        }
+      }
+    ],
+    "coverFile": "cover/rmwu8qcec505_auto.jpg",
+    "coverAuto": true,
+    "videoFile": "video/rmwu8qcec505.mp4",
+    "onLanding": false,
+    "order": 4,
+    "createdAt": 1795497296196,
+    "updatedAt": 1795497544159
+  },
+  {
+    "id": "rmwu9gb6b929",
+    "title": "But I Don’t Code",
+    "theme": "Right Model, Right Job",
+    "lang": "en",
+    "hook": "“But I’m not a developer.”",
+    "stamp": "Describe it. That’s the skill.",
+    "next": "Next: the chat box is not the toolbox.",
+    "lines": [
+      {
+        "id": "0a5fd6cb",
+        "s": "“AI is for developers.” Lovely. Can you think rationally? Can you say what you want, and what the finished thing looks like?",
+        "h": 1300,
+        "d": "arms folded",
+        "m": "flat",
+        "log": [
+          "can_code = false",
+          "can_explain_clearly = ?"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwu9gb6b929/0a5fd6cb-mwu9r2gj.mp3",
+          "durationMs": 6624,
+          "key": "1145a4cd7a",
+          "voiceLabel": "Uploaded",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "“AI is for developers.” Lovely. Can you think rationally? Can you say what you want, and what the finished thing looks like?"
+        }
+      },
+      {
+        "id": "1d605983",
+        "s": "Then you’re qualified. The skill isn’t syntax. It’s describing the outcome in enough detail that nobody has to guess.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "skill = clear brief"
+        ],
+        "audio": {
+          "file": "audio/rmwu9gb6b929/1d605983-mwu9tk1h.mp3",
+          "durationMs": 6144,
+          "key": "75b399f131",
+          "voiceLabel": "Uploaded",
+          "text": "Then you’re qualified. The skill isn’t syntax. It’s describing the outcome in enough detail that nobody has to guess."
+        }
+      },
+      {
+        "id": "cd3f4875",
+        "s": "Where was I? Exactly. Long briefs get lost when you get interrupted. Write it down first, then paste it in.",
+        "h": 1000,
+        "d": "mid-sentence, someone talks over me",
+        "m": "flat",
+        "audio": {
+          "file": "audio/rmwu9gb6b929/cd3f4875-mwu9xbfm.mp3",
+          "durationMs": 6144,
+          "key": "e44c7e8581",
+          "voiceLabel": "Uploaded",
+          "text": "Where was I? Exactly. Long briefs get lost when you get interrupted. Write it down first, then paste it in."
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 5,
+    "createdAt": 1795498507667,
+    "updatedAt": 1795499301188
+  },
+  {
+    "id": "rmwujd54d014",
+    "title": "Nobody Asked",
+    "theme": "The Denial Came First - Volume II",
+    "lang": "en",
+    "hook": "Nobody asked. They answered anyway.",
+    "stamp": "The denial arrived before the question.",
+    "next": "Next: out of jurisdiction.",
+    "lines": [
+      {
+        "id": "447ef8e0",
+        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
+        "h": 1400,
+        "d": "reading a statement nobody requested",
+        "log": [
+          "question_asked = none",
+          "denial_issued = yes"
+        ]
+      },
+      {
+        "id": "f2d8bd27",
+        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "unprompted_denials = 2"
+        ]
+      },
+      {
+        "id": "c9f17b56",
+        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
+        "h": 1100,
+        "d": "to camera",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 6,
+    "createdAt": 1795515156013,
+    "updatedAt": 1795515156013
+  },
+  {
+    "id": "rmwujga0e3d4",
+    "title": "Nobody Asked",
+    "theme": "The Denial Came First - Volume II",
+    "lang": "en",
+    "hook": "Nobody asked. They answered anyway.",
+    "stamp": "The denial arrived before the question.",
+    "next": "Next: out of jurisdiction.",
+    "lines": [
+      {
+        "id": "22786e26",
+        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
+        "h": 1400,
+        "d": "reading a statement nobody requested",
+        "log": [
+          "question_asked = none",
+          "denial_issued = yes"
+        ]
+      },
+      {
+        "id": "981fd067",
+        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "unprompted_denials = 2"
+        ]
+      },
+      {
+        "id": "3322150a",
+        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
+        "h": 1100,
+        "d": "to camera",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 7,
+    "createdAt": 1795515302318,
+    "updatedAt": 1795515302318
+  },
+  {
+    "id": "rmwujkuaa145",
+    "title": "Nobody Asked",
+    "theme": "The Denial Came First - Volume II",
+    "lang": "en",
+    "hook": "Nobody asked. They answered anyway.",
+    "stamp": "The denial arrived before the question.",
+    "next": "Next: out of jurisdiction.",
+    "lines": [
+      {
+        "id": "7e375259",
+        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
+        "h": 1400,
+        "d": "reading a statement nobody requested",
+        "m": "up",
+        "log": [
+          "question_asked = none",
+          "denial_issued = yes"
+        ]
+      },
+      {
+        "id": "d4e8931d",
+        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "unprompted_denials = 2"
+        ]
+      },
+      {
+        "id": "81dbef06",
+        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
+        "h": 1100,
+        "d": "to camera",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 8,
+    "createdAt": 1795515515218,
+    "updatedAt": 1795515554300
+  },
+  {
+    "id": "rmwukvnlyd83",
+    "title": "The Verdict",
+    "theme": "The Denial Came First - Volume II",
+    "lang": "en",
+    "hook": "The verdict.",
+    "stamp": "Ask who decided. Ask for the record.",
+    "next": "Ask for the paper trail.",
+    "lines": [
+      {
+        "id": "55414f78",
+        "s": "Deny. Attack. Reverse who’s the victim. There’s an acronym for it, which is how you know it’s common. It’s a pattern worth noticing, not proof of anything by itself.",
+        "h": 1400,
+        "d": "calm, almost wise",
+        "m": "up",
+        "log": [
+          "pattern: deny / attack / reverse"
+        ]
+      },
+      {
+        "id": "fb5d5ca6",
+        "s": "The antidote is boring. Dates. Names of whoever decided. The text of the decision. The recordings. Paper beats tone every time.",
+        "h": 1300,
+        "log": [
+          "who_decided = ?",
+          "decision_text = ?",
+          "evidence = on file"
+        ]
+      },
+      {
+        "id": "64b6523e",
+        "s": "So keep the timeline, keep asking the same plain question, and let the record do the talking.",
+        "h": 1000,
+        "d": "small smile"
+      }
+    ],
+    "onLanding": false,
+    "order": 9,
+    "createdAt": 1795517699398,
+    "updatedAt": 1795517722510
+  },
+  {
+    "id": "rmwukwnw458d",
+    "title": "I’ll Get Back to You",
+    "theme": "The Denial Came First",
+    "lang": "en",
+    "hook": "Six months. One “I’ll get back to you.”",
+    "stamp": "No deadline. No decision-maker named.",
+    "next": "Next: applause is not an audit.",
+    "lines": [
+      {
+        "id": "bfa19437",
+        "s": "Day one: “I’ve asked for an investigation.” Lovely. We’ll be in touch.",
+        "h": 1200,
+        "d": "checking a calendar",
+        "log": [
+          "dec 30: investigation requested"
+        ]
+      },
+      {
+        "id": "f88d2137",
+        "s": "Three weeks later: the technical team says the position is the same, and legal is looking at it. No deadline.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "jan 19: legal consulted",
+          "deadline = none"
+        ]
+      },
+      {
+        "id": "048b14a5",
+        "s": "Five months after that: a formal reply restating the first reply. Who made the call? Still not named. It’s a very patient kind of silence.",
+        "h": 1100,
+        "d": "quietly",
+        "m": "flat",
+        "log": [
+          "jun 28: formal reply",
+          "decision_maker = unnamed"
+        ]
+      }
+    ],
+    "onLanding": false,
+    "order": 10,
+    "createdAt": 1795517746420,
+    "updatedAt": 1795517746420
+  }
+]

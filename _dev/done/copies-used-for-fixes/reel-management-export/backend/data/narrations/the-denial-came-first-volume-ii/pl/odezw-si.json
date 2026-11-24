@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "pl",
+  "reel": "odezw-si",
+  "title": "Odezwę się",
+  "hook": "Sześć miesięcy. Jedno „odezwę się”.",
+  "stamp": "Bez terminu. Bez nazwanego decydenta.",
+  "next": "Dalej: aplauz to nie audyt.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sprawdzając kalendarz",
+      "text": "Dzień pierwszy: „Poprosiłem o śledztwo.” Świetnie. Odezwiemy się.",
+      "mood": "flat",
+      "panel": [
+        "30 gru: poproszono o śledztwo"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Trzy tygodnie później: zespół techniczny mówi, że stanowisko jest takie samo, a dział prawny to analizuje. Bez terminu.",
+      "mood": "up",
+      "panel": [
+        "19 sty: konsultacja prawna",
+        "termin = brak"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "cicho",
+      "text": "Pięć miesięcy później: formalna odpowiedź powtarzająca pierwszą. Kto zdecydował? Wciąż nie nazwany. To bardzo cierpliwa cisza.",
+      "mood": "flat",
+      "panel": [
+        "28 cze: formalna odpowiedź",
+        "decydent = nienazwany"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

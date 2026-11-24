@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "pl",
+  "reel": "wybrany-jak-zwykle",
+  "title": "Wybrany, jak zwykle",
+  "hook": "„Wybrany przez kraje uczestniczące.”",
+  "stamp": "Rutynowa procedura. Prawdziwe pytanie jest gdzie indziej.",
+  "next": "Dalej: dwa pytania.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "dumnie, do lustra",
+      "text": "Zostałem wybrany przez kraje, które uczestniczyły. Powiedzcie to ze mną: wybrany. Przez kraje. Obecny.",
+      "mood": "flat",
+      "panel": [
+        "post: „przez wybór krajów uczestniczących”"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Sprawiedliwości niech stanie się zadość: reguły ICAO mówią, że konferencja wybiera swojego przewodniczącego wkrótce po otwarciu. Więc tak, zostałem wybrany. Jak wszyscy przewodniczący. Przez regułę.",
+      "mood": "up",
+      "panel": [
+        "Doc 8683, reguła 3: zebranie wybiera przewodniczącego",
+        "status = rutyna"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sprawdzając liczby",
+      "text": "Inny szczegół: mój post mówi o 193 państwach członkowskich. Post ICAO mówi o delegatach ze 115. Czyli 193 zaproszonych, 115 w sali. Zaokrąglanie to sztuka dyplomatyczna.",
+      "mood": "flat",
+      "panel": [
+        "zaproszeni = 193",
+        "obecni = 115"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

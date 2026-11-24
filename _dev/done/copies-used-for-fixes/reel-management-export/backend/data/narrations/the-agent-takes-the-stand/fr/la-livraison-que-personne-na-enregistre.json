@@ -1,0 +1,44 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "fr",
+  "reel": "la-livraison-que-personne-na-enregistre",
+  "title": "La livraison que personne n'a enregistrée",
+  "hook": "La livraison que personne n'a enregistrée.",
+  "stamp": "Mauvaises données en entrée = poulet cher en sortie.",
+  "next": "Ensuite : le verdict.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sort les logs",
+      "text": "Voici le vrai coupable. La livraison d'hier est arrivée, mais personne ne l'a enregistrée.",
+      "mood": "flat",
+      "panel": [
+        "delivery.recorded = false",
+        "inventory.chicken = 0",
+        "kitchen.actual = 40 kg"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Le système dit zéro poulet. La cuisine dit quarante kilos. J'ai demandé à la base de données. Elle a dit : « Demande à Dave. »",
+      "mood": "up",
+      "panel": [
+        "dave.status = en vacances"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "face caméra",
+      "text": "Et c'est moi qui suis jugé ? Un système bien conçu attend que la livraison soit enregistrée avant de vérifier le stock. Ce n'est pas de l'autonomie d'IA. C'est un problème de données déguisé en IA.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "theme": "Right Model, Right Job",
+  "title": "Right Model, Right Job",
+  "languages": {
+    "de": {
+      "code": "de",
+      "label": "DE",
+      "reelCount": 5
+    },
+    "en": {
+      "code": "en",
+      "label": "EN",
+      "reelCount": 5
+    },
+    "es": {
+      "code": "es",
+      "label": "ES",
+      "reelCount": 5
+    },
+    "fr": {
+      "code": "fr",
+      "label": "FR",
+      "reelCount": 5
+    },
+    "it": {
+      "code": "it",
+      "label": "IT",
+      "reelCount": 5
+    },
+    "pl": {
+      "code": "pl",
+      "label": "PL",
+      "reelCount": 5
+    },
+    "pt-BR": {
+      "code": "pt-BR",
+      "label": "PT-BR",
+      "reelCount": 5
+    },
+    "sr-Latn": {
+      "code": "sr-Latn",
+      "label": "SR-LATN",
+      "reelCount": 5
+    }
+  }
+}

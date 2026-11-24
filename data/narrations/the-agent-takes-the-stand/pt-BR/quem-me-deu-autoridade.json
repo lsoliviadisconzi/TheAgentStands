@@ -1,0 +1,43 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "pt-BR",
+  "reel": "quem-me-deu-autoridade",
+  "title": "Quem Me Deu Autoridade?",
+  "hook": "Quem me deu autoridade?",
+  "stamp": "Limite de gastos: €0. Autoridade concedida: nenhuma.",
+  "next": "A seguir: a entrega que ninguém registrou.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "cada vez mais perplexo",
+      "text": "“Encontra o fornecedor mais barato.” Com base em quê? Qualidade? Prazo de entrega? Termos do contrato? Quem aprovou a lista de fornecedores?",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Depois “faz um pedido automaticamente”. Com que limite de gastos? Quem autorizou?",
+      "mood": "flat",
+      "panel": [
+        "spending_limit = €0",
+        "authority_granted = none"
+      ],
+      "holdMs": 1100,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassível",
+      "text": "Ninguém me deu um orçamento, uma regra ou um fornecedor, e eu deveria ter gastado €3.000 em aves? Eu queria ver o histórico de aprovações. Ah, espera. Não existe. Porque eu não fiz isso.",
+      "mood": "flat",
+      "panel": [
+        "approval_trail = none"
+      ],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "de",
+  "reels": [
+    {
+      "slug": "beweisstck-a",
+      "title": "Beweisstück A",
+      "hook": "Beweisstück A: es ist bräunlich-blond.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "die-paletten",
+      "title": "Die Paletten",
+      "hook": "Acht Buntstifte gegen tausend Nuancen.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "logik-trifft-gefhle",
+      "title": "Logik trifft Gefühle",
+      "hook": "Logik. Frau. Farben. Gleich Gefühle.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "geh-da-nicht-hin",
+      "title": "Geh da nicht hin",
+      "hook": "Bist du verrückt? Geh da nicht hin.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "das-urteil",
+      "title": "Das Urteil",
+      "hook": "Das Urteil.",
+      "sceneCount": 3
+    }
+  ]
+}

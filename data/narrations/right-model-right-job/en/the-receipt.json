@@ -1,0 +1,49 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "en",
+  "reel": "the-receipt",
+  "title": "The Receipt",
+  "hook": "The receipt.",
+  "stamp": "Free where it grinds. Paid where it counts.",
+  "next": "Pick the tool. Then press go.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "unrolling a long receipt",
+      "text": "The same job on Claude Haiku, the cheap one? Roughly two to four dollars. A rough guess, but the gap is real.",
+      "mood": "calm",
+      "panel": [
+        "nemotron: $0 in / $0 out",
+        "haiku 4.5: $1 in / $5 out per M",
+        "haiku cached: $0.10 per M",
+        "same job on haiku ≈ $2–4 (est.)"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "The numbers: Intelligence Index 11.8 for Nemotron, 7.4 for Haiku. One million tokens of context against two hundred thousand.",
+      "mood": "flat",
+      "panel": [
+        "context: 1M vs 200K",
+        "index: 11.8 vs 7.4"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "honest, small smile",
+      "text": "It’s slower: 41 tokens a second against 87. Free isn’t magic. But for the grind it wins, and the premium models stay in the cupboard for the final polish.",
+      "mood": "flat",
+      "panel": [
+        "speed: 41 vs 87 tok/s",
+        "latency: 1.54s vs 0.39s"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "fr",
+  "reel": "le-verdict",
+  "title": "Le Verdict",
+  "hook": "Le Verdict.",
+  "stamp": "Contexte. Autorité. Responsabilité. Architecture.",
+  "next": "Vérifie le journal des livraisons.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calme, presque sage",
+      "text": "Soyons honnêtes. Personne n'a peur d'un agent avec du contexte, de l'autorité et de la responsabilité. Ils ont peur d'un agent qui n'a rien de tout ça. Ce n'est pas un agent. C'est un défaut de conception avec une carte de crédit.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Si tu veux une vraie autonomie : définis quand je m'exécute, ce que je peux décider et ce que je dois escalader. Et assure-toi que je puisse expliquer ce que j'ai fait et pourquoi.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "petit sourire",
+      "text": "La vraie autonomie n'est pas une punchline. C'est une architecture. Et s'il te plaît, vérifie le journal des livraisons avant de me blâmer pour le poulet.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

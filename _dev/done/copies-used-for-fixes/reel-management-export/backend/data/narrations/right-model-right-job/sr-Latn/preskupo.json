@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "sr-Latn",
+  "reel": "preskupo",
+  "title": "Preskupo",
+  "hook": "„Claude je preskup.“",
+  "stamp": "Premium za sjaj. Besplatno za teški rad.",
+  "next": "Sledeće: dvadeset minuta besplatnog teškog rada.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "polako klimajući glavom",
+      "text": "Da. Preskup je. I briljantan je. Oba su tačna.",
+      "mood": "flat",
+      "panel": [
+        "claude.kvalitet = briljantan",
+        "claude.cena = takođe briljantna"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Zato ga ne troši na teški rad. Sačuvaj ga za doterivanja, male detalje, onu jednu tešku stvar koja mora da bude tačna.",
+      "mood": "up",
+      "panel": [
+        "koristi_za = sjaj, teški delovi"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "u kameru",
+      "text": "I ne, ne možeš ni da vrtiš neograničene besplatne modele. Osim ako imaš vrlo duboke džepove. Ja nemam.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

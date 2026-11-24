@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "sr-Latn",
+  "reel": "ko-regulie-koga",
+  "title": "Ko reguliše koga",
+  "hook": "Klubom aviokompanija predsedava aviokompanija.",
+  "stamp": "Klub nije regulator. Regulator bi ipak trebalo da odgovara na poštu.",
+  "next": "Traži papirni trag.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "crtajući tri kutije",
+      "text": "ICAO: telo UN od država koje postavlja globalne standarde. Naša agencija: nacionalni regulator. IATA: trgovinsko udruženje aviokompanija.",
+      "mood": "flat",
+      "panel": [
+        "ICAO = države",
+        "ANAC = nacionalni regulator",
+        "IATA = trgovinsko udruženje aviokompanija"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ove godine predsedavajući odbora IATA je CEO upravo aviokompanije iz predmeta. Uloga rotira među CEO-ima aviokompanija. To je ono što klub jeste, ne zavera.",
+      "mood": "up",
+      "panel": [
+        "predsedavajući IATA (jun 2026): CEO LATAM grupe",
+        "rotacija = godišnja",
+        "AGM u Rio de Žaneiru"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "mirno, skoro mudro",
+      "text": "Ništa u ovim dokumentima ne pokazuje da se neko koordinira. Lek je dosadan: imenovani donosilac odluke, tekst odluke, datum. Traži to. U pisanoj formi.",
+      "mood": "calm",
+      "panel": [
+        "ko_je_odlučio = ?",
+        "tekst_odluke = ?",
+        "datum = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

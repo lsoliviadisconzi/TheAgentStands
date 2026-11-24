@@ -1,0 +1,36 @@
+{
+  "theme": "Elected By Rule",
+  "language": "fr",
+  "reels": [
+    {
+      "slug": "lu-comme-dhabitude",
+      "title": "Élu, comme d’habitude",
+      "hook": "« Élu par les pays participants. »",
+      "sceneCount": 3
+    },
+    {
+      "slug": "deux-questions",
+      "title": "Deux questions",
+      "hook": "Deux questions. Deux réponses différentes.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "un-trophe-nest-pas-un-audit",
+      "title": "Un trophée n’est pas un audit",
+      "hook": "Un trophée de gouvernance. Une question sur un dossier.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "deux-tableaux-de-score",
+      "title": "Deux tableaux de score",
+      "hook": "107e. Ou 56. Cela dépend du tableau.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "qui-rgule-qui",
+      "title": "Qui régule qui",
+      "hook": "Le club des compagnies aériennes est présidé par une compagnie aérienne.",
+      "sceneCount": 3
+    }
+  ]
+}

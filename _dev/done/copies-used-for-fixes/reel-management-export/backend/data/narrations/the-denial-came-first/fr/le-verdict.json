@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First",
+  "language": "fr",
+  "reel": "le-verdict",
+  "title": "Le verdict",
+  "hook": "Le verdict.",
+  "stamp": "Demandez qui a décidé. Demandez le dossier.",
+  "next": "Demandez la trace écrite.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calme, presque sage",
+      "text": "Nier. Attaquer. Inverser qui est la victime. Il y a un acronyme pour ça, et c’est comme ça qu’on sait que c’est courant. C’est un schéma à remarquer, pas une preuve en soi.",
+      "mood": "calm",
+      "panel": [
+        "schéma : nier / attaquer / inverser"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "L’antidote est ennuyeux. Des dates. Les noms de ceux qui ont décidé. Le texte de la décision. Les enregistrements. Le papier bat le ton à chaque fois.",
+      "mood": "flat",
+      "panel": [
+        "qui_a_décidé = ?",
+        "texte_décision = ?",
+        "preuve = au dossier"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "petit sourire",
+      "text": "Alors garde la chronologie, continue à poser la même question simple, et laisse le dossier parler.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

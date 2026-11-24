@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "it",
+  "reel": "la-cronologia-che-non-cera",
+  "title": "La Cronologia Che Non C’Era",
+  "hook": "Sei mesi. Un calendario. Zero nomi.",
+  "stamp": "Nessuna scadenza. Nessun responsabile nominato.",
+  "next": "Poi: compliance sullo scaffale.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "controllando un thread di messaggi",
+      "text": "30 dicembre: ho chiesto un’indagine. Ci faremo sentire.",
+      "mood": "flat",
+      "panel": [
+        "30 dic: indagine richiesta"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19 gennaio: posizione tecnica invariata. Il legale ci sta guardando. Nessuna scadenza. Puoi anche usare FalaBR.",
+      "mood": "up",
+      "panel": [
+        "19 gen: legale consultato",
+        "scadenza = nessuna"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sottovoce",
+      "text": "Arriva maggio. La stessa posizione. Chi ha deciso la mancanza di giurisdizione? Ancora non nominato. Il calendario si è mosso. Il responsabile no.",
+      "mood": "flat",
+      "panel": [
+        "responsabile_decisione = non nominato",
+        "mesi_trascorsi = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

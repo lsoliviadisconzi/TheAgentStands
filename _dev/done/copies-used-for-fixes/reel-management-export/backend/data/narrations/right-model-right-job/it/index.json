@@ -1,0 +1,36 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "it",
+  "reels": [
+    {
+      "slug": "ma-io-non-programmo",
+      "title": "Ma Io Non Programmo",
+      "hook": "“Ma io non sono uno sviluppatore.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "non-solo-una-chat",
+      "title": "Non Solo una Chat",
+      "hook": "Una finestra di chat non è una strategia.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "troppo-caro",
+      "title": "Troppo Caro",
+      "hook": "“Claude costa troppo.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "20-minuti-di-lavoro",
+      "title": "20 Minuti di Lavoro",
+      "hook": "Venti minuti di trivellazione. Fattura zero.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-ricevuta",
+      "title": "La Ricevuta",
+      "hook": "La ricevuta.",
+      "sceneCount": 3
+    }
+  ]
+}

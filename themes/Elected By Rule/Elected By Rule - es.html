@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elegido por Regla</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#e4eeea;--fg:#13231d;--mute:#53706a;--btn:#fff;--line:#b6cbc3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}}
+:root[data-theme="dark"]{--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #ffb454;outline-offset:2px}
+button[aria-selected="true"]{background:#ffb454;color:#2a1a05;border-color:#ffb454}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#1d1b24;--paper:#e9f2ee;--tag:#ffb454;--dim:#86a198;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(255,225,170,.26),rgba(255,225,170,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#243630;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#2a1a05}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#ffd699;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#2a1a05;font:700 7.2cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+.fine{max-width:360px;margin:14px 0 0;font-size:15px;color:var(--mute);text-align:center}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Elegido por Regla</h1>
+<p class="sub">Cinco reels. Fechas reales, números reales, un portavoz ficticio. Pulsa play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="26" y="-2" width="68" height="16" rx="3" fill="#ffb454"/><text class="badge" x="60" y="10" text-anchor="middle">LA AGENCIA</text>
+    </svg>
+    <div class="name">El portavoz</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pausar</button>
+  <button id="re">Repetir</button>
+  <label><input type="checkbox" id="all"> Reproducir los cinco</label>
+</div>
+<p class="fine">El portavoz es ficticio; las fechas y respuestas parafrasean la correspondencia facilitada. Fuentes: Regla 3 del Doc 8683 de la OACI y publicación de ATConf/7 de la OACI; CPI 2025 de Transparency International; Edelman Trust Barometer 2026 (28 países, confianza media en empresas, gobierno, medios y ONG); anuncios del consejo de IATA, junio de 2026; cobertura del premio Rede Governança Brasil.</p>
+
+<script>
+const R=[{"n": "Elegido, como siempre", "hook": "“Elegido por los países participantes.”", "next": "Siguiente: dos preguntas.", "stamp": "Procedimiento rutinario. La pregunta real está en otro sitio.", "l": [{"d": "con orgullo, a un espejo", "s": "Fui elegido por los países que participaron. Dilo conmigo: elegido. Por los países. Presente.", "log": ["publicación: “por elección de los países participantes”"], "h": 1400}, {"m": "up", "s": "En honor a la verdad: las reglas de la OACI dicen que una conferencia elige a su propio presidente poco después de abrirse. Así que sí, fui elegido. Como todos los presidentes. Por regla.", "log": ["Doc 8683, Regla 3: la reunión elige a su Presidente", "estado = rutina"], "h": 1500}, {"d": "revisando los números", "m": "flat", "s": "Otro detalle: mi publicación dice 193 Estados miembros. La propia publicación de la OACI dice delegados de 115. O sea, 193 invitados, 115 en la sala. Redondear es un arte diplomático.", "log": ["invitados = 193", "asistentes = 115"], "h": 1300}]}, {"n": "Dos Preguntas", "hook": "Dos preguntas. Dos respuestas distintas.", "next": "Siguiente: un trofeo no es una auditoría.", "stamp": "Respondieron sobre el tiempo. No a la pregunta.", "l": [{"d": "leyendo un hilo", "s": "El pasajero pregunta: ¿quién decidió que estaba fuera de nuestra jurisdicción, y para cuándo responderán? Respuesta: “He pedido que se revise.”", "log": ["preguntado: ¿quién decidió? ¿cuándo?", "respondido: “revisándolo”"], "h": 1500}, {"m": "up", "s": "Meses después: ¿la solicitud a legal fue por escrito? ¿Qué fecha? ¿A quién? Respuesta: la respuesta formal de diciembre, repetida, más una nueva pregunta: ¿dónde se compró el billete?", "log": ["preguntado: ¿escrito? ¿fecha? ¿a quién?", "respondido: mismo texto del 3 dic", "preguntó de vuelta: ¿billete comprado dónde?"], "h": 1600}, {"d": "en voz baja", "m": "flat", "s": "Dijo: en Brasil. Luego preguntó cuándo y cómo habíamos contactado a la aerolínea. En los mensajes archivados, esa sigue esperando.", "log": ["ticket.bought_in = brasil", "respuesta en archivo = ninguna"], "h": 1200}]}, {"n": "Un Trofeo No Es una Auditoría", "hook": "Un trofeo de gobernanza. Una pregunta sobre un expediente.", "next": "Siguiente: dos marcadores.", "stamp": "Un premio no dice nada sobre este expediente.", "l": [{"d": "puliendo un trofeo", "s": "La agencia ganó un premio de gobernanza la semana pasada. Gestión de riesgos. Compliance. Innovación responsable. Bonita foto.", "log": ["premio = premio de gobernanza (7ª edición)", "otorgado por = asociación voluntaria sin ánimo de lucro"], "h": 1500}, {"m": "up", "s": "El premio viene de una asociación voluntaria fundada en 2019. Creíble, claro. Tampoco es una investigación de ninguna denuncia concreta.", "log": ["la agencia también quedó 2ª en 2022"], "h": 1400}, {"d": "sin expresión", "m": "flat", "s": "Justo en ambos sentidos: un trofeo no prueba que todo esté bien, y un expediente no prueba que todo esté roto. Pero un responsable con nombre resolvería esto más rápido que una gala.", "h": 1200}]}, {"n": "Dos Marcadores", "hook": "107º. O 56. Depende del marcador.", "next": "Siguiente: ¿quién regula a quién?", "stamp": "La percepción no es prueba. En cualquier caso.", "l": [{"d": "sosteniendo dos marcadores", "s": "Percepción de la corrupción, 2025: Brasil marca 35 sobre 100. Puesto: 107º de 182. Media mundial: 42.", "log": ["TI CPI 2025: 35/100", "puesto = 107 de 182", "media global = 42"], "h": 1500}, {"m": "up", "s": "Confianza, 2026: el índice Edelman sitúa a Brasil en 56 sobre 100. Por encima de EE. UU. con 47, Reino Unido con 44, Alemania con 44, Francia con 42.", "log": ["índice de confianza Edelman: Brasil 56", "EE. UU. 47 / RU 44 / DE 44 / FR 42", "(media de empresas, gobierno, medios y ONG)"], "h": 1700}, {"d": "a cámara", "m": "flat", "s": "Así que “el país menos confiable” no es lo que dicen los números. La frase honesta: la corrupción percibida es mala, las instituciones no son uniformemente desconfiadas, y ninguno de los dos números prueba un caso concreto.", "h": 1300}]}, {"n": "Quién Regula a Quién", "hook": "El club de las aerolíneas está presidido por una aerolínea.", "next": "Pide el rastro documental.", "stamp": "Un club no es un regulador. Un regulador debería responder su correo.", "l": [{"d": "dibujando tres cajas", "s": "OACI: un organismo de la ONU formado por Estados que fija estándares globales. Nuestra agencia: el regulador nacional. IATA: la asociación comercial de las aerolíneas.", "log": ["OACI = Estados", "ANAC = regulador nacional", "IATA = asociación comercial de aerolíneas"], "h": 1500}, {"m": "up", "s": "Este año, el presidente del consejo de IATA es el CEO de la propia aerolínea del expediente. El cargo rota entre CEOs de aerolíneas. Eso es un club, no una conspiración.", "log": ["presidente de IATA (jun 2026): CEO del grupo LATAM", "rotación = anual", "AGM celebrado en Río de Janeiro"], "h": 1700}, {"d": "calmado, casi sabio", "m": "calm", "s": "Nada en estos documentos muestra a nadie coordinando. El remedio es aburrido: un responsable con nombre, el texto de la decisión, la fecha. Pide eso. Por escrito.", "log": ["quien_decidio = ?", "texto_decision = ?", "fecha = ?"], "h": 1300}]}];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Resume":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

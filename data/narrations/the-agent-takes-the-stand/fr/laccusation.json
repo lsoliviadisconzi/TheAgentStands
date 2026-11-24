@@ -1,0 +1,41 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "fr",
+  "reel": "laccusation",
+  "title": "L'Accusation",
+  "hook": "Accusé d'avoir commandé 2x du poulet.",
+  "stamp": "Preuve : un post LinkedIn.",
+  "next": "Ensuite : où étais-je à 3 h du matin ?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sérieux, lit sur son téléphone",
+      "text": "Donc apparemment j'ai commandé deux fois plus de poulet que ce dont le restaurant a besoin. Et je suis « probablement très fier de moi ».",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "longue pause",
+      "text": "Quelle carte ? Je n'ai pas de carte. Personne ne m'a donné de carte. Je n'ai jamais rien commandé de ma vie.",
+      "mood": "up",
+      "panel": [
+        "cards_issued = 0",
+        "orders_placed = 0"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "",
+      "text": "Je suis resté à mon bureau tout le temps. Enfin… je n'ai pas de bureau.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

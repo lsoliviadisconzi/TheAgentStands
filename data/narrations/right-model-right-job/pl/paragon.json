@@ -1,0 +1,49 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pl",
+  "reel": "paragon",
+  "title": "Paragon",
+  "hook": "Paragon.",
+  "stamp": "Za darmo tam, gdzie haruje. Płatne tam, gdzie liczy się jakość.",
+  "next": "Wybierz narzędzie. Potem naciśnij go.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "rozwijając długi paragon",
+      "text": "To samo zadanie na Claude Haiku, tym tanim? Mniej więcej od dwóch do czterech dolarów. Zgrubny szacunek, ale różnica jest realna.",
+      "mood": "calm",
+      "panel": [
+        "nemotron: 0 $ wejście / 0 $ wyjście",
+        "haiku 4.5: 1 $ wejście / 5 $ wyjście za M",
+        "haiku z cache: 0,10 $ za M",
+        "to samo na haiku ≈ 2–4 $ (szac.)"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Liczby: Intelligence Index 11,8 dla Nemotron, 7,4 dla Haiku. Milion tokenów kontekstu przeciw dwustu tysiącom.",
+      "mood": "flat",
+      "panel": [
+        "kontekst: 1M vs 200K",
+        "indeks: 11,8 vs 7,4"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "uczciwie, mały uśmiech",
+      "text": "Jest wolniejszy: 41 tokenów na sekundę przeciw 87. Darmowe nie jest magiczne. Ale do harówki wygrywa, a modele premium zostają w szafie na finalny szlif.",
+      "mood": "flat",
+      "panel": [
+        "prędkość: 41 vs 87 tok/s",
+        "opóźnienie: 1,54 s vs 0,39 s"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

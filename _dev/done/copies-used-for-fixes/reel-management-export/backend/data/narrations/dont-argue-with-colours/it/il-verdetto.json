@@ -1,0 +1,50 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "it",
+  "reel": "il-verdetto",
+  "title": "Il verdetto",
+  "hook": "Il verdetto.",
+  "stamp": "Non stavo razionalizzando. Stavo solo discutendo. E ho perso lo stesso.",
+  "next": "Concorda. Poi compra fiori.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calmo, quasi saggio",
+      "text": "Siamo onesti. Non stavo razionalizzando, stavo solo discutendo. E non puoi discutere con una persona che sa cos'è il “bronde”.",
+      "mood": "calm",
+      "panel": [
+        "discussione = persa",
+        "bronde = esiste"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "I suoi capelli non sono grigi, i miei non sono marroncini, ed entrambi sono, a quanto pare, una sfumatura che non so pronunciare.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1200,
+      "swatches": [
+        [
+          "i suoi capelli: cenere champagne",
+          "#cfc3ad"
+        ],
+        [
+          "i miei capelli: vanno bene",
+          "#9a8466"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "sorriso accennato",
+      "text": "Quindi il piano è: di' “hai ragione”, compra fiori e chiedi di che colore sono. Non dire rosso. È “rosa polvere”.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

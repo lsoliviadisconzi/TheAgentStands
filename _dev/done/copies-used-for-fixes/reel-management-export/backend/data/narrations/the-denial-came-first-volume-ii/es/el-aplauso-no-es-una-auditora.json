@@ -1,0 +1,42 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "es",
+  "reel": "el-aplauso-no-es-una-auditora",
+  "title": "El Aplauso No Es una Auditoría",
+  "hook": "365 me gusta. Cero preguntas.",
+  "stamp": "El aplauso no es una auditoría.",
+  "next": "Siguiente: el veredicto.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "desplazando un hilo de comentarios",
+      "text": "Un gran anuncio. Cientos de me gusta. Decenas de comentarios. Cada comentario visible es una felicitación.",
+      "mood": "flat",
+      "panel": [
+        "me gusta = 365",
+        "comentarios = 43",
+        "preguntas_hechas = 0 visibles"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Todos aplauden a todos. Todos “cuentan con” todos. Es una sala cálida. Las salas cálidas son geniales para animar. Menos para escrutar.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sin expresión",
+      "text": "Una industria que se autorregula, se felicita y responde a las quejas con un enlace al formulario correcto.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

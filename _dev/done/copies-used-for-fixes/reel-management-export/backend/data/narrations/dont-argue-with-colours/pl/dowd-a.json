@@ -1,0 +1,44 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "pl",
+  "reel": "dowd-a",
+  "title": "Dowód A",
+  "hook": "Dowód A: to brązowo-blond.",
+  "stamp": "Sprzeciw uwzględniony, zanim dokończyłem zdanie.",
+  "next": "Następnie: palety.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "pokazując zbliżenie swojego ucha",
+      "text": "Wysłałem kumplowi dowód. Włosy. Zbliżenie. Dobre światło. To brązowo-blond. Sprawa zamknięta.",
+      "mood": "flat",
+      "panel": [
+        "kolor.włosów = brązowo-blond",
+        "pewność = 100%"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ona mówi, że siwe. Siwe! Owszem, koło ucha są siwe włoski. Włoski. Drobne, dystyngowane włoski.",
+      "mood": "up",
+      "panel": [
+        "siwe_włoski = kilka",
+        "siwe_włoski.istotne = nie"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "cicho",
+      "text": "Właśnie zdałem sobie sprawę, że użyłem słowa „brązowo” w sądzie. Nie mam żadnych biegłych.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

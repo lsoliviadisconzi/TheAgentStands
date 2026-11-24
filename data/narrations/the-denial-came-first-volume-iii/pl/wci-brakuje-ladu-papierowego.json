@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pl",
+  "reel": "wci-brakuje-ladu-papierowego",
+  "title": "Wciąż brakuje śladu papierowego",
+  "hook": "Zapytaj o nazwisko. Zapytaj o datę.",
+  "stamp": "Papier bije ton. Za każdym razem.",
+  "next": "Trzymaj chronologię.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "spokojnie",
+      "text": "Wzorzec jest spójny: wczesne zapewnienie, że proces był czysty, długa cisza co do istoty, nagroda dla systemu, ranking, który się nie poprawia.",
+      "mood": "calm",
+      "panel": [
+        "wzorzec = zapewniaj / opóźniaj / nagradzaj / rang"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Antidotum pozostaje nudne. Nazwisko decydenta. Data pisemnej prośby do działu prawnego. Tekst decyzji. Nagrania, które już istnieją.",
+      "mood": "flat",
+      "panel": [
+        "decydent = ?",
+        "data_prośby_do_prawnego = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "mały uśmiech",
+      "text": "Zachowaj wiadomości. Zachowaj daty. Pozwól mówić zapisowi, gdy sala woli aplauz.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

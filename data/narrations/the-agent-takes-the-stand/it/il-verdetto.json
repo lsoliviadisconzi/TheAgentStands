@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "it",
+  "reel": "il-verdetto",
+  "title": "Il Verdetto",
+  "hook": "Il verdetto.",
+  "stamp": "Contesto. Autorità. Responsabilità. Architettura.",
+  "next": "Controlla il registro delle consegne.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calmo, quasi saggio",
+      "text": "Siamo onesti. Nessuno ha paura di un agente con contesto, autorità e responsabilità. Hanno paura di un agente che non ha niente di tutto ciò. Quello non è un agente. È un difetto di progettazione con una carta di credito.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Se vuoi vera autonomia: definisci quando mi attivo, cosa posso decidere e cosa devo escalare. E assicurati che io possa spiegare cosa ho fatto e perché.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "un piccolo sorriso",
+      "text": "La vera autonomia non è una battuta. È un'architettura. E per favore, controlla il registro delle consegne prima di darmi la colpa del pollo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "fr",
+  "reel": "qui-rgule-qui",
+  "title": "Qui régule qui",
+  "hook": "Le club des compagnies aériennes est présidé par une compagnie aérienne.",
+  "stamp": "Un club n’est pas un régulateur. Un régulateur devrait quand même répondre à son courrier.",
+  "next": "Demandez la trace écrite.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "dessinant trois cases",
+      "text": "OACI : un organe de l’ONU composé d’États qui fixe des normes mondiales. Notre agence : le régulateur national. IATA : l’association professionnelle des compagnies aériennes.",
+      "mood": "flat",
+      "panel": [
+        "OACI = États",
+        "ANAC = régulateur national",
+        "IATA = association professionnelle des compagnies"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Cette année, le président du conseil de l’IATA est le PDG de la compagnie même qui figure au dossier. Le rôle tourne parmi les PDG de compagnies aériennes. C’est ce qu’est un club, pas une conspiration.",
+      "mood": "up",
+      "panel": [
+        "président IATA (juin 2026) : PDG du groupe LATAM",
+        "rotation = annuelle",
+        "AGM à Rio de Janeiro"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "calme, presque sage",
+      "text": "Rien dans ces documents ne montre une coordination. Le remède est ennuyeux : un décideur nommé, le texte de la décision, la date. Demandez cela. Par écrit.",
+      "mood": "calm",
+      "panel": [
+        "qui_a_décidé = ?",
+        "texte_décision = ?",
+        "date = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

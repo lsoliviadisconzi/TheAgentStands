@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "en",
+  "reel": "who-regulates-whom",
+  "title": "Who Regulates Whom",
+  "hook": "The airlines’ club is chaired by an airline.",
+  "stamp": "A club isn’t a regulator. A regulator should still answer its mail.",
+  "next": "Ask for the paper trail.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "drawing three boxes",
+      "text": "ICAO: a UN body of states that sets global standards. Our agency: the national regulator. IATA: the airlines’ trade association.",
+      "mood": "flat",
+      "panel": [
+        "ICAO = states",
+        "ANAC = national regulator",
+        "IATA = airline trade association"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "This year the IATA board chair is the CEO of the very airline in the file. The role rotates among airline CEOs. That’s what a club is, not a conspiracy.",
+      "mood": "up",
+      "panel": [
+        "IATA chair (jun 2026): LATAM group CEO",
+        "rotation = yearly",
+        "agm held in rio de janeiro"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "calm, almost wise",
+      "text": "Nothing in these documents shows anyone coordinating. The remedy is boring: a named decision-maker, the decision text, the date. Ask for those. In writing.",
+      "mood": "calm",
+      "panel": [
+        "who_decided = ?",
+        "decision_text = ?",
+        "date = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

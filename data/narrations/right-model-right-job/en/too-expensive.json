@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "en",
+  "reel": "too-expensive",
+  "title": "Too Expensive",
+  "hook": "“Claude is too expensive.”",
+  "stamp": "Premium for the polish. Free for the grind.",
+  "next": "Next: twenty minutes of free grind.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "nodding slowly",
+      "text": "Yes. It’s too expensive. It’s also brilliant. Both things are true.",
+      "mood": "flat",
+      "panel": [
+        "claude.quality = brilliant",
+        "claude.price = also brilliant"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "So don’t spend it on the heavy lifting. Save it for the refinements, the little touches, the one hard thing that has to be right.",
+      "mood": "up",
+      "panel": [
+        "use_for = polish, hard bits"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "to camera",
+      "text": "And no, you can’t run unlimited free models either. Unless you have very deep pockets. I don’t.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

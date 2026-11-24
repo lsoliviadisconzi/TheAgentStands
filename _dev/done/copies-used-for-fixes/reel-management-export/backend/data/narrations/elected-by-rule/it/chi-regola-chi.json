@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "it",
+  "reel": "chi-regola-chi",
+  "title": "Chi Regola Chi",
+  "hook": "Il club delle compagnie aeree è presieduto da una compagnia aerea.",
+  "stamp": "Un club non è un regolatore. Un regolatore dovrebbe comunque rispondere alla posta.",
+  "next": "Chiedi la pista documentale.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "disegnando tre caselle",
+      "text": "ICAO: un organismo ONU di Stati che stabilisce standard globali. La nostra agenzia: il regolatore nazionale. IATA: l’associazione di categoria delle compagnie aeree.",
+      "mood": "flat",
+      "panel": [
+        "ICAO = Stati",
+        "ANAC = regolatore nazionale",
+        "IATA = associazione di categoria"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Quest’anno il presidente del consiglio IATA è il CEO della compagnia aerea coinvolta nel fascicolo. Il ruolo ruota tra CEO di compagnie aeree. Questo è un club, non un complotto.",
+      "mood": "up",
+      "panel": [
+        "presidente IATA (giu 2026): CEO del gruppo LATAM",
+        "rotazione = annuale",
+        "AGM tenuto a Rio de Janeiro"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "calmo, quasi saggio",
+      "text": "Niente in questi documenti mostra qualcuno che coordina. Il rimedio è noioso: un responsabile nominato, il testo della decisione, la data. Chiedi quelli. Per iscritto.",
+      "mood": "calm",
+      "panel": [
+        "chi_ha_deciso = ?",
+        "testo_decisione = ?",
+        "data = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

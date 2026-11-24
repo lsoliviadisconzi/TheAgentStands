@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "fr",
+  "reel": "la-trace-crite-manque-encore",
+  "title": "La trace écrite manque encore",
+  "hook": "Demandez le nom. Demandez la date.",
+  "stamp": "Le papier bat le ton. À chaque fois.",
+  "next": "Gardez la chronologie.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calmement",
+      "text": "Le schéma est cohérent : une réassurance précoce que le processus était propre, un long silence sur le fond, un prix pour le système, un classement qui ne s’améliore pas.",
+      "mood": "calm",
+      "panel": [
+        "schéma = rassurer / retarder / primé / classé"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "L’antidote reste ennuyeux. Nom du décideur. Date de la demande écrite au juridique. Texte de la décision. Les enregistrements qui existent déjà.",
+      "mood": "flat",
+      "panel": [
+        "décideur = ?",
+        "date_demande_au_juridique = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "petit sourire",
+      "text": "Gardez les messages. Gardez les dates. Laissez le dossier parler quand la salle préfère les applaudissements.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

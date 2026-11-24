@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "de",
+  "reel": "20-minuten-schwerarbeit",
+  "title": "20 Minuten Schwerarbeit",
+  "hook": "Zwanzig Minuten Bohren. Null Rechnung.",
+  "stamp": "14,7 Mio. Token. 0 $.",
+  "next": "Weiter: die Rechnung.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "das Terminal beobachtend",
+      "text": "Gerade jetzt, während ich rede, bohrt Nemotron 3 Ultra seit zwanzig Minuten. Kostenlos.",
+      "mood": "flat",
+      "panel": [
+        "Modell = nemotron-3-ultra (kostenlos)",
+        "Runden = 51",
+        "Schritte = 136",
+        "Token = 14,7 Mio."
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Es stieß auf eine Playwright-Browser-Installation, einen gesperrten Cache, eine Berechtigungswand. Es versuchte einen anderen Weg. Und noch einen. Niemand zahlte für die Wiederholungen.",
+      "mood": "up",
+      "panel": [
+        "Chromium installieren: Berechtigung verweigert",
+        "Retry: eigener Pfad",
+        "cache_hit = 96 %"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "leise",
+      "text": "Bei einem bezahlten Modell läuft da ein sehr geduldiger Zähler. Hier ist es nur ein Fortschrittsbalken und ein Wasserkocher.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

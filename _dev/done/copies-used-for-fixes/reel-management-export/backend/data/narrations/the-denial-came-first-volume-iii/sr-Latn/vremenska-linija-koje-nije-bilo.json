@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "sr-Latn",
+  "reel": "vremenska-linija-koje-nije-bilo",
+  "title": "Vremenska linija koje nije bilo",
+  "hook": "Šest meseci. Jedan kalendar. Nula imena.",
+  "stamp": "Bez roka. Bez imenovanog donosioca odluke.",
+  "next": "Sledeće: compliance na polici.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "proveravajući nit poruka",
+      "text": "30. decembra: tražio sam istragu. Javićemo se.",
+      "mood": "flat",
+      "panel": [
+        "30. dec: zatražena istraga"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19. januara: tehnički stav nepromenjen. Pravna služba to gleda. Bez roka. Možete koristiti i FalaBR.",
+      "mood": "up",
+      "panel": [
+        "19. jan: konsultovana pravna",
+        "rok = nema"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "tiho",
+      "text": "Maj dolazi. Isti stav. Ko je odlučio o nedostatku nadležnosti? Još nije imenovan. Kalendar se pomerio. Donosilac odluke nije.",
+      "mood": "flat",
+      "panel": [
+        "donosilac_odluke = neimenovan",
+        "proteklih_meseci = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

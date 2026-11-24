@@ -1,0 +1,36 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "fr",
+  "reels": [
+    {
+      "slug": "mais-je-ne-code-pas",
+      "title": "Mais je ne code pas",
+      "hook": "« Mais je ne suis pas développeur. »",
+      "sceneCount": 3
+    },
+    {
+      "slug": "pas-juste-une-chatbox",
+      "title": "Pas juste une chatbox",
+      "hook": "Une fenêtre de chat n’est pas une stratégie.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "trop-cher",
+      "title": "Trop cher",
+      "hook": "« Claude est trop cher. »",
+      "sceneCount": 3
+    },
+    {
+      "slug": "20-minutes-de-travail",
+      "title": "20 minutes de travail",
+      "hook": "Vingt minutes de forage. Zéro facture.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "le-reu",
+      "title": "Le reçu",
+      "hook": "Le reçu.",
+      "sceneCount": 3
+    }
+  ]
+}

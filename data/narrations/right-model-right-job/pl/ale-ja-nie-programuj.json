@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pl",
+  "reel": "ale-ja-nie-programuj",
+  "title": "Ale ja nie programuję",
+  "hook": "„Ale ja nie jestem developerem.”",
+  "stamp": "Opisz to. To jest umiejętność.",
+  "next": "Dalej: okno czatu to nie skrzynka z narzędziami.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "ze skrzyżowanymi rękami",
+      "text": "„AI jest dla developerów.” Urocze. Umiesz myśleć racjonalnie? Umiesz powiedzieć, czego chcesz i jak wygląda gotowy efekt?",
+      "mood": "flat",
+      "panel": [
+        "umie_programować = false",
+        "umie_wyjaśnić_jasno = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Więc jesteś kwalifikowany. Umiejętność to nie składnia. To opisanie wyniku z takim detalem, żeby nikt nie musiał zgadywać.",
+      "mood": "up",
+      "panel": [
+        "umiejętność = jasny brief"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "w połowie zdania ktoś mówi przez mnie",
+      "text": "Na czym skończyłem? Właśnie. Długie briefy giną, gdy cię przerywają. Najpierw zapisz, potem wklej.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

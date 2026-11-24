@@ -1,0 +1,45 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "fr",
+  "reel": "pas-juste-une-chatbox",
+  "title": "Pas juste une chatbox",
+  "hook": "Une fenêtre de chat n’est pas une stratégie.",
+  "stamp": "Savoir quoi utiliser, et comment.",
+  "next": "Ensuite : « Claude est trop cher. »",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "montrant une très grande boîte à outils",
+      "text": "La plupart des gens ouvrent une fenêtre de chat, tapent « aide » et appellent ça utiliser l’IA.",
+      "mood": "flat",
+      "panel": [
+        "outils_utilisés = 1",
+        "modèles_connus = le célèbre"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Il y a des modèles pour lire des montagnes de PDF, des modèles pour de longs runs d’agents, des modèles pour la dernière touche. Ils ne sont pas interchangeables.",
+      "mood": "up",
+      "panel": [
+        "lecture_pdf = modèle A",
+        "run_agent = modèle B",
+        "dernière_touche = modèle C"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassible",
+      "text": "Utiliser un seul modèle pour tout, c’est comme embaucher un chirurgien pour porter des cartons. Impressionnant. Et facturé.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "de",
+  "reels": [
+    {
+      "slug": "die-peers-haben-es-gesagt",
+      "title": "Die Peers haben es gesagt",
+      "hook": "Niemand hat gefragt. Sie haben dreimal geantwortet.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "die-zeitleiste-die-es-nicht-gab",
+      "title": "Die Zeitleiste, die es nicht gab",
+      "hook": "Sechs Monate. Ein Kalender. Null Namen.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "compliance-im-regal",
+      "title": "Compliance im Regal",
+      "hook": "Ein Preis für Governance. Eine offene Akte.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "rang-107",
+      "title": "Rang 107",
+      "hook": "35 von 100. Zweitschlechtester Wert der Reihe.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "die-papierspur-fehlt-noch",
+      "title": "Die Papierspur fehlt noch",
+      "hook": "Frag nach dem Namen. Frag nach dem Datum.",
+      "sceneCount": 3
+    }
+  ]
+}

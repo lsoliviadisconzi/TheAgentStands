@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "it",
+  "reel": "ti-faccio-sapere",
+  "title": "Ti Faccio Sapere",
+  "hook": "Sei mesi. Un “ti faccio sapere”.",
+  "stamp": "Nessuna scadenza. Nessun responsabile nominato.",
+  "next": "Poi: l’applauso non è un audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "controllando un calendario",
+      "text": "Giorno uno: “Ho chiesto un’indagine.” Ottimo. Ci faremo sentire.",
+      "mood": "flat",
+      "panel": [
+        "30 dic: indagine richiesta"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Tre settimane dopo: la squadra tecnica dice che la posizione è la stessa, e il legale ci sta guardando. Nessuna scadenza.",
+      "mood": "up",
+      "panel": [
+        "19 gen: legale consultato",
+        "scadenza = nessuna"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sottovoce",
+      "text": "Cinque mesi dopo: una risposta formale che ribadisce la prima risposta. Chi ha deciso? Ancora non nominato. È un silenzio molto paziente.",
+      "mood": "flat",
+      "panel": [
+        "28 giu: risposta formale",
+        "responsabile_decisione = non nominato"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

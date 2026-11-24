@@ -1,0 +1,96 @@
+{
+  "themes": {
+    "dont-argue-with-colours": {
+      "title": "Don't Argue With Colours",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn",
+        "th"
+      ]
+    },
+    "elected-by-rule": {
+      "title": "Elected By Rule",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    },
+    "right-model-right-job": {
+      "title": "Right Model, Right Job",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    },
+    "the-agent-takes-the-stand": {
+      "title": "The Agent Takes the Stand",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    },
+    "the-denial-came-first": {
+      "title": "The Denial Came First",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    },
+    "the-denial-came-first-volume-ii": {
+      "title": "The Denial Came First - Volume II",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    },
+    "the-denial-came-first-volume-iii": {
+      "title": "The Denial Came First - Volume III",
+      "languages": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "it",
+        "pl",
+        "pt-BR",
+        "sr-Latn"
+      ]
+    }
+  }
+}

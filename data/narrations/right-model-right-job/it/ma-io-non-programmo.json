@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "it",
+  "reel": "ma-io-non-programmo",
+  "title": "Ma Io Non Programmo",
+  "hook": "“Ma io non sono uno sviluppatore.”",
+  "stamp": "Descrivilo. Questa è l’abilità.",
+  "next": "Poi: la casella chat non è la cassetta degli attrezzi.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "braccia conserte",
+      "text": "“L’IA è per gli sviluppatori.” Che carino. Sai pensare razionalmente? Sai dire cosa vuoi e com’è il risultato finito?",
+      "mood": "flat",
+      "panel": [
+        "sa_programmare = false",
+        "sa_spiegare_chiaramente = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Allora sei qualificato. L’abilità non è la sintassi. È descrivere il risultato con abbastanza dettaglio che nessuno debba indovinare.",
+      "mood": "up",
+      "panel": [
+        "abilità = brief chiaro"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a metà frase, qualcuno parla sopra di me",
+      "text": "Dov’ero? Esatto. I brief lunghi si perdono quando vieni interrotto. Scrivilo prima, poi incollalo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

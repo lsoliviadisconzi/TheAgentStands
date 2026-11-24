@@ -1,0 +1,44 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "pt-BR",
+  "reel": "prova-a",
+  "title": "Prova A",
+  "hook": "Prova A: é um castanho loirinho.",
+  "stamp": "Objeção acolhida antes de eu terminar a frase.",
+  "next": "A seguir: as paletas.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "segurando um close da própria orelha",
+      "text": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
+      "mood": "flat",
+      "panel": [
+        "cabelo.cor = castanho loirinho",
+        "confiança = 100%"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
+      "mood": "up",
+      "panel": [
+        "fios_grisalhos = alguns",
+        "fios_grisalhos.relevante = não"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "baixinho",
+      "text": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

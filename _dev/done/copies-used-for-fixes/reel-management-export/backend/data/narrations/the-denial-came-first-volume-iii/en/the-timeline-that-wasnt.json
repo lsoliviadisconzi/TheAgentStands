@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "en",
+  "reel": "the-timeline-that-wasnt",
+  "title": "The Timeline That Wasn’t",
+  "hook": "Six months. One calendar. Zero names.",
+  "stamp": "No deadline. No decision-maker named.",
+  "next": "Next: compliance on the shelf.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "checking a message thread",
+      "text": "30 December: I’ve asked for an investigation. We’ll be in touch.",
+      "mood": "flat",
+      "panel": [
+        "dec 30: investigation requested"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19 January: Technical position unchanged. Legal is looking at it. No deadline. You can also use FalaBR.",
+      "mood": "up",
+      "panel": [
+        "jan 19: legal consulted",
+        "deadline = none"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "quietly",
+      "text": "May arrives. The same position. Who decided the lack of jurisdiction? Still not named. The calendar moved. The decision-maker did not.",
+      "mood": "flat",
+      "panel": [
+        "decision_maker = unnamed",
+        "months_elapsed = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "pt-BR",
+  "reels": [
+    {
+      "slug": "ningum-perguntou",
+      "title": "Ninguém Perguntou",
+      "hook": "Ninguém perguntou. Eles responderam mesmo assim.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "fora-da-jurisdio",
+      "title": "Fora da Jurisdição",
+      "hook": "“Isso está fora da nossa jurisdição.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "eu-retorno-depois",
+      "title": "Eu Retorno Depois",
+      "hook": "Seis meses. Um “eu retorno depois”.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "aplauso-no-auditoria",
+      "title": "Aplauso Não É Auditoria",
+      "hook": "365 curtidas. Zero perguntas.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "o-veredito",
+      "title": "O Veredito",
+      "hook": "O veredito.",
+      "sceneCount": 3
+    }
+  ]
+}

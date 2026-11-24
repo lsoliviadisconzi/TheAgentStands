@@ -1,0 +1,36 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "fr",
+  "reels": [
+    {
+      "slug": "preuve-a",
+      "title": "Preuve A",
+      "hook": "Preuve A : c’est brun-blondâtre.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "les-palettes",
+      "title": "Les palettes",
+      "hook": "Huit crayons contre mille nuances.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-logique-rencontre-les-sentiments",
+      "title": "La logique rencontre les sentiments",
+      "hook": "Logique. Femme. Couleurs. Égal sentiments.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "ny-va-pas",
+      "title": "N’y va pas",
+      "hook": "T’es fou ? N’y va pas.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "le-verdict",
+      "title": "Le verdict",
+      "hook": "Le verdict.",
+      "sceneCount": 3
+    }
+  ]
+}

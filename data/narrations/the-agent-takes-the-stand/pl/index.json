@@ -1,0 +1,36 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "pl",
+  "reels": [
+    {
+      "slug": "oskarenie",
+      "title": "Oskarżenie",
+      "hook": "Oskarżony o zamówienie 2x kurczaka.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "gdzie-byem-o-3-w-nocy",
+      "title": "Gdzie byłem o 3 w nocy?",
+      "hook": "Gdzie byłem o 3 w nocy?",
+      "sceneCount": 3
+    },
+    {
+      "slug": "kto-da-mi-uprawnienia",
+      "title": "Kto dał mi uprawnienia?",
+      "hook": "Kto dał mi uprawnienia?",
+      "sceneCount": 3
+    },
+    {
+      "slug": "dostawa-ktrej-nikt-nie-zarejestrowa",
+      "title": "Dostawa, której nikt nie zarejestrował",
+      "hook": "Dostawa, której nikt nie zarejestrował.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "werdykt",
+      "title": "Werdykt",
+      "hook": "Werdykt.",
+      "sceneCount": 3
+    }
+  ]
+}

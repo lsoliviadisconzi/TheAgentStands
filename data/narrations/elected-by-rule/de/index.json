@@ -1,0 +1,36 @@
+{
+  "theme": "Elected By Rule",
+  "language": "de",
+  "reels": [
+    {
+      "slug": "gewhlt-wie-blich",
+      "title": "Gewählt, wie üblich",
+      "hook": "„Gewählt von den teilnehmenden Ländern.“",
+      "sceneCount": 3
+    },
+    {
+      "slug": "zwei-fragen",
+      "title": "Zwei Fragen",
+      "hook": "Zwei Fragen. Zwei verschiedene Antworten.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "eine-trophe-ist-kein-audit",
+      "title": "Eine Trophäe ist kein Audit",
+      "hook": "Eine Trophäe für Governance. Eine Frage zu einer Akte.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "zwei-anzeigetafeln",
+      "title": "Zwei Anzeigetafeln",
+      "hook": "107. Oder 56. Kommt auf die Anzeigetafel an.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "wer-reguliert-wen",
+      "title": "Wer reguliert wen",
+      "hook": "Der Club der Airlines wird von einer Airline geleitet.",
+      "sceneCount": 3
+    }
+  ]
+}

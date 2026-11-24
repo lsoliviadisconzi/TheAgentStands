@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First",
+  "language": "pl",
+  "reel": "nikt-nie-pyta",
+  "title": "Nikt nie pytał",
+  "hook": "Nikt nie pytał. Odpowiedzieli i tak.",
+  "stamp": "Zaprzeczenie przyszło przed pytaniem.",
+  "next": "Dalej: poza jurysdykcją.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "czytając oświadczenie, o które nikt nie prosił",
+      "text": "Nikt nie pytał, czy zignorowaliśmy skargę. Więc żeby było jasne: nie zignorowaliśmy skargi.",
+      "mood": "flat",
+      "panel": [
+        "pytanie_zadane = brak",
+        "zaprzeczenie_wydane = tak"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Nikt nie pytał, czy ktoś nami kieruje. Chcielibyśmy potwierdzić, że nikt nami nie kieruje. Bez pytania. Do protokołu.",
+      "mood": "up",
+      "panel": [
+        "zaprzeczenia_bez_pytania = 2"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "do kamery",
+      "text": "Jest stare powiedzenie o protestowaniu zbyt mocno. My to nazywamy komunikacją. Zasada: gdy odpowiedź przychodzi przed pytaniem, idź sprawdzić pytanie.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

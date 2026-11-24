@@ -1,0 +1,49 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "de",
+  "reel": "die-rechnung",
+  "title": "Die Rechnung",
+  "hook": "Die Rechnung.",
+  "stamp": "Kostenlos, wo es schuftet. Bezahlt, wo es zählt.",
+  "next": "Wähl das Werkzeug. Dann drück Go.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "eine lange Rechnung ausrollend",
+      "text": "Dieselbe Aufgabe mit Claude Haiku, dem günstigen? Ungefähr zwei bis vier Dollar. Eine grobe Schätzung, aber die Lücke ist real.",
+      "mood": "calm",
+      "panel": [
+        "nemotron: 0 $ rein / 0 $ raus",
+        "haiku 4.5: 1 $ rein / 5 $ raus pro M",
+        "haiku im Cache: 0,10 $ pro M",
+        "dieselbe Aufgabe mit haiku ≈ 2–4 $ (geschätzt)"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Die Zahlen: Intelligence Index 11,8 für Nemotron, 7,4 für Haiku. Eine Million Token Kontext gegen zweihunderttausend.",
+      "mood": "flat",
+      "panel": [
+        "Kontext: 1M vs. 200K",
+        "Index: 11,8 vs. 7,4"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "ehrlich, kleines Lächeln",
+      "text": "Es ist langsamer: 41 Token pro Sekunde gegen 87. Kostenlos ist keine Magie. Aber für die Schwerarbeit gewinnt es, und die Premium-Modelle bleiben für den letzten Schliff im Schrank.",
+      "mood": "flat",
+      "panel": [
+        "Geschwindigkeit: 41 vs. 87 Tok/s",
+        "Latenz: 1,54 s vs. 0,39 s"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

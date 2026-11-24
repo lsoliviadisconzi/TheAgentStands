@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pt-BR",
+  "reel": "a-trilha-documental-ainda-ausente",
+  "title": "A Trilha Documental Ainda Ausente",
+  "hook": "Peça o nome. Peça a data.",
+  "stamp": "Papel vence tom. Todas as vezes.",
+  "next": "Mantenha a linha do tempo.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calmo",
+      "text": "O padrão é consistente: reafirmação antecipada de que o processo foi limpo, silêncio prolongado sobre o mérito, um prêmio para o sistema, um ranking que não melhora.",
+      "mood": "calm",
+      "panel": [
+        "padrão: reafirmar / atrasar / premiar / rankear"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "O antídoto continua entediante. Nome do tomador de decisão. Data do pedido por escrito ao jurídico. Texto da decisão. As gravações que já existem.",
+      "mood": "flat",
+      "panel": [
+        "quem_decidiu = ?",
+        "data_pedido_juridico = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sorriso pequeno",
+      "text": "Guarde as mensagens. Guarde as datas. Deixe o registro falar quando a sala preferir aplausos.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

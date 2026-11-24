@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ne discutez pas avec les couleurs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#efe6e3;--fg:#2a1c22;--mute:#7a6a70;--btn:#fff;--line:#d6c6c9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1216;--fg:#f1e8ea;--mute:#a893a0;--btn:#2a1d23;--line:#43303a}}
+:root[data-theme="dark"]{--bg:#1a1216;--fg:#f1e8ea;--mute:#a893a0;--btn:#2a1d23;--line:#43303a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #ff5c8a;outline-offset:2px}
+button[aria-selected="true"]{background:#ff5c8a;color:#2a0f1a;border-color:#ff5c8a}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#2a1d26;--paper:#f3e9e4;--tag:#ff5c8a;--dim:#a8929d;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(255,214,230,.3),rgba(255,214,230,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#3b2a33;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#2a0f1a}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#ffb3c9;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.chip{display:inline-block;width:3.2cqw;height:3.2cqw;border-radius:50%;margin-right:1.6cqw;vertical-align:middle;border:1px solid rgba(255,255,255,.3)}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#2a0f1a;font:700 7.2cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Ne discutez pas avec les couleurs</h1>
+<p class="sub">Cinq reels. Une tignasse. Zéro chance de gagner. Appuyez sur play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="34" y="-2" width="52" height="16" rx="3" fill="#ff5c8a"/><text class="badge" x="60" y="10" text-anchor="middle">LE TYPE</text>
+    </svg>
+    <div class="name">Le prévenu</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pause</button>
+  <button id="re">Rejouer</button>
+  <label><input type="checkbox" id="all"> Lire les cinq</label>
+</div>
+
+<script>
+const R=[
+{n:"Preuve A",hook:"Preuve A : c’est brun-blondâtre.",next:"Ensuite : les palettes.",stamp:"Objection retenue avant que je finisse ma phrase.",
+ l:[{d:"tenant une photo rapprochée de son oreille",s:"J’ai envoyé la preuve à mon pote. Cheveux. Gros plan. Belle lumière. C’est brun-blondâtre. Affaire classée.",log:["cheveux.couleur = brun-blondâtre","confiance = 100%"],h:1300},
+    {m:"up",s:"Elle dit que c’est gris. Gris ! Il y a des mèches grises près de l’oreille, d’accord. Des mèches. Petites, distinguées.",log:["mèches_grises = quelques-unes","mèches_grises.pertinent = non"],h:1300},
+    {d:"à voix basse",m:"flat",s:"Je viens de réaliser que j’ai utilisé le mot « brunâtre » au tribunal. Je n’ai aucun témoin expert.",h:1000}]},
+{n:"Les palettes",hook:"Huit crayons contre mille nuances.",next:"Ensuite : la logique entre dans la pièce.",stamp:"Hommes : 8 crayons. Elle : tous.",
+ l:[{d:"déroulant deux planches",s:"Ma palette, comme au dossier : rouge, bleu, vert, jaune, marron, noir, blanc. Et « l’autre ».",sw:[["rouge","#d33"],["bleu","#37d"],["vert","#3a5"],["jaune","#fc3"],["marron","#764"],["l’autre","#a6a"]],h:1400},
+    {m:"up",s:"Sa palette : cendre, miel, champagne, blé, champignon, eau de vaisselle, bronde, rose poudré, grège, avoine.",sw:[["cendre","#b2aca0"],["miel","#d9a441"],["champagne","#e8d3b0"],["champignon","#9a8b7e"],["rose poudré","#c98b92"],["grège","#b5ad9f"]],h:1400},
+    {d:"face caméra",m:"flat",s:"Elles n’ont pas juste eu plus de couleurs. Elles ont eu tout un département oculaire en plus, et personne ne nous a prévenus.",h:1000}]},
+{n:"La logique rencontre les sentiments",hook:"Logique. Femme. Couleurs. Égal sentiments.",next:"Ensuite : n’y va pas.",stamp:"Logique : 0. Sentiments : 1.",
+ l:[{d:"écrivant une équation sur une serviette",s:"Logique, plus femme, plus couleurs. Laisse-moi résoudre pour x.",log:["logique + femme + couleurs = ?"],h:1200},
+    {m:"up",s:"Réponse : tout ça égale des sentiments, mon ami. On ne peut pas factoriser les sentiments. J’ai essayé. Ça a donné un beige.",log:["résultat = sentiments","erreur : division par sentiments impossible"],h:1300},
+    {d:"impassible",m:"flat",s:"Pendant ce temps, mon meilleur argument est « ça fait brunâtre ». Ce n’est pas un point. C’est un haussement d’épaules avec des golfes.",h:1000}]},
+{n:"N’y va pas",hook:"T’es fou ? N’y va pas.",next:"Ensuite : le verdict.",stamp:"Ne contredis jamais une femme sur les couleurs.",
+ l:[{d:"voix de négociateur d’otages",m:"up",s:"Écoute bien. Ne contredis pas une femme sur les couleurs. Je répète : n’y va pas.",log:["niveau_risque = extrême"],h:1300},
+    {s:"« C’est bleu pétrole ou turquoise ? » Ce n’est pas une question. C’est une trappe.",log:["pétrole_vs_turquoise = trappe"],h:1200},
+    {d:"en chuchotant",m:"flat",s:"Les seules réponses sûres sont « tu as raison » et « c’est une jolie nuance de ce que tu veux ».",h:1000}]},
+{n:"Le verdict",hook:"Le verdict.",next:"Approuve. Puis achète des fleurs.",stamp:"Je ne rationalisais pas. Je discutais, c’est tout. Et j’ai quand même perdu.",
+ l:[{d:"calme, presque sage",m:"calm",s:"Soyons honnêtes. Je ne rationalisais pas, je discutais, c’est tout. Et on ne discute pas avec quelqu’un qui sait ce qu’est « bronde ».",log:["discussion = perdue","bronde = existe"],h:1300},
+    {s:"Ses cheveux ne sont pas gris, les miens ne sont pas brunâtres, et les deux sont, apparemment, une nuance que je ne sais pas prononcer.",sw:[["ses cheveux : cendre champagne","#cfc3ad"],["mes cheveux : ça va","#9a8466"]],h:1200},
+    {d:"petit sourire",s:"Donc le plan : dis « tu as raison », achète des fleurs et demande de quelle couleur elles sont. Ne dis pas rouge. C’est « rose poudré ».",h:1000}]}
+];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Reprendre":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log||L.sw)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      (L.sw||[]).forEach(([n,c])=>{const d=document.createElement("div");const s=document.createElement("span");s.className="chip";s.style.background=c;d.append(s,n);pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

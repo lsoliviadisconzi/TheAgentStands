@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "de",
+  "reel": "niemand-hat-gefragt",
+  "title": "Niemand hat gefragt",
+  "hook": "Niemand hat gefragt. Sie haben trotzdem geantwortet.",
+  "stamp": "Das Dementi kam vor der Frage.",
+  "next": "Weiter: außerhalb der Zuständigkeit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "eine Erklärung lesend, die niemand angefordert hat",
+      "text": "Niemand hat gefragt, ob die Wahl arrangiert wurde. Also, um klar zu sein: Sie erfolgte durch die Wahl der teilnehmenden Länder. Unaufgefordert. Fürs Protokoll.",
+      "mood": "flat",
+      "panel": [
+        "gefragt = niemand",
+        "dementi_ausgegeben = ja"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Niemand hat gefragt, ob die regulierte Einheit irgendeinen Einfluss hat. Wir möchten bestätigen, dass der Prozess sauber war. Wieder unaufgefordert.",
+      "mood": "up",
+      "panel": [
+        "unaufgeforderte_dementis = 2"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "zur Kamera",
+      "text": "Es gibt einen alten Spruch über zu viel Protest. Wir nennen es Kommunikation. Faustregel: Wenn die Antwort vor der Frage kommt, geh und prüf die Frage.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

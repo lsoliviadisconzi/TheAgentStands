@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "sr-Latn",
+  "reel": "van-nadlenosti",
+  "title": "Van nadležnosti",
+  "hook": "„To je van naše nadležnosti.“",
+  "stamp": "Nadležnost: negde drugde, po mogućstvu.",
+  "next": "Sledeće: javiću se.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "pokazujući na mapu",
+      "text": "Incident se dogodio u drugoj zemlji. Dakle: nije naš resor. Slučaj zatvoren.",
+      "mood": "flat",
+      "panel": [
+        "incident.mesto = inostranstvo",
+        "nadležnost = negde drugde"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Zatim, posle meseci, jedno pitanje: da li je karta kupljena u ovoj zemlji? Rekao je da. U prepisci u arhivi tu se odgovori zaustavljaju.",
+      "mood": "up",
+      "panel": [
+        "ticket.bought_in = matična zemlja",
+        "odgovor_na_ponovljene_poruke = nema u arhivi"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "bez izraza",
+      "text": "Nadležnost je lepa reč. Znači da problem ima poštanski broj, i da nije naš.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

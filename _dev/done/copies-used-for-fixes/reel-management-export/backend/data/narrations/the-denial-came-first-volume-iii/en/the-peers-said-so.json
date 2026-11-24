@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "en",
+  "reel": "the-peers-said-so",
+  "title": "The Peers Said So",
+  "hook": "Nobody asked. They answered three times.",
+  "stamp": "The reassurance arrived before the question.",
+  "next": "Next: the timeline that wasn’t.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "reading the official statement",
+      "text": "Assumir a presidência, por escolha dos próprios países participantes. We would like to confirm: it was by choice of the participating countries themselves.",
+      "mood": "flat",
+      "panel": [
+        "question_asked = none",
+        "peer_election_stated = yes"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "In Portuguese. In English. In Spanish. The same line. Elected by his peers. No one had asked how the chair was chosen.",
+      "mood": "up",
+      "panel": [
+        "languages = 3",
+        "unprompted_clarifications = multiple"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "to camera",
+      "text": "When the answer arrives before the question, and then arrives again in two more languages, the question was never the problem.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

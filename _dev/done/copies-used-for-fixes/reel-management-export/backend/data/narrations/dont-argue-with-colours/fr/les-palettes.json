@@ -1,0 +1,88 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "fr",
+  "reel": "les-palettes",
+  "title": "Les palettes",
+  "hook": "Huit crayons contre mille nuances.",
+  "stamp": "Hommes : 8 crayons. Elle : tous.",
+  "next": "Ensuite : la logique entre dans la pièce.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "déroulant deux planches",
+      "text": "Ma palette, comme au dossier : rouge, bleu, vert, jaune, marron, noir, blanc. Et « l’autre ».",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "rouge",
+          "#d33"
+        ],
+        [
+          "bleu",
+          "#37d"
+        ],
+        [
+          "vert",
+          "#3a5"
+        ],
+        [
+          "jaune",
+          "#fc3"
+        ],
+        [
+          "marron",
+          "#764"
+        ],
+        [
+          "l’autre",
+          "#a6a"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Sa palette : cendre, miel, champagne, blé, champignon, eau de vaisselle, bronde, rose poudré, grège, avoine.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "cendre",
+          "#b2aca0"
+        ],
+        [
+          "miel",
+          "#d9a441"
+        ],
+        [
+          "champagne",
+          "#e8d3b0"
+        ],
+        [
+          "champignon",
+          "#9a8b7e"
+        ],
+        [
+          "rose poudré",
+          "#c98b92"
+        ],
+        [
+          "grège",
+          "#b5ad9f"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "face caméra",
+      "text": "Elles n’ont pas juste eu plus de couleurs. Elles ont eu tout un département oculaire en plus, et personne ne nous a prévenus.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

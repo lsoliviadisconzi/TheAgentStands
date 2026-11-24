@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pravi model, pravi posao</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#e4eeea;--fg:#13231d;--mute:#53706a;--btn:#fff;--line:#b6cbc3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}}
+:root[data-theme="dark"]{--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #3ddc97;outline-offset:2px}
+button[aria-selected="true"]{background:#3ddc97;color:#0b2018;border-color:#3ddc97}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#14211d;--paper:#e9f2ee;--tag:#3ddc97;--dim:#86a198;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(190,255,225,.26),rgba(190,255,225,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#243630;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#0b2018}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#8df0c0;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#0b2018;font:700 7.2cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+.fine{max-width:360px;margin:14px 0 0;font-size:15px;color:var(--mute);text-align:center}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Pravi model, pravi posao</h1>
+<p class="sub">Pet reelsa. Jedan besplatan model. Jedan vrlo strpljiv novčanik. Pritisni play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="38" y="-2" width="44" height="16" rx="3" fill="#3ddc97"/><text class="badge" x="60" y="10" text-anchor="middle">TI</text>
+    </svg>
+    <div class="name">Onaj koji drži novčanik</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pauza</button>
+  <button id="re">Ponovi</button>
+  <label><input type="checkbox" id="all"> Pusti svih pet</label>
+</div>
+<p class="fine">Benchmarkovi: Artificial Analysis preko OpenRoutera, 23. nov. 2026. Cena Haikua u reelu 4 je gruba procena (pretpostavlja ~96% cache hitova i lagan izlaz), nije faktura.</p>
+
+<script>
+const R=[{"n": "Ali ja ne kodiram", "hook": "„Ali ja nisam developer.“", "next": "Sledeće: chat prozor nije alatnica.", "stamp": "Opiši to. To je veština.", "l": [{"d": "prekrštenih ruku", "s": "„AI je za developere.“ Slatko. Umeš li racionalno da misliš? Umeš li da kažeš šta želiš i kako izgleda gotova stvar?", "log": ["ume_da_kodira = false", "ume_jasno_da_objasni = ?"], "h": 1300}, {"m": "up", "s": "Onda si kvalifikovan. Veština nije sintaksa. To je opisivanje ishoda dovoljno detaljno da niko ne mora da pogađa.", "log": ["veština = jasan brief"], "h": 1300}, {"d": "usred rečenice, neko govori preko mene", "m": "flat", "s": "Gde sam stao? Tačno. Dugački brifovi se izgube kada te prekinu. Prvo zapiši, pa nalepi.", "h": 1000}]}, {"n": "Nije samo chatbox", "hook": "Chat prozor nije strategija.", "next": "Sledeće: „Claude je preskup.“", "stamp": "Znaj šta da koristiš, i kako.", "l": [{"d": "pokazujući na vrlo veliku alatnicu", "s": "Većina otvori jedan chat prozor, otkuca „pomozi“ i nazove to korišćenjem AI-ja.", "log": ["korišćeni_alati = 1", "poznati_modeli = onaj čuveni"], "h": 1300}, {"m": "up", "s": "Postoje modeli za čitanje planina PDF-ova, modeli za duge agentske prolaze, modeli za finalni sjaj. Nisu zamenljivi.", "log": ["čitanje_pdf = model A", "agentski_prolaz = model B", "finalni_sjaj = model C"], "h": 1400}, {"d": "bez izraza", "m": "flat", "s": "Koristiti jedan model za sve je kao unajmiti hirurga da nosi kutije. Impresivno. I fakturisano.", "h": 1000}]}, {"n": "Preskupo", "hook": "„Claude je preskup.“", "next": "Sledeće: dvadeset minuta besplatnog teškog rada.", "stamp": "Premium za sjaj. Besplatno za teški rad.", "l": [{"d": "polako klimajući glavom", "s": "Da. Preskup je. I briljantan je. Oba su tačna.", "log": ["claude.kvalitet = briljantan", "claude.cena = takođe briljantna"], "h": 1300}, {"m": "up", "s": "Zato ga ne troši na teški rad. Sačuvaj ga za doterivanja, male detalje, onu jednu tešku stvar koja mora da bude tačna.", "log": ["koristi_za = sjaj, teški delovi"], "h": 1300}, {"d": "u kameru", "m": "flat", "s": "I ne, ne možeš ni da vrtiš neograničene besplatne modele. Osim ako imaš vrlo duboke džepove. Ja nemam.", "h": 1000}]}, {"n": "20 minuta teškog rada", "hook": "Dvadeset minuta bušenja. Nula fakture.", "next": "Sledeće: račun.", "stamp": "14,7 miliona tokena. 0 $.", "l": [{"d": "gledajući terminal", "s": "Upravo sada, dok govorim, Nemotron 3 Ultra buši već dvadeset minuta. Besplatno.", "log": ["model = nemotron-3-ultra (besplatan)", "turns = 51", "koraci = 136", "tokeni = 14,7 mil."], "h": 1400}, {"m": "up", "s": "Naletio je na Playwright instalaciju browsera, zaključan cache, zid dozvola. Prob'o je drugi put. I još jedan. Niko nije platio ponavljanja.", "log": ["install chromium: dozvola odbijena", "retry: prilagođena putanja", "cache_hit = 96%"], "h": 1500}, {"d": "tiho", "m": "flat", "s": "Na plaćenom modelu to je vrlo strpljiv brojač koji radi. Ovde je samo progress bar i čajnik.", "h": 1000}]}, {"n": "Račun", "hook": "Račun.", "next": "Izaberi alat. Onda pritisni go.", "stamp": "Besplatno gde radi teško. Plaćeno gde se računa.", "l": [{"d": "odmotavajući dugačak račun", "m": "calm", "s": "Isti posao na Claude Haiku, onom jeftinom? Otprilike dva do četiri dolara. Gruba procena, ali razlika je stvarna.", "log": ["nemotron: 0 $ ulaz / 0 $ izlaz", "haiku 4.5: 1 $ ulaz / 5 $ izlaz po M", "haiku iz cachea: 0,10 $ po M", "isti posao na haikuu ≈ 2–4 $ (procena)"], "h": 1500}, {"s": "Brojevi: Intelligence Index 11,8 za Nemotron, 7,4 za Haiku. Milion tokena konteksta protiv dvesta hiljada.", "log": ["kontekst: 1M vs 200K", "indeks: 11,8 vs 7,4"], "h": 1400}, {"d": "iskreno, mali osmeh", "s": "Sporiji je: 41 token u sekundi protiv 87. Besplatno nije magija. Ali za teški rad pobeđuje, a premium modeli ostaju u ormaru za finalni sjaj.", "log": ["brzina: 41 vs 87 tok/s", "latencija: 1,54 s vs 0,39 s"], "h": 1200}]}];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Resume":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

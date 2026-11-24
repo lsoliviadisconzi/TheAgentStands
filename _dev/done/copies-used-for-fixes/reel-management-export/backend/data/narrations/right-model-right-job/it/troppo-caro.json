@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "it",
+  "reel": "troppo-caro",
+  "title": "Troppo Caro",
+  "hook": "“Claude costa troppo.”",
+  "stamp": "Premium per la rifinitura. Gratis per il lavoro pesante.",
+  "next": "Poi: venti minuti di lavoro gratis.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "annuendo lentamente",
+      "text": "Sì. Costa troppo. È anche brillante. Entrambe le cose sono vere.",
+      "mood": "flat",
+      "panel": [
+        "claude.qualità = brillante",
+        "claude.prezzo = anche brillante"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Quindi non spenderlo per il sollevamento pesante. Tienilo per le rifiniture, i piccoli tocchi, l’unica cosa difficile che deve venire bene.",
+      "mood": "up",
+      "panel": [
+        "usare_per = rifinitura, parti difficili"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "in camera",
+      "text": "E no, non puoi nemmeno usare modelli gratis illimitati. A meno che tu non abbia tasche molto profonde. Io no.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

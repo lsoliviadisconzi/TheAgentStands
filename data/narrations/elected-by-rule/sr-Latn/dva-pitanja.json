@@ -1,0 +1,48 @@
+{
+  "theme": "Elected By Rule",
+  "language": "sr-Latn",
+  "reel": "dva-pitanja",
+  "title": "Dva pitanja",
+  "hook": "Dva pitanja. Dva različita odgovora.",
+  "stamp": "Odgovorili su o vremenu. Ne na pitanje.",
+  "next": "Sledeće: trofej nije revizija.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "čitajući nit",
+      "text": "Putnik pita: ko je odlučio da je to van naše nadležnosti, i do kada ćete odgovoriti? Odgovor: „Tražio sam da se to proveri.“",
+      "mood": "flat",
+      "panel": [
+        "pitano: ko je odlučio? kada?",
+        "odgovoreno: „proverava se“"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Mesecima kasnije: da li je zahtev pravnoj službi bio pisan? Kog datuma? Kome? Odgovor: formalni odgovor iz decembra, ponovljen, plus novo pitanje: gde je kupljena karta?",
+      "mood": "up",
+      "panel": [
+        "pitano: pisano? datum? kome?",
+        "odgovoreno: isti tekst kao 3. dec.",
+        "uzvratno pitanje: karta kupljena gde?"
+      ],
+      "holdMs": 1600,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "tiho",
+      "text": "Rekao je: u Brazilu. Zatim je pitao kada i kako smo kontaktirali aviokompaniju. U porukama u arhivi to pitanje još čeka.",
+      "mood": "flat",
+      "panel": [
+        "ticket.bought_in = brazil",
+        "odgovor na ponovljene poruke = nema u arhivi"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

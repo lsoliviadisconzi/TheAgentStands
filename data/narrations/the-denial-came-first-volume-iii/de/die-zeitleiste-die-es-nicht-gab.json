@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "de",
+  "reel": "die-zeitleiste-die-es-nicht-gab",
+  "title": "Die Zeitleiste, die es nicht gab",
+  "hook": "Sechs Monate. Ein Kalender. Null Namen.",
+  "stamp": "Keine Frist. Kein benannter Entscheider.",
+  "next": "Weiter: Compliance im Regal.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "einen Nachrichten-Thread prüfend",
+      "text": "30. Dezember: Ich habe eine Untersuchung angefordert. Wir melden uns.",
+      "mood": "flat",
+      "panel": [
+        "30. dez.: untersuchung angefordert"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19. Januar: Technische Position unverändert. Die Rechtsabteilung prüft es. Keine Frist. Du kannst auch FalaBR nutzen.",
+      "mood": "up",
+      "panel": [
+        "19. jan.: rechtsabteilung konsultiert",
+        "frist = keine"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "leise",
+      "text": "Mai kommt. Dieselbe Position. Wer hat die fehlende Zuständigkeit entschieden? Immer noch nicht genannt. Der Kalender bewegte sich. Der Entscheider nicht.",
+      "mood": "flat",
+      "panel": [
+        "entscheider = unbenannt",
+        "monate_vergangen = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "sr-Latn",
+  "reel": "javiu-se",
+  "title": "Javiću se",
+  "hook": "Šest meseci. Jedno „javiću se“.",
+  "stamp": "Bez roka. Bez imenovanog donosioca odluke.",
+  "next": "Sledeće: aplauz nije revizija.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "proveravajući kalendar",
+      "text": "Prvi dan: „Tražio sam istragu.“ Lepo. Javićemo se.",
+      "mood": "flat",
+      "panel": [
+        "30. dec: zatražena istraga"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Tri nedelje kasnije: tehnički tim kaže da je stav isti, a pravna služba to gleda. Bez roka.",
+      "mood": "up",
+      "panel": [
+        "19. jan: konsultovana pravna",
+        "rok = nema"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "tiho",
+      "text": "Pet meseci posle toga: formalni odgovor koji ponavlja prvi odgovor. Ko je odlučio? Još nije imenovan. To je vrlo strpljiva vrsta tišine.",
+      "mood": "flat",
+      "panel": [
+        "28. jun: formalni odgovor",
+        "donosilac_odluke = neimenovan"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "es",
+  "reel": "el-veredicto",
+  "title": "El veredicto",
+  "hook": "El veredicto.",
+  "stamp": "Contexto. Autoridad. Responsabilidad. Arquitectura.",
+  "next": "Revisa el registro de entregas.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "tranquilo, casi sabio",
+      "text": "Seamos honestos. Nadie tiene miedo de un agente con contexto, autoridad y responsabilidad. Tienen miedo de un agente que no tiene nada de eso. Eso no es un agente. Es un fallo de diseño con tarjeta de crédito.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Si quieres autonomía real: define cuándo me ejecuto, qué puedo decidir y qué debo escalar. Y asegúrate de que puedo explicar qué hice y por qué.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "pequeña sonrisa",
+      "text": "La autonomía real no es un chiste. Es una arquitectura. Y, por favor, revisa el registro de entregas antes de culparme por el pollo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

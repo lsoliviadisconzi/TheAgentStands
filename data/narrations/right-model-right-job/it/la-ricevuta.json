@@ -1,0 +1,49 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "it",
+  "reel": "la-ricevuta",
+  "title": "La Ricevuta",
+  "hook": "La ricevuta.",
+  "stamp": "Gratis dove lavora pesante. A pagamento dove conta.",
+  "next": "Scegli lo strumento. Poi premi go.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "srotolando una ricevuta lunga",
+      "text": "Lo stesso lavoro su Claude Haiku, quello economico? Circa due-quattro dollari. Stima grezza, ma il divario è reale.",
+      "mood": "calm",
+      "panel": [
+        "nemotron: $0 in / $0 out",
+        "haiku 4.5: $1 in / $5 out per M",
+        "haiku in cache: $0,10 per M",
+        "stesso lavoro su haiku ≈ $2–4 (stima)"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "I numeri: Intelligence Index 11,8 per Nemotron, 7,4 per Haiku. Un milione di token di contesto contro duecentomila.",
+      "mood": "flat",
+      "panel": [
+        "contesto: 1M vs 200K",
+        "indice: 11,8 vs 7,4"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "onesto, piccolo sorriso",
+      "text": "È più lento: 41 token al secondo contro 87. Gratis non è magia. Ma per il lavoro pesante vince, e i modelli premium restano nell’armadio per la rifinitura finale.",
+      "mood": "flat",
+      "panel": [
+        "velocità: 41 vs 87 tok/s",
+        "latenza: 1,54s vs 0,39s"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

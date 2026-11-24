@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "it",
+  "reel": "compliance-sullo-scaffale",
+  "title": "Compliance Sullo Scaffale",
+  "hook": "Un premio per la governance. Un fascicolo aperto.",
+  "stamp": "Il trofeo è arrivato. La risposta no.",
+  "next": "Poi: posizione 107.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "tenendo una targa",
+      "text": "Novembre. L’agenzia riceve il premio RGB per governance, gestione del rischio e compliance.",
+      "mood": "flat",
+      "panel": [
+        "premio = RGB Executivo Federal",
+        "data = nov 2026"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Stesso mese, stessa istituzione: una denuncia formale ancora senza risposta nel merito. Prove non affrontate. Responsabile ancora non nominato.",
+      "mood": "up",
+      "panel": [
+        "fascicolo_aperto = 50001.115849/2025-10"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassibile",
+      "text": "Un premio per il sistema. Un silenzio per il fascicolo. Entrambe le cose possono essere vere insieme. È questa la parte interessante.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

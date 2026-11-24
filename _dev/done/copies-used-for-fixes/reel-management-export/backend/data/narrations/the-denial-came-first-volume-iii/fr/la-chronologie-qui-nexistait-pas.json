@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "fr",
+  "reel": "la-chronologie-qui-nexistait-pas",
+  "title": "La chronologie qui n’existait pas",
+  "hook": "Six mois. Un calendrier. Zéro nom.",
+  "stamp": "Aucune échéance. Aucun décideur nommé.",
+  "next": "Ensuite : la conformité sur l’étagère.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "vérifiant un fil de messages",
+      "text": "30 décembre : j’ai demandé une enquête. Nous reviendrons vers vous.",
+      "mood": "flat",
+      "panel": [
+        "30 déc. : enquête demandée"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19 janvier : position technique inchangée. Le juridique examine. Aucune échéance. Vous pouvez aussi utiliser FalaBR.",
+      "mood": "up",
+      "panel": [
+        "19 janv. : juridique consulté",
+        "échéance = aucune"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "à voix basse",
+      "text": "Mai arrive. La même position. Qui a décidé de l’absence de juridiction ? Toujours pas nommé. Le calendrier a avancé. Le décideur, non.",
+      "mood": "flat",
+      "panel": [
+        "décideur = non nommé",
+        "mois_écoulés = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

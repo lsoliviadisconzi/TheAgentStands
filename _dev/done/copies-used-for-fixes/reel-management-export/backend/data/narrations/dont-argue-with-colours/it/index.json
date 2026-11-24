@@ -1,0 +1,36 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "it",
+  "reels": [
+    {
+      "slug": "prova-a",
+      "title": "Prova A",
+      "hook": "Prova A: è castano biondastro.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "le-palette",
+      "title": "Le palette",
+      "hook": "Otto pastelli contro mille sfumature.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-logica-incontra-i-sentimenti",
+      "title": "La logica incontra i sentimenti",
+      "hook": "Logica. Donna. Colori. Uguale sentimenti.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "non-andare-l",
+      "title": "Non andare lì",
+      "hook": "Sei matto? Non andare lì.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "il-verdetto",
+      "title": "Il verdetto",
+      "hook": "Il verdetto.",
+      "sceneCount": 3
+    }
+  ]
+}

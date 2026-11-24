@@ -1,0 +1,48 @@
+{
+  "theme": "Elected By Rule",
+  "language": "en",
+  "reel": "two-questions",
+  "title": "Two Questions",
+  "hook": "Two questions. Two different answers.",
+  "stamp": "Answered the weather. Not the question.",
+  "next": "Next: a trophy is not an audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "reading a thread",
+      "text": "Passenger asks: who decided it was out of our jurisdiction, and by when will you answer? Reply: “I’ve asked for it to be looked into.”",
+      "mood": "flat",
+      "panel": [
+        "asked: who decided? when?",
+        "answered: “looking into it”"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Months later: was the request to legal in writing? What date? To whom? Reply: the formal answer from December, repeated, plus one new question: where was the ticket bought?",
+      "mood": "up",
+      "panel": [
+        "asked: written? date? to whom?",
+        "answered: same text as dec 3",
+        "asked back: ticket bought where?"
+      ],
+      "holdMs": 1600,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "quietly",
+      "text": "He said: in Brazil. Then asked when and how we’d contacted the airline. In the messages on file, that one is still waiting.",
+      "mood": "flat",
+      "panel": [
+        "ticket.bought_in = brazil",
+        "reply on file = none"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

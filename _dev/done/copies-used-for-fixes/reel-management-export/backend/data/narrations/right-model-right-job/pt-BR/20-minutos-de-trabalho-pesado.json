@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pt-BR",
+  "reel": "20-minutos-de-trabalho-pesado",
+  "title": "20 Minutos de Trabalho Pesado",
+  "hook": "Vinte minutos de perfuração. Fatura zero.",
+  "stamp": "14,7M de tokens. US$ 0.",
+  "next": "A seguir: o recibo.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "observando o terminal",
+      "text": "Agora, enquanto eu falo, o Nemotron 3 Ultra está perfurando há vinte minutos. De graça.",
+      "mood": "flat",
+      "panel": [
+        "modelo = nemotron-3-ultra (grátis)",
+        "turnos = 51",
+        "passos = 136",
+        "tokens = 14,7M"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Bateu numa instalação de navegador Playwright, num cache travado, numa parede de permissões. Tentou outro caminho. E outro. Ninguém pagou pelas tentativas.",
+      "mood": "up",
+      "panel": [
+        "instalar chromium: permissão negada",
+        "retry: caminho personalizado",
+        "cache_hit = 96%"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "baixinho",
+      "text": "Num modelo pago, isso é um medidor muito paciente rodando. Aqui, é só uma barra de progresso e uma chaleira.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

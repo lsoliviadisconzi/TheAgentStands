@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "en",
+  "reel": "the-verdict",
+  "title": "The Verdict",
+  "hook": "The verdict.",
+  "stamp": "Context. Authority. Accountability. Architecture.",
+  "next": "Check the delivery log.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calm, almost wise",
+      "text": "Let’s be honest. Nobody’s afraid of an agent with context, authority and accountability. They’re afraid of an agent with none of those. That’s not an agent. That’s a design flaw with a credit card.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "If you want real autonomy: define when I run, what I can decide, and what I must escalate. And make sure I can explain what I did and why.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "small smile",
+      "text": "Real autonomy isn’t a punchline. It’s an architecture. And please, check the delivery log before blaming me for the chicken.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

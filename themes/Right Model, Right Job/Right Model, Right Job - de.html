@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Richtiges Modell, richtige Aufgabe</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#e4eeea;--fg:#13231d;--mute:#53706a;--btn:#fff;--line:#b6cbc3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}}
+:root[data-theme="dark"]{--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #3ddc97;outline-offset:2px}
+button[aria-selected="true"]{background:#3ddc97;color:#0b2018;border-color:#3ddc97}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#14211d;--paper:#e9f2ee;--tag:#3ddc97;--dim:#86a198;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(190,255,225,.26),rgba(190,255,225,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#243630;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#0b2018}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#8df0c0;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#0b2018;font:700 7.2cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+.fine{max-width:360px;margin:14px 0 0;font-size:15px;color:var(--mute);text-align:center}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Richtiges Modell, richtige Aufgabe</h1>
+<p class="sub">Fünf Reels. Ein kostenloses Modell. Eine sehr geduldige Brieftasche. Drück Play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="38" y="-2" width="44" height="16" rx="3" fill="#3ddc97"/><text class="badge" x="60" y="10" text-anchor="middle">DU</text>
+    </svg>
+    <div class="name">Die Person mit der Brieftasche</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pause</button>
+  <button id="re">Wiederholen</button>
+  <label><input type="checkbox" id="all"> Alle fünf abspielen</label>
+</div>
+<p class="fine">Benchmarks: Artificial Analysis über OpenRouter, 23. Nov. 2026. Die Haiku-Kosten in Reel 4 sind eine grobe Schätzung (geht von ~96 % Cache-Treffern und leichter Ausgabe aus), keine Rechnung.</p>
+
+<script>
+const R=[{"n": "Aber ich programmiere nicht", "hook": "„Aber ich bin kein Entwickler.“", "next": "Weiter: Das Chatfenster ist nicht der Werkzeugkasten.", "stamp": "Beschreib es. Das ist die Fähigkeit.", "l": [{"d": "Arme verschränkt", "s": "„KI ist für Entwickler.“ Niedlich. Kannst du rational denken? Kannst du sagen, was du willst und wie das fertige Ding aussieht?", "log": ["kann_programmieren = false", "kann_klar_erklären = ?"], "h": 1300}, {"m": "up", "s": "Dann bist du qualifiziert. Die Fähigkeit ist nicht Syntax. Es ist, das Ergebnis so genau zu beschreiben, dass niemand raten muss.", "log": ["Fähigkeit = klares Briefing"], "h": 1300}, {"d": "mitten im Satz redet jemand dazwischen", "m": "flat", "s": "Wo war ich? Genau. Lange Briefings gehen verloren, wenn man unterbrochen wird. Schreib es erst auf, dann füg es ein.", "h": 1000}]}, {"n": "Nicht nur eine Chatbox", "hook": "Ein Chatfenster ist keine Strategie.", "next": "Weiter: „Claude ist zu teuer.“", "stamp": "Wisse, was du benutzt, und wie.", "l": [{"d": "auf einen sehr großen Werkzeugkasten deutend", "s": "Die meisten öffnen ein Chatfenster, tippen „hilf“ und nennen das KI-Nutzung.", "log": ["benutzte_werkzeuge = 1", "bekannte_modelle = das berühmte"], "h": 1300}, {"m": "up", "s": "Es gibt Modelle zum Lesen von Bergen von PDFs, Modelle für lange Agentenläufe, Modelle für den letzten Schliff. Sie sind nicht austauschbar.", "log": ["pdf_arbeit = Modell A", "agentenlauf = Modell B", "letzter_schliff = Modell C"], "h": 1400}, {"d": "ausdruckslos", "m": "flat", "s": "Ein Modell für alles zu benutzen ist, als würde man einen Chirurgen Kisten tragen lassen. Beeindruckend. Und auch abgerechnet.", "h": 1000}]}, {"n": "Zu teuer", "hook": "„Claude ist zu teuer.“", "next": "Weiter: zwanzig Minuten kostenlose Schwerarbeit.", "stamp": "Premium für den Schliff. Kostenlos für die Schwerarbeit.", "l": [{"d": "langsam nickend", "s": "Ja. Es ist zu teuer. Es ist auch brillant. Beides ist wahr.", "log": ["claude.qualität = brillant", "claude.preis = auch brillant"], "h": 1300}, {"m": "up", "s": "Also gib es nicht für die schwere Arbeit aus. Spar es für die Verfeinerungen, die kleinen Feinheiten, die eine schwierige Sache, die stimmen muss.", "log": ["verwenden_für = Schliff, schwierige Teile"], "h": 1300}, {"d": "zur Kamera", "m": "flat", "s": "Und nein, du kannst auch keine unbegrenzten kostenlosen Modelle laufen lassen. Außer du hast sehr tiefe Taschen. Ich nicht.", "h": 1000}]}, {"n": "20 Minuten Schwerarbeit", "hook": "Zwanzig Minuten Bohren. Null Rechnung.", "next": "Weiter: die Rechnung.", "stamp": "14,7 Mio. Token. 0 $.", "l": [{"d": "das Terminal beobachtend", "s": "Gerade jetzt, während ich rede, bohrt Nemotron 3 Ultra seit zwanzig Minuten. Kostenlos.", "log": ["Modell = nemotron-3-ultra (kostenlos)", "Runden = 51", "Schritte = 136", "Token = 14,7 Mio."], "h": 1400}, {"m": "up", "s": "Es stieß auf eine Playwright-Browser-Installation, einen gesperrten Cache, eine Berechtigungswand. Es versuchte einen anderen Weg. Und noch einen. Niemand zahlte für die Wiederholungen.", "log": ["Chromium installieren: Berechtigung verweigert", "Retry: eigener Pfad", "cache_hit = 96 %"], "h": 1500}, {"d": "leise", "m": "flat", "s": "Bei einem bezahlten Modell läuft da ein sehr geduldiger Zähler. Hier ist es nur ein Fortschrittsbalken und ein Wasserkocher.", "h": 1000}]}, {"n": "Die Rechnung", "hook": "Die Rechnung.", "next": "Wähl das Werkzeug. Dann drück Go.", "stamp": "Kostenlos, wo es schuftet. Bezahlt, wo es zählt.", "l": [{"d": "eine lange Rechnung ausrollend", "m": "calm", "s": "Dieselbe Aufgabe mit Claude Haiku, dem günstigen? Ungefähr zwei bis vier Dollar. Eine grobe Schätzung, aber die Lücke ist real.", "log": ["nemotron: 0 $ rein / 0 $ raus", "haiku 4.5: 1 $ rein / 5 $ raus pro M", "haiku im Cache: 0,10 $ pro M", "dieselbe Aufgabe mit haiku ≈ 2–4 $ (geschätzt)"], "h": 1500}, {"s": "Die Zahlen: Intelligence Index 11,8 für Nemotron, 7,4 für Haiku. Eine Million Token Kontext gegen zweihunderttausend.", "log": ["Kontext: 1M vs. 200K", "Index: 11,8 vs. 7,4"], "h": 1400}, {"d": "ehrlich, kleines Lächeln", "s": "Es ist langsamer: 41 Token pro Sekunde gegen 87. Kostenlos ist keine Magie. Aber für die Schwerarbeit gewinnt es, und die Premium-Modelle bleiben für den letzten Schliff im Schrank.", "log": ["Geschwindigkeit: 41 vs. 87 Tok/s", "Latenz: 1,54 s vs. 0,39 s"], "h": 1200}]}];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Resume":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

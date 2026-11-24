@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "fr",
+  "reels": [
+    {
+      "slug": "personne-na-demand",
+      "title": "Personne n’a demandé",
+      "hook": "Personne n’a demandé. Ils ont répondu quand même.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "hors-juridiction",
+      "title": "Hors juridiction",
+      "hook": "« C’est hors de notre juridiction. »",
+      "sceneCount": 3
+    },
+    {
+      "slug": "je-reviens-vers-vous",
+      "title": "Je reviens vers vous",
+      "hook": "Six mois. Un « je reviens vers vous ».",
+      "sceneCount": 3
+    },
+    {
+      "slug": "lapplaudissement-nest-pas-un-audit",
+      "title": "L’applaudissement n’est pas un audit",
+      "hook": "365 likes. Zéro question.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "le-verdict",
+      "title": "Le verdict",
+      "hook": "Le verdict.",
+      "sceneCount": 3
+    }
+  ]
+}

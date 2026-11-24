@@ -1,0 +1,43 @@
+{
+  "theme": "Elected By Rule",
+  "language": "de",
+  "reel": "eine-trophe-ist-kein-audit",
+  "title": "Eine Trophäe ist kein Audit",
+  "hook": "Eine Trophäe für Governance. Eine Frage zu einer Akte.",
+  "stamp": "Ein Preis sagt nichts über diese Akte.",
+  "next": "Weiter: zwei Anzeigetafeln.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "eine Trophäe polierend",
+      "text": "Die Agentur hat letzte Woche einen Governance-Preis gewonnen. Risikomanagement. Compliance. Verantwortungsvolle Innovation. Schönes Foto.",
+      "mood": "flat",
+      "panel": [
+        "Preis = Governance-Preis (7. Ausgabe)",
+        "vergeben von = gemeinnütziger Freiwilligenverband"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Der Preis kommt von einem Freiwilligenverband, gegründet 2019. Glaubwürdig, klar. Er ist auch keine Untersuchung einer bestimmten Beschwerde.",
+      "mood": "up",
+      "panel": [
+        "Agentur war 2022 auch 2."
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "ausdruckslos",
+      "text": "Fair in beide Richtungen: Eine Trophäe beweist nicht, dass alles in Ordnung ist, und eine Akte beweist nicht, dass alles kaputt ist. Aber ein benannter Entscheider würde das schneller klären als eine Gala.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

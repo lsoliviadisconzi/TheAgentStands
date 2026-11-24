@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "pt-BR",
+  "reel": "quem-regula-quem",
+  "title": "Quem Regula Quem",
+  "hook": "O clube das companhias aéreas é presidido por uma companhia aérea.",
+  "stamp": "Um clube não é um regulador. Um regulador ainda deveria responder suas mensagens.",
+  "next": "Peça a trilha documental.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "desenhando três caixas",
+      "text": "ICAO: um órgão da ONU formado por Estados que define padrões globais. Nossa agência: o regulador nacional. IATA: a associação comercial das companhias aéreas.",
+      "mood": "flat",
+      "panel": [
+        "ICAO = Estados",
+        "ANAC = regulador nacional",
+        "IATA = associação comercial das aéreas"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Este ano, o presidente do conselho da IATA é o CEO da própria companhia aérea do processo. O cargo rotaciona entre CEOs de companhias aéreas. É isso que um clube é, não uma conspiração.",
+      "mood": "up",
+      "panel": [
+        "presidente da IATA (jun 2026): CEO do grupo LATAM",
+        "rotação = anual",
+        "AGM realizado no Rio de Janeiro"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "calmo, quase sábio",
+      "text": "Nada nesses documentos mostra alguém coordenando. O remédio é entediante: um tomador de decisão nomeado, o texto da decisão, a data. Peça esses itens. Por escrito.",
+      "mood": "calm",
+      "panel": [
+        "quem_decidiu = ?",
+        "texto_decisao = ?",
+        "data = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "es",
+  "reels": [
+    {
+      "slug": "prueba-a",
+      "title": "Prueba A",
+      "hook": "Prueba A: es castaño claro tirando a rubio.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "las-paletas",
+      "title": "Las paletas",
+      "hook": "Ocho crayones contra mil tonos.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-lgica-conoce-a-los-sentimientos",
+      "title": "La lógica conoce a los sentimientos",
+      "hook": "Lógica. Mujer. Colores. Igual a sentimientos.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "no-vayas-por-ah",
+      "title": "No vayas por ahí",
+      "hook": "¿Estás loco? No vayas por ahí.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "el-veredicto",
+      "title": "El veredicto",
+      "hook": "El veredicto.",
+      "sceneCount": 3
+    }
+  ]
+}

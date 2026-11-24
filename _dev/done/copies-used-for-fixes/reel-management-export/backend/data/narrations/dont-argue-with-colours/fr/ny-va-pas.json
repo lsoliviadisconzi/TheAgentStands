@@ -1,0 +1,42 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "fr",
+  "reel": "ny-va-pas",
+  "title": "N’y va pas",
+  "hook": "T’es fou ? N’y va pas.",
+  "stamp": "Ne contredis jamais une femme sur les couleurs.",
+  "next": "Ensuite : le verdict.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "voix de négociateur d’otages",
+      "text": "Écoute bien. Ne contredis pas une femme sur les couleurs. Je répète : n’y va pas.",
+      "mood": "up",
+      "panel": [
+        "niveau_risque = extrême"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "« C’est bleu pétrole ou turquoise ? » Ce n’est pas une question. C’est une trappe.",
+      "mood": "flat",
+      "panel": [
+        "pétrole_vs_turquoise = trappe"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "en chuchotant",
+      "text": "Les seules réponses sûres sont « tu as raison » et « c’est une jolie nuance de ce que tu veux ».",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

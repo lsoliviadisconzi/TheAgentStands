@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "sr-Latn",
+  "reel": "rang-107",
+  "title": "Rang 107",
+  "hook": "35 od 100. Drugi najgori u seriji.",
+  "stamp": "Broj je javan. Predmet nije.",
+  "next": "Sledeće: papirni trag još nedostaje.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "čitajući rangiranje",
+      "text": "Corruption Perceptions Index 2025. Brazil: 35 poena. Rang 107 od 182. Drugi najgori u seriji.",
+      "mood": "flat",
+      "panel": [
+        "cpi_2025 = 35",
+        "rang = 107/182"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Svetski prosek: 42. Zemlja je znatno ispod. Agencija koja reguliše vazdušni prostor dobija trofej za upravljanje u istoj sezoni.",
+      "mood": "up",
+      "panel": [
+        "svetski_prosek = 42",
+        "jaz = vidljiv"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "u kameru",
+      "text": "Brojevi ne dokazuju jedan slučaj. Čine tišinu glasnijom.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

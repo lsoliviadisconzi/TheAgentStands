@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First",
+  "language": "sr-Latn",
+  "reels": [
+    {
+      "slug": "niko-nije-pitao",
+      "title": "Niko nije pitao",
+      "hook": "Niko nije pitao. Ipak su odgovorili.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "van-nadlenosti",
+      "title": "Van nadležnosti",
+      "hook": "„To je van naše nadležnosti.“",
+      "sceneCount": 3
+    },
+    {
+      "slug": "javiu-se",
+      "title": "Javiću se",
+      "hook": "Šest meseci. Jedno „javiću se“.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "aplauz-nije-revizija",
+      "title": "Aplauz nije revizija",
+      "hook": "365 lajkova. Nula pitanja.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "presuda",
+      "title": "Presuda",
+      "hook": "Presuda.",
+      "sceneCount": 3
+    }
+  ]
+}

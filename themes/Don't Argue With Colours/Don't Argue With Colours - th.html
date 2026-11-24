@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>อย่าเถียงกับสี</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#efe6e3;--fg:#2a1c22;--mute:#7a6a70;--btn:#fff;--line:#d6c6c9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1216;--fg:#f1e8ea;--mute:#a893a0;--btn:#2a1d23;--line:#43303a}}
+:root[data-theme="dark"]{--bg:#1a1216;--fg:#f1e8ea;--mute:#a893a0;--btn:#2a1d23;--line:#43303a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed","Noto Sans Thai",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed","Noto Sans Thai",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #ff5c8a;outline-offset:2px}
+button[aria-selected="true"]{background:#ff5c8a;color:#2a0f1a;border-color:#ff5c8a}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#2a1d26;--paper:#f3e9e4;--tag:#ff5c8a;--dim:#a8929d;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(255,214,230,.3),rgba(255,214,230,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#3b2a33;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed","Noto Sans Thai";fill:#2a0f1a}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite","Noto Sans Thai",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,"Noto Sans Thai",monospace;color:#ffb3c9;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.chip{display:inline-block;width:3.2cqw;height:3.2cqw;border-radius:50%;margin-right:1.6cqw;vertical-align:middle;border:1px solid rgba(255,255,255,.3)}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite","Noto Sans Thai",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed","Noto Sans Thai";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#2a0f1a;font:700 7.2cqw/1.05 "Barlow Condensed","Noto Sans Thai";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed","Noto Sans Thai";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>อย่าเถียงกับสี</h1>
+<p class="sub">ห้ารีล ผมหนึ่งหัว โอกาสชนะศูนย์ กดเล่นเลย</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="34" y="-2" width="52" height="16" rx="3" fill="#ff5c8a"/><text class="badge" x="60" y="10" text-anchor="middle">ผู้ชายคนนี้</text>
+    </svg>
+    <div class="name">จำเลย</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">หยุดชั่วคราว</button>
+  <button id="re">เล่นซ้ำ</button>
+  <label><input type="checkbox" id="all"> เล่นทั้งห้ารีล</label>
+</div>
+
+<script>
+const R=[
+{n:"หลักฐาน A",hook:"หลักฐาน A: มันสีน้ำตาลอมบลอนด์",next:"ต่อไป: พาเลตต์สี",stamp:"ถูกยกคำค้านก่อนฉันจะพูดจบประโยค",
+ l:[{d:"ชูภาพโคลสอัปใบหูของตัวเอง",s:"ฉันส่งหลักฐานให้เพื่อนดูแล้ว ผม โคลสอัป แสงดี ๆ มันสีน้ำตาลอมบลอนด์ คดีจบ",log:["สีผม = น้ำตาลอมบลอนด์","ความมั่นใจ = 100%"],h:1300},
+    {m:"up",s:"เธอบอกว่าสีเทา เทาเนี่ยนะ! ก็มีเส้นเทา ๆ ตรงใบหูบ้างแหละ จริง แต่แค่นิดเดียว เส้นเล็ก ๆ ที่ดูมีระดับ",log:["เส้นเทา = มีนิดหน่อย","เส้นเทา.เกี่ยวข้อง = ไม่"],h:1300},
+    {d:"พูดเบา ๆ",m:"flat",s:"เพิ่งรู้ตัวว่าฉันใช้คำว่า “น้ำตาลอม” ในศาล ฉันไม่มีพยานผู้เชี่ยวชาญสักคน",h:1000}]},
+{n:"พาเลตต์สี",hook:"สีเทียนแปดแท่งกับพันเฉดสี",next:"ต่อไป: ตรรกะเข้าห้อง",stamp:"ผู้ชาย: สีเทียน 8 แท่ง เธอ: ทุกแท่ง",
+ l:[{d:"คลี่แผนภูมิสองแผ่น",s:"พาเลตต์สีของฉันตามที่ยื่นไว้: แดง น้ำเงิน เขียว เหลือง น้ำตาล ดำ ขาว แล้วก็ “อันอื่น”",sw:[["แดง","#d33"],["น้ำเงิน","#37d"],["เขียว","#3a5"],["เหลือง","#fc3"],["น้ำตาล","#764"],["อันอื่น","#a6a"]],h:1400},
+    {m:"up",s:"พาเลตต์ของเธอ: แอช น้ำผึ้ง แชมเปญ ข้าวสาลี เห็ด น้ำล้างจาน บรอนด์ โรสฝุ่น เกรจ ข้าวโอ๊ต",sw:[["แอช","#b2aca0"],["น้ำผึ้ง","#d9a441"],["แชมเปญ","#e8d3b0"],["เห็ด","#9a8b7e"],["โรสฝุ่น","#c98b92"],["เกรจ","#b5ad9f"]],h:1400},
+    {d:"พูดกับกล้อง",m:"flat",s:"ไม่ใช่แค่ว่าพวกเธอมีสีมากกว่า พวกเธอมีแผนกตาดูสีอีกแผนกหนึ่ง และไม่มีใครบอกพวกเรา",h:1000}]},
+{n:"ตรรกะพบความรู้สึก",hook:"ตรรกะ ผู้หญิง สี เท่ากับความรู้สึก",next:"ต่อไป: อย่าไปตรงนั้น",stamp:"ตรรกะ: 0 ความรู้สึก: 1",
+ l:[{d:"เขียนสมการบนกระดาษเช็ดปาก",s:"ตรรกะ บวกผู้หญิง บวกสี ให้ฉันแก้หา x ก่อน",log:["ตรรกะ + ผู้หญิง + สี = ?"],h:1200},
+    {m:"up",s:"คำตอบ: ทุกอย่างเท่ากับความรู้สึก เพื่อนเอ๋ย แยกตัวประกอบความรู้สึกไม่ได้ ฉันลองแล้ว มันออกมาเป็นสีเบจ",log:["ผลลัพธ์ = ความรู้สึก","ข้อผิดพลาด: หารด้วยความรู้สึกไม่ได้"],h:1300},
+    {d:"สีหน้าตาย",m:"flat",s:"ในขณะที่ข้อโต้แย้งที่ดีที่สุดของฉันคือ “มันดูน้ำตาล ๆ” นั่นไม่ใช่ประเด็น นั่นคือการยักไหล่ที่มีขมับ",h:1000}]},
+{n:"อย่าไปตรงนั้น",hook:"คุณบ้าเหรอ? อย่าไปตรงนั้น",next:"ต่อไป: คำตัดสิน",stamp:"อย่าแย้งผู้หญิงเรื่องสี เด็ดขาด",
+ l:[{d:"เสียงนักเจรจาตัวประกัน",m:"up",s:"ฟังให้ดี อย่าแย้งผู้หญิงเรื่องสี ย้ำอีกครั้ง: อย่าไปตรงนั้น",log:["ระดับความเสี่ยง = สุดขีด"],h:1300},
+    {s:"“นี่มันสีฟ้าเพโทรลหรือเทอร์ควอยซ์?” นั่นไม่ใช่คำถาม นั่นคือประตูกล",log:["เพโทรลกับเทอร์ควอยซ์ = ประตูกล"],h:1200},
+    {d:"กระซิบ",m:"flat",s:"คำตอบที่ปลอดภัยมีแค่ “คุณพูดถูก” กับ “เฉดสีสวยมาก ไม่ว่าคุณจะเรียกมันว่าอะไร”",h:1000}]},
+{n:"คำตัดสิน",hook:"คำตัดสิน",next:"เห็นด้วย แล้วซื้อดอกไม้",stamp:"ไม่ได้กำลังหาเหตุผลเข้าข้างตัวเอง แค่เถียงเฉย ๆ แต่ก็ยังแพ้",
+ l:[{d:"ใจเย็น เกือบจะดูฉลาด",m:"calm",s:"พูดตามตรง ฉันไม่ได้หาเหตุผลเข้าข้างตัวเอง ฉันแค่เถียง และคุณเถียงกับคนที่รู้ว่า “บรอนด์” คืออะไรไม่ได้",log:["การเถียง = แพ้","บรอนด์ = มีจริง"],h:1300},
+    {s:"ผมของเธอไม่ใช่สีเทา ผมของฉันไม่ใช่น้ำตาล ๆ และทั้งสองสีก็เป็นเฉดที่ฉันออกเสียงไม่ถูก",sw:[["ผมเธอ: แอชแชมเปญ","#cfc3ad"],["ผมฉัน: ก็ดีอยู่","#9a8466"]],h:1200},
+    {d:"ยิ้มบาง ๆ",s:"ดังนั้นแผนคือ: พูดว่า “คุณพูดถูก” ซื้อดอกไม้ แล้วถามว่าดอกไม้สีอะไร อย่าพูดว่าแดง มันคือ “โรสฝุ่น”",h:1000}]}
+];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"เล่นต่อ":"หยุดชั่วคราว"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="หยุดชั่วคราว";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log||L.sw)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      (L.sw||[]).forEach(([n,c])=>{const d=document.createElement("div");const s=document.createElement("span");s.className="chip";s.style.background=c;d.append(s,n);pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "de",
+  "reel": "zwei-anzeigetafeln",
+  "title": "Zwei Anzeigetafeln",
+  "hook": "107. Oder 56. Kommt auf die Anzeigetafel an.",
+  "stamp": "Wahrnehmung ist kein Beweis. So oder so.",
+  "next": "Weiter: Wer reguliert wen?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "zwei Anzeigetafeln haltend",
+      "text": "Korruptionswahrnehmung, 2025: Brasilien erreicht 35 von 100. Rang: 107 von 182. Weltdurchschnitt: 42.",
+      "mood": "flat",
+      "panel": [
+        "TI CPI 2025: 35/100",
+        "Rang = 107 von 182",
+        "globaler Durchschnitt = 42"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Vertrauen, 2026: Der Edelman-Index setzt Brasilien auf 56 von 100. Das liegt über den USA mit 47, dem UK mit 44, Deutschland mit 44, Frankreich mit 42.",
+      "mood": "up",
+      "panel": [
+        "Edelman-Vertrauensindex: Brasilien 56",
+        "USA 47 / UK 44 / DE 44 / FR 42",
+        "(Durchschnitt aus Wirtschaft, Regierung, Medien, NGOs)"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "zur Kamera",
+      "text": "Also ist „das am wenigsten vertrauenswürdige Land“ nicht, was die Zahlen sagen. Die ehrliche Formulierung: Wahrgenommene Korruption ist schlecht, Institutionen werden nicht uniform misstraut, und keine der beiden Zahlen beweist einen Einzelfall.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

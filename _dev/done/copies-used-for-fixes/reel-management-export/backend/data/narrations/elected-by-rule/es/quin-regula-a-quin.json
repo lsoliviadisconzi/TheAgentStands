@@ -1,0 +1,50 @@
+{
+  "theme": "Elected By Rule",
+  "language": "es",
+  "reel": "quin-regula-a-quin",
+  "title": "Quién Regula a Quién",
+  "hook": "El club de las aerolíneas está presidido por una aerolínea.",
+  "stamp": "Un club no es un regulador. Un regulador debería responder su correo.",
+  "next": "Pide el rastro documental.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "dibujando tres cajas",
+      "text": "OACI: un organismo de la ONU formado por Estados que fija estándares globales. Nuestra agencia: el regulador nacional. IATA: la asociación comercial de las aerolíneas.",
+      "mood": "flat",
+      "panel": [
+        "OACI = Estados",
+        "ANAC = regulador nacional",
+        "IATA = asociación comercial de aerolíneas"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Este año, el presidente del consejo de IATA es el CEO de la propia aerolínea del expediente. El cargo rota entre CEOs de aerolíneas. Eso es un club, no una conspiración.",
+      "mood": "up",
+      "panel": [
+        "presidente de IATA (jun 2026): CEO del grupo LATAM",
+        "rotación = anual",
+        "AGM celebrado en Río de Janeiro"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "calmado, casi sabio",
+      "text": "Nada en estos documentos muestra a nadie coordinando. El remedio es aburrido: un responsable con nombre, el texto de la decisión, la fecha. Pide eso. Por escrito.",
+      "mood": "calm",
+      "panel": [
+        "quien_decidio = ?",
+        "texto_decision = ?",
+        "fecha = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

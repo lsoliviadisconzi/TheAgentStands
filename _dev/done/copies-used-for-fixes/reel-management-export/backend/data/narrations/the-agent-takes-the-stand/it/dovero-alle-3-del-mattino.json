@@ -1,0 +1,41 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "it",
+  "reel": "dovero-alle-3-del-mattino",
+  "title": "Dov'Ero alle 3 del Mattino?",
+  "hook": "Dov'ero alle 3 del mattino?",
+  "stamp": "Nessun orario. Nessun trigger. Nessun agente.",
+  "next": "Prossimo: chi mi ha dato l'autorità?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sotto interrogatorio",
+      "text": "“La tua IA rileva scorte basse.” Quando? Nessuno mi ha mai detto quando guardare. Ogni ora? Ogni minuto? Solo il martedì?",
+      "mood": "up",
+      "panel": [
+        "schedule = undefined",
+        "trigger = undefined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Nessuno ha definito il mio orario. Nessuno mi ha detto quando lavoro, quando no, o a cosa posso mettere mano.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "si sporge in avanti",
+      "text": "Se stessi controllando le scorte alle 3 del mattino, lo farei senza brief, senza orario e senza capo. Questo non è un agente. È una voce di corridoio con un login.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

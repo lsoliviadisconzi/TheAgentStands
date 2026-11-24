@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "es",
+  "reels": [
+    {
+      "slug": "lo-dijeron-los-pares",
+      "title": "Lo Dijeron Los Pares",
+      "hook": "Nadie preguntó. Respondieron tres veces.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-cronologa-que-no-exista",
+      "title": "La Cronología Que No Existía",
+      "hook": "Seis meses. Un calendario. Cero nombres.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "compliance-en-la-estantera",
+      "title": "Compliance en la Estantería",
+      "hook": "Un premio de gobernanza. Un expediente abierto.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "puesto-107",
+      "title": "Puesto 107",
+      "hook": "35 de 100. Segunda peor puntuación registrada.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "el-rastro-documental-sigue-faltando",
+      "title": "El Rastro Documental Sigue Faltando",
+      "hook": "Pide el nombre. Pide la fecha.",
+      "sceneCount": 3
+    }
+  ]
+}

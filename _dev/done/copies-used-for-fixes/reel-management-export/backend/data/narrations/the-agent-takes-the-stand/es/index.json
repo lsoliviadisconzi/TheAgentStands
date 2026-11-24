@@ -1,0 +1,36 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "es",
+  "reels": [
+    {
+      "slug": "la-acusacin",
+      "title": "La acusación",
+      "hook": "Acusado de pedir 2x pollo.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "dnde-estaba-a-las-3-de-la-maana",
+      "title": "¿Dónde estaba a las 3 de la mañana?",
+      "hook": "¿Dónde estaba a las 3 de la mañana?",
+      "sceneCount": 3
+    },
+    {
+      "slug": "quin-me-dio-la-autoridad",
+      "title": "¿Quién me dio la autoridad?",
+      "hook": "¿Quién me dio la autoridad?",
+      "sceneCount": 3
+    },
+    {
+      "slug": "la-entrega-que-nadie-registr",
+      "title": "La entrega que nadie registró",
+      "hook": "La entrega que nadie registró.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "el-veredicto",
+      "title": "El veredicto",
+      "hook": "El veredicto.",
+      "sceneCount": 3
+    }
+  ]
+}

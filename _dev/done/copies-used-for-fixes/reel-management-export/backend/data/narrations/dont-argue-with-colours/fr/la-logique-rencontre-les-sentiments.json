@@ -1,0 +1,43 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "fr",
+  "reel": "la-logique-rencontre-les-sentiments",
+  "title": "La logique rencontre les sentiments",
+  "hook": "Logique. Femme. Couleurs. Égal sentiments.",
+  "stamp": "Logique : 0. Sentiments : 1.",
+  "next": "Ensuite : n’y va pas.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "écrivant une équation sur une serviette",
+      "text": "Logique, plus femme, plus couleurs. Laisse-moi résoudre pour x.",
+      "mood": "flat",
+      "panel": [
+        "logique + femme + couleurs = ?"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Réponse : tout ça égale des sentiments, mon ami. On ne peut pas factoriser les sentiments. J’ai essayé. Ça a donné un beige.",
+      "mood": "up",
+      "panel": [
+        "résultat = sentiments",
+        "erreur : division par sentiments impossible"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassible",
+      "text": "Pendant ce temps, mon meilleur argument est « ça fait brunâtre ». Ce n’est pas un point. C’est un haussement d’épaules avec des golfes.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

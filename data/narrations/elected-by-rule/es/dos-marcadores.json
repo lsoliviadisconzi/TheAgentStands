@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "es",
+  "reel": "dos-marcadores",
+  "title": "Dos Marcadores",
+  "hook": "107º. O 56. Depende del marcador.",
+  "stamp": "La percepción no es prueba. En cualquier caso.",
+  "next": "Siguiente: ¿quién regula a quién?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sosteniendo dos marcadores",
+      "text": "Percepción de la corrupción, 2025: Brasil marca 35 sobre 100. Puesto: 107º de 182. Media mundial: 42.",
+      "mood": "flat",
+      "panel": [
+        "TI CPI 2025: 35/100",
+        "puesto = 107 de 182",
+        "media global = 42"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Confianza, 2026: el índice Edelman sitúa a Brasil en 56 sobre 100. Por encima de EE. UU. con 47, Reino Unido con 44, Alemania con 44, Francia con 42.",
+      "mood": "up",
+      "panel": [
+        "índice de confianza Edelman: Brasil 56",
+        "EE. UU. 47 / RU 44 / DE 44 / FR 42",
+        "(media de empresas, gobierno, medios y ONG)"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a cámara",
+      "text": "Así que “el país menos confiable” no es lo que dicen los números. La frase honesta: la corrupción percibida es mala, las instituciones no son uniformemente desconfiadas, y ninguno de los dos números prueba un caso concreto.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

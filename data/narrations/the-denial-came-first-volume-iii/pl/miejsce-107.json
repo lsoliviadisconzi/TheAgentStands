@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pl",
+  "reel": "miejsce-107",
+  "title": "Miejsce 107",
+  "hook": "35 na 100. Drugi najgorszy wynik w serii.",
+  "stamp": "Liczba jest publiczna. Teczka nie.",
+  "next": "Dalej: wciąż brakuje śladu papierowego.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "czytając ranking",
+      "text": "Corruption Perceptions Index 2025. Brazylia: 35 punktów. Miejsce 107 na 182. Drugi najgorszy wynik w serii.",
+      "mood": "flat",
+      "panel": [
+        "cpi_2025 = 35",
+        "miejsce = 107/182"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Średnia światowa: 42. Kraj jest znacznie poniżej. Agencja regulująca przestrzeń powietrzną dostaje trofeum za ład korporacyjny w tym samym sezonie.",
+      "mood": "up",
+      "panel": [
+        "średnia_światowa = 42",
+        "luka = widoczna"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "do kamery",
+      "text": "Liczby nie dowodzą jednej sprawy. Czynią ciszę głośniejszą.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+
+> backend@1.0.0 dev
+> ts-node-dev --respawn src/index.ts
+
+[INFO] 07:11:05 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+Backend listening on port 4000
+[INFO] 07:52:56 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:04 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:08 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:14 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:18 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:23 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/model.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:28 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/index.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:32 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/index.ts has been modified
+Backend listening on port 4000
+[INFO] 07:53:52 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/index.ts has been modified
+Backend listening on port 4000

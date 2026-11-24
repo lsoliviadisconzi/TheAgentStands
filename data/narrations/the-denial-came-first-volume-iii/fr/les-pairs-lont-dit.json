@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "fr",
+  "reel": "les-pairs-lont-dit",
+  "title": "Les pairs l’ont dit",
+  "hook": "Personne n’a demandé. Ils ont répondu trois fois.",
+  "stamp": "La réassurance est arrivée avant la question.",
+  "next": "Ensuite : la chronologie qui n’existait pas.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "lisant la déclaration officielle",
+      "text": "Assumir a presidência, por escolha dos próprios países participantes. Nous souhaitons confirmer : c’était par choix des pays participants eux-mêmes.",
+      "mood": "flat",
+      "panel": [
+        "question_posée = aucune",
+        "élection_par_les_pairs_affirmée = oui"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "En portugais. En anglais. En espagnol. La même phrase. Élu par ses pairs. Personne n’avait demandé comment le président avait été choisi.",
+      "mood": "up",
+      "panel": [
+        "langues = 3",
+        "clarifications_non_sollicitées = plusieurs"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "face caméra",
+      "text": "Quand la réponse arrive avant la question, puis revient dans deux langues de plus, la question n’a jamais été le problème.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

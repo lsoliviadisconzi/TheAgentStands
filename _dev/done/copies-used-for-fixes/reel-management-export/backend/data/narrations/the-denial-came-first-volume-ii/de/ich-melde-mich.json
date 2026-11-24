@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "de",
+  "reel": "ich-melde-mich",
+  "title": "Ich melde mich",
+  "hook": "Sechs Monate. Ein „Ich melde mich“.",
+  "stamp": "Keine Frist. Kein benannter Entscheider.",
+  "next": "Weiter: Applaus ist kein Audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "einen Kalender prüfend",
+      "text": "Tag eins: „Ich habe eine Untersuchung angefordert.“ Schön. Wir melden uns.",
+      "mood": "flat",
+      "panel": [
+        "30. dez.: untersuchung angefordert"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Drei Wochen später: Das Technikteam sagt, die Position sei dieselbe, und die Rechtsabteilung prüfe es. Keine Frist.",
+      "mood": "up",
+      "panel": [
+        "19. jan.: rechtsabteilung konsultiert",
+        "frist = keine"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "leise",
+      "text": "Fünf Monate später: eine formelle Antwort, die die erste Antwort wiederholt. Wer hat entschieden? Immer noch nicht genannt. Es ist eine sehr geduldige Art von Schweigen.",
+      "mood": "flat",
+      "panel": [
+        "28. jun.: formelle antwort",
+        "entscheider = unbenannt"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "de",
+  "reel": "die-paletten",
+  "title": "Die Paletten",
+  "hook": "Acht Buntstifte gegen tausend Nuancen.",
+  "stamp": "Männer: 8 Buntstifte. Sie: alle.",
+  "next": "Weiter: Logik betritt den Raum.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "rollt zwei Tafeln aus",
+      "text": "Meine Farbpalette, zu Protokoll: rot, blau, grün, gelb, braun, schwarz, weiß. Und „das andere“.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "rot",
+          "#d33"
+        ],
+        [
+          "blau",
+          "#37d"
+        ],
+        [
+          "grün",
+          "#3a5"
+        ],
+        [
+          "gelb",
+          "#fc3"
+        ],
+        [
+          "braun",
+          "#764"
+        ],
+        [
+          "das andere",
+          "#a6a"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ihre Palette: Asch, Honig, Champagner, Weizen, Pilz, Spülwasser, Bronde, staubiges Rosa, Greige, Hafer.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "asch",
+          "#b2aca0"
+        ],
+        [
+          "honig",
+          "#d9a441"
+        ],
+        [
+          "champagner",
+          "#e8d3b0"
+        ],
+        [
+          "pilz",
+          "#9a8b7e"
+        ],
+        [
+          "staubiges rosa",
+          "#c98b92"
+        ],
+        [
+          "greige",
+          "#b5ad9f"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "zur Kamera",
+      "text": "Sie haben nicht nur mehr Farben bekommen. Sie haben eine ganze zusätzliche Augenabteilung bekommen, und niemand hat es uns gesagt.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

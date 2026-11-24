@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First",
+  "language": "es",
+  "reel": "nadie-pregunt",
+  "title": "Nadie Preguntó",
+  "hook": "Nadie preguntó. Respondieron igual.",
+  "stamp": "La negación llegó antes de la pregunta.",
+  "next": "Siguiente: fuera de jurisdicción.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "leyendo una declaración que nadie pidió",
+      "text": "Nadie preguntó si ignoramos la denuncia. Así que, para que quede claro: no ignoramos la denuncia.",
+      "mood": "flat",
+      "panel": [
+        "pregunta_hecha = ninguna",
+        "negacion_emitida = sí"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Nadie preguntó si alguien nos está dirigiendo. Nos gustaría confirmar que nadie nos está dirigiendo. Sin que nos lo pidan. Para que conste.",
+      "mood": "up",
+      "panel": [
+        "negaciones_espontaneas = 2"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a cámara",
+      "text": "Hay una vieja frase sobre protestar demasiado. Nosotros lo llamamos comunicación. Regla básica: cuando la respuesta llega antes de la pregunta, ve a comprobar la pregunta.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "es",
+  "reel": "20-minutos-de-trabajo",
+  "title": "20 Minutos de Trabajo",
+  "hook": "Veinte minutos de perforación. Factura cero.",
+  "stamp": "14,7M de tokens. $0.",
+  "next": "Siguiente: el recibo.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "mirando la terminal",
+      "text": "Ahora mismo, mientras hablo, Nemotron 3 Ultra lleva veinte minutos perforando. Gratis.",
+      "mood": "flat",
+      "panel": [
+        "modelo = nemotron-3-ultra (gratis)",
+        "turnos = 51",
+        "pasos = 136",
+        "tokens = 14,7M"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Se topó con una instalación del navegador Playwright, una caché bloqueada, un muro de permisos. Probó otro camino. Y otro. Nadie pagó por los reintentos.",
+      "mood": "up",
+      "panel": [
+        "instalar chromium: permiso denegado",
+        "retry: ruta personalizada",
+        "cache_hit = 96%"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "en voz baja",
+      "text": "En un modelo de pago eso es un contador muy paciente funcionando. Aquí es solo una barra de progreso y una tetera.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

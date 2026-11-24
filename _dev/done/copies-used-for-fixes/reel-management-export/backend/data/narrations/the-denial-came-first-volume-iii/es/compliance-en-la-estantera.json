@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "es",
+  "reel": "compliance-en-la-estantera",
+  "title": "Compliance en la Estantería",
+  "hook": "Un premio de gobernanza. Un expediente abierto.",
+  "stamp": "Llegó el trofeo. No llegó la respuesta.",
+  "next": "Siguiente: puesto 107.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sosteniendo una placa",
+      "text": "Noviembre. La agencia recibe el premio RGB de gobernanza, gestión de riesgos y compliance.",
+      "mood": "flat",
+      "panel": [
+        "premio = RGB Executivo Federal",
+        "fecha = nov 2026"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Mismo mes, misma institución: una denuncia formal aún sin respuesta en el fondo. Pruebas no abordadas. Responsable aún sin nombre.",
+      "mood": "up",
+      "panel": [
+        "expediente_abierto = 50001.115849/2025-10"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sin expresión",
+      "text": "Un premio para el sistema. Un silencio para el expediente. Ambas cosas pueden ser verdad a la vez. Esa es la parte interesante.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

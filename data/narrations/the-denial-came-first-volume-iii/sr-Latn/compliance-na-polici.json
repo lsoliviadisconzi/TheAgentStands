@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "sr-Latn",
+  "reel": "compliance-na-polici",
+  "title": "Compliance na polici",
+  "hook": "Nagrada za upravljanje. Otvoren predmet.",
+  "stamp": "Trofej je stigao. Odgovor nije.",
+  "next": "Sledeće: rang 107.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "držeći malu plaketu",
+      "text": "Novembar. Agencija dobija RGB nagradu za upravljanje, upravljanje rizicima i compliance.",
+      "mood": "flat",
+      "panel": [
+        "nagrada = RGB Executivo Federal",
+        "datum = nov 2026"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Isti mesec, ista institucija: formalna denúncia još bez odgovora u suštini. Dokazi nisu razmotreni. Donosilac odluke još nije imenovan.",
+      "mood": "up",
+      "panel": [
+        "otvoren_predmet = 50001.115849/2025-10"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "bez izraza",
+      "text": "Nagrada za sistem. Tišina za predmet. Oba mogu biti tačni istovremeno. To je zanimljiv deo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

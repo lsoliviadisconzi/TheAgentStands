@@ -1,0 +1,45 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "de",
+  "reel": "nicht-nur-eine-chatbox",
+  "title": "Nicht nur eine Chatbox",
+  "hook": "Ein Chatfenster ist keine Strategie.",
+  "stamp": "Wisse, was du benutzt, und wie.",
+  "next": "Weiter: „Claude ist zu teuer.“",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "auf einen sehr großen Werkzeugkasten deutend",
+      "text": "Die meisten öffnen ein Chatfenster, tippen „hilf“ und nennen das KI-Nutzung.",
+      "mood": "flat",
+      "panel": [
+        "benutzte_werkzeuge = 1",
+        "bekannte_modelle = das berühmte"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Es gibt Modelle zum Lesen von Bergen von PDFs, Modelle für lange Agentenläufe, Modelle für den letzten Schliff. Sie sind nicht austauschbar.",
+      "mood": "up",
+      "panel": [
+        "pdf_arbeit = Modell A",
+        "agentenlauf = Modell B",
+        "letzter_schliff = Modell C"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "ausdruckslos",
+      "text": "Ein Modell für alles zu benutzen ist, als würde man einen Chirurgen Kisten tragen lassen. Beeindruckend. Und auch abgerechnet.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

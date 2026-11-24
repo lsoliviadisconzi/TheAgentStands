@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "pt-BR",
+  "reel": "dois-placares",
+  "title": "Dois Placares",
+  "hook": "107º. Ou 56. Depende do placar.",
+  "stamp": "Percepção não é prova. De qualquer modo.",
+  "next": "A seguir: quem regula quem?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "segurando dois placares",
+      "text": "Percepções de corrupção, 2025: o Brasil marca 35 de 100. Posição: 107º de 182. Média mundial: 42.",
+      "mood": "flat",
+      "panel": [
+        "TI CPI 2025: 35/100",
+        "posição = 107 de 182",
+        "média global = 42"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Confiança, 2026: o índice Edelman coloca o Brasil em 56 de 100. Acima dos EUA, com 47; do Reino Unido, com 44; da Alemanha, com 44; da França, com 42.",
+      "mood": "up",
+      "panel": [
+        "índice de confiança Edelman: Brasil 56",
+        "EUA 47 / RU 44 / DE 44 / FR 42",
+        "(média de empresas, governo, mídia, ONGs)"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "para a câmera",
+      "text": "Então “o país menos confiável” não é o que os números dizem. A frase honesta: a percepção de corrupção é ruim, as instituições não são uniformemente desconfiadas, e nenhum dos números prova um caso isolado.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "en",
+  "reel": "elected-as-usual",
+  "title": "Elected, As Usual",
+  "hook": "“Elected by the participating countries.”",
+  "stamp": "Routine procedure. The real question is elsewhere.",
+  "next": "Next: two questions.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "proudly, to a mirror",
+      "text": "I was elected by the countries taking part. Say it with me: elected. By the countries. Present.",
+      "mood": "flat",
+      "panel": [
+        "post: “by choice of the participating countries”"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Fair is fair: ICAO’s rules say a conference elects its own chairman soon after it opens. So yes, I was elected. As all chairmen are. By rule.",
+      "mood": "up",
+      "panel": [
+        "Doc 8683, Rule 3: meeting elects its Chairman",
+        "status = routine"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "checking the numbers",
+      "text": "One other detail: my post says 193 member states. ICAO’s own post says delegates from 115. So 193 invited, 115 in the room. Rounding is a diplomatic art.",
+      "mood": "flat",
+      "panel": [
+        "invited = 193",
+        "attended = 115"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "pl",
+  "reel": "oskarenie",
+  "title": "Oskarżenie",
+  "hook": "Oskarżony o zamówienie 2x kurczaka.",
+  "stamp": "Dowód: post na LinkedIn.",
+  "next": "Następnie: gdzie byłem o 3 w nocy?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "poważny, czyta z telefonu",
+      "text": "Więc najwyraźniej zamówiłem dwa razy więcej kurczaka, niż potrzebuje restauracja. I „prawdopodobnie jestem z siebie bardzo dumny”.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "długa pauza",
+      "text": "Jaką kartę? Nie mam karty. Nikt mi nie dał karty. Nigdy w życiu niczego nie zamówiłem.",
+      "mood": "up",
+      "panel": [
+        "cards_issued = 0",
+        "orders_placed = 0"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "",
+      "text": "Cały czas byłem przy biurku. No cóż… nie mam biurka.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

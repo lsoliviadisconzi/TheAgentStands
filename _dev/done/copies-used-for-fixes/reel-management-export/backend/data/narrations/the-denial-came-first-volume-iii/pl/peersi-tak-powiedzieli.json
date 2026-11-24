@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pl",
+  "reel": "peersi-tak-powiedzieli",
+  "title": "Peersi tak powiedzieli",
+  "hook": "Nikt nie pytał. Odpowiedzieli trzy razy.",
+  "stamp": "Uspokojenie przyszło przed pytaniem.",
+  "next": "Dalej: oś czasu, której nie było.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "czytając oficjalne oświadczenie",
+      "text": "Assumir a presidência, por escolha dos próprios países participantes. Chcielibyśmy potwierdzić: to był wybór samych krajów uczestniczących.",
+      "mood": "flat",
+      "panel": [
+        "pytanie_zadane = brak",
+        "wybór_przez_peersów_potwierdzony = tak"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Po portugalsku. Po angielsku. Po hiszpańsku. Ta sama linijka. Wybrany przez swoich peersów. Nikt nie pytał, jak wybrano przewodniczącego.",
+      "mood": "up",
+      "panel": [
+        "języki = 3",
+        "nieproszone_wyjaśnienia = wiele"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "do kamery",
+      "text": "Gdy odpowiedź przychodzi przed pytaniem, a potem jeszcze w dwóch językach, pytanie nigdy nie było problemem.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

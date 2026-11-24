@@ -1,0 +1,44 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "en",
+  "reel": "the-delivery-nobody-recorded",
+  "title": "The Delivery Nobody Recorded",
+  "hook": "The delivery nobody recorded.",
+  "stamp": "Bad data in = expensive chicken out.",
+  "next": "Next: the verdict.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "pulls up the logs",
+      "text": "Here’s the real culprit. Yesterday’s delivery arrived, but nobody recorded it.",
+      "mood": "flat",
+      "panel": [
+        "delivery.recorded = false",
+        "inventory.chicken = 0",
+        "kitchen.actual = 40 kg"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "The system says zero chicken. The kitchen says forty kilos. I asked the database. It said, “Ask Dave.”",
+      "mood": "up",
+      "panel": [
+        "dave.status = on holiday"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "to camera",
+      "text": "And I’m the one on trial? A well-designed system waits for the delivery to be recorded before it checks the stock. That’s not AI autonomy. That’s a data problem wearing an AI costume.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

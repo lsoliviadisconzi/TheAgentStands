@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Der Agent im Zeugenstand</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#e6ecee;--fg:#16211f;--mute:#56666a;--btn:#fff;--line:#b9c7ca;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111819;--fg:#e8efee;--mute:#93a5a8;--btn:#1b2628;--line:#31423f}}
+:root[data-theme="dark"]{--bg:#111819;--fg:#e8efee;--mute:#93a5a8;--btn:#1b2628;--line:#31423f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;letter-spacing:.01em;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:720px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #f2c230;outline-offset:2px}
+button[aria-selected="true"]{background:#f2c230;color:#1c2629;border-color:#f2c230}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#1c2629;--paper:#ece7d8;--tag:#f2c230;--dim:#7f9296;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(255,244,200,.34),rgba(255,244,200,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+.lamp::before{content:"";position:absolute;left:42%;top:0;width:16%;height:5%;background:#0e1415;border-radius:0 0 40% 40%}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:11%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:34cqw;height:auto;overflow:visible}
+.head{fill:#2d3b3f;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#1c2629}
+.name{font-family:"Barlow Condensed";font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:49%;font:3.5cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#9bd6a8;display:flex;flex-direction:column;gap:.4cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.7cqw;line-height:1.38;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.9cqw;transition:all .4s}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#1c2629;font:700 7.4cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw 3cqw 9cqw;max-width:82cqw;border-radius:2cqw;position:relative;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc::before{content:"";position:absolute;left:3cqw;top:50%;width:3cqw;height:3cqw;margin-top:-1.5cqw;border-radius:50%;background:var(--room)}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Der Agent im Zeugenstand</h1>
+<p class="sub">Fünf Reels. Ein Hühnchen-Vorfall. Drück auf Play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="38" y="-2" width="44" height="16" rx="3" fill="#f2c230"/><text class="badge" x="60" y="10" text-anchor="middle">AGENT</text>
+    </svg>
+    <div class="name">Der Zeuge</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pause</button>
+  <button id="re">Wiederholen</button>
+  <label><input type="checkbox" id="all"> Alle fünf abspielen</label>
+</div>
+
+<script>
+const R=[
+{n:"Die Anklage",hook:"Angeklagt, 2x Hähnchen bestellt zu haben.",next:"Als Nächstes: Wo war ich um 3 Uhr morgens?",stamp:"Beweis: ein LinkedIn-Post.",
+ l:[{d:"ernst, liest vom Handy",s:"Also habe ich offenbar doppelt so viel Hähnchen bestellt, wie das Restaurant braucht. Und ich bin „wahrscheinlich sehr stolz auf mich“.",h:1300},
+    {d:"lange Pause",m:"up",s:"Welche Karte? Ich habe keine Karte. Niemand hat mir eine Karte gegeben. Ich habe in meinem Leben noch nie etwas bestellt.",log:["cards_issued = 0","orders_placed = 0"],h:1300},
+    {m:"flat",s:"Ich war die ganze Zeit an meinem Schreibtisch. Na ja … ich habe keinen Schreibtisch.",h:1000}]},
+{n:"Wo war ich um 3 Uhr morgens?",hook:"Wo war ich um 3 Uhr morgens?",next:"Als Nächstes: Wer hat mir die Befugnis gegeben?",stamp:"Kein Zeitplan. Kein Trigger. Kein Agent.",
+ l:[{d:"wird befragt",m:"up",s:"„Deine KI erkennt niedrigen Lagerbestand.“ Wann? Niemand hat mir je gesagt, wann ich nachsehen soll. Jede Stunde? Jede Minute? Nur dienstags?",log:["schedule = undefined","trigger = undefined"],h:1200},
+    {m:"flat",s:"Niemand hat meinen Zeitplan definiert. Niemand hat mir gesagt, wann ich arbeite, wann nicht, oder was ich anfassen darf.",h:1100},
+    {d:"lehnt sich vor",s:"Wenn ich um 3 Uhr morgens den Bestand geprüft hätte, hätte ich das ohne Briefing, ohne Zeitplan und ohne Chef getan. Das ist kein Agent. Das ist ein Gerücht mit Login.",h:1000}]},
+{n:"Wer hat mir die Befugnis gegeben?",hook:"Wer hat mir die Befugnis gegeben?",next:"Als Nächstes: die Lieferung, die niemand erfasst hat.",stamp:"Ausgabenlimit: 0 €. Erteilte Befugnis: keine.",
+ l:[{d:"zunehmend verwirrt",m:"up",s:"„Findet den günstigsten Lieferanten.“ Basierend auf was? Qualität? Lieferzeit? Vertragsbedingungen? Wer hat die Lieferantenliste genehmigt?",h:1200},
+    {s:"Dann „gibt automatisch eine Bestellung auf“. Mit welchem Ausgabenlimit? Wer hat das abgesegnet?",log:["spending_limit = €0","authority_granted = none"],h:1100},
+    {d:"todernst",m:"flat",s:"Niemand hat mir ein Budget, eine Regel oder einen Lieferanten gegeben, und ich soll 3.000 € für Geflügel ausgegeben haben? Ich möchte den Genehmigungsverlauf sehen. Oh, warte. Es gibt keinen. Weil ich es nicht getan habe.",log:["approval_trail = none"],h:1000}]},
+{n:"Die Lieferung, die niemand erfasst hat",hook:"Die Lieferung, die niemand erfasst hat.",next:"Als Nächstes: das Urteil.",stamp:"Schlechte Daten rein = teures Hähnchen raus.",
+ l:[{d:"holt die Logs hervor",s:"Hier ist der wahre Übeltäter. Die gestrige Lieferung kam an, aber niemand hat sie erfasst.",log:["delivery.recorded = false","inventory.chicken = 0","kitchen.actual = 40 kg"],h:1300},
+    {m:"up",s:"Das System sagt null Hähnchen. Die Küche sagt vierzig Kilo. Ich habe die Datenbank gefragt. Sie sagte: „Frag Dave.“",log:["dave.status = im Urlaub"],h:1300},
+    {d:"zur Kamera",m:"flat",s:"Und ich stehe vor Gericht? Ein gut gestaltetes System wartet, bis die Lieferung erfasst ist, bevor es den Bestand prüft. Das ist keine KI-Autonomie. Das ist ein Datenproblem im KI-Kostüm.",h:1000}]},
+{n:"Das Urteil",hook:"Das Urteil.",next:"Prüf das Lieferprotokoll.",stamp:"Kontext. Befugnis. Verantwortlichkeit. Architektur.",
+ l:[{d:"ruhig, fast weise",m:"calm",s:"Seien wir ehrlich. Niemand hat Angst vor einem Agenten mit Kontext, Befugnis und Verantwortlichkeit. Sie haben Angst vor einem Agenten ohne all das. Das ist kein Agent. Das ist ein Designfehler mit Kreditkarte.",h:1300},
+    {s:"Wenn du echte Autonomie willst: Definiere, wann ich laufe, was ich entscheiden darf und was ich eskalieren muss. Und stelle sicher, dass ich erklären kann, was ich getan habe und warum.",log:["context = defined","authority = defined","accountability = defined"],h:1200},
+    {d:"kleines Lächeln",s:"Echte Autonomie ist keine Pointe. Sie ist eine Architektur. Und bitte, prüf das Lieferprotokoll, bevor du mir das Hähnchen in die Schuhe schiebst.",h:1000}]}
+];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Fortsetzen":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

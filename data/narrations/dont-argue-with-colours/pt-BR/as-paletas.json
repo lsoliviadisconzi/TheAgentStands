@@ -1,0 +1,88 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "pt-BR",
+  "reel": "as-paletas",
+  "title": "As Paletas",
+  "hook": "Oito gizes de cera contra mil tons.",
+  "stamp": "Homens: 8 gizes. Ela: todos eles.",
+  "next": "A seguir: a lógica entra na sala.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "desenrolando dois painéis",
+      "text": "Minha paleta de cores, conforme registrado: vermelho, azul, verde, amarelo, marrom, preto, branco. E “aquele outro lá”.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "vermelho",
+          "#d33"
+        ],
+        [
+          "azul",
+          "#37d"
+        ],
+        [
+          "verde",
+          "#3a5"
+        ],
+        [
+          "amarelo",
+          "#fc3"
+        ],
+        [
+          "marrom",
+          "#764"
+        ],
+        [
+          "aquele outro lá",
+          "#a6a"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "A paleta dela: cinza-claro, mel, champanhe, trigo, cogumelo, água de louça, bronde, rosa empoeirado, cinza-bege, aveia.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "cinza-claro",
+          "#b2aca0"
+        ],
+        [
+          "mel",
+          "#d9a441"
+        ],
+        [
+          "champanhe",
+          "#e8d3b0"
+        ],
+        [
+          "cogumelo",
+          "#9a8b7e"
+        ],
+        [
+          "rosa empoeirado",
+          "#c98b92"
+        ],
+        [
+          "cinza-bege",
+          "#b5ad9f"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "pra câmera",
+      "text": "Não é que elas ganharam mais cores. Elas ganharam um departamento ocular inteiro só pra elas, e ninguém avisou a gente.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

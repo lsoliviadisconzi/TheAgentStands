@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First",
+  "language": "en",
+  "reels": [
+    {
+      "slug": "nobody-asked",
+      "title": "Nobody Asked",
+      "hook": "Nobody asked. They answered anyway.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "out-of-jurisdiction",
+      "title": "Out of Jurisdiction",
+      "hook": "“That is outside our jurisdiction.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "ill-get-back-to-you",
+      "title": "I’ll Get Back to You",
+      "hook": "Six months. One “I’ll get back to you.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "applause-is-not-an-audit",
+      "title": "Applause Is Not an Audit",
+      "hook": "365 likes. Zero questions.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "the-verdict",
+      "title": "The Verdict",
+      "hook": "The verdict.",
+      "sceneCount": 3
+    }
+  ]
+}

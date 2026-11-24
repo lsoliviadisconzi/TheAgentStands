@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "fr",
+  "reel": "la-conformit-sur-ltagre",
+  "title": "La conformité sur l’étagère",
+  "hook": "Un prix pour la gouvernance. Un dossier ouvert.",
+  "stamp": "Le trophée est arrivé. La réponse, non.",
+  "next": "Ensuite : rang 107.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "tenant une petite plaque",
+      "text": "Novembre. L’agence reçoit le prix RGB pour la gouvernance, la gestion des risques et la conformité.",
+      "mood": "flat",
+      "panel": [
+        "prix = RGB Executivo Federal",
+        "date = nov. 2026"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Même mois, même institution : une denúncia formelle toujours sans réponse sur le fond. Les éléments de preuve ne sont pas traités. Le décideur n’est toujours pas nommé.",
+      "mood": "up",
+      "panel": [
+        "affaire_ouverte = 50001.115849/2025-10"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "impassible",
+      "text": "Un prix pour le système. Un silence pour le dossier. Les deux peuvent être vrais en même temps. C’est ça, la partie intéressante.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

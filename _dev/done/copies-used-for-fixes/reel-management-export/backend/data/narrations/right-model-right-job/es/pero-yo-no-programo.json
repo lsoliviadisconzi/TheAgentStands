@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "es",
+  "reel": "pero-yo-no-programo",
+  "title": "Pero Yo No Programo",
+  "hook": "“Pero yo no soy desarrollador.”",
+  "stamp": "Descríbelo. Esa es la habilidad.",
+  "next": "Siguiente: la caja de chat no es la caja de herramientas.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "brazos cruzados",
+      "text": "“La IA es para desarrolladores.” Qué mono. ¿Puedes pensar racionalmente? ¿Puedes decir qué quieres y cómo es el resultado terminado?",
+      "mood": "flat",
+      "panel": [
+        "sabe_programar = false",
+        "sabe_explicar_claro = ?"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Entonces estás cualificado. La habilidad no es la sintaxis. Es describir el resultado con suficiente detalle para que nadie tenga que adivinar.",
+      "mood": "up",
+      "panel": [
+        "habilidad = brief claro"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a mitad de frase, alguien habla por encima de mí",
+      "text": "¿Dónde estaba? Exacto. Los briefs largos se pierden cuando te interrumpen. Escríbelo primero, luego pégalo.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

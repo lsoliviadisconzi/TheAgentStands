@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "es",
+  "reel": "lo-dijeron-los-pares",
+  "title": "Lo Dijeron Los Pares",
+  "hook": "Nadie preguntó. Respondieron tres veces.",
+  "stamp": "La reafirmación llegó antes de la pregunta.",
+  "next": "Siguiente: la cronología que no existía.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "leyendo la declaración oficial",
+      "text": "Assumir a presidência, por escolha dos próprios países participantes. Nos gustaría confirmar: fue por elección de los propios países participantes.",
+      "mood": "flat",
+      "panel": [
+        "pregunta_hecha = ninguna",
+        "eleccion_por_pares_declarada = sí"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "En portugués. En inglés. En español. La misma frase. Elegido por sus pares. Nadie había preguntado cómo se eligió al presidente.",
+      "mood": "up",
+      "panel": [
+        "idiomas = 3",
+        "aclaraciones_espontaneas = varias"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a cámara",
+      "text": "Cuando la respuesta llega antes de la pregunta, y luego llega otra vez en dos idiomas más, la pregunta nunca fue el problema.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

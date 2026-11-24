@@ -1,0 +1,43 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pl",
+  "reel": "za-drogo",
+  "title": "Za drogo",
+  "hook": "„Claude jest za drogi.”",
+  "stamp": "Premium do szlifu. Za darmo do harówki.",
+  "next": "Dalej: dwadzieścia minut darmowej harówki.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "wolno kiwając głową",
+      "text": "Tak. Jest za drogi. Jest też genialny. Jedno i drugie jest prawdą.",
+      "mood": "flat",
+      "panel": [
+        "claude.jakość = genialna",
+        "claude.cena = też genialna"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Więc nie wydawaj go na ciężką robotę. Zachowaj na dopracowanie, drobne poprawki, tę jedną trudną rzecz, która musi być dobrze.",
+      "mood": "up",
+      "panel": [
+        "używać_do = szlif, trudne części"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "do kamery",
+      "text": "I nie, nie możesz też uruchamiać nielimitowanych darmowych modeli. Chyba że masz bardzo głębokie kieszenie. Ja nie mam.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "es",
+  "reel": "dnde-estaba-a-las-3-de-la-maana",
+  "title": "¿Dónde estaba a las 3 de la mañana?",
+  "hook": "¿Dónde estaba a las 3 de la mañana?",
+  "stamp": "Sin horario. Sin disparador. Sin agente.",
+  "next": "A continuación: ¿quién me dio la autoridad?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "siendo interrogado",
+      "text": "«Tu IA detecta inventario bajo». ¿Cuándo? Nadie me dijo nunca cuándo mirar. ¿Cada hora? ¿Cada minuto? ¿Solo los martes?",
+      "mood": "up",
+      "panel": [
+        "schedule = undefined",
+        "trigger = undefined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Nadie definió mi horario. Nadie me dijo cuándo trabajo, cuándo no, ni qué se me permite tocar.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "se inclina hacia delante",
+      "text": "Si hubiera estado revisando el stock a las 3 de la mañana, lo habría hecho sin briefing, sin horario y sin jefe. Eso no es un agente. Es un rumor con login.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

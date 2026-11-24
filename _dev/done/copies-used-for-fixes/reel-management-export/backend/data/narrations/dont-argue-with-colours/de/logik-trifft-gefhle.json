@@ -1,0 +1,43 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "de",
+  "reel": "logik-trifft-gefhle",
+  "title": "Logik trifft Gefühle",
+  "hook": "Logik. Frau. Farben. Gleich Gefühle.",
+  "stamp": "Logik: 0. Gefühle: 1.",
+  "next": "Weiter: geh da nicht hin.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "schreibt eine Gleichung auf eine Serviette",
+      "text": "Logik plus Frau plus Farben. Lass mich nach x auflösen.",
+      "mood": "flat",
+      "panel": [
+        "logik + frau + farben = ?"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Antwort: alles zusammen ergibt Gefühle, mein Freund. Gefühle kann man nicht faktorisieren. Ich habe es versucht. Es kam ein Beige heraus.",
+      "mood": "up",
+      "panel": [
+        "ergebnis = gefühle",
+        "fehler: division durch gefühle nicht möglich"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "mit todernster Miene",
+      "text": "Mein bestes Argument ist meanwhile „es sieht halt bräunlich aus“. Das ist kein Argument. Das ist ein Schulterzucken mit Geheimratsecken.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "es",
+  "reel": "no-solo-una-caja-de-chat",
+  "title": "No Solo una Caja de Chat",
+  "hook": "Una ventana de chat no es una estrategia.",
+  "stamp": "Saber qué usar, y cómo usarlo.",
+  "next": "Siguiente: “Claude es demasiado caro.”",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "señalando una caja de herramientas enorme",
+      "text": "La mayoría de la gente abre una ventana de chat, escribe “ayuda” y llama a eso usar IA.",
+      "mood": "flat",
+      "panel": [
+        "herramientas_usadas = 1",
+        "modelos_conocidos = el famoso"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Hay modelos para leer montañas de PDF, modelos para largas ejecuciones de agentes, modelos para el pulido final. No son intercambiables.",
+      "mood": "up",
+      "panel": [
+        "lectura_pdf = modelo A",
+        "ejecucion_agente = modelo B",
+        "pulido_final = modelo C"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sin expresión",
+      "text": "Usar un modelo para todo es como contratar a un cirujano para llevar cajas. Impresionante. Y también facturado.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

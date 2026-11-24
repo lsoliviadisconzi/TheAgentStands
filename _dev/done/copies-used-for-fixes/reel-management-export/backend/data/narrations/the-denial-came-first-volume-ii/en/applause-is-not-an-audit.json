@@ -1,0 +1,42 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "en",
+  "reel": "applause-is-not-an-audit",
+  "title": "Applause Is Not an Audit",
+  "hook": "365 likes. Zero questions.",
+  "stamp": "Applause is not an audit.",
+  "next": "Next: the verdict.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "scrolling a comment thread",
+      "text": "A big announcement. Hundreds of likes. Dozens of comments. Every visible comment is congratulations.",
+      "mood": "flat",
+      "panel": [
+        "likes = 365",
+        "comments = 43",
+        "questions_asked = 0 visible"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Everyone applauds everyone. Everyone “counts on” everyone. It’s a warm room. Warm rooms are great for cheering. Less so for scrutiny.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "deadpan",
+      "text": "An industry that regulates itself, congratulates itself, and replies to complaints with a link to the right form.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1100,
+      "swatches": []
+    }
+  ]
+}

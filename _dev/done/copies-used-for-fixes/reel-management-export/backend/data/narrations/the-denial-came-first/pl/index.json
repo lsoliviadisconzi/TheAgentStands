@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First",
+  "language": "pl",
+  "reels": [
+    {
+      "slug": "nikt-nie-pyta",
+      "title": "Nikt nie pytał",
+      "hook": "Nikt nie pytał. Odpowiedzieli i tak.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "poza-jurysdykcj",
+      "title": "Poza jurysdykcją",
+      "hook": "„To poza naszą jurysdykcją.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "odezw-si",
+      "title": "Odezwę się",
+      "hook": "Sześć miesięcy. Jedno „odezwę się”.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "aplauz-to-nie-audyt",
+      "title": "Aplauz to nie audyt",
+      "hook": "365 polubień. Zero pytań.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "werdykt",
+      "title": "Werdykt",
+      "hook": "Werdykt.",
+      "sceneCount": 3
+    }
+  ]
+}

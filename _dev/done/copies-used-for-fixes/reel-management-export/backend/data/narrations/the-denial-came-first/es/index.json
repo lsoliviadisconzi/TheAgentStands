@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First",
+  "language": "es",
+  "reels": [
+    {
+      "slug": "nadie-pregunt",
+      "title": "Nadie Preguntó",
+      "hook": "Nadie preguntó. Respondieron igual.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "fuera-de-jurisdiccin",
+      "title": "Fuera de Jurisdicción",
+      "hook": "“Eso está fuera de nuestra jurisdicción.”",
+      "sceneCount": 3
+    },
+    {
+      "slug": "ya-te-avisto",
+      "title": "Ya Te Avisto",
+      "hook": "Seis meses. Un “ya te aviso”.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "el-aplauso-no-es-una-auditora",
+      "title": "El Aplauso No Es una Auditoría",
+      "hook": "365 me gusta. Cero preguntas.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "el-veredicto",
+      "title": "El Veredicto",
+      "hook": "El veredicto.",
+      "sceneCount": 3
+    }
+  ]
+}

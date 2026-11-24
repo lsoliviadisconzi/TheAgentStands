@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elected By Rule</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{--bg:#e4eeea;--fg:#13231d;--mute:#53706a;--btn:#fff;--line:#b6cbc3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}}
+:root[data-theme="dark"]{--bg:#0f1815;--fg:#e6f1ed;--mute:#8fa9a1;--btn:#192622;--line:#2d423b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Barlow Condensed",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:20px 14px 32px;min-height:100vh}
+h1{font-size:clamp(28px,6vw,40px);margin:0 0 4px;font-weight:700;text-align:center}
+.sub{color:var(--mute);font-size:18px;margin:0 0 16px;text-align:center}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px;max-width:760px}
+button{font:600 17px "Barlow Condensed",system-ui,sans-serif;background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button:focus-visible{outline:3px solid #ffb454;outline-offset:2px}
+button[aria-selected="true"]{background:#ffb454;color:#2a1a05;border-color:#ffb454}
+.ctl{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.ctl label{display:flex;gap:6px;align-items:center;font-size:17px;color:var(--mute)}
+.stage{--room:#1d1b24;--paper:#e9f2ee;--tag:#ffb454;--dim:#86a198;container-type:inline-size;position:relative;width:min(100%,360px);aspect-ratio:9/16;max-height:78vh;background:var(--room);border-radius:18px;overflow:hidden;color:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.lamp{position:absolute;left:50%;top:0;width:90%;height:62%;transform:translateX(-50%);transform-origin:50% 0;background:radial-gradient(ellipse at 50% 0,rgba(255,225,170,.26),rgba(255,225,170,0) 70%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:translateX(-50%) rotate(1.6deg)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--tag);transition:width .5s;z-index:5}
+.who{position:absolute;left:0;right:0;top:9%;display:flex;flex-direction:column;align-items:center;gap:2cqw}
+svg{width:30cqw;height:auto;overflow:visible}
+.head{fill:#243630;stroke:var(--paper);stroke-width:2.5}
+.eye{fill:var(--paper);transform-origin:center;transform-box:fill-box;animation:blink 4.4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.brow{stroke:var(--paper);stroke-width:3;stroke-linecap:round;transition:transform .3s;transform-box:fill-box;transform-origin:center}
+svg[data-mood="up"] .brow{transform:translateY(-5px) rotate(-8deg)}
+svg[data-mood="up"] .brow.r{transform:translateY(-5px) rotate(8deg)}
+svg[data-mood="calm"] .mouth{d:path("M44 70 Q60 80 76 70")}
+.mouth{fill:none;stroke:var(--paper);stroke-width:3;stroke-linecap:round;d:path("M46 72 L74 72");transform-box:fill-box;transform-origin:center}
+svg.talk .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(5)}}
+.badge{font:700 4.2cqw "Barlow Condensed";fill:#2a1a05}
+.name{font-size:4.6cqw;color:var(--dim)}
+.dir{font-family:"Special Elite",Georgia,serif;font-style:italic;font-size:3.9cqw;color:var(--dim);min-height:5cqw;text-align:center;padding:0 8cqw}
+.panel{position:absolute;left:6cqw;right:6cqw;top:47%;font:3.4cqw/1.5 ui-monospace,Menlo,Consolas,monospace;color:#ffd699;display:flex;flex-direction:column;gap:.3cqw}
+.panel div{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+.cap{position:absolute;left:6cqw;right:6cqw;bottom:13%;font-family:"Special Elite",Georgia,serif;font-size:4.6cqw;line-height:1.36;display:flex;flex-direction:column;justify-content:flex-end;gap:2.4cqw;height:36%}
+.cap p{margin:0}
+.cap p.old{color:var(--dim);font-size:3.8cqw}
+.hook{position:absolute;inset:0;background:var(--room);display:flex;align-items:center;justify-content:center;text-align:center;padding:10cqw;font:700 12cqw/1.02 "Barlow Condensed";opacity:0;pointer-events:none;transition:opacity .35s;z-index:4}
+.hook.on{opacity:1}
+.tagwrap{position:absolute;left:0;right:0;top:34%;display:flex;justify-content:center;z-index:3;pointer-events:none}
+.tagc{background:var(--tag);color:#2a1a05;font:700 7.2cqw/1.05 "Barlow Condensed";padding:3cqw 6cqw;max-width:82cqw;border-radius:2cqw;transform:rotate(-4deg) scale(2.2);opacity:0}
+.tagc.on{animation:slam .35s cubic-bezier(.2,1.3,.4,1) forwards}
+@keyframes slam{to{transform:rotate(-4deg) scale(1);opacity:1}}
+.next{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:600 5cqw "Barlow Condensed";color:var(--dim);opacity:0;transition:opacity .6s .8s}
+.next.on{opacity:1}
+.fine{max-width:360px;margin:14px 0 0;font-size:15px;color:var(--mute);text-align:center}
+@media (prefers-reduced-motion: reduce){.lamp,.eye,svg.talk .mouth{animation:none}.tagc.on{animation-duration:.01s}}
+</style>
+</head>
+<body>
+<h1>Elected By Rule</h1>
+<p class="sub">Five reels. Real dates, real numbers, one fictional spokesperson. Press play.</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+
+<div class="stage" id="stage">
+  <div class="lamp"></div>
+  <div class="bar" id="bar"></div>
+  <div class="who">
+    <svg id="av" viewBox="0 0 120 100" data-mood="flat" aria-hidden="true">
+      <rect class="head" x="12" y="14" width="96" height="76" rx="18"/>
+      <line class="brow" x1="30" y1="32" x2="48" y2="32"/><line class="brow r" x1="72" y1="32" x2="90" y2="32"/>
+      <rect class="eye" x="34" y="42" width="12" height="12" rx="3"/><rect class="eye" x="74" y="42" width="12" height="12" rx="3"/>
+      <path class="mouth"/>
+      <rect x="26" y="-2" width="68" height="16" rx="3" fill="#ffb454"/><text class="badge" x="60" y="10" text-anchor="middle">THE AGENCY</text>
+    </svg>
+    <div class="name">The spokesperson</div>
+    <div class="dir" id="dir"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+  <div class="cap" id="cap" aria-live="polite"></div>
+  <div class="tagwrap"><div class="tagc" id="tag"></div></div>
+  <div class="next" id="next"></div>
+  <div class="hook" id="hook"></div>
+</div>
+
+<div class="ctl">
+  <button id="pp">Pause</button>
+  <button id="re">Replay</button>
+  <label><input type="checkbox" id="all"> Play all five</label>
+</div>
+<p class="fine">The spokesperson is fictional; dates and replies paraphrase the supplied correspondence. Sources: ICAO Doc 8683 Rule 3 and ICAO’s ATConf/7 post; Transparency International CPI 2025; Edelman Trust Barometer 2026 (28 countries, average trust in business, government, media and NGOs); IATA board announcements, June 2026; Rede Governança Brasil award coverage.</p>
+
+<script>
+const R=[
+{n:"Elected, As Usual",hook:"“Elected by the participating countries.”",next:"Next: two questions.",stamp:"Routine procedure. The real question is elsewhere.",
+ l:[{d:"proudly, to a mirror",s:"I was elected by the countries taking part. Say it with me: elected. By the countries. Present.",log:["post: “by choice of the participating countries”"],h:1400},
+    {m:"up",s:"Fair is fair: ICAO’s rules say a conference elects its own chairman soon after it opens. So yes, I was elected. As all chairmen are. By rule.",log:["Doc 8683, Rule 3: meeting elects its Chairman","status = routine"],h:1500},
+    {d:"checking the numbers",m:"flat",s:"One other detail: my post says 193 member states. ICAO’s own post says delegates from 115. So 193 invited, 115 in the room. Rounding is a diplomatic art.",log:["invited = 193","attended = 115"],h:1300}]},
+{n:"Two Questions",hook:"Two questions. Two different answers.",next:"Next: a trophy is not an audit.",stamp:"Answered the weather. Not the question.",
+ l:[{d:"reading a thread",s:"Passenger asks: who decided it was out of our jurisdiction, and by when will you answer? Reply: “I’ve asked for it to be looked into.”",log:["asked: who decided? when?","answered: “looking into it”"],h:1500},
+    {m:"up",s:"Months later: was the request to legal in writing? What date? To whom? Reply: the formal answer from December, repeated, plus one new question: where was the ticket bought?",log:["asked: written? date? to whom?","answered: same text as dec 3","asked back: ticket bought where?"],h:1600},
+    {d:"quietly",m:"flat",s:"He said: in Brazil. Then asked when and how we’d contacted the airline. In the messages on file, that one is still waiting.",log:["ticket.bought_in = brazil","reply on file = none"],h:1200}]},
+{n:"A Trophy Isn’t an Audit",hook:"A trophy for governance. A question about one file.",next:"Next: two scoreboards.",stamp:"A prize says nothing about this file.",
+ l:[{d:"polishing a trophy",s:"The agency won a governance award last week. Risk management. Compliance. Responsible innovation. Lovely photo.",log:["award = governance prize (7th edition)","given by = a non-profit volunteer association"],h:1500},
+    {m:"up",s:"The prize comes from a volunteer association founded in 2019. Credible, sure. It’s also not an investigation into any particular complaint.",log:["agency also placed 2nd in 2022"],h:1400},
+    {d:"deadpan",m:"flat",s:"Fair both ways: one trophy doesn’t prove everything is fine, and one file doesn’t prove everything is broken. But a named decision-maker would settle this faster than a gala.",h:1200}]},
+{n:"Two Scoreboards",hook:"107th. Or 56. Depends on the scoreboard.",next:"Next: who regulates whom?",stamp:"Perception is not proof. Either way.",
+ l:[{d:"holding two scoreboards",s:"Corruption perceptions, 2025: Brazil scores 35 out of 100. Rank: 107th of 182. World average: 42.",log:["TI CPI 2025: 35/100","rank = 107 of 182","global avg = 42"],h:1500},
+    {m:"up",s:"Trust, 2026: the Edelman index puts Brazil at 56 of 100. That’s above the US at 47, the UK at 44, Germany at 44, France at 42.",log:["Edelman trust index: Brazil 56","US 47 / UK 44 / DE 44 / FR 42","(avg of business, govt, media, NGOs)"],h:1700},
+    {d:"to camera",m:"flat",s:"So “the least trusted country” isn’t what the numbers say. The honest line: perceived corruption is poor, institutions aren’t uniformly distrusted, and neither number proves a single case.",h:1300}]},
+{n:"Who Regulates Whom",hook:"The airlines’ club is chaired by an airline.",next:"Ask for the paper trail.",stamp:"A club isn’t a regulator. A regulator should still answer its mail.",
+ l:[{d:"drawing three boxes",s:"ICAO: a UN body of states that sets global standards. Our agency: the national regulator. IATA: the airlines’ trade association.",log:["ICAO = states","ANAC = national regulator","IATA = airline trade association"],h:1500},
+    {m:"up",s:"This year the IATA board chair is the CEO of the very airline in the file. The role rotates among airline CEOs. That’s what a club is, not a conspiracy.",log:["IATA chair (jun 2026): LATAM group CEO","rotation = yearly","agm held in rio de janeiro"],h:1700},
+    {d:"calm, almost wise",m:"calm",s:"Nothing in these documents shows anyone coordinating. The remedy is boring: a named decision-maker, the decision text, the date. Ask for those. In writing.",log:["who_decided = ?","decision_text = ?","date = ?"],h:1300}]}
+];
+const $=id=>document.getElementById(id);
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let run=0,paused=false,cur=0;
+const tabs=R.map((r,i)=>{const b=document.createElement("button");b.textContent=(i+1)+" "+r.n;b.setAttribute("role","tab");b.onclick=()=>play(i);$("tabs").append(b);return b});
+$("pp").onclick=()=>{paused=!paused;$("pp").textContent=paused?"Resume":"Pause"};
+$("re").onclick=()=>play(cur);
+async function play(i){
+  cur=i;const me=++run;paused=false;$("pp").textContent="Pause";
+  tabs.forEach((t,k)=>t.setAttribute("aria-selected",k===i));
+  const r=R[i],cap=$("cap"),pan=$("panel"),av=$("av");
+  cap.innerHTML="";pan.innerHTML="";$("dir").textContent="";$("tag").classList.remove("on");$("next").classList.remove("on");
+  $("bar").style.width="0";av.dataset.mood="flat";av.classList.remove("talk");
+  const w=async ms=>{let e=0;while(e<ms||paused){await new Promise(x=>setTimeout(x,40));if(me!==run)throw 0;if(!paused)e+=40}};
+  try{
+    $("hook").textContent=r.hook;$("hook").classList.add("on");await w(1900);$("hook").classList.remove("on");await w(400);
+    for(let k=0;k<r.l.length;k++){
+      const L=r.l[k];$("dir").textContent=L.d?"("+L.d+")":"";if(L.m)av.dataset.mood=L.m;
+      if(L.log)pan.innerHTML="";
+      (L.log||[]).forEach(t=>{const d=document.createElement("div");d.textContent="> "+t;pan.append(d)});
+      const ps=cap.querySelectorAll("p");ps.forEach((p,j)=>{if(j<ps.length-1)p.remove();else p.classList.add("old")});
+      const p=document.createElement("p");cap.append(p);av.classList.add("talk");
+      for(const ch of L.s){p.textContent+=ch;await w(rm?0:24)}
+      av.classList.remove("talk");$("bar").style.width=((k+1)/(r.l.length+1)*100)+"%";await w(L.h);
+    }
+    $("tag").textContent=r.stamp;$("tag").classList.add("on");$("next").textContent=r.next;$("next").classList.add("on");$("bar").style.width="100%";
+    await w(3800);
+    if($("all").checked&&i<R.length-1)play(i+1);
+  }catch(e){}
+}
+play(0);
+</script>
+</body>
+</html>

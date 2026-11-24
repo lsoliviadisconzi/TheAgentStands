@@ -1,0 +1,36 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "en",
+  "reels": [
+    {
+      "slug": "the-peers-said-so",
+      "title": "The Peers Said So",
+      "hook": "Nobody asked. They answered three times.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "the-timeline-that-wasnt",
+      "title": "The Timeline That Wasn’t",
+      "hook": "Six months. One calendar. Zero names.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "compliance-on-the-shelf",
+      "title": "Compliance on the Shelf",
+      "hook": "A prize for governance. An open file.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "rank-107",
+      "title": "Rank 107",
+      "hook": "35 out of 100. Second-worst score on record.",
+      "sceneCount": 3
+    },
+    {
+      "slug": "the-paper-trail-still-missing",
+      "title": "The Paper Trail Still Missing",
+      "hook": "Ask for the name. Ask for the date.",
+      "sceneCount": 3
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume III",
+  "language": "pl",
+  "reel": "o-czasu-ktrej-nie-byo",
+  "title": "Oś czasu, której nie było",
+  "hook": "Sześć miesięcy. Jeden kalendarz. Zero nazwisk.",
+  "stamp": "Bez terminu. Bez nazwanego decydenta.",
+  "next": "Dalej: compliance na półce.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "sprawdzając wątek wiadomości",
+      "text": "30 grudnia: poprosiłem o śledztwo. Odezwiemy się.",
+      "mood": "flat",
+      "panel": [
+        "30 gru: poproszono o śledztwo"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "19 stycznia: stanowisko techniczne bez zmian. Dział prawny to analizuje. Bez terminu. Możesz też użyć FalaBR.",
+      "mood": "up",
+      "panel": [
+        "19 sty: konsultacja prawna",
+        "termin = brak"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "cicho",
+      "text": "Nadchodzi maj. To samo stanowisko. Kto zdecydował o braku jurysdykcji? Wciąż nie nazwany. Kalendarz się przesunął. Decydent nie.",
+      "mood": "flat",
+      "panel": [
+        "decydent = nienazwany",
+        "minęło_miesięcy = 5+"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

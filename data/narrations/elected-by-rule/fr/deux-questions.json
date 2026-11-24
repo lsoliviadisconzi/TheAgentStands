@@ -1,0 +1,48 @@
+{
+  "theme": "Elected By Rule",
+  "language": "fr",
+  "reel": "deux-questions",
+  "title": "Deux questions",
+  "hook": "Deux questions. Deux réponses différentes.",
+  "stamp": "On a répondu sur la météo. Pas à la question.",
+  "next": "Ensuite : un trophée n’est pas un audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "lisant un fil",
+      "text": "Le passager demande : qui a décidé que c’était hors de notre juridiction, et pour quand répondrez-vous ? Réponse : « J’ai demandé que ce soit examiné. »",
+      "mood": "flat",
+      "panel": [
+        "demandé : qui a décidé ? quand ?",
+        "répondu : « en cours d’examen »"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Mois plus tard : la demande au service juridique était-elle écrite ? Quelle date ? À qui ? Réponse : la réponse formelle de décembre, répétée, plus une nouvelle question : où le billet a-t-il été acheté ?",
+      "mood": "up",
+      "panel": [
+        "demandé : écrit ? date ? à qui ?",
+        "répondu : même texte que le 3 déc.",
+        "question en retour : billet acheté où ?"
+      ],
+      "holdMs": 1600,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "à voix basse",
+      "text": "Il a dit : au Brésil. Puis il a demandé quand et comment nous avions contacté la compagnie. Dans les messages archivés, cette question attend encore.",
+      "mood": "flat",
+      "panel": [
+        "ticket.bought_in = brésil",
+        "réponse aux relances = aucune au dossier"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "pl",
+  "reel": "logika-spotyka-uczucia",
+  "title": "Logika spotyka uczucia",
+  "hook": "Logika. Kobieta. Kolory. Równa się uczucia.",
+  "stamp": "Logika: 0. Uczucia: 1.",
+  "next": "Następnie: nie idź tam.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "pisząc równanie na serwetce",
+      "text": "Logika plus kobieta plus kolory. Pozwól, że rozwiążę na x.",
+      "mood": "flat",
+      "panel": [
+        "logika + kobieta + kolory = ?"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Odpowiedź: wszystko to równa się uczucia, przyjacielu. Uczuć nie da się rozłożyć na czynniki. Próbowałem. Wyszło beżowe.",
+      "mood": "up",
+      "panel": [
+        "wynik = uczucia",
+        "błąd: nie można dzielić przez uczucia"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "martwym głosem",
+      "text": "Tymczasem mój najlepszy argument to „wygląda na brązowawe”. To nie jest argument. To wzruszenie ramion z zakolami.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

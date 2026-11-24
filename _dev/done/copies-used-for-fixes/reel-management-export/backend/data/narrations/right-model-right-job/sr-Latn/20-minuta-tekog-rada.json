@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "sr-Latn",
+  "reel": "20-minuta-tekog-rada",
+  "title": "20 minuta teškog rada",
+  "hook": "Dvadeset minuta bušenja. Nula fakture.",
+  "stamp": "14,7 miliona tokena. 0 $.",
+  "next": "Sledeće: račun.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "gledajući terminal",
+      "text": "Upravo sada, dok govorim, Nemotron 3 Ultra buši već dvadeset minuta. Besplatno.",
+      "mood": "flat",
+      "panel": [
+        "model = nemotron-3-ultra (besplatan)",
+        "turns = 51",
+        "koraci = 136",
+        "tokeni = 14,7 mil."
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Naletio je na Playwright instalaciju browsera, zaključan cache, zid dozvola. Prob'o je drugi put. I još jedan. Niko nije platio ponavljanja.",
+      "mood": "up",
+      "panel": [
+        "install chromium: dozvola odbijena",
+        "retry: prilagođena putanja",
+        "cache_hit = 96%"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "tiho",
+      "text": "Na plaćenom modelu to je vrlo strpljiv brojač koji radi. Ovde je samo progress bar i čajnik.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

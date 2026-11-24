@@ -1,0 +1,48 @@
+{
+  "theme": "Elected By Rule",
+  "language": "es",
+  "reel": "dos-preguntas",
+  "title": "Dos Preguntas",
+  "hook": "Dos preguntas. Dos respuestas distintas.",
+  "stamp": "Respondieron sobre el tiempo. No a la pregunta.",
+  "next": "Siguiente: un trofeo no es una auditoría.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "leyendo un hilo",
+      "text": "El pasajero pregunta: ¿quién decidió que estaba fuera de nuestra jurisdicción, y para cuándo responderán? Respuesta: “He pedido que se revise.”",
+      "mood": "flat",
+      "panel": [
+        "preguntado: ¿quién decidió? ¿cuándo?",
+        "respondido: “revisándolo”"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Meses después: ¿la solicitud a legal fue por escrito? ¿Qué fecha? ¿A quién? Respuesta: la respuesta formal de diciembre, repetida, más una nueva pregunta: ¿dónde se compró el billete?",
+      "mood": "up",
+      "panel": [
+        "preguntado: ¿escrito? ¿fecha? ¿a quién?",
+        "respondido: mismo texto del 3 dic",
+        "preguntó de vuelta: ¿billete comprado dónde?"
+      ],
+      "holdMs": 1600,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "en voz baja",
+      "text": "Dijo: en Brasil. Luego preguntó cuándo y cómo habíamos contactado a la aerolínea. En los mensajes archivados, esa sigue esperando.",
+      "mood": "flat",
+      "panel": [
+        "ticket.bought_in = brasil",
+        "respuesta en archivo = ninguna"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

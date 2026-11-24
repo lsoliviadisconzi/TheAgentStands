@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "pl",
+  "reel": "werdykt",
+  "title": "Werdykt",
+  "hook": "Werdykt.",
+  "stamp": "Kontekst. Uprawnienia. Odpowiedzialność. Architektura.",
+  "next": "Sprawdź rejestr dostaw.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "spokojny, niemal mądry",
+      "text": "Bądźmy szczerzy. Nikt nie boi się agenta z kontekstem, uprawnieniami i odpowiedzialnością. Boją się agenta, który nie ma żadnego z tych rzeczy. To nie agent. To wada projektowa z kartą kredytową.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Jeśli chcesz prawdziwej autonomii: określ, kiedy działam, co mogę decydować i co muszę eskalować. I upewnij się, że potrafię wyjaśnić, co zrobiłem i dlaczego.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "lekki uśmiech",
+      "text": "Prawdziwa autonomia to nie żart. To architektura. I proszę, sprawdź rejestr dostaw, zanim obwinisz mnie o kurczaka.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

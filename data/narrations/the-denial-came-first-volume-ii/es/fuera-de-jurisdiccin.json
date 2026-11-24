@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "es",
+  "reel": "fuera-de-jurisdiccin",
+  "title": "Fuera de Jurisdicción",
+  "hook": "“Eso está fuera de nuestra jurisdicción.”",
+  "stamp": "Jurisdicción: en otro sitio, a ser posible.",
+  "next": "Siguiente: ya te aviso.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "señalando un mapa",
+      "text": "El incidente ocurrió en otro país. Por tanto: no es nuestro departamento. Caso cerrado.",
+      "mood": "flat",
+      "panel": [
+        "incidente.ubicacion = extranjero",
+        "jurisdiccion = en otro sitio"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Luego, después de meses, una pregunta: ¿el billete se compró en este país? Dijo que sí. En la correspondencia archivada, ahí se acaban las respuestas.",
+      "mood": "up",
+      "panel": [
+        "ticket.bought_in = país de origen",
+        "respuesta_a_seguimientos = ninguna en archivo"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "sin expresión",
+      "text": "Jurisdicción es una palabra preciosa. Significa que el problema tiene código postal, y no es el nuestro.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

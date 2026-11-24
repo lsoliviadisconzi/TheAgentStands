@@ -1,0 +1,47 @@
+{
+  "theme": "Right Model, Right Job",
+  "language": "pl",
+  "reel": "20-minut-harwki",
+  "title": "20 minut harówki",
+  "hook": "Dwadzieścia minut wiercenia. Zero faktury.",
+  "stamp": "14,7 mln tokenów. 0 $.",
+  "next": "Dalej: paragon.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "obserwując terminal",
+      "text": "Teraz, gdy mówię, Nemotron 3 Ultra wierci już od dwudziestu minut. Za darmo.",
+      "mood": "flat",
+      "panel": [
+        "model = nemotron-3-ultra (darmowy)",
+        "tury = 51",
+        "kroki = 136",
+        "tokeny = 14,7 mln"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Trafił na instalację przeglądarki Playwright, zablokowany cache, ścianę uprawnień. Próbował inną ścieżką. I jeszcze inną. Nikt nie zapłacił za powtórki.",
+      "mood": "up",
+      "panel": [
+        "instalacja chromium: odmowa uprawnień",
+        "retry: własna ścieżka",
+        "cache_hit = 96%"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "cicho",
+      "text": "Na płatnym modelu to bardzo cierpliwy licznik, który tyka. Tutaj to tylko pasek postępu i czajnik.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

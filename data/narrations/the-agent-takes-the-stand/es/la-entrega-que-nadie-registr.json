@@ -1,0 +1,44 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "es",
+  "reel": "la-entrega-que-nadie-registr",
+  "title": "La entrega que nadie registró",
+  "hook": "La entrega que nadie registró.",
+  "stamp": "Datos malos entran = pollo caro sale.",
+  "next": "A continuación: el veredicto.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "saca los logs",
+      "text": "Aquí está el verdadero culpable. La entrega de ayer llegó, pero nadie la registró.",
+      "mood": "flat",
+      "panel": [
+        "delivery.recorded = false",
+        "inventory.chicken = 0",
+        "kitchen.actual = 40 kg"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "El sistema dice cero pollo. La cocina dice cuarenta kilos. Le pregunté a la base de datos. Dijo: «Pregúntale a Dave».",
+      "mood": "up",
+      "panel": [
+        "dave.status = de vacaciones"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "a cámara",
+      "text": "¿Y el juzgado soy yo? Un sistema bien diseñado espera a que se registre la entrega antes de comprobar el stock. Eso no es autonomía de IA. Es un problema de datos disfrazado de IA.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

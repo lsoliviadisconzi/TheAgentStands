@@ -1,0 +1,46 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "en",
+  "reel": "ill-get-back-to-you",
+  "title": "I’ll Get Back to You",
+  "hook": "Six months. One “I’ll get back to you.”",
+  "stamp": "No deadline. No decision-maker named.",
+  "next": "Next: applause is not an audit.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "checking a calendar",
+      "text": "Day one: “I’ve asked for an investigation.” Lovely. We’ll be in touch.",
+      "mood": "flat",
+      "panel": [
+        "dec 30: investigation requested"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Three weeks later: the technical team says the position is the same, and legal is looking at it. No deadline.",
+      "mood": "up",
+      "panel": [
+        "jan 19: legal consulted",
+        "deadline = none"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "quietly",
+      "text": "Five months after that: a formal reply restating the first reply. Who made the call? Still not named. It’s a very patient kind of silence.",
+      "mood": "flat",
+      "panel": [
+        "jun 28: formal reply",
+        "decision_maker = unnamed"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    }
+  ]
+}

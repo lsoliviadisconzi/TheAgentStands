@@ -1,0 +1,46 @@
+{
+  "theme": "Elected By Rule",
+  "language": "pl",
+  "reel": "dwie-tablice-wynikw",
+  "title": "Dwie tablice wyników",
+  "hook": "107. Albo 56. Zależy od tablicy.",
+  "stamp": "Percepcja to nie dowód. Tak czy inaczej.",
+  "next": "Dalej: kto reguluje kogo?",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "trzymając dwie tablice",
+      "text": "Percepcja korupcji, 2025: Brazylia ma 35 na 100. Miejsce: 107 na 182. Średnia światowa: 42.",
+      "mood": "flat",
+      "panel": [
+        "TI CPI 2025: 35/100",
+        "miejsce = 107 z 182",
+        "średnia globalna = 42"
+      ],
+      "holdMs": 1500,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Zaufanie, 2026: indeks Edelmana daje Brazylii 56 na 100. To więcej niż USA 47, Wielka Brytania 44, Niemcy 44, Francja 42.",
+      "mood": "up",
+      "panel": [
+        "indeks zaufania Edelmana: Brazylia 56",
+        "USA 47 / UK 44 / DE 44 / FR 42",
+        "(średnia biznesu, rządu, mediów, NGO)"
+      ],
+      "holdMs": 1700,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "do kamery",
+      "text": "Czyli „najmniej zaufany kraj” nie jest tym, co mówią liczby. Uczciwa wersja: postrzegana korupcja jest zła, instytucjom nie brakuje zaufania jednolicie, a żadna z tych liczb nie dowodzi jednej sprawy.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    }
+  ]
+}

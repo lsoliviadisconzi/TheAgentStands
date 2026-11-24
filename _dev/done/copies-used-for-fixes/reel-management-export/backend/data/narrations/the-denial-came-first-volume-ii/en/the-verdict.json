@@ -1,0 +1,44 @@
+{
+  "theme": "The Denial Came First - Volume II",
+  "language": "en",
+  "reel": "the-verdict",
+  "title": "The Verdict",
+  "hook": "The verdict.",
+  "stamp": "Ask who decided. Ask for the record.",
+  "next": "Ask for the paper trail.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "calm, almost wise",
+      "text": "Deny. Attack. Reverse who’s the victim. There’s an acronym for it, which is how you know it’s common. It’s a pattern worth noticing, not proof of anything by itself.",
+      "mood": "calm",
+      "panel": [
+        "pattern: deny / attack / reverse"
+      ],
+      "holdMs": 1400,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "The antidote is boring. Dates. Names of whoever decided. The text of the decision. The recordings. Paper beats tone every time.",
+      "mood": "flat",
+      "panel": [
+        "who_decided = ?",
+        "decision_text = ?",
+        "evidence = on file"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "small smile",
+      "text": "So keep the timeline, keep asking the same plain question, and let the record do the talking.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

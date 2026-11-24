@@ -1,0 +1,42 @@
+{
+  "theme": "The Agent Takes the Stand",
+  "language": "sr-Latn",
+  "reel": "presuda",
+  "title": "Presuda",
+  "hook": "Presuda.",
+  "stamp": "Kontekst. Ovlašćenje. Odgovornost. Arhitektura.",
+  "next": "Proveri dnevnik dostava.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "miran, gotovo mudar",
+      "text": "Budimo iskreni. Nikoga nije strah agenta sa kontekstom, ovlašćenjem i odgovornošću. Strah ih je agenta koji nema ništa od toga. To nije agent. To je projektna greška sa kreditnom karticom.",
+      "mood": "calm",
+      "panel": [],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ako želiš pravu autonomiju: definiši kada se pokrećem, šta mogu da odlučim i šta moram da eskaliram. I pobrini se da mogu da objasnim šta sam uradio i zašto.",
+      "mood": "flat",
+      "panel": [
+        "context = defined",
+        "authority = defined",
+        "accountability = defined"
+      ],
+      "holdMs": 1200,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "blagi osmeh",
+      "text": "Prava autonomija nije šala. To je arhitektura. I molim te, proveri dnevnik dostava pre nego što me optužiš za piletinu.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

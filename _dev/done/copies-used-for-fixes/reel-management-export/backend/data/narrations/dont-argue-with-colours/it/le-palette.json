@@ -1,0 +1,88 @@
+{
+  "theme": "Don't Argue With Colours",
+  "language": "it",
+  "reel": "le-palette",
+  "title": "Le palette",
+  "hook": "Otto pastelli contro mille sfumature.",
+  "stamp": "Uomini: 8 pastelli. Lei: tutti quanti.",
+  "next": "Poi: la logica entra nella stanza.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "srotolando due cartelle",
+      "text": "La mia palette, come da fascicolo: rosso, blu, verde, giallo, marrone, nero, bianco. E “quell'altro”.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "rosso",
+          "#d33"
+        ],
+        [
+          "blu",
+          "#37d"
+        ],
+        [
+          "verde",
+          "#3a5"
+        ],
+        [
+          "giallo",
+          "#fc3"
+        ],
+        [
+          "marrone",
+          "#764"
+        ],
+        [
+          "quell'altro",
+          "#a6a"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "La sua palette: cenere, miele, champagne, grano, fungo, acqua di piatti, bronde, rosa polvere, grigio-beige, avena.",
+      "mood": "up",
+      "panel": [],
+      "holdMs": 1400,
+      "swatches": [
+        [
+          "cenere",
+          "#b2aca0"
+        ],
+        [
+          "miele",
+          "#d9a441"
+        ],
+        [
+          "champagne",
+          "#e8d3b0"
+        ],
+        [
+          "fungo",
+          "#9a8b7e"
+        ],
+        [
+          "rosa polvere",
+          "#c98b92"
+        ],
+        [
+          "grigio-beige",
+          "#b5ad9f"
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "direction": "verso la camera",
+      "text": "Non è che hanno solo più colori. Hanno un intero reparto oculare in più, e nessuno ce l'ha detto.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}

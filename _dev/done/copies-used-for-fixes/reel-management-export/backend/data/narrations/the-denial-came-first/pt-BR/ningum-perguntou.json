@@ -1,0 +1,43 @@
+{
+  "theme": "The Denial Came First",
+  "language": "pt-BR",
+  "reel": "ningum-perguntou",
+  "title": "Ninguém Perguntou",
+  "hook": "Ninguém perguntou. Eles responderam mesmo assim.",
+  "stamp": "A negativa chegou antes da pergunta.",
+  "next": "A seguir: fora da jurisdição.",
+  "scenes": [
+    {
+      "index": 0,
+      "direction": "lendo uma declaração que ninguém pediu",
+      "text": "Ninguém perguntou se ignoramos a denúncia. Então, para deixar claro: não ignoramos a denúncia.",
+      "mood": "flat",
+      "panel": [
+        "pergunta_feita = nenhuma",
+        "negativa_emitida = sim"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 1,
+      "direction": "",
+      "text": "Ninguém perguntou se alguém está nos dirigindo. Gostaríamos de confirmar que ninguém está nos dirigindo. Sem provocação. Para o registro.",
+      "mood": "up",
+      "panel": [
+        "negativas_espontâneas = 2"
+      ],
+      "holdMs": 1300,
+      "swatches": []
+    },
+    {
+      "index": 2,
+      "direction": "para a câmera",
+      "text": "Há uma velha frase sobre protestar demais. Chamamos isso de comunicação. Regra de bolso: quando a resposta chega antes da pergunta, vá checar a pergunta.",
+      "mood": "flat",
+      "panel": [],
+      "holdMs": 1000,
+      "swatches": []
+    }
+  ]
+}
