@@ -1,0 +1,40 @@
+{
+  "id": "timeline",
+  "name": "Chronology Strip",
+  "icon": "⏳",
+  "category": "prop",
+  "tags": [
+    "chronology",
+    "timeline",
+    "method",
+    "dossier-03",
+    "dossier-06"
+  ],
+  "desc": "Horizontal timeline with labelled nodes, a travelling marker and an optional unexplained gap",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY-30"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "text": {
+      "type": "text",
+      "default": "Then|Later|After|Now",
+      "desc": "Labels separated by |"
+    },
+    "gap": {
+      "type": "number",
+      "default": 1,
+      "desc": "Segment index shown as unexplained gap; -1 for none"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst esc=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');\nconst L=String(ctx.text||'Then|Later|After|Now').split('|'),n=L.length,gp=ctx.gap??1,W=130,xs=i=>i*W/Math.max(1,n-1)-W/2;\nfor(let i=0;i<n-1;i++){const g=i===gp;svg+=`<line x1=\"${xs(i)}\" y1=\"0\" x2=\"${xs(i+1)}\" y2=\"0\" stroke=\"${g?tag:ink}\" stroke-width=\"${g?1.6:2.4}\" ${g?'stroke-dasharray=\"3 3\"':''} stroke-linecap=\"round\"/>`;if(g)svg+=`<text x=\"${(xs(i)+xs(i+1))/2}\" y=\"-6\" text-anchor=\"middle\" font-family=\"Barlow Condensed,sans-serif\" font-weight=\"700\" font-size=\"12\" fill=\"${tag}\">?</text>`;}\nfor(let i=0;i<n;i++)svg+=`<circle cx=\"${xs(i)}\" cy=\"0\" r=\"4\" fill=\"${pap}\" stroke=\"${ink}\" stroke-width=\"1.6\"/><text x=\"${xs(i)}\" y=\"15\" text-anchor=\"middle\" font-family=\"Special Elite,Georgia,serif\" font-size=\"8.5\" fill=\"${ink}\">${esc(L[i])}</text>`;\nsvg+=`<circle cx=\"${-W/2+((mt*0.12)%1)*W}\" cy=\"0\" r=\"2.6\" fill=\"${tag}\"/>`;\nsvg+='</g>';"
+}

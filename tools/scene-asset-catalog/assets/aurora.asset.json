@@ -1,0 +1,13 @@
+{
+  "id": "aurora",
+  "name": "Aurora Borealis",
+  "icon": "🌌",
+  "category": "sky",
+  "tags": ["night", "sky", "magic", "color"],
+  "desc": "Northern lights — drifting color ellipses and wavy curtains across the upper sky",
+  "params": {
+    "bands": { "type": "number","default": 5 },
+    "curtains": { "type": "number","default": 3 }
+  },
+  "code": "const bands = ctx.bands ?? 5; const curtains = ctx.curtains ?? 3;\nconst w_ = ctx.w || 800; const h_ = ctx.h || 500;\nconst cols = ['#00FF88','#7DF9FF','#DA70D6','#00CED1','#9370DB'];\nfor (let i = 0; i < bands; i++) {\n  const ax = w_*(0.1+i*(0.8/bands));\n  const ay = h_*0.08 + Math.sin(mt*0.4+i*1.2)*h_*0.06;\n  const aw = w_*0.22;\n  const ah = h_*0.25 + Math.sin(mt*0.3+i*0.8)*h_*0.05;\n  const op = 0.06 + Math.sin(mt*0.5+i*0.97)*0.04;\n  svg += `<ellipse cx=\"${ax}\" cy=\"${ay}\" rx=\"${aw}\" ry=\"${ah}\" fill=\"${cols[i%cols.length]}\" opacity=\"${op}\"/>`;\n}\nfor (let i = 0; i < curtains; i++) {\n  const cy = h_*0.12 + i*h_*0.04;\n  const sway = Math.sin(mt*0.6+i*1.5)*w_*0.05;\n  svg += `<path d=\"M0 ${cy} Q${w_*0.2+sway} ${cy-15} ${w_*0.4} ${cy+5} T${w_*0.7} ${cy-8} T${w_} ${cy}\" fill=\"none\" stroke=\"rgba(125,249,255,${0.12+Math.sin(mt*0.4+i)*0.06})\" stroke-width=\"${3+i}\"/>`;\n}"
+}

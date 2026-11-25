@@ -1,0 +1,13 @@
+{
+  "id": "castle_ice",
+  "name": "Ice Castle",
+  "icon": "🏰",
+  "category": "prop",
+  "tags": ["building", "fantasy", "ice", "winter"],
+  "desc": "Ice castle with two towers and magically pulsing windows",
+  "params": {
+    "x": { "type": "x", "default": "w*0.5" },
+    "y": { "type": "y", "default": "bY-160" }
+  },
+  "code": "const cx = ctx.x ?? 200; const cy = ctx.y ?? 120;\nsvg += `<defs><linearGradient id=\"lg-cic-${Math.floor(cx)}\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"${isN ? '#8EC8F8' : '#C8E8FF'}\"/><stop offset=\"100%\" stop-color=\"${isN ? '#5A8AB8' : '#90C0E0'}\"/></linearGradient></defs>`;\nconst gid = `url(#lg-cic-${Math.floor(cx)})`;\nsvg += `<rect x=\"${cx-35}\" y=\"${cy}\" width=\"70\" height=\"55\" rx=\"3\" fill=\"${gid}\" stroke=\"#80B0D0\" stroke-width=\"${ol}\"/>`;\nsvg += `<path d=\"M${cx-10} ${cy+55} L${cx-10} ${cy+35} Q${cx} ${cy+25} ${cx+10} ${cy+35} L${cx+10} ${cy+55}\" fill=\"${isN ? 'rgba(125,249,255,0.4)' : 'rgba(100,180,220,0.3)'}\" stroke=\"#80B0D0\" stroke-width=\"${ol*0.5}\"/>`;\nsvg += `<rect x=\"${cx-55}\" y=\"${cy-40}\" width=\"24\" height=\"95\" rx=\"2\" fill=\"${gid}\" stroke=\"#80B0D0\" stroke-width=\"${ol}\"/>`;\nsvg += `<polygon points=\"${cx-55},${cy-40} ${cx-43},${cy-65} ${cx-31},${cy-40}\" fill=\"#A0D8F0\" stroke=\"#80B0D0\" stroke-width=\"${ol*0.7}\"/>`;\nsvg += `<rect x=\"${cx+31}\" y=\"${cy-55}\" width=\"24\" height=\"110\" rx=\"2\" fill=\"${gid}\" stroke=\"#80B0D0\" stroke-width=\"${ol}\"/>`;\nsvg += `<polygon points=\"${cx+31},${cy-55} ${cx+43},${cy-85} ${cx+55},${cy-55}\" fill=\"#A0D8F0\" stroke=\"#80B0D0\" stroke-width=\"${ol*0.7}\"/>`;\nconst wins = [[-43,cy-20],[-43,cy+10],[0,cy+10],[43,cy-35],[43,cy-5],[43,cy+25]];\nfor (let i = 0; i < wins.length; i++) {\n  const wxp = cx + wins[i][0];\n  const wyp = wins[i][1];\n  const pulse = Math.sin(mt*1.8+i*1.3)*0.5+0.5;\n  svg += `<rect x=\"${wxp-3}\" y=\"${wyp}\" width=\"6\" height=\"8\" rx=\"3\" fill=\"rgba(125,249,255,${0.4+pulse*0.5})\" stroke=\"#80B0D0\" stroke-width=\"${ol*0.3}\"/>`;\n  if (isN) svg += `<ellipse cx=\"${wxp}\" cy=\"${wyp+4}\" rx=\"10\" ry=\"8\" fill=\"rgba(125,249,255,${0.03+pulse*0.04})\"/>`;\n}\nsvg += `<circle cx=\"${cx}\" cy=\"${cy-10}\" r=\"${40+w3*15}\" fill=\"rgba(125,249,255,0.08)\"/>`;"
+}

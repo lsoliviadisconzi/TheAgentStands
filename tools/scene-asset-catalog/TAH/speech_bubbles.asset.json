@@ -1,0 +1,36 @@
+{
+  "id": "speech_bubbles",
+  "name": "Deflection Bubbles",
+  "icon": "💬",
+  "category": "fx",
+  "tags": [
+    "darvo",
+    "gaslighting",
+    "deflection",
+    "dossier-01",
+    "dossier-03",
+    "dossier-08"
+  ],
+  "desc": "Stack of speech bubbles that pop in one by one, e.g. denial, reframe, reversal",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "text": {
+      "type": "text",
+      "default": "I never said that.|That’s not what I meant.|You’re always attacking me.",
+      "desc": "Bubbles separated by |"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst esc=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');\nconst L=String(ctx.text||'I never said that.|That’s not what I meant.|You’re always attacking me.').split('|'),n=L.length,t=mt%(n*1.4+2),shown=Math.min(n,Math.floor(t/1.4)+1);\nfor(let i=0;i<shown;i++){const tx=esc(L[i]),w=Math.max(60,tx.length*5.4+16),cx=(i%2?12:-12),cy=-22-i*28,age=t-i*1.4,pop=Math.min(1,age/0.25);\nsvg+=`<g transform=\"translate(${cx} ${cy}) scale(${0.8+0.2*pop})\" opacity=\"${pop}\"><rect x=\"${-w/2}\" y=\"-11\" width=\"${w}\" height=\"22\" rx=\"8\" fill=\"${pap}\" stroke=\"${ink}\" stroke-width=\"1.2\"/><polygon points=\"${-w/2+10},11 ${-w/2+6},18 ${-w/2+20},11\" fill=\"${pap}\" stroke=\"${ink}\" stroke-width=\"1.2\"/><rect x=\"${-w/2+8}\" y=\"10\" width=\"14\" height=\"2.4\" fill=\"${pap}\"/><text x=\"0\" y=\"3.5\" text-anchor=\"middle\" font-family=\"Special Elite,Georgia,serif\" font-size=\"10\" fill=\"${ink}\">${tx}</text></g>`;}\nsvg+='</g>';"
+}

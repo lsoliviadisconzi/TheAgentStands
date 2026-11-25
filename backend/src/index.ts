@@ -232,7 +232,7 @@ async function listVoices(force = false) {
         label: String(v.label || v.id || ''), 
         model: String(v.model || ''), 
         designModel: String(v.designModel || ''),
-        kind: String(v.kind || 'designed'), 
+        kind: String(v.kind || ''), 
         instruct: String(v.instruct || ''), 
         voice: String(v.voice || 'default'), 
         langCode: String(v.langCode || ''), 

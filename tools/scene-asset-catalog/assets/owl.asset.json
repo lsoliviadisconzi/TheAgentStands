@@ -1,0 +1,15 @@
+{
+  "id": "owl",
+  "name": "Wise Owl (perched)",
+  "icon": "🦉",
+  "category": "character",
+  "tags": ["forest", "bird", "nocturnal", "animal", "wisdom"],
+  "desc": "Perched owl with blinking golden eyes and optional wisdom sparkles",
+  "params": {
+    "x":     { "type": "x",     "default": "w*0.3" },
+    "y":     { "type": "y",     "default": "bY-60" },
+    "talk":  { "type": "bool",  "default": true, "desc": "Emit golden sparkles when talking" },
+    "branch":{ "type": "bool",  "default": true, "desc": "Draw branch under the owl" }
+  },
+  "code": "const owlX = ctx.x ?? 120; const owlY = ctx.y ?? 80; const talk = ctx.talk !== false; const branch = ctx.branch !== false; const blink = Math.sin(mt*0.8) > 0.93 ? 0 : 1;\nif (branch) svg += `<line x1=\"${owlX-20}\" y1=\"${owlY+12}\" x2=\"${owlX+8}\" y2=\"${owlY+10}\" stroke=\"#5A4030\" stroke-width=\"4\" stroke-linecap=\"round\"/>`;\nsvg += `<ellipse cx=\"${owlX}\" cy=\"${owlY+2}\" rx=\"8\" ry=\"10\" fill=\"#8B6B4A\" stroke=\"#6B4B2A\" stroke-width=\"${ol*0.4}\"/>`;\nsvg += `<circle cx=\"${owlX}\" cy=\"${owlY-9}\" r=\"7\" fill=\"#9B7B5A\" stroke=\"#6B4B2A\" stroke-width=\"${ol*0.4}\"/>`;\nsvg += `<polygon points=\"${owlX-5},${owlY-14} ${owlX-3},${owlY-21} ${owlX-1},${owlY-14}\" fill=\"#7B5B3A\"/>`;\nsvg += `<polygon points=\"${owlX+1},${owlY-14} ${owlX+3},${owlY-21} ${owlX+5},${owlY-14}\" fill=\"#7B5B3A\"/>`;\nif (blink) {\n  svg += `<circle cx=\"${owlX-3}\" cy=\"${owlY-10}\" r=\"3.5\" fill=\"#FFD700\" stroke=\"#DAA520\" stroke-width=\"0.5\"/>`;\n  svg += `<circle cx=\"${owlX+3}\" cy=\"${owlY-10}\" r=\"3.5\" fill=\"#FFD700\" stroke=\"#DAA520\" stroke-width=\"0.5\"/>`;\n  svg += `<circle cx=\"${owlX-3}\" cy=\"${owlY-10}\" r=\"1.5\" fill=\"#222\"/>`;\n  svg += `<circle cx=\"${owlX+3}\" cy=\"${owlY-10}\" r=\"1.5\" fill=\"#222\"/>`;\n} else {\n  svg += `<line x1=\"${owlX-5}\" y1=\"${owlY-10}\" x2=\"${owlX-1}\" y2=\"${owlY-10}\" stroke=\"#222\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>`;\n  svg += `<line x1=\"${owlX+1}\" y1=\"${owlY-10}\" x2=\"${owlX+5}\" y2=\"${owlY-10}\" stroke=\"#222\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>`;\n}\nsvg += `<polygon points=\"${owlX},${owlY-8} ${owlX-1.5},${owlY-6} ${owlX+1.5},${owlY-6}\" fill=\"#DAA520\"/>`;\nif (talk && Math.sin(mt*1.2) > 0.5) {\n  for (let i = 0; i < 4; i++) {\n    const stx = owlX+10+i*5+Math.sin(mt*3+i)*3;\n    const sty = owlY-12+Math.cos(mt*2+i*1.1)*4;\n    svg += `<circle cx=\"${stx}\" cy=\"${sty}\" r=\"${1.5-i*0.2}\" fill=\"#FFD700\" opacity=\"${0.4+Math.sin(mt*2+i)*0.3}\"/>`;\n  }\n}"
+}

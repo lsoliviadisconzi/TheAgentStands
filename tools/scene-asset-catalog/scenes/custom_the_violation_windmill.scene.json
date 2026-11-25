@@ -1,0 +1,13 @@
+{
+  "id": "custom_the_violation_windmill",
+  "icon": "\ud83c\udfa8",
+  "name": "The Violation Windmill",
+  "desc": "The Violation Windmill \u2014 deterministic SVG scene",
+  "sky1": "#5B8EC4",
+  "sky2": "#87CEEB",
+  "ground": "#3D6B4F",
+  "bld": "#6B5D4F",
+  "acc": "#C4862D",
+  "category": "custom",
+  "code": "// \u2500\u2500 THE VIOLATION WINDMILL \u2014 Custom scene \u2014 The Violation Windmill \u2500\u2500\n// Scene ID: custom_the_violation_windmill\n// Palette: sky1=#5B8EC4, sky2=#87CEEB, ground=#3D6B4F, bld=#6B5D4F, acc=#C4862D\n\n// Uses runtime-provided mt, w1, w2, w3 from renderSVG\n\n// Sky gradient\nsvg+=`<defs><linearGradient id=\"lg-custom_the_violation_windmill\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n  <stop offset=\"0%\" stop-color=\"#5B8EC4\"/>\n  <stop offset=\"100%\" stop-color=\"#87CEEB\"/>\n</linearGradient></defs>`;\n\n// Main structure\nconst cx = w*0.45, baseY = bY - 80;\nsvg+=`<rect x=\"${cx-30}\" y=\"${baseY}\" width=\"60\" height=\"80\" rx=\"3\"\n  fill=\"#6B5D4F\" stroke=\"#3A3228\" stroke-width=\"${ol}\"/>`;\n\n// TODO: Add scene-specific elements here\n// Use w1, w2, w3 oscillators for deterministic animation\n// Use isN for night mode glow effects"
+}

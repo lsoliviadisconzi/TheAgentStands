@@ -1,0 +1,38 @@
+{
+  "id": "like_counter",
+  "name": "Applause Counter",
+  "icon": "❤️",
+  "category": "prop",
+  "tags": [
+    "virtue-signalling",
+    "applause",
+    "echo-chamber",
+    "dossier-05",
+    "dossier-04"
+  ],
+  "desc": "Social post card whose likes tick up while the 'questions' badge stays at zero",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "count": {
+      "type": "number",
+      "default": 365
+    },
+    "q": {
+      "type": "text",
+      "default": "questions: 0"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst esc=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');\nconst cnt=Math.round(ctx.count??365),qt=esc(ctx.q||'questions: 0'),t=Math.min(1,(mt%9)/3),n=Math.round(cnt*(1-Math.pow(1-t,3))),k=1+Math.sin(mt*5)*0.12*(t<1?1:0.4);\nsvg+=`<rect x=\"-50\" y=\"-62\" width=\"100\" height=\"60\" rx=\"6\" fill=\"${pap}\" stroke=\"${ink}\" stroke-width=\"1.2\"/><circle cx=\"-38\" cy=\"-48\" r=\"6\" fill=\"${dim}\"/><rect x=\"-28\" y=\"-52\" width=\"44\" height=\"3\" rx=\"1.5\" fill=\"${ink}\" opacity=\"0.7\"/><rect x=\"-28\" y=\"-45\" width=\"30\" height=\"3\" rx=\"1.5\" fill=\"${ink}\" opacity=\"0.4\"/><rect x=\"-44\" y=\"-36\" width=\"88\" height=\"14\" rx=\"2\" fill=\"${ink}\" opacity=\"0.12\"/>`;\nsvg+=`<g transform=\"translate(-40 -11) scale(${k})\"><path d=\"M0 3 C-8 -4 -4 -9 0 -4 C4 -9 8 -4 0 3 Z\" fill=\"${tag}\"/></g><text x=\"-31\" y=\"-7.5\" font-family=\"Barlow Condensed,sans-serif\" font-weight=\"700\" font-size=\"12\" fill=\"${ink}\">${n}</text>`;\nsvg+=`<rect x=\"2\" y=\"-16\" width=\"46\" height=\"12\" rx=\"6\" fill=\"none\" stroke=\"${dim}\" stroke-width=\"1\"/><text x=\"25\" y=\"-7.5\" text-anchor=\"middle\" font-family=\"Special Elite,Georgia,serif\" font-size=\"6.5\" fill=\"${dim}\">${qt}</text>`;\nsvg+='</g>';"
+}

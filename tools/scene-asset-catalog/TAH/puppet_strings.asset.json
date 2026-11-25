@@ -1,0 +1,33 @@
+{
+  "id": "puppet_strings",
+  "name": "Puppet Strings",
+  "icon": "🎭",
+  "category": "fx",
+  "tags": [
+    "control",
+    "coercive-control",
+    "dependency",
+    "dossier-09"
+  ],
+  "desc": "A control bar pulling a small puppet by strings; the puppet follows every tug",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "color": {
+      "type": "color",
+      "default": "#FF8A5C"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst col=ctx.color||tag,sw=Math.sin(mt*1.4)*10,a=sw*0.4*Math.PI/180,bob=Math.sin(mt*2.8)*2;\nconst bp=u=>[u*Math.cos(a),-120+u*Math.sin(a)];\nconst hl=[-14,-30+Math.sin(mt*2)*6],hr=[14,-30+Math.sin(mt*2+1.4)*6],hd=[0,-46+bob];\nsvg+=`<rect x=\"-6\" y=\"-136\" width=\"12\" height=\"10\" rx=\"3\" fill=\"${dim}\"/><line x1=\"0\" y1=\"-126\" x2=\"0\" y2=\"-120\" stroke=\"${dim}\" stroke-width=\"2\"/><line x1=\"-22\" y1=\"-120\" x2=\"22\" y2=\"-120\" stroke=\"${ink}\" stroke-width=\"3\" stroke-linecap=\"round\" transform=\"rotate(${sw*0.4} 0 -120)\"/>`;\n[[-20,hl],[-6,[hd[0],hd[1]-8]],[6,[hd[0],hd[1]-8]],[20,hr]].forEach(s2=>{const b=bp(s2[0]);svg+=`<line x1=\"${b[0]}\" y1=\"${b[1]}\" x2=\"${s2[1][0]}\" y2=\"${s2[1][1]}\" stroke=\"${col}\" stroke-width=\"0.9\"/>`;});\nsvg+=`<g fill=\"${dim}\"><circle cx=\"0\" cy=\"${-46+bob}\" r=\"6\"/><rect x=\"-6\" y=\"${-38+bob}\" width=\"12\" height=\"18\" rx=\"3\"/><line x1=\"-5\" y1=\"${-20+bob}\" x2=\"-6\" y2=\"0\" stroke=\"${dim}\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"5\" y1=\"${-20+bob}\" x2=\"6\" y2=\"0\" stroke=\"${dim}\" stroke-width=\"3\" stroke-linecap=\"round\"/></g>`;\nsvg+=`<line x1=\"-5\" y1=\"${-36+bob}\" x2=\"${hl[0]}\" y2=\"${hl[1]}\" stroke=\"${dim}\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><line x1=\"5\" y1=\"${-36+bob}\" x2=\"${hr[0]}\" y2=\"${hr[1]}\" stroke=\"${dim}\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>`;\nsvg+='</g>';"
+}

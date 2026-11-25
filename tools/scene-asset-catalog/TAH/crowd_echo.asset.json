@@ -1,0 +1,46 @@
+{
+  "id": "crowd_echo",
+  "name": "Echoing Crowd",
+  "icon": "👥",
+  "category": "character",
+  "tags": [
+    "groupthink",
+    "illusory-truth",
+    "repetition",
+    "dossier-03",
+    "dossier-04"
+  ],
+  "desc": "Row of identical figures nodding in unison, with an optional lone dissenter who does not",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "count": {
+      "type": "number",
+      "default": 7
+    },
+    "gap": {
+      "type": "number",
+      "default": 18
+    },
+    "dissenter": {
+      "type": "bool",
+      "default": true
+    },
+    "dissenterIndex": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst n=Math.max(2,Math.round(ctx.count??7)),gap=ctx.gap??18,dis=ctx.dissenter!==false,di=ctx.dissenterIndex??Math.floor(n/2),W=(n-1)*gap;\nfor(let i=0;i<n;i++){const dx=i*gap-W/2,d=dis&&i===di,nod=d?0:Math.sin(mt*2.4)*2.2,col=d?tag:'#7D8CA0',hx=d?Math.sin(mt*0.9)*1.5:0;\nsvg+=`<path d=\"M${dx-8} 0 Q${dx-8} ${-22+nod} ${dx} ${-22+nod} Q${dx+8} ${-22+nod} ${dx+8} 0 Z\" fill=\"${col}\"/><circle cx=\"${dx+hx}\" cy=\"${-30+nod}\" r=\"6\" fill=\"${col}\"/>`;\nif(d)svg+=`<circle cx=\"${dx}\" cy=\"-14\" r=\"14\" fill=\"none\" stroke=\"${tag}\" stroke-width=\"1\" stroke-dasharray=\"3 3\" opacity=\"0.7\"/><text x=\"${dx}\" y=\"-42\" text-anchor=\"middle\" font-family=\"Barlow Condensed,sans-serif\" font-weight=\"700\" font-size=\"11\" fill=\"${tag}\">?</text>`;}\nsvg+=`<line x1=\"${-W/2-14}\" y1=\"1\" x2=\"${W/2+14}\" y2=\"1\" stroke=\"${ink}\" stroke-width=\"1\" opacity=\"0.3\"/>`;\nsvg+='</g>';"
+}

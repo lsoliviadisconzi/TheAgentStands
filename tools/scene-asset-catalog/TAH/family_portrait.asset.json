@@ -1,0 +1,39 @@
+{
+  "id": "family_portrait",
+  "name": "Family Portrait (anonymised)",
+  "icon": "🖼️",
+  "category": "prop",
+  "tags": [
+    "family",
+    "scapegoat",
+    "exclusion",
+    "dossier-02",
+    "dossier-07"
+  ],
+  "desc": "Framed group of faceless silhouettes where one figure fades out; optional crack across the glass",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "exclude": {
+      "type": "bool",
+      "default": true,
+      "desc": "Fade one silhouette out"
+    },
+    "crack": {
+      "type": "bool",
+      "default": false
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst ex=ctx.exclude!==false,crack=!!ctx.crack,wood=isN?'#6B4B2A':'#8B6B4A';\nsvg+=`<polyline points=\"-22,-92 0,-106 22,-92\" fill=\"none\" stroke=\"${dim}\" stroke-width=\"1\"/><rect x=\"-45\" y=\"-92\" width=\"90\" height=\"70\" rx=\"3\" fill=\"${pap}\" stroke=\"${wood}\" stroke-width=\"5\"/>`;\nfor(let i=0;i<4;i++){const cx=-30+i*20,out=ex&&i===3,hh=i%2?0:-3;\nconst body=`<circle cx=\"${cx}\" cy=\"${-62+hh}\" r=\"5.5\"/><path d=\"M${cx-9} -24 Q${cx-9} ${-50+hh} ${cx} ${-50+hh} Q${cx+9} ${-50+hh} ${cx+9} -24 Z\"/>`;\nsvg+=out?`<g fill=\"none\" stroke=\"${tag}\" stroke-width=\"1.2\" stroke-dasharray=\"3 2\" opacity=\"${0.35+Math.sin(mt*1.2)*0.2}\">${body}</g>`:`<g fill=\"${dim}\">${body}</g>`;}\nif(crack)svg+=`<polyline points=\"-8,-92 -2,-76 -10,-62 2,-48 -4,-34 4,-22\" fill=\"none\" stroke=\"${ink}\" stroke-width=\"1.4\"/>`;\nsvg+='</g>';"
+}

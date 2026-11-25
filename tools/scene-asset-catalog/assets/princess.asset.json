@@ -1,0 +1,16 @@
+{
+  "id": "princess",
+  "name": "Princess",
+  "icon": "👸",
+  "category": "character",
+  "tags": ["character", "magic", "fantasy", "royalty"],
+  "desc": "Princess silhouette with flowing cape, tiara, and magic sparkle from hand",
+  "params": {
+    "x":     { "type": "x",     "default": "w*0.35" },
+    "y":     { "type": "y",     "default": "bY+2" },
+    "dress": { "type": "color", "default": "#87CEEB" },
+    "accent":{ "type": "color", "default": "#FFD700", "desc": "Tiara + sparkle color" },
+    "magic": { "type": "bool",  "default": true }
+  },
+  "code": "const px = ctx.x ?? 150; const py = ctx.y ?? 220; const dress = ctx.dress || (isN ? '#6A5ACD' : '#87CEEB'); const acc = ctx.accent || '#FFD700'; const magic = ctx.magic !== false;\nsvg += `<polygon points=\"${px},${py-25} ${px-12},${py} ${px+12},${py}\" fill=\"${dress}\" stroke=\"${isN ? '#483D8B' : '#5F9EA0'}\" stroke-width=\"${ol*0.5}\" opacity=\"0.85\"/>`;\nconst capeFlow = Math.sin(mt*1.2)*6;\nsvg += `<path d=\"M${px+3} ${py-22} Q${px+15+capeFlow} ${py-18} ${px+10+capeFlow*1.5} ${py-5}\" fill=\"none\" stroke=\"${isN ? '#9370DB' : '#ADD8E6'}\" stroke-width=\"2.5\" stroke-linecap=\"round\" opacity=\"0.7\"/>`;\nsvg += `<circle cx=\"${px}\" cy=\"${py-30}\" r=\"6\" fill=\"#FFDAB9\" stroke=\"#DEB887\" stroke-width=\"${ol*0.3}\"/>`;\nconst braidSway = Math.sin(mt*0.9)*3;\nsvg += `<path d=\"M${px+4} ${py-28} Q${px+10+braidSway} ${py-18} ${px+8+braidSway*1.2} ${py-8}\" fill=\"none\" stroke=\"#F5DEB3\" stroke-width=\"3\" stroke-linecap=\"round\"/>`;\nsvg += `<path d=\"M${px-5} ${py-35} L${px-3} ${py-39} L${px} ${py-36} L${px+3} ${py-39} L${px+5} ${py-35}\" fill=\"none\" stroke=\"${acc}\" stroke-width=\"1.5\"/>`;\nif (magic) {\n  const sparkleR = 3 + w3 * 4;\n  const sparkleOp = 0.4 + w1 * 0.4;\n  svg += `<circle cx=\"${px-14}\" cy=\"${py-12}\" r=\"${sparkleR}\" fill=\"${acc}\" opacity=\"${sparkleOp * 0.3}\"/>`;\n  svg += `<circle cx=\"${px-14}\" cy=\"${py-12}\" r=\"${sparkleR*0.4}\" fill=\"#FFF\" opacity=\"${sparkleOp}\"/>`;\n  for (let i = 0; i < 6; i++) {\n    const mpx = px - 14 + Math.sin(mt*2+i*1.05)*(10+i*4);\n    const mpy = py - 12 + Math.cos(mt*1.8+i*0.8)*(8+i*3);\n    svg += `<circle cx=\"${mpx}\" cy=\"${mpy}\" r=\"${1+Math.sin(mt*3+i*1.3)*0.8}\" fill=\"${acc}\" opacity=\"${0.3+Math.sin(mt*2+i)*0.3}\"/>`;\n  }\n}"
+}

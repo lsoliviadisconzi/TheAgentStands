@@ -495,13 +495,13 @@ function App() {
             ) : (
               <>
                 <div className="lib-pick">
-                  <select className="vo-in" value={selectedNarrationThemeSlug} onChange={(e) => handleNarrationThemeSelect(e.target.value)}>
+                  <select className="vo-in" name="narrationTheme" value={selectedNarrationThemeSlug} onChange={(e) => handleNarrationThemeSelect(e.target.value)}>
                     <option value="">-- Select Theme --</option>
                     {Object.entries(narrationThemes).map(([slug, data]) => (
                       <option key={slug} value={slug}>{data.title} <small>({data.languages.length} langs)</small></option>
                     ))}
                   </select>
-                  <select className="vo-in" value={selectedNarrationLanguage} onChange={(e) => handleNarrationLanguageSelect(e.target.value)} disabled={!selectedNarrationThemeSlug}>
+                  <select className="vo-in" name="narrationLanguage" value={selectedNarrationLanguage} onChange={(e) => handleNarrationLanguageSelect(e.target.value)} disabled={!selectedNarrationThemeSlug}>
                     <option value="">-- Language --</option>
                     {narrationTheme?.languages && Object.entries(narrationTheme.languages).map(([code, data]) => (
                       <option key={code} value={code}>{data.label} ({data.reelCount})</option>

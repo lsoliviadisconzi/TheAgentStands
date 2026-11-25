@@ -1,0 +1,14 @@
+{
+  "id": "snowman",
+  "name": "Snowman",
+  "icon": "⛄",
+  "category": "character",
+  "tags": ["winter", "snow", "character", "festive"],
+  "desc": "Three-ball snowman with top hat, carrot nose, and swaying twig arms",
+  "params": {
+    "x": { "type": "x", "default": "w*0.72" },
+    "y": { "type": "y", "default": "bY-2" },
+    "wave": { "type": "bool", "default": false, "desc": "Arms wave energetically" }
+  },
+  "code": "const smx = ctx.x ?? 300; const smy = ctx.y ?? 240; const wave = !!ctx.wave;\nconst armSway = wave ? Math.sin(mt*4)*12 : Math.sin(mt*0.8)*5;\nsvg += `<circle cx=\"${smx}\" cy=\"${smy}\" r=\"16\" fill=\"#F8F8FF\" stroke=\"#C8D8E8\" stroke-width=\"${ol*0.6}\"/>`;\nsvg += `<circle cx=\"${smx}\" cy=\"${smy-26}\" r=\"12\" fill=\"#F8F8FF\" stroke=\"#C8D8E8\" stroke-width=\"${ol*0.6}\"/>`;\nsvg += `<circle cx=\"${smx}\" cy=\"${smy-46}\" r=\"9\" fill=\"#F8F8FF\" stroke=\"#C8D8E8\" stroke-width=\"${ol*0.6}\"/>`;\nsvg += `<circle cx=\"${smx-3}\" cy=\"${smy-48}\" r=\"1.5\" fill=\"#2A2A2A\"/>`;\nsvg += `<circle cx=\"${smx+3}\" cy=\"${smy-48}\" r=\"1.5\" fill=\"#2A2A2A\"/>`;\nsvg += `<polygon points=\"${smx},${smy-45} ${smx+8},${smy-44} ${smx},${smy-43}\" fill=\"#FF8C42\"/>`;\nsvg += `<path d=\"M${smx-4} ${smy-41} Q${smx} ${smy-39} ${smx+4} ${smy-41}\" fill=\"none\" stroke=\"#2A2A2A\" stroke-width=\"1\"/>`;\nfor (let i = 0; i < 3; i++) svg += `<circle cx=\"${smx}\" cy=\"${smy-20+i*7}\" r=\"1.5\" fill=\"#2A2A2A\"/>`;\nsvg += `<line x1=\"${smx-12}\" y1=\"${smy-28}\" x2=\"${smx-28}\" y2=\"${smy-38+armSway}\" stroke=\"#6B4F2A\" stroke-width=\"2\" stroke-linecap=\"round\"/>`;\nsvg += `<line x1=\"${smx+12}\" y1=\"${smy-28}\" x2=\"${smx+28}\" y2=\"${smy-40-armSway}\" stroke=\"#6B4F2A\" stroke-width=\"2\" stroke-linecap=\"round\"/>`;\nsvg += `<rect x=\"${smx-7}\" y=\"${smy-60}\" width=\"14\" height=\"12\" rx=\"1\" fill=\"#2A2A3A\" stroke=\"#1A1A2A\" stroke-width=\"${ol*0.4}\"/>`;\nsvg += `<rect x=\"${smx-10}\" y=\"${smy-49}\" width=\"20\" height=\"3\" rx=\"1\" fill=\"#2A2A3A\"/>`;"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "speaker_lectern",
+  "name": "Speaker at Lectern",
+  "icon": "🎤",
+  "category": "character",
+  "tags": [
+    "moral-superiority",
+    "grandstanding",
+    "halo",
+    "dossier-01",
+    "dossier-05"
+  ],
+  "desc": "Faceless speaker behind a lectern with a gesturing arm and an optional halo that slips",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "halo": {
+      "type": "bool",
+      "default": true
+    },
+    "slip": {
+      "type": "number",
+      "default": 0.5,
+      "desc": "0 straight halo, 1 badly slipping"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst halo=ctx.halo!==false,slip=ctx.slip??0.5,arm=Math.sin(mt*2.2)*8,suit=isN?'#3A4A5C':'#2B3A4C',wood=isN?'#5A4636':'#7A5A3E';\nsvg+=`<path d=\"M-14 -70 Q0 -78 14 -70 L16 -30 L-16 -30 Z\" fill=\"${suit}\"/><circle cx=\"0\" cy=\"-84\" r=\"9\" fill=\"${isN?'#C9B79A':'#E3CBA8'}\"/>`;\nsvg+=`<line x1=\"14\" y1=\"-66\" x2=\"${30+arm}\" y2=\"-80\" stroke=\"${suit}\" stroke-width=\"5\" stroke-linecap=\"round\"/>`;\nsvg+=`<path d=\"M-24 -34 L24 -34 L20 0 L-20 0 Z\" fill=\"${wood}\" stroke=\"${ink}\" stroke-width=\"1\"/><rect x=\"-27\" y=\"-38\" width=\"54\" height=\"5\" rx=\"1\" fill=\"${wood}\" stroke=\"${ink}\" stroke-width=\"1\"/>`;\nsvg+=`<line x1=\"-8\" y1=\"-38\" x2=\"-8\" y2=\"-52\" stroke=\"${ink}\" stroke-width=\"1.5\"/><circle cx=\"-8\" cy=\"-54\" r=\"3\" fill=\"${ink}\"/>`;\nif(halo){const hy=-98+slip*5+Math.sin(mt*1.5)*slip*1.5;svg+=`<ellipse cx=\"${slip*3}\" cy=\"${hy}\" rx=\"15\" ry=\"4\" fill=\"#FFD700\" opacity=\"0.2\" transform=\"rotate(${slip*14} 0 ${hy})\"/><ellipse cx=\"${slip*3}\" cy=\"${hy}\" rx=\"12\" ry=\"3.2\" fill=\"none\" stroke=\"#FFD700\" stroke-width=\"2.2\" transform=\"rotate(${slip*14} 0 ${hy})\"/>`;}\nsvg+='</g>';"
+}

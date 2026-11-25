@@ -1,0 +1,17 @@
+{
+  "id": "firefly_swarm",
+  "name": "Firefly Swarm",
+  "icon": "✨",
+  "category": "fx",
+  "tags": ["night", "magic", "particle", "glow", "swarm"],
+  "desc": "Cluster of glowing fireflies drifting in an area with soft halos",
+  "params": {
+    "x":     { "type": "x",     "default": 0,    "desc": "Area left" },
+    "y":     { "type": "y",     "default": "bY-55" },
+    "w":     { "type": "number","default": "w",  "desc": "Area width" },
+    "h":     { "type": "number","default": 55 },
+    "count": { "type": "number","default": 15 },
+    "color": { "type": "color", "default": "#FFD700" }
+  },
+  "code": "const ax = ctx.x ?? 0; const ay = ctx.y ?? 150; const aw = ctx.w ?? 400; const ah = ctx.h ?? 55; const count = ctx.count ?? 15; const col = ctx.color || '#FFD700';\nfor (let i = 0; i < count; i++) {\n  const fx = ax + (Math.sin(i*47.3+3.1)*0.5+0.5)*aw;\n  const fy = ay + (Math.sin(i*83.7+7.3)*0.5+0.5)*ah;\n  const dx = Math.sin(mt*0.7+i*0.97)*10;\n  const dy = Math.cos(mt*0.5+i*1.3)*7;\n  const op = 0.2 + Math.sin(mt*2+i*1.1)*0.3;\n  svg += `<circle cx=\"${fx+dx}\" cy=\"${fy+dy}\" r=\"${1.3+Math.sin(mt*1.5+i*0.8)*0.6}\" fill=\"${col}\" opacity=\"${op}\"/>`;\n  svg += `<circle cx=\"${fx+dx}\" cy=\"${fy+dy}\" r=\"${4+Math.sin(mt*1.5+i)*2}\" fill=\"${col}\" opacity=\"${op*0.08}\"/>`;\n}"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "evidence_board",
+  "name": "Evidence Board",
+  "icon": "📌",
+  "category": "prop",
+  "tags": [
+    "chronology",
+    "evidence",
+    "timeline",
+    "method",
+    "dossier-03"
+  ],
+  "desc": "Corkboard with pinned cards and red string that draws itself between them",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "strings": {
+      "type": "bool",
+      "default": true
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst st=ctx.strings!==false,p=Math.min(1,(mt%7)/3.5);\nsvg+=`<rect x=\"-60\" y=\"-86\" width=\"120\" height=\"82\" rx=\"3\" fill=\"${isN?'#7A5B3E':'#B98A5B'}\" stroke=\"${isN?'#4A3320':'#6B4B2A'}\" stroke-width=\"3\"/>`;\nconst C=[[-48,-76,-4],[8,-80,3],[-42,-44,2],[10,-46,-3]],P=[];\nC.forEach((c,i)=>{const px=c[0]+17,py=c[1]+3;P.push([px,py]);svg+=`<g transform=\"rotate(${c[2]} ${px} ${py})\"><rect x=\"${c[0]}\" y=\"${c[1]}\" width=\"34\" height=\"24\" fill=\"${isN?'#E8E4D4':'#FFFDF4'}\" stroke=\"${dim}\" stroke-width=\"0.6\"/><rect x=\"${c[0]+4}\" y=\"${c[1]+9}\" width=\"22\" height=\"2\" fill=\"${dim}\"/><rect x=\"${c[0]+4}\" y=\"${c[1]+14}\" width=\"15\" height=\"2\" fill=\"${dim}\"/></g>`;});\nif(st)[[0,1],[1,3],[3,2]].forEach((e,k)=>{const q=Math.max(0,Math.min(1,p*3-k));svg+=`<path d=\"M${P[e[0]][0]} ${P[e[0]][1]} L${P[e[1]][0]} ${P[e[1]][1]}\" pathLength=\"1\" stroke-dasharray=\"1\" stroke-dashoffset=\"${1-q}\" fill=\"none\" stroke=\"#C0392B\" stroke-width=\"1.3\"/>`;});\nP.forEach(q=>svg+=`<circle cx=\"${q[0]}\" cy=\"${q[1]}\" r=\"2.2\" fill=\"#C0392B\"/>`);\nsvg+='</g>';"
+}

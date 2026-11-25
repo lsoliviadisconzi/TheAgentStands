@@ -1,0 +1,13 @@
+{
+  "id": "snowflakes",
+  "name": "Falling Snowflakes",
+  "icon": "❄️",
+  "category": "fx",
+  "tags": ["winter", "weather", "particle"],
+  "desc": "Animated falling snowflakes with horizontal drift; covers full canvas",
+  "params": {
+    "count": { "type": "number","default": 25 },
+    "speed": { "type": "number","default": 8 }
+  },
+  "code": "const count = ctx.count ?? 25; const speed = ctx.speed ?? 8;\nconst w_ = ctx.w || 800; const h_ = ctx.h || 500;\nfor (let i = 0; i < count; i++) {\n  const sfx = (Math.sin(i*73.1+5.3)*0.5+0.5)*w_ + Math.sin(mt*0.8+i*0.6)*15;\n  const sfy = ((mt*speed + i*(h_/count))%(h_+20))-10;\n  const sfr = 1 + Math.sin(i*2.3)*0.8;\n  const op = 0.4 + Math.sin(mt*1.5+i*0.7)*0.3;\n  svg += `<circle cx=\"${sfx%w_}\" cy=\"${sfy}\" r=\"${sfr}\" fill=\"#FFF\" opacity=\"${op}\"/>`;\n}"
+}

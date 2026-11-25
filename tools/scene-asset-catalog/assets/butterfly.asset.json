@@ -1,0 +1,16 @@
+{
+  "id": "butterfly",
+  "name": "Golden Butterfly",
+  "icon": "🦋",
+  "category": "character",
+  "tags": ["fx", "animal", "magic", "flying", "trail"],
+  "desc": "Magical golden butterfly with flapping wings, trailing particles, and soft glow",
+  "params": {
+    "x":     { "type": "x",     "default": "w*0.48" },
+    "y":     { "type": "y",     "default": "bY-50" },
+    "color": { "type": "color", "default": "#FFD700" },
+    "range": { "type": "number","default": 60, "desc": "Horizontal flight range" },
+    "trail": { "type": "bool",  "default": true }
+  },
+  "code": "const ax = ctx.x ?? 200; const ay = ctx.y ?? 180; const col = ctx.color || '#FFD700'; const range = ctx.range ?? 60; const trail = ctx.trail !== false;\nconst bfx = ax + Math.sin(mt*0.6)*range;\nconst bfy = ay + Math.cos(mt*0.5)*15;\nconst bfW = Math.sin(mt*7)*5;\nsvg += `<ellipse cx=\"${bfx-3}\" cy=\"${bfy}\" rx=\"${4+bfW*0.3}\" ry=\"5\" fill=\"${col}\" opacity=\"0.85\" transform=\"rotate(${-bfW*2} ${bfx-3} ${bfy})\"/>`;\nsvg += `<ellipse cx=\"${bfx+3}\" cy=\"${bfy}\" rx=\"${4+bfW*0.3}\" ry=\"5\" fill=\"${col}\" opacity=\"0.85\" transform=\"rotate(${bfW*2} ${bfx+3} ${bfy})\"/>`;\nsvg += `<ellipse cx=\"${bfx}\" cy=\"${bfy}\" rx=\"1\" ry=\"3.5\" fill=\"#8B6914\"/>`;\nif (trail) {\n  for (let i = 0; i < 6; i++) {\n    const trx = bfx - i*4 - Math.sin(mt*0.5+i*0.3)*3;\n    const tri = bfy + i*1.5 + Math.cos(mt*0.6+i*0.4)*2;\n    svg += `<circle cx=\"${trx}\" cy=\"${tri}\" r=\"${1.8-i*0.2}\" fill=\"${col}\" opacity=\"${0.25-i*0.03}\"/>`;\n  }\n}\nsvg += `<circle cx=\"${bfx}\" cy=\"${bfy}\" r=\"${10+w3*5}\" fill=\"${col}\" opacity=\"${0.04+w1*0.03}\"/>`;"
+}

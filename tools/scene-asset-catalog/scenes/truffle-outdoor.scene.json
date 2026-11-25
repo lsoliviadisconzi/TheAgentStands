@@ -1,0 +1,13 @@
+{
+  "id": "truffle_outdoor",
+  "type": "3d",
+  "name": "Truffle Man — Outdoor",
+  "icon": "🌤️",
+  "desc": "Animated character GLB (/uploads/truffle_man.glb) in an outdoor lighting preset.",
+  "category": "custom",
+  "environment": "outdoor",
+  "model": "/uploads/truffle_man.glb",
+  "camera": { "fov": 50, "position": [4, 2.5, 6] },
+  "lighting": { "ambient": 0.5, "directional": 1.6 },
+  "animations": { "speed": 1, "play": true }
+}

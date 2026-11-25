@@ -1,0 +1,46 @@
+{
+  "id": "slam_stamp",
+  "name": "Slam Stamp",
+  "icon": "🏷️",
+  "category": "fx",
+  "tags": [
+    "stamp",
+    "verdict",
+    "end-card",
+    "reel"
+  ],
+  "desc": "The coral end-of-reel stamp: slams in from large, rotated, with a punched hole",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "h*0.45"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "text": {
+      "type": "text",
+      "default": "EVIDENCE BEFORE NARRATIVE"
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 14
+    },
+    "loop": {
+      "type": "number",
+      "default": 5,
+      "desc": "Seconds per slam"
+    },
+    "color": {
+      "type": "color",
+      "default": "#FF8A5C"
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst esc=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');\nconst tx=esc(ctx.text||'EVIDENCE BEFORE NARRATIVE'),fs=ctx.fontSize??14,col=ctx.color||tag,w=Math.max(50,tx.length*fs*0.5+30),h=fs+14;\nconst t=mt%(ctx.loop??5),k=Math.min(1,t/0.35),e=1-Math.pow(1-k,3),sc=2.2-1.2*e;\nsvg+=`<g transform=\"rotate(-4) scale(${sc})\" opacity=\"${k}\"><rect x=\"${-w/2}\" y=\"${-h/2}\" width=\"${w}\" height=\"${h}\" rx=\"3\" fill=\"${col}\"/><circle cx=\"${-w/2+8}\" cy=\"0\" r=\"3\" fill=\"${isN?'#18202B':'#ECE7D8'}\"/><text x=\"6\" y=\"${fs*0.35}\" text-anchor=\"middle\" font-family=\"Barlow Condensed,sans-serif\" font-weight=\"700\" font-size=\"${fs}\" fill=\"#2B1206\">${tx}</text></g>`;\nsvg+='</g>';"
+}

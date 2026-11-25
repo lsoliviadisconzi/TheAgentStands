@@ -1,0 +1,16 @@
+{
+  "id": "pup",
+  "name": "Pup (puppy)",
+  "icon": "🐶",
+  "category": "character",
+  "tags": ["animal", "dog", "cute", "walking"],
+  "desc": "Configurable-color puppy with walk-cycle legs and wagging tail",
+  "params": {
+    "x":     { "type": "x",     "default": "w*0.5" },
+    "y":     { "type": "y",     "default": "bY+5" },
+    "color": { "type": "color", "default": "#FF8C42" },
+    "stroke":{ "type": "color", "default": "#D06B20" },
+    "walk":  { "type": "bool",  "default": true }
+  },
+  "code": "const px = ctx.x ?? 200; const py = ctx.y ?? 220; const col = ctx.color || '#FF8C42'; const sc2 = ctx.stroke || '#D06B20'; const walk = ctx.walk !== false;\nconst cyc = walk ? mt*0.8 : 0;\nconst bx = px + (walk ? Math.sin(cyc)*4 : 0);\nconst by = py + (walk ? Math.abs(Math.sin(cyc*2))*2 : 0);\nsvg += `<ellipse cx=\"${bx}\" cy=\"${by-5}\" rx=\"7\" ry=\"5\" fill=\"${col}\" stroke=\"${sc2}\" stroke-width=\"${ol*0.4}\"/>`;\nsvg += `<circle cx=\"${bx+5}\" cy=\"${by-10}\" r=\"5\" fill=\"${col}\" stroke=\"${sc2}\" stroke-width=\"${ol*0.4}\"/>`;\nsvg += `<polygon points=\"${bx+2},${by-14} ${bx+1},${by-19} ${bx+5},${by-15}\" fill=\"${sc2}\"/>`;\nsvg += `<polygon points=\"${bx+8},${by-14} ${bx+9},${by-19} ${bx+6},${by-15}\" fill=\"${sc2}\"/>`;\nsvg += `<circle cx=\"${bx+4}\" cy=\"${by-11}\" r=\"1\" fill=\"#222\"/>`;\nsvg += `<circle cx=\"${bx+7}\" cy=\"${by-11}\" r=\"1\" fill=\"#222\"/>`;\nconst lf = walk ? Math.sin(cyc*3)*3 : 0;\nsvg += `<line x1=\"${bx-4}\" y1=\"${by-1}\" x2=\"${bx-5+lf}\" y2=\"${by+5}\" stroke=\"${sc2}\" stroke-width=\"2\" stroke-linecap=\"round\"/>`;\nsvg += `<line x1=\"${bx+4}\" y1=\"${by-1}\" x2=\"${bx+5-lf}\" y2=\"${by+5}\" stroke=\"${sc2}\" stroke-width=\"2\" stroke-linecap=\"round\"/>`;\nconst tail = Math.sin(mt*3.5)*8;\nsvg += `<path d=\"M${bx-7} ${by-6} Q${bx-12} ${by-14+tail} ${bx-10} ${by-18+tail*0.5}\" fill=\"none\" stroke=\"${col}\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>`;"
+}

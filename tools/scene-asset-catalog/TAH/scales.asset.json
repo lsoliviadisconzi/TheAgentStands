@@ -1,0 +1,39 @@
+{
+  "id": "scales",
+  "name": "Scales of Standards",
+  "icon": "⚖️",
+  "category": "prop",
+  "tags": [
+    "double-standard",
+    "consistency",
+    "hypocrisy-gap",
+    "dossier-05",
+    "dossier-07"
+  ],
+  "desc": "Balance scales whose beam tilts; 'rigged' adds a thumb on one pan to show a double standard",
+  "params": {
+    "x": {
+      "type": "x",
+      "default": "w*0.5"
+    },
+    "y": {
+      "type": "y",
+      "default": "bY"
+    },
+    "scale": {
+      "type": "number",
+      "default": 1,
+      "desc": "Uniform scale"
+    },
+    "tilt": {
+      "type": "number",
+      "default": 0,
+      "desc": "-1 left heavy to 1 right heavy"
+    },
+    "rigged": {
+      "type": "bool",
+      "default": false
+    }
+  },
+  "code": "const x=ctx.x??200,y=ctx.y??220,s=ctx.scale??1;const ink=isN?'#EAE8E1':'#18202B',tag='#FF8A5C',pap=isN?'#2A3542':'#ECE7D8',dim=isN?'#8B9AAB':'#5B6878';svg+=`<g transform=\"translate(${x} ${y}) scale(${s})\">`;\nconst tilt=ctx.tilt??0,rig=!!ctx.rigged,ang=tilt*14+Math.sin(mt*1.3)*(Math.abs(tilt)<0.05?2:0.8),a=ang*Math.PI/180,c=Math.cos(a),sn=Math.sin(a);\nconst Lx=-44*c,Ly=-90-44*sn,Rx=44*c,Ry=-90+44*sn;\nsvg+=`<line x1=\"0\" y1=\"-8\" x2=\"0\" y2=\"-90\" stroke=\"${ink}\" stroke-width=\"3\"/><path d=\"M-18 0 L-10 -8 L10 -8 L18 0 Z\" fill=\"${ink}\"/><line x1=\"-44\" y1=\"-90\" x2=\"44\" y2=\"-90\" stroke=\"${ink}\" stroke-width=\"3\" stroke-linecap=\"round\" transform=\"rotate(${ang} 0 -90)\"/>`;\n[[Lx,Ly,4],[Rx,Ry,rig?9:4]].forEach(p=>{svg+=`<line x1=\"${p[0]}\" y1=\"${p[1]}\" x2=\"${p[0]-12}\" y2=\"${p[1]+26}\" stroke=\"${dim}\" stroke-width=\"1\"/><line x1=\"${p[0]}\" y1=\"${p[1]}\" x2=\"${p[0]+12}\" y2=\"${p[1]+26}\" stroke=\"${dim}\" stroke-width=\"1\"/><path d=\"M${p[0]-14} ${p[1]+26} Q${p[0]} ${p[1]+36} ${p[0]+14} ${p[1]+26} Z\" fill=\"#C9A24A\"/><circle cx=\"${p[0]}\" cy=\"${p[1]+22}\" r=\"${p[2]}\" fill=\"${ink}\" opacity=\"0.8\"/>`;});\nif(rig)svg+=`<rect x=\"${Rx-4}\" y=\"${Ry+38}\" width=\"8\" height=\"12\" rx=\"4\" fill=\"${tag}\"/>`;\nsvg+='</g>';"
+}

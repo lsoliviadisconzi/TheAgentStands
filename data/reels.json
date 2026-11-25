@@ -13,6 +13,9 @@
         "s": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
         "h": 1300,
         "d": "segurando um close da própria orelha",
+        "fx": {
+          "propR": "folder"
+        },
         "log": [
           "cabelo.cor = castanho loirinho",
           "confiança = 100%"
@@ -66,10 +69,20 @@
     "onLanding": false,
     "order": 0,
     "createdAt": 1795491317898,
-    "updatedAt": 1795588604681,
+    "updatedAt": 1795592757868,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_4u",
+        "id": "cue_mwvtkf3g_oh",
+        "track": "propR",
+        "anchor": {
+          "kind": "line",
+          "line": "7a92ed4f",
+          "at": "start"
+        },
+        "value": "mic"
+      },
+      {
+        "id": "cue_mwvtkf3g_oi",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -79,7 +92,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_4v",
+        "id": "cue_mwvtkf3g_oj",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -108,14 +121,14 @@
           "hair.colour = browny blondish",
           "confidence = 100%"
         ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
         "audio": {
-          "file": "audio/rmwu5c5e983a/c640eb5b-ad5a80796a.mp3",
-          "durationMs": 8784,
-          "key": "ad5a80796a",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "file": "audio/rmwu5c5e983a/c640eb5b-be72589798.mp3",
+          "durationMs": 7656,
+          "key": "be72589798",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
           "text": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-          "voiceLabel": "EN - British - Male Calm"
+          "voiceLabel": "EN - British - Male North"
         }
       },
       {
@@ -143,24 +156,24 @@
         "h": 1000,
         "d": "quietly",
         "m": "flat",
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
         "audio": {
-          "file": "audio/rmwu5c5e983a/5228525e-0226fca06f.mp3",
-          "durationMs": 4608,
-          "key": "0226fca06f",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "file": "audio/rmwu5c5e983a/5228525e-9e720ac4ed.mp3",
+          "durationMs": 5016,
+          "key": "9e720ac4ed",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
           "text": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-          "voiceLabel": "EN - British - Male Calm"
+          "voiceLabel": "EN - British - Male North"
         }
       }
     ],
     "onLanding": false,
     "order": 1,
     "createdAt": 1795491595089,
-    "updatedAt": 1795493061132,
+    "updatedAt": 1795590683545,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_4w",
+        "id": "cue_mwvtkf3g_ok",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -170,7 +183,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_4x",
+        "id": "cue_mwvtkf3g_ol",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -256,7 +269,7 @@
     "updatedAt": 1795496250988,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_4y",
+        "id": "cue_mwvtkf3g_om",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -266,7 +279,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_4z",
+        "id": "cue_mwvtkf3g_on",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -334,7 +347,7 @@
     "updatedAt": 1795497107779,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_50",
+        "id": "cue_mwvtkf3g_oo",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -344,7 +357,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_51",
+        "id": "cue_mwvtkf3g_op",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -424,7 +437,7 @@
     "updatedAt": 1795497544159,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_52",
+        "id": "cue_mwvtkf3g_oq",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -434,7 +447,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_53",
+        "id": "cue_mwvtkf3g_or",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -511,7 +524,7 @@
     "updatedAt": 1795499301188,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_54",
+        "id": "cue_mwvtkf3g_os",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -521,7 +534,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvr3eh4_55",
+        "id": "cue_mwvtkf3g_ot",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -531,7 +544,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_56",
+        "id": "cue_mwvtkf3g_ou",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -584,7 +597,7 @@
     "updatedAt": 1795515156013,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_57",
+        "id": "cue_mwvtkf3g_ov",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -594,7 +607,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_58",
+        "id": "cue_mwvtkf3g_ow",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -647,7 +660,7 @@
     "updatedAt": 1795515302318,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_59",
+        "id": "cue_mwvtkf3g_ox",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -657,7 +670,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5a",
+        "id": "cue_mwvtkf3g_oy",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -711,7 +724,7 @@
     "updatedAt": 1795515554300,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5b",
+        "id": "cue_mwvtkf3g_oz",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -721,7 +734,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5c",
+        "id": "cue_mwvtkf3g_p0",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -731,7 +744,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5d",
+        "id": "cue_mwvtkf3g_p1",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -784,7 +797,7 @@
     "updatedAt": 1795517722510,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5e",
+        "id": "cue_mwvtkf3g_p2",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -841,7 +854,7 @@
     "updatedAt": 1795517746420,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5f",
+        "id": "cue_mwvtkf3g_p3",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -851,7 +864,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5g",
+        "id": "cue_mwvtkf3g_p4",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -935,7 +948,7 @@
     "updatedAt": 1795518737983,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5h",
+        "id": "cue_mwvtkf3g_p5",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -945,7 +958,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvr3eh4_5i",
+        "id": "cue_mwvtkf3g_p6",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -955,7 +968,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvr3eh4_5j",
+        "id": "cue_mwvtkf3g_p7",
         "track": "lightColor",
         "anchor": {
           "kind": "line",
@@ -965,7 +978,7 @@
         "value": "warm"
       },
       {
-        "id": "cue_mwvr3eh4_5k",
+        "id": "cue_mwvtkf3g_p8",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -975,7 +988,7 @@
         "value": "night"
       },
       {
-        "id": "cue_mwvr3eh4_5l",
+        "id": "cue_mwvtkf3g_p9",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -985,7 +998,7 @@
         "value": "question"
       },
       {
-        "id": "cue_mwvr3eh4_5m",
+        "id": "cue_mwvtkf3g_pa",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -995,7 +1008,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5n",
+        "id": "cue_mwvtkf3g_pb",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1049,7 +1062,7 @@
     "updatedAt": 1795519488327,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5o",
+        "id": "cue_mwvtkf3g_pc",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1059,7 +1072,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5p",
+        "id": "cue_mwvtkf3g_pd",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1116,7 +1129,7 @@
     "updatedAt": 1795519731030,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5q",
+        "id": "cue_mwvtkf3g_pe",
         "track": "lightColor",
         "anchor": {
           "kind": "line",
@@ -1126,7 +1139,7 @@
         "value": "alarm"
       },
       {
-        "id": "cue_mwvr3eh4_5r",
+        "id": "cue_mwvtkf3g_pf",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1136,7 +1149,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5s",
+        "id": "cue_mwvtkf3g_pg",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1190,7 +1203,7 @@
     "updatedAt": 1795542156982,
     "cues": [
       {
-        "id": "cue_mwvr3eh4_5t",
+        "id": "cue_mwvtkf3g_ph",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1200,7 +1213,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh4_5u",
+        "id": "cue_mwvtkf3g_pi",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1279,7 +1292,7 @@
     "updatedAt": 1795521151078,
     "cues": [
       {
-        "id": "cue_mwvr3eh5_5v",
+        "id": "cue_mwvtkf3g_pj",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1289,7 +1302,7 @@
         "value": "#121112"
       },
       {
-        "id": "cue_mwvr3eh5_5w",
+        "id": "cue_mwvtkf3g_pk",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1299,7 +1312,7 @@
         "value": "clock"
       },
       {
-        "id": "cue_mwvr3eh5_5x",
+        "id": "cue_mwvtkf3g_pl",
         "track": "badgeColor",
         "anchor": {
           "kind": "line",
@@ -1309,7 +1322,7 @@
         "value": "#efc74d"
       },
       {
-        "id": "cue_mwvr3eh5_5y",
+        "id": "cue_mwvtkf3g_pm",
         "track": "badgeName",
         "anchor": {
           "kind": "line",
@@ -1319,7 +1332,7 @@
         "value": "AGENT"
       },
       {
-        "id": "cue_mwvr3eh5_5z",
+        "id": "cue_mwvtkf3g_pn",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1329,7 +1342,7 @@
         "value": "sleepy"
       },
       {
-        "id": "cue_mwvr3eh5_60",
+        "id": "cue_mwvtkf3g_po",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -1339,7 +1352,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvr3eh5_61",
+        "id": "cue_mwvtkf3g_pp",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1349,7 +1362,7 @@
         "value": "plum"
       },
       {
-        "id": "cue_mwvr3eh5_62",
+        "id": "cue_mwvtkf3g_pq",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1359,7 +1372,7 @@
         "value": "question"
       },
       {
-        "id": "cue_mwvr3eh5_63",
+        "id": "cue_mwvtkf3g_pr",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1410,7 +1423,7 @@
     "updatedAt": 1795521254893,
     "cues": [
       {
-        "id": "cue_mwvr3eh5_64",
+        "id": "cue_mwvtkf3g_ps",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1420,7 +1433,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvr3eh5_65",
+        "id": "cue_mwvtkf3g_pt",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1430,7 +1443,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh5_66",
+        "id": "cue_mwvtkf3g_pu",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1515,7 +1528,7 @@
     "updatedAt": 1795522516707,
     "cues": [
       {
-        "id": "cue_mwvr3eh5_67",
+        "id": "cue_mwvtkf3g_pv",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1525,7 +1538,7 @@
         "value": "clock"
       },
       {
-        "id": "cue_mwvr3eh5_68",
+        "id": "cue_mwvtkf3g_pw",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1535,7 +1548,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh5_69",
+        "id": "cue_mwvtkf3g_px",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1545,7 +1558,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvr3eh5_6a",
+        "id": "cue_mwvtkf3g_py",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -1555,7 +1568,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvr3eh5_6b",
+        "id": "cue_mwvtkf3g_pz",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1565,7 +1578,7 @@
         "value": "#15131b"
       },
       {
-        "id": "cue_mwvr3eh5_6c",
+        "id": "cue_mwvtkf3g_q0",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1575,7 +1588,7 @@
         "value": "none"
       },
       {
-        "id": "cue_mwvr3eh5_6d",
+        "id": "cue_mwvtkf3g_q1",
         "track": "propR",
         "anchor": {
           "kind": "line",
@@ -1628,7 +1641,7 @@
     "updatedAt": 1795580818115,
     "cues": [
       {
-        "id": "cue_mwvr3eh5_6e",
+        "id": "cue_mwvtkf3g_q2",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1638,7 +1651,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvr3eh5_6f",
+        "id": "cue_mwvtkf3g_q3",
         "track": "mood",
         "anchor": {
           "kind": "line",
