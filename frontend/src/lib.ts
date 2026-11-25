@@ -48,7 +48,7 @@ export function nextFx(cur: LineFx | undefined, key: keyof LineFx, value: string
  * top up to and including this one, exactly the way the player does at run time.
  */
 export function resolveLook(lines: Line[], index: number): StageLook {
-  const look: StageLook = { mood: 'flat', light: 'sway', color: '', room: '', propL: '', propR: '' }
+  const look: StageLook = { mood: 'flat', light: 'sway', color: '', room: '', propL: '', propR: '', badgeColor: '', badgeName: '' }
   for (let i = 0; i <= index && i < lines.length; i++) {
     const l = lines[i]
     if (l.m) look.mood = l.m
@@ -57,6 +57,8 @@ export function resolveLook(lines: Line[], index: number): StageLook {
     if (l.fx?.room) look.room = l.fx.room
     if (l.fx?.propL !== undefined) look.propL = l.fx.propL === 'none' ? '' : l.fx.propL
     if (l.fx?.propR !== undefined) look.propR = l.fx.propR === 'none' ? '' : l.fx.propR
+    if (l.fx?.badgeColor) look.badgeColor = l.fx.badgeColor
+    if (l.fx?.badgeName) look.badgeName = l.fx.badgeName
   }
   return look
 }

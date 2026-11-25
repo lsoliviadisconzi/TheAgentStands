@@ -14,6 +14,8 @@ export interface LineFx {
   room?: string
   propL?: string
   propR?: string
+  badgeColor?: string // avatar badge fill colour (CSS colour string)
+  badgeName?: string // text inside the avatar badge
 }
 
 /** The fully resolved look of one line (earlier lines' sticky settings folded in). Sent to the preview by "Try now". */
@@ -24,6 +26,8 @@ export interface StageLook {
   room: string
   propL: string
   propR: string
+  badgeColor: string
+  badgeName: string
 }
 
 export interface StageOption { id: string; label: string }

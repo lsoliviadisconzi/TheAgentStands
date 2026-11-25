@@ -16,6 +16,8 @@ export interface LineFx {
   room?: string; // room tint
   propL?: string; // SVG prop, left of the face
   propR?: string; // SVG prop, right of the face
+  badgeColor?: string; // avatar badge fill colour (CSS colour string)
+  badgeName?: string; // text inside the avatar badge
 }
 
 /* ------------------------------------------------------------------ catalog */
@@ -83,9 +85,16 @@ export function cleanFx(raw: unknown): LineFx | undefined {
   const out: LineFx = {};
   if (has(LIGHTS, r.light)) out.light = r.light as string;
   if (has(COLORS, r.color)) out.color = r.color as string;
-  if (has(ROOMS, r.room)) out.room = r.room as string;
+  // room: accept whitelisted ID or any hex colour string (#RRGGBB)
+  if (typeof r.room === 'string') {
+    if (has(ROOMS, r.room)) out.room = r.room;
+    else if (/^#[0-9a-fA-F]{6}$/.test(r.room)) out.room = r.room;
+  }
   if (r.propL === 'none' || has(PROPS, r.propL)) out.propL = r.propL as string; // 'none' removes the current prop
   if (r.propR === 'none' || has(PROPS, r.propR)) out.propR = r.propR as string;
+  // badgeColor and badgeName are free-form strings (CSS colour / text), so no whitelist
+  if (typeof r.badgeColor === 'string') out.badgeColor = r.badgeColor;
+  if (typeof r.badgeName === 'string') out.badgeName = r.badgeName;
   return Object.keys(out).length ? out : undefined;
 }
 
@@ -200,7 +209,7 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     s.innerHTML=id&&PROP[id]?'<div class="fx-prop fx-'+id+'">'+PROP[id]+'</div>':'';
   }
   function clear(){
-    stage.removeAttribute('data-light');stage.style.removeProperty('--lamp-rgb');stage.style.removeProperty('--room');
+    stage.removeAttribute('data-light');stage.style.removeProperty('--lamp-rgb');stage.style.removeProperty('--room');stage.style.removeProperty('--badge-color');
     prop('l','');prop('r','');
   }
   function reset(){i=-1;clear()}
@@ -208,7 +217,27 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     if(!f)return;
     if(f.light){ if(f.light==='sway')stage.removeAttribute('data-light'); else stage.setAttribute('data-light',f.light); }
     if(f.color&&COL[f.color])stage.style.setProperty('--lamp-rgb',COL[f.color]);
-    if(f.room&&ROOM[f.room])stage.style.setProperty('--room',ROOM[f.room]);
+    if(f.room){
+      if(ROOM[f.room]) stage.style.setProperty('--room',ROOM[f.room]);
+      else if(/^#[0-9a-fA-F]{6}$/.test(f.room)) stage.style.setProperty('--room',f.room);
+    }
+    if(f.badgeColor){ stage.style.setProperty('--badge-color',f.badgeColor); }
+    if(f.badgeColor || f.badgeName){
+      var av=document.getElementById('av');
+      if(av){
+        var textElement=av.querySelector('.badge');
+        if(textElement){
+          if(f.badgeName) textElement.textContent=f.badgeName;
+          if(f.badgeColor) {
+            // Set badge text fill color
+            textElement.setAttribute('fill', f.badgeColor);
+            // Also set the background rect fill (sibling before the text)
+            var rectElement=textElement.previousElementSibling;
+            if(rectElement && rectElement.tagName==='rect') rectElement.setAttribute('fill', f.badgeColor);
+          }
+        }
+      }
+    }
     if(f.propL!==undefined)prop('l',f.propL);
     if(f.propR!==undefined)prop('r',f.propR);
   }
@@ -225,7 +254,7 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     var av=document.getElementById('av');
     if(av&&typeof k.mood==='string'&&/^[a-z]{2,12}$/.test(k.mood))av.setAttribute('data-mood',k.mood);
     clear();
-    apply({light:LIGHT.indexOf(k.light)>=0?k.light:'sway',color:k.color||'',room:k.room||'',propL:k.propL||'',propR:k.propR||''});
+    apply({light:LIGHT.indexOf(k.light)>=0?k.light:'sway',color:k.color||'',room:k.room||'',badgeColor:k.badgeColor||'',badgeName:k.badgeName||'',propL:k.propL||'',propR:k.propR||''});
   });` : ''}
 })();`;
 };

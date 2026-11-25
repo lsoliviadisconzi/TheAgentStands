@@ -3,22 +3,7 @@
 > vite
 
 
-  VITE v8.3.8  ready in 196 ms
+  VITE v8.3.8  ready in 165 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-7:54:05 AM [vite] (client) hmr update /src/App.tsx, /src/AudioPanel.tsx
-7:54:23 AM [vite] (client) hmr update /src/App.tsx, /src/AudioPanel.tsx
-7:54:34 AM [vite] (client) hmr update /src/App.tsx, /src/AudioPanel.tsx
-7:54:39 AM [vite] (client) hmr update /src/App.tsx, /src/AudioPanel.tsx
-7:54:42 AM [vite] (client) hmr update /src/AudioPanel.tsx
-7:54:50 AM [vite] (client) hmr update /src/AudioPanel.tsx
-7:54:58 AM [vite] (client) hmr update /src/AudioPanel.tsx
-7:55:28 AM [vite] (client) hmr update /src/AudioPanel.tsx
-7:55:31 AM [vite] (client) hmr update /src/App.tsx
-7:55:35 AM [vite] (client) hmr update /src/App.tsx
-7:55:39 AM [vite] (client) hmr update /src/App.tsx
-7:56:43 AM [vite] http proxy error: /api/reels/rmwukwnw458d
-AggregateError [ECONNREFUSED]: 
-    at internalConnectMultiple (node:net:1139:18)
-    at afterConnectMultiple (node:net:1714:7)

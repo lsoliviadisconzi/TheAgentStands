@@ -1052,3 +1052,17 @@ textarea { resize: vertical; min-height: 60px; }
 .tb-save { font-size: 11px; color: var(--mu); white-space: nowrap; }
 .tb-save[data-s="saving"], .tb-save[data-s="dirty"] { color: var(--warn); }
 .tb-save[data-s="error"] { color: var(--err); }
+/* ==========================================================================
+   Stage effects: colour fields (swatch picker + optional screen eyedropper)
+   ========================================================================== */
+.vo-colorfield { display: flex; align-items: center; gap: 6px; }
+.vo-colorfield .vo-btn { padding: 5px 8px; }
+.vo-color {
+  width: 34px;
+  height: 30px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  cursor: pointer;
+}

@@ -271,7 +271,6 @@ export default function AudioPanel(p: Props) {
                         {([
                           ['Light', 'light', stage.lights],
                           ['Light colour', 'color', stage.colors],
-                          ['Room', 'room', stage.rooms],
                           ['Prop left', 'propL', stage.props],
                           ['Prop right', 'propR', stage.props],
                         ] as const).map(([label, key, opts]) => (
@@ -285,11 +284,34 @@ export default function AudioPanel(p: Props) {
                             </select>
                           </label>
                         ))}
+                        <label>
+                          Room
+                          <select className="vo-in" value={l.fx?.room || ''} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })}>
+                            <option value="">keep previous</option>
+                            {stage.rooms.map((o) => (
+                              <option key={o.id} value={o.id}>{o.label}</option>
+                            ))}
+                          </select>
+                        </label>
+                        <label className="vo-colorfield">
+                          Room colour
+                          <input className="vo-color" type="color" value={l.fx?.room || '#1d1b24'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })} />
+                        </label>
                         <button type="button" className="vo-btn" title="Show this line's look in the preview now. Earlier lines' settings are included. Press Replay to watch it in sequence." onClick={() => tryLine(l.id)}>
                           Try now
                         </button>
                       </div>
                     )}
+                    <div className="vo-row">
+                      <label className="vo-colorfield">
+                        Badge colour
+                        <input className="vo-color" type="color" value={l.fx?.badgeColor || '#f2c230'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeColor', e.target.value) })} />
+                      </label>
+                      <label>
+                        Badge name
+                        <input className="vo-in" type="text" value={l.fx?.badgeName || ''} placeholder="e.g. AGENT" onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeName', e.target.value) })} />
+                      </label>
+                    </div>
                     <small className="vo-status" data-s={reel.plan.clamped.includes(i) ? 'stale' : ''}>
                       Plays at {fmt(reel.plan.starts[i] ?? 0)}
                       {reel.plan.clamped.includes(i) && (i === 0 ? ' · the first line always follows the hook card' : ' · can\'t start before the previous line ends')}

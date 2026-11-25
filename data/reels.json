@@ -609,5 +609,385 @@
     "order": 10,
     "createdAt": 1795517746420,
     "updatedAt": 1795517746420
+  },
+  {
+    "id": "rmwul1s7f24d",
+    "title": "Exhibit A",
+    "theme": "Don't Argue With Colours",
+    "lang": "en",
+    "hook": "Exhibit A: it’s browny blondish.",
+    "stamp": "Overruled before I finished the sentence.",
+    "next": "Next: the palettes.",
+    "lines": [
+      {
+        "id": "66917e5d",
+        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+        "h": 1300,
+        "d": "holding up a close-up of his ear",
+        "m": "flat",
+        "fx": {
+          "light": "flicker",
+          "color": "warm",
+          "room": "night",
+          "propL": "question"
+        },
+        "log": [
+          "hair.colour = browny blondish",
+          "confidence = 100%"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwul1s7f24d/66917e5d-mwulhmli.mp3",
+          "durationMs": 6792,
+          "key": "ad5a80796a",
+          "voiceLabel": "Uploaded",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed."
+        }
+      },
+      {
+        "id": "080924c7",
+        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "grey_bits = a few",
+          "grey_bits.relevant = no"
+        ],
+        "audio": {
+          "file": "audio/rmwul1s7f24d/080924c7-mwulhqd2.mp3",
+          "durationMs": 6456,
+          "key": "5ef3cc099e",
+          "voiceLabel": "Uploaded",
+          "text": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits."
+        }
+      },
+      {
+        "id": "19e2dbc3",
+        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+        "h": 1000,
+        "d": "quietly",
+        "m": "flat",
+        "audio": {
+          "file": "audio/rmwul1s7f24d/19e2dbc3-mwulhwye.mp3",
+          "durationMs": 4704,
+          "key": "a24a597700",
+          "voiceLabel": "Uploaded",
+          "text": "I’ve just realised I used the word “browny” in court. I have no expert witnesses."
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 11,
+    "createdAt": 1795517985291,
+    "updatedAt": 1795518737983
+  },
+  {
+    "id": "rmwulxzyf3fe",
+    "title": "Exhibit A",
+    "theme": "Don't Argue With Colours",
+    "lang": "en",
+    "hook": "Exhibit A: it’s browny blondish.",
+    "stamp": "Overruled before I finished the sentence.",
+    "next": "Next: the palettes.",
+    "lines": [
+      {
+        "id": "30f7510c",
+        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+        "h": 1300,
+        "d": "holding up a close-up of his ear",
+        "log": [
+          "hair.colour = browny blondish",
+          "confidence = 100%"
+        ]
+      },
+      {
+        "id": "23c827e7",
+        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "grey_bits = a few",
+          "grey_bits.relevant = no"
+        ]
+      },
+      {
+        "id": "f3501d65",
+        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+        "h": 1000,
+        "d": "quietly",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 12,
+    "createdAt": 1795519488327,
+    "updatedAt": 1795519488327
+  },
+  {
+    "id": "rmwum1r0sfbd",
+    "title": "Exhibit A",
+    "theme": "Don't Argue With Colours",
+    "lang": "en",
+    "hook": "Exhibit A: it’s browny blondish.",
+    "stamp": "Overruled before I finished the sentence.",
+    "next": "Next: the palettes.",
+    "lines": [
+      {
+        "id": "116a6090",
+        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+        "h": 1300,
+        "d": "holding up a close-up of his ear",
+        "fx": {
+          "color": "alarm"
+        },
+        "log": [
+          "hair.colour = browny blondish",
+          "confidence = 100%"
+        ]
+      },
+      {
+        "id": "4943a3f1",
+        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "grey_bits = a few",
+          "grey_bits.relevant = no"
+        ]
+      },
+      {
+        "id": "ca073a50",
+        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+        "h": 1000,
+        "d": "quietly",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 13,
+    "createdAt": 1795519663372,
+    "updatedAt": 1795519731030
+  },
+  {
+    "id": "rmwum8lnn458",
+    "title": "Exhibit A",
+    "theme": "Don't Argue With Colours",
+    "lang": "en",
+    "hook": "Exhibit A: it’s browny blondish.",
+    "stamp": "Overruled before I finished the sentence.",
+    "next": "Next: the palettes.",
+    "lines": [
+      {
+        "id": "002f7598",
+        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
+        "h": 1300,
+        "d": "holding up a close-up of his ear",
+        "log": [
+          "hair.colour = browny blondish",
+          "confidence = 100%"
+        ]
+      },
+      {
+        "id": "d0ace7d1",
+        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "grey_bits = a few",
+          "grey_bits.relevant = no"
+        ]
+      },
+      {
+        "id": "f6f9012d",
+        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
+        "h": 1000,
+        "d": "quietly",
+        "m": "flat"
+      }
+    ],
+    "onLanding": true,
+    "order": 14,
+    "createdAt": 1795519983011,
+    "updatedAt": 1795542156982
+  },
+  {
+    "id": "rmwumq5a0768",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "419bf496",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "d": "serious, reading from a phone",
+        "fx": {
+          "room": "#121112",
+          "propL": "clock",
+          "badgeColor": "#efc74d",
+          "badgeName": "AGENT"
+        },
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwumq5a0768/419bf496-6ac6a04c1e.mp3",
+          "durationMs": 5184,
+          "key": "6ac6a04c1e",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "20b3daef",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "d": "long beat",
+        "m": "sleepy",
+        "fx": {
+          "light": "flicker",
+          "room": "plum",
+          "propL": "question"
+        },
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmwumq5a0768/20b3daef-6df547f4dc.mp3",
+          "durationMs": 5256,
+          "key": "6df547f4dc",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "43556dc2",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 15,
+    "createdAt": 1795520801592,
+    "updatedAt": 1795521151078
+  },
+  {
+    "id": "rmwumzv1pece",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "fa1d6a14",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "d": "serious, reading from a phone",
+        "m": "flat"
+      },
+      {
+        "id": "1d287f92",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "d": "long beat",
+        "m": "up",
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ]
+      },
+      {
+        "id": "5528e439",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 16,
+    "createdAt": 1795521254893,
+    "updatedAt": 1795521254893
+  },
+  {
+    "id": "rmwunh8wtc28",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "eb5e552d",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "offset": 14651,
+        "d": "serious, reading from a phone",
+        "fx": {
+          "propL": "clock"
+        },
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+        "audio": {
+          "file": "audio/rmwunh8wtc28/eb5e552d-mwunhz5p.mp3",
+          "durationMs": 5976,
+          "key": "3735d5d955",
+          "voiceLabel": "Uploaded",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”"
+        }
+      },
+      {
+        "id": "a0c768f8",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "offset": 3355,
+        "d": "long beat",
+        "m": "up",
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ],
+        "audio": {
+          "file": "audio/rmwunh8wtc28/a0c768f8-mwuni3ih.mp3",
+          "durationMs": 5568,
+          "key": "477b121445",
+          "voiceLabel": "Uploaded",
+          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life."
+        }
+      },
+      {
+        "id": "35791a50",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "offset": 18,
+        "m": "flat",
+        "fx": {
+          "light": "flicker",
+          "room": "#15131b",
+          "propL": "none",
+          "propR": "question"
+        },
+        "audio": {
+          "file": "audio/rmwunh8wtc28/35791a50-mwuni7wm.mp3",
+          "durationMs": 3816,
+          "key": "1decf50802",
+          "voiceLabel": "Uploaded",
+          "text": "I’ve been at my desk the whole time. Well… I don’t have a desk."
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 17,
+    "createdAt": 1795522066013,
+    "updatedAt": 1795522516707
   }
 ]
