@@ -61,10 +61,10 @@ export default function AudioPanel(p: Props) {
   }
 
   const addLine = () =>
-    p.onEdit((r) => {
-      const last = r.lines[r.lines.length - 1]
-      return { ...r, lines: [...r.lines, { id: uid(), s: '', h: 1000, voiceId: last?.voiceId || defaultVoice }] }
-    })
+    p.onEdit((r) => ({
+      ...r,
+      lines: [...r.lines, { id: uid(), s: '', h: 1000 }],
+    }))
 
   const removeLine = (id: string) => p.onEdit((r) => ({ ...r, lines: r.lines.filter((l) => l.id !== id) }))
 
@@ -161,6 +161,16 @@ export default function AudioPanel(p: Props) {
   }
 
   const total = reel.plan.totalMs || 1
+
+  // --- voice consistency ---
+  const usedVoiceIds = [...new Set(reel.lines.map((l) => l.voiceId).filter(Boolean))] as string[]
+  const hasVoiceMix = usedVoiceIds.length > 1
+  const voiceFreq: Record<string, number> = {}
+  reel.lines.forEach((l) => { if (l.voiceId) voiceFreq[l.voiceId] = (voiceFreq[l.voiceId] || 0) + 1 })
+  const majorityVoice = hasVoiceMix
+    ? (Object.entries(voiceFreq).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '')
+    : ''
+
   const lineSt = (l: Line) => lineState(l, reel.castSettings?.[l.voiceId || ''])
   const pending = reel.lines.filter((l) => ['new', 'stale'].includes(lineSt(l)))
 
@@ -204,6 +214,12 @@ export default function AudioPanel(p: Props) {
                 <b>{(reel.plan.totalMs / 1000).toFixed(1)}</b> s
               </span>
             </div>
+
+            {hasVoiceMix && (
+              <div className="note warn" style={{ margin: '0 0 8px', fontSize: 12 }}>
+                ⚠ Mixed voices — {usedVoiceIds.length} different voices across {reel.lines.length} lines. All lines must use the same voice. Go to <strong>Write &amp; voice</strong> and fix the flagged lines.
+              </div>
+            )}
 
             <div className="aud-track" aria-label="Narration timeline">
               {reel.lines.map((l, i) => (
@@ -552,6 +568,12 @@ export default function AudioPanel(p: Props) {
               </div>
             )}
 
+            {hasVoiceMix && (
+              <div className="note warn" style={{ margin: '0 0 8px', fontSize: 12 }}>
+                ⚠ {usedVoiceIds.length} voices detected in this reel — lines flagged <strong>"Voice mismatch"</strong> below are outliers. Change them to match the majority voice and regenerate.
+              </div>
+            )}
+
             <div className="sec">Reel</div>
             <div className="vo-card">
               <input className="vo-in" name="reelTitle" aria-label="Title" placeholder="Title" value={reel.title} onChange={(e) => p.onEdit((r) => ({ ...r, title: e.target.value }))} />
@@ -576,6 +598,8 @@ export default function AudioPanel(p: Props) {
               const langAccents = accentsForLang(reel.lang)
               const isCustomAccent = !!l.ttsAccent && !langAccents.includes(l.ttsAccent)
               const speedVal = l.ttsSpeed ?? 1
+              const isVoiceOutlier = hasVoiceMix && !!l.voiceId && l.voiceId !== majorityVoice
+              const isMissingVoice = hasVoiceMix && !l.voiceId
               return (
                 <div key={l.id} className="vo-card" style={{ ['--c' as string]: hue(i) }} data-live={p.liveLine === i ? '' : undefined}>
                   <div className="vo-head">
@@ -601,6 +625,11 @@ export default function AudioPanel(p: Props) {
                         </optgroup>
                       )}
                     </select>
+                    {(isVoiceOutlier || isMissingVoice) && (
+                      <span style={{ color: 'var(--warn)', fontSize: 11, fontWeight: 600, whiteSpace: 'nowrap' }}>
+                        ⚠ Voice mismatch
+                      </span>
+                    )}
                     <button className="vo-btn quiet" title="Move up" disabled={i === 0} onClick={() => moveLine(i, -1)}>
                       ↑
                     </button>

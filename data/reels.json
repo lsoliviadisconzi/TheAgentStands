@@ -1,563 +1,5 @@
 [
   {
-    "id": "rmwu567iif8e",
-    "title": "Prova A",
-    "theme": "Don't Argue With Colours",
-    "lang": "pt-BR",
-    "hook": "Prova A: é um castanho loirinho.",
-    "stamp": "Objeção acolhida antes de eu terminar a frase.",
-    "next": "A seguir: as paletas.",
-    "lines": [
-      {
-        "id": "7a92ed4f",
-        "s": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
-        "h": 1300,
-        "d": "segurando um close da própria orelha",
-        "fx": {
-          "propR": "folder"
-        },
-        "log": [
-          "cabelo.cor = castanho loirinho",
-          "confiança = 100%"
-        ],
-        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-        "ttsInstruct": "stern, serious, authoritative",
-        "audio": {
-          "file": "audio/rmwu567iif8e/7a92ed4f-338912ca7b.mp3",
-          "durationMs": 9264,
-          "key": "338912ca7b",
-          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-          "text": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
-          "voiceLabel": "PT-BR - The Standing Agent",
-          "ttsInstruct": "stern, serious, authoritative"
-        }
-      },
-      {
-        "id": "c12e3533",
-        "s": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "fios_grisalhos = alguns",
-          "fios_grisalhos.relevante = não"
-        ],
-        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-        "audio": {
-          "file": "audio/rmwu567iif8e/c12e3533-694288c1ad.mp3",
-          "durationMs": 15336,
-          "key": "694288c1ad",
-          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-          "text": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
-          "voiceLabel": "PT-BR - The Standing Agent"
-        }
-      },
-      {
-        "id": "82884f4e",
-        "s": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
-        "h": 1000,
-        "d": "baixinho",
-        "m": "flat",
-        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-        "audio": {
-          "file": "audio/rmwu567iif8e/82884f4e-dbf9f424d2.mp3",
-          "durationMs": 9744,
-          "key": "dbf9f424d2",
-          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-          "text": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
-          "voiceLabel": "PT-BR - The Standing Agent"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 0,
-    "createdAt": 1795491317898,
-    "updatedAt": 1795606720997,
-    "cues": [
-      {
-        "id": "cue_mww3m0vx_1gr",
-        "track": "propR",
-        "anchor": {
-          "kind": "line",
-          "line": "7a92ed4f",
-          "at": "start"
-        },
-        "value": "folder"
-      },
-      {
-        "id": "cue_mww3m0vx_1gs",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "c12e3533",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vx_1gt",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "82884f4e",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwu5c5e983a",
-    "title": "Exhibit A",
-    "theme": "Don't Argue With Colours",
-    "lang": "en",
-    "hook": "Exhibit A: it’s browny blondish.",
-    "stamp": "Overruled before I finished the sentence.",
-    "next": "Next: the palettes.",
-    "lines": [
-      {
-        "id": "c640eb5b",
-        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-        "h": 1300,
-        "d": "holding up a close-up of his ear",
-        "log": [
-          "hair.colour = browny blondish",
-          "confidence = 100%"
-        ],
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "audio": {
-          "file": "audio/rmwu5c5e983a/c640eb5b-be72589798.mp3",
-          "durationMs": 7656,
-          "key": "be72589798",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-          "voiceLabel": "EN - British - Male North"
-        }
-      },
-      {
-        "id": "337e519e",
-        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "grey_bits = a few",
-          "grey_bits.relevant = no"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu5c5e983a/337e519e-f9b1ba6ee7.mp3",
-          "durationMs": 6528,
-          "key": "f9b1ba6ee7",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "5228525e",
-        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-        "h": 1000,
-        "d": "quietly",
-        "m": "flat",
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "audio": {
-          "file": "audio/rmwu5c5e983a/5228525e-9e720ac4ed.mp3",
-          "durationMs": 5016,
-          "key": "9e720ac4ed",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-          "voiceLabel": "EN - British - Male North"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 1,
-    "createdAt": 1795491595089,
-    "updatedAt": 1795590683545,
-    "cues": [
-      {
-        "id": "cue_mww3m0vx_1gu",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "337e519e",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vx_1gv",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "5228525e",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwu7ksvb374",
-    "title": "Nobody Asked",
-    "theme": "The Denial Came First - Volume II",
-    "lang": "en",
-    "hook": "Nobody asked. They answered anyway.",
-    "stamp": "The denial arrived before the question.",
-    "next": "Next: out of jurisdiction.",
-    "lines": [
-      {
-        "id": "oqnbc42b",
-        "s": "",
-        "h": 1000,
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819"
-      },
-      {
-        "id": "b0786817",
-        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
-        "h": 1400,
-        "d": "reading a statement nobody requested",
-        "log": [
-          "question_asked = none",
-          "denial_issued = yes"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu7ksvb374/b0786817-3800d9be01.mp3",
-          "durationMs": 8856,
-          "key": "3800d9be01",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "58f48eb3",
-        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "unprompted_denials = 2"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu7ksvb374/58f48eb3-9d27ea7cdf.mp3",
-          "durationMs": 7728,
-          "key": "9d27ea7cdf",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "f8cff1ab",
-        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
-        "h": 1100,
-        "d": "to camera",
-        "m": "flat",
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "audio": {
-          "file": "audio/rmwu7ksvb374/f8cff1ab-f9936dc261.mp3",
-          "durationMs": 8304,
-          "key": "f9936dc261",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
-          "voiceLabel": "THE  Lord Pig"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 2,
-    "createdAt": 1795495357991,
-    "updatedAt": 1795496250988,
-    "cues": [
-      {
-        "id": "cue_mww3m0vx_1gw",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "58f48eb3",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vx_1gx",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "f8cff1ab",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwu8k4e032d",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "3f5b21ba",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "d": "serious, reading from a phone",
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu8k4e032d/3f5b21ba-6ac6a04c1e.mp3",
-          "durationMs": 6048,
-          "key": "6ac6a04c1e",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "a8c4ca8b",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "d": "long beat",
-        "m": "up",
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu8k4e032d/a8c4ca8b-6df547f4dc.mp3",
-          "durationMs": 96048,
-          "key": "6df547f4dc",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "1f2f29fd",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "m": "flat"
-      }
-    ],
-    "onLanding": true,
-    "order": 3,
-    "createdAt": 1795497005880,
-    "updatedAt": 1795604299232,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1gy",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "a8c4ca8b",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1gz",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "1f2f29fd",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwu8qcec505",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "9ec72f12",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "d": "serious, reading from a phone",
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu8qcec505/9ec72f12-6ac6a04c1e.mp3",
-          "durationMs": 5424,
-          "key": "6ac6a04c1e",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "cb408fd0",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "d": "long beat",
-        "m": "up",
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu8qcec505/cb408fd0-6df547f4dc.mp3",
-          "durationMs": 11496,
-          "key": "6df547f4dc",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "f76ef8fe",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "m": "flat",
-        "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-        "audio": {
-          "file": "audio/rmwu8qcec505/f76ef8fe-62591cbc83.mp3",
-          "durationMs": 3744,
-          "key": "62591cbc83",
-          "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
-          "text": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-          "voiceLabel": "PT-BR - The Standing Agent"
-        }
-      }
-    ],
-    "coverFile": "cover/rmwu8qcec505_auto.jpg",
-    "coverAuto": true,
-    "videoFile": "video/rmwu8qcec505.mp4",
-    "onLanding": true,
-    "order": 4,
-    "createdAt": 1795497296196,
-    "updatedAt": 1795604297510,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1h0",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "cb408fd0",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1h1",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "f76ef8fe",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwu9gb6b929",
-    "title": "But I Don’t Code",
-    "theme": "Right Model, Right Job",
-    "lang": "en",
-    "hook": "“But I’m not a developer.”",
-    "stamp": "Describe it. That’s the skill.",
-    "next": "Next: the chat box is not the toolbox.",
-    "lines": [
-      {
-        "id": "0a5fd6cb",
-        "s": "“AI is for developers.” Lovely. Can you think rationally? Can you say what you want, and what the finished thing looks like?",
-        "h": 1300,
-        "d": "arms folded",
-        "m": "flat",
-        "log": [
-          "can_code = false",
-          "can_explain_clearly = ?"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwu9gb6b929/0a5fd6cb-mwu9r2gj.mp3",
-          "durationMs": 6624,
-          "key": "1145a4cd7a",
-          "voiceLabel": "Uploaded",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "“AI is for developers.” Lovely. Can you think rationally? Can you say what you want, and what the finished thing looks like?"
-        }
-      },
-      {
-        "id": "1d605983",
-        "s": "Then you’re qualified. The skill isn’t syntax. It’s describing the outcome in enough detail that nobody has to guess.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "skill = clear brief"
-        ],
-        "audio": {
-          "file": "audio/rmwu9gb6b929/1d605983-mwu9tk1h.mp3",
-          "durationMs": 6144,
-          "key": "75b399f131",
-          "voiceLabel": "Uploaded",
-          "text": "Then you’re qualified. The skill isn’t syntax. It’s describing the outcome in enough detail that nobody has to guess."
-        }
-      },
-      {
-        "id": "cd3f4875",
-        "s": "Where was I? Exactly. Long briefs get lost when you get interrupted. Write it down first, then paste it in.",
-        "h": 1000,
-        "d": "mid-sentence, someone talks over me",
-        "m": "flat",
-        "audio": {
-          "file": "audio/rmwu9gb6b929/cd3f4875-mwu9xbfm.mp3",
-          "durationMs": 6144,
-          "key": "e44c7e8581",
-          "voiceLabel": "Uploaded",
-          "text": "Where was I? Exactly. Long briefs get lost when you get interrupted. Write it down first, then paste it in."
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 5,
-    "createdAt": 1795498507667,
-    "updatedAt": 1795499301188,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1h2",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "0a5fd6cb",
-          "at": "start"
-        },
-        "value": "flat"
-      },
-      {
-        "id": "cue_mww3m0vy_1h3",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "1d605983",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1h4",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "cd3f4875",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
     "id": "rmwujd54d014",
     "title": "Nobody Asked",
     "theme": "The Denial Came First - Volume II",
@@ -599,7 +41,7 @@
     "updatedAt": 1795515156013,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1h5",
+        "id": "cue_mww513vh_cr",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -609,148 +51,11 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1h6",
+        "id": "cue_mww513vh_cs",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "c9f17b56",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwujga0e3d4",
-    "title": "Nobody Asked",
-    "theme": "The Denial Came First - Volume II",
-    "lang": "en",
-    "hook": "Nobody asked. They answered anyway.",
-    "stamp": "The denial arrived before the question.",
-    "next": "Next: out of jurisdiction.",
-    "lines": [
-      {
-        "id": "22786e26",
-        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
-        "h": 1400,
-        "d": "reading a statement nobody requested",
-        "log": [
-          "question_asked = none",
-          "denial_issued = yes"
-        ]
-      },
-      {
-        "id": "981fd067",
-        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "unprompted_denials = 2"
-        ]
-      },
-      {
-        "id": "3322150a",
-        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
-        "h": 1100,
-        "d": "to camera",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 7,
-    "createdAt": 1795515302318,
-    "updatedAt": 1795515302318,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1h7",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "981fd067",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1h8",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "3322150a",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwujkuaa145",
-    "title": "Nobody Asked",
-    "theme": "The Denial Came First - Volume II",
-    "lang": "en",
-    "hook": "Nobody asked. They answered anyway.",
-    "stamp": "The denial arrived before the question.",
-    "next": "Next: out of jurisdiction.",
-    "lines": [
-      {
-        "id": "7e375259",
-        "s": "Nobody asked whether the election was arranged. So, to be clear: it was by choice of the participating countries. Unprompted. For the record.",
-        "h": 1400,
-        "d": "reading a statement nobody requested",
-        "m": "up",
-        "log": [
-          "question_asked = none",
-          "denial_issued = yes"
-        ]
-      },
-      {
-        "id": "d4e8931d",
-        "s": "Nobody asked whether the regulated entity has any influence. We would like to confirm that the process was clean. Again, unprompted.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "unprompted_denials = 2"
-        ]
-      },
-      {
-        "id": "81dbef06",
-        "s": "There’s an old line about protesting too much. We call it communications. Rule of thumb: when the answer arrives before the question, go and check the question.",
-        "h": 1100,
-        "d": "to camera",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 8,
-    "createdAt": 1795515515218,
-    "updatedAt": 1795515554300,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1h9",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "7e375259",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1ha",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "d4e8931d",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1hb",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "81dbef06",
           "at": "start"
         },
         "value": "flat"
@@ -799,7 +104,7 @@
     "updatedAt": 1795517722510,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1hc",
+        "id": "cue_mww513vh_ct",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -856,7 +161,7 @@
     "updatedAt": 1795517746420,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1hd",
+        "id": "cue_mww513vh_cu",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -866,155 +171,11 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1he",
+        "id": "cue_mww513vh_cv",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "048b14a5",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwul1s7f24d",
-    "title": "Exhibit A",
-    "theme": "Don't Argue With Colours",
-    "lang": "en",
-    "hook": "Exhibit A: it’s browny blondish.",
-    "stamp": "Overruled before I finished the sentence.",
-    "next": "Next: the palettes.",
-    "lines": [
-      {
-        "id": "66917e5d",
-        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-        "h": 1300,
-        "d": "holding up a close-up of his ear",
-        "m": "flat",
-        "fx": {
-          "light": "flicker",
-          "color": "warm",
-          "room": "night",
-          "propL": "question"
-        },
-        "log": [
-          "hair.colour = browny blondish",
-          "confidence = 100%"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwul1s7f24d/66917e5d-mwulhmli.mp3",
-          "durationMs": 6792,
-          "key": "ad5a80796a",
-          "voiceLabel": "Uploaded",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed."
-        }
-      },
-      {
-        "id": "080924c7",
-        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "grey_bits = a few",
-          "grey_bits.relevant = no"
-        ],
-        "audio": {
-          "file": "audio/rmwul1s7f24d/080924c7-mwulhqd2.mp3",
-          "durationMs": 6456,
-          "key": "5ef3cc099e",
-          "voiceLabel": "Uploaded",
-          "text": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits."
-        }
-      },
-      {
-        "id": "19e2dbc3",
-        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-        "h": 1000,
-        "d": "quietly",
-        "m": "flat",
-        "audio": {
-          "file": "audio/rmwul1s7f24d/19e2dbc3-mwulhwye.mp3",
-          "durationMs": 4704,
-          "key": "a24a597700",
-          "voiceLabel": "Uploaded",
-          "text": "I’ve just realised I used the word “browny” in court. I have no expert witnesses."
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 11,
-    "createdAt": 1795517985291,
-    "updatedAt": 1795518737983,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1hf",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "66917e5d",
-          "at": "start"
-        },
-        "value": "flat"
-      },
-      {
-        "id": "cue_mww3m0vy_1hg",
-        "track": "light",
-        "anchor": {
-          "kind": "line",
-          "line": "66917e5d",
-          "at": "start"
-        },
-        "value": "flicker"
-      },
-      {
-        "id": "cue_mww3m0vy_1hh",
-        "track": "lightColor",
-        "anchor": {
-          "kind": "line",
-          "line": "66917e5d",
-          "at": "start"
-        },
-        "value": "warm"
-      },
-      {
-        "id": "cue_mww3m0vy_1hi",
-        "track": "room",
-        "anchor": {
-          "kind": "line",
-          "line": "66917e5d",
-          "at": "start"
-        },
-        "value": "night"
-      },
-      {
-        "id": "cue_mww3m0vy_1hj",
-        "track": "propL",
-        "anchor": {
-          "kind": "line",
-          "line": "66917e5d",
-          "at": "start"
-        },
-        "value": "question"
-      },
-      {
-        "id": "cue_mww3m0vy_1hk",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "080924c7",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1hl",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "19e2dbc3",
           "at": "start"
         },
         "value": "flat"
@@ -1064,7 +225,7 @@
     "updatedAt": 1795519488327,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1hm",
+        "id": "cue_mww513vh_cw",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1074,311 +235,11 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1hn",
+        "id": "cue_mww513vh_cx",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "f3501d65",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwum1r0sfbd",
-    "title": "Exhibit A",
-    "theme": "Don't Argue With Colours",
-    "lang": "en",
-    "hook": "Exhibit A: it’s browny blondish.",
-    "stamp": "Overruled before I finished the sentence.",
-    "next": "Next: the palettes.",
-    "lines": [
-      {
-        "id": "116a6090",
-        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-        "h": 1300,
-        "d": "holding up a close-up of his ear",
-        "fx": {
-          "color": "alarm"
-        },
-        "log": [
-          "hair.colour = browny blondish",
-          "confidence = 100%"
-        ]
-      },
-      {
-        "id": "4943a3f1",
-        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "grey_bits = a few",
-          "grey_bits.relevant = no"
-        ]
-      },
-      {
-        "id": "ca073a50",
-        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-        "h": 1000,
-        "d": "quietly",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 13,
-    "createdAt": 1795519663372,
-    "updatedAt": 1795519731030,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1ho",
-        "track": "lightColor",
-        "anchor": {
-          "kind": "line",
-          "line": "116a6090",
-          "at": "start"
-        },
-        "value": "alarm"
-      },
-      {
-        "id": "cue_mww3m0vy_1hp",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "4943a3f1",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1hq",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "ca073a50",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwum8lnn458",
-    "title": "Exhibit A",
-    "theme": "Don't Argue With Colours",
-    "lang": "en",
-    "hook": "Exhibit A: it’s browny blondish.",
-    "stamp": "Overruled before I finished the sentence.",
-    "next": "Next: the palettes.",
-    "lines": [
-      {
-        "id": "002f7598",
-        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-        "h": 1300,
-        "d": "holding up a close-up of his ear",
-        "log": [
-          "hair.colour = browny blondish",
-          "confidence = 100%"
-        ]
-      },
-      {
-        "id": "d0ace7d1",
-        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "grey_bits = a few",
-          "grey_bits.relevant = no"
-        ]
-      },
-      {
-        "id": "f6f9012d",
-        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-        "h": 1000,
-        "d": "quietly",
-        "m": "flat"
-      }
-    ],
-    "onLanding": true,
-    "order": 14,
-    "createdAt": 1795519983011,
-    "updatedAt": 1795542156982,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1hr",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "d0ace7d1",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1hs",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "f6f9012d",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwumq5a0768",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "419bf496",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "d": "serious, reading from a phone",
-        "fx": {
-          "room": "#121112",
-          "propL": "clock",
-          "badgeColor": "#efc74d",
-          "badgeName": "AGENT"
-        },
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwumq5a0768/419bf496-6ac6a04c1e.mp3",
-          "durationMs": 5184,
-          "key": "6ac6a04c1e",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "20b3daef",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "d": "long beat",
-        "m": "sleepy",
-        "fx": {
-          "light": "flicker",
-          "room": "plum",
-          "propL": "question"
-        },
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwumq5a0768/20b3daef-6df547f4dc.mp3",
-          "durationMs": 5256,
-          "key": "6df547f4dc",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "43556dc2",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 15,
-    "createdAt": 1795520801592,
-    "updatedAt": 1795521151078,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1ht",
-        "track": "room",
-        "anchor": {
-          "kind": "line",
-          "line": "419bf496",
-          "at": "start"
-        },
-        "value": "#121112"
-      },
-      {
-        "id": "cue_mww3m0vy_1hu",
-        "track": "propL",
-        "anchor": {
-          "kind": "line",
-          "line": "419bf496",
-          "at": "start"
-        },
-        "value": "clock"
-      },
-      {
-        "id": "cue_mww3m0vy_1hv",
-        "track": "badgeColor",
-        "anchor": {
-          "kind": "line",
-          "line": "419bf496",
-          "at": "start"
-        },
-        "value": "#efc74d"
-      },
-      {
-        "id": "cue_mww3m0vy_1hw",
-        "track": "badgeName",
-        "anchor": {
-          "kind": "line",
-          "line": "419bf496",
-          "at": "start"
-        },
-        "value": "AGENT"
-      },
-      {
-        "id": "cue_mww3m0vy_1hx",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "20b3daef",
-          "at": "start"
-        },
-        "value": "sleepy"
-      },
-      {
-        "id": "cue_mww3m0vy_1hy",
-        "track": "light",
-        "anchor": {
-          "kind": "line",
-          "line": "20b3daef",
-          "at": "start"
-        },
-        "value": "flicker"
-      },
-      {
-        "id": "cue_mww3m0vy_1hz",
-        "track": "room",
-        "anchor": {
-          "kind": "line",
-          "line": "20b3daef",
-          "at": "start"
-        },
-        "value": "plum"
-      },
-      {
-        "id": "cue_mww3m0vy_1i0",
-        "track": "propL",
-        "anchor": {
-          "kind": "line",
-          "line": "20b3daef",
-          "at": "start"
-        },
-        "value": "question"
-      },
-      {
-        "id": "cue_mww3m0vy_1i1",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "43556dc2",
           "at": "start"
         },
         "value": "flat"
@@ -1399,7 +260,17 @@
         "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
         "h": 1300,
         "d": "serious, reading from a phone",
-        "m": "flat"
+        "m": "flat",
+        "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+        "audio": {
+          "file": "audio/rmwumzv1pece/fa1d6a14-44b29b42bc.mp3",
+          "durationMs": 5016,
+          "key": "44b29b42bc",
+          "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+          "voiceLabel": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "castSig": "ref/rmwumzv1pece/mww4qpsh.mp3|So, this is how it works. It's a bit mental, but turns out I don't have to even talk anymore. I can just use this and type becoming a true hermit now.|||english|||||"
+        }
       },
       {
         "id": "1d287f92",
@@ -1410,22 +281,51 @@
         "log": [
           "cards_issued = 0",
           "orders_placed = 0"
-        ]
+        ],
+        "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+        "audio": {
+          "file": "audio/rmwumzv1pece/1d287f92-1f5a593992.mp3",
+          "durationMs": 5016,
+          "key": "1f5a593992",
+          "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+          "voiceLabel": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "castSig": "ref/rmwumzv1pece/mww4qpsh.mp3|So, this is how it works. It's a bit mental, but turns out I don't have to even talk anymore. I can just use this and type becoming a true hermit now.|||english|||||"
+        }
       },
       {
         "id": "5528e439",
         "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
         "h": 1000,
-        "m": "flat"
+        "m": "flat",
+        "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+        "audio": {
+          "file": "audio/rmwumzv1pece/5528e439-1440a76ab7.mp3",
+          "durationMs": 3504,
+          "key": "1440a76ab7",
+          "voiceId": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "text": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+          "voiceLabel": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit",
+          "castSig": "ref/rmwumzv1pece/mww4qpsh.mp3|So, this is how it works. It's a bit mental, but turns out I don't have to even talk anymore. I can just use this and type becoming a true hermit now.|||english|||||"
+        }
       }
     ],
+    "castSettings": {
+      "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit": {
+        "name": "British Northern",
+        "refAudio": "ref/rmwumzv1pece/mww4qpsh.mp3",
+        "refAudioName": "uploaded_media_1795610917720.mp3",
+        "refText": "So, this is how it works. It's a bit mental, but turns out I don't have to even talk anymore. I can just use this and type becoming a true hermit now.",
+        "langCode": "english"
+      }
+    },
     "onLanding": false,
     "order": 16,
     "createdAt": 1795521254893,
-    "updatedAt": 1795521254893,
+    "updatedAt": 1795611846537,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1i2",
+        "id": "cue_mww513vh_cy",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1435,7 +335,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mww3m0vy_1i3",
+        "id": "cue_mww513vh_cz",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1445,7 +345,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1i4",
+        "id": "cue_mww513vh_d0",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1453,151 +353,6 @@
           "at": "start"
         },
         "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwunh8wtc28",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "eb5e552d",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "offset": 14651,
-        "d": "serious, reading from a phone",
-        "fx": {
-          "propL": "clock"
-        },
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "audio": {
-          "file": "audio/rmwunh8wtc28/eb5e552d-mwunhz5p.mp3",
-          "durationMs": 5976,
-          "key": "3735d5d955",
-          "voiceLabel": "Uploaded",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”"
-        }
-      },
-      {
-        "id": "a0c768f8",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "offset": 3355,
-        "d": "long beat",
-        "m": "up",
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ],
-        "audio": {
-          "file": "audio/rmwunh8wtc28/a0c768f8-mwuni3ih.mp3",
-          "durationMs": 5568,
-          "key": "477b121445",
-          "voiceLabel": "Uploaded",
-          "text": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life."
-        }
-      },
-      {
-        "id": "35791a50",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "offset": 18,
-        "m": "flat",
-        "fx": {
-          "light": "flicker",
-          "room": "#15131b",
-          "propL": "none",
-          "propR": "question"
-        },
-        "audio": {
-          "file": "audio/rmwunh8wtc28/35791a50-mwuni7wm.mp3",
-          "durationMs": 3816,
-          "key": "1decf50802",
-          "voiceLabel": "Uploaded",
-          "text": "I’ve been at my desk the whole time. Well… I don’t have a desk."
-        }
-      }
-    ],
-    "onLanding": true,
-    "order": 17,
-    "createdAt": 1795522066013,
-    "updatedAt": 1795605063125,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1i5",
-        "track": "propL",
-        "anchor": {
-          "kind": "line",
-          "line": "eb5e552d",
-          "at": "start"
-        },
-        "value": "clock"
-      },
-      {
-        "id": "cue_mww3m0vy_1i6",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "a0c768f8",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1i7",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "35791a50",
-          "at": "start"
-        },
-        "value": "flat"
-      },
-      {
-        "id": "cue_mww3m0vy_1i8",
-        "track": "light",
-        "anchor": {
-          "kind": "line",
-          "line": "35791a50",
-          "at": "start"
-        },
-        "value": "flicker"
-      },
-      {
-        "id": "cue_mww3m0vy_1i9",
-        "track": "room",
-        "anchor": {
-          "kind": "line",
-          "line": "35791a50",
-          "at": "start"
-        },
-        "value": "#15131b"
-      },
-      {
-        "id": "cue_mww3m0vy_1ia",
-        "track": "propL",
-        "anchor": {
-          "kind": "line",
-          "line": "35791a50",
-          "at": "start"
-        },
-        "value": "none"
-      },
-      {
-        "id": "cue_mww3m0vy_1ib",
-        "track": "propR",
-        "anchor": {
-          "kind": "line",
-          "line": "35791a50",
-          "at": "start"
-        },
-        "value": "question"
       }
     ]
   },
@@ -1643,7 +398,7 @@
     "updatedAt": 1795580818115,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ic",
+        "id": "cue_mww513vh_d1",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1653,7 +408,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1id",
+        "id": "cue_mww513vh_d2",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1706,7 +461,7 @@
     "updatedAt": 1795597733264,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ie",
+        "id": "cue_mww513vh_d3",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1716,7 +471,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1if",
+        "id": "cue_mww513vh_d4",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1775,7 +530,7 @@
     "updatedAt": 1795598049749,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ig",
+        "id": "cue_mww513vh_d5",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1826,7 +581,7 @@
     "updatedAt": 1795598310765,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ih",
+        "id": "cue_mww513vh_d6",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1836,7 +591,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1ii",
+        "id": "cue_mww513vh_d7",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1888,7 +643,7 @@
     "updatedAt": 1795598529987,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ij",
+        "id": "cue_mww513vh_d8",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1942,7 +697,7 @@
     "updatedAt": 1795598561318,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1ik",
+        "id": "cue_mww513vh_d9",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1952,199 +707,11 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1il",
+        "id": "cue_mww513vh_da",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "3ace9d9d",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvx8qaef80",
-    "title": "A Trophy Isn’t an Audit",
-    "theme": "Elected By Rule",
-    "lang": "en",
-    "hook": "A trophy for governance. A question about one file.",
-    "stamp": "A prize says nothing about this file.",
-    "next": "Next: two scoreboards.",
-    "lines": [
-      {
-        "id": "0e5792a3",
-        "s": "The agency won a governance award last week. Risk management. Compliance. Responsible innovation. Lovely photo.",
-        "h": 1500,
-        "d": "polishing a trophy",
-        "log": [
-          "award = governance prize (7th edition)",
-          "given by = a non-profit volunteer association"
-        ]
-      },
-      {
-        "id": "1847e524",
-        "s": "The prize comes from a volunteer association founded in 2019. Credible, sure. It’s also not an investigation into any particular complaint.",
-        "h": 1400,
-        "m": "up",
-        "log": [
-          "agency also placed 2nd in 2022"
-        ]
-      },
-      {
-        "id": "76ed0038",
-        "s": "Fair both ways: one trophy doesn’t prove everything is fine, and one file doesn’t prove everything is broken. But a named decision-maker would settle this faster than a gala.",
-        "h": 1200,
-        "d": "deadpan",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 24,
-    "createdAt": 1795598930966,
-    "updatedAt": 1795598930966,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1im",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "1847e524",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1in",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "76ed0038",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvxckzj5bd",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "b230b669",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "offset": 9023,
-        "d": "serious, reading from a phone"
-      },
-      {
-        "id": "35ba5025",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "offset": 5997,
-        "d": "long beat",
-        "m": "up",
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ]
-      },
-      {
-        "id": "03356e20",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 25,
-    "createdAt": 1795599110719,
-    "updatedAt": 1795599123706,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1io",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "35ba5025",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1ip",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "03356e20",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvxm2wse20",
-    "title": "A Trophy Isn’t an Audit",
-    "theme": "Elected By Rule",
-    "lang": "en",
-    "hook": "A trophy for governance. A question about one file.",
-    "stamp": "A prize says nothing about this file.",
-    "next": "Next: two scoreboards.",
-    "lines": [
-      {
-        "id": "24754259",
-        "s": "The agency won a governance award last week. Risk management. Compliance. Responsible innovation. Lovely photo.",
-        "h": 1500,
-        "d": "polishing a trophy",
-        "log": [
-          "award = governance prize (7th edition)",
-          "given by = a non-profit volunteer association"
-        ]
-      },
-      {
-        "id": "b3f54ca1",
-        "s": "The prize comes from a volunteer association founded in 2019. Credible, sure. It’s also not an investigation into any particular complaint.",
-        "h": 1400,
-        "m": "up",
-        "log": [
-          "agency also placed 2nd in 2022"
-        ]
-      },
-      {
-        "id": "5b670209",
-        "s": "Fair both ways: one trophy doesn’t prove everything is fine, and one file doesn’t prove everything is broken. But a named decision-maker would settle this faster than a gala.",
-        "h": 1200,
-        "d": "deadpan",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 26,
-    "createdAt": 1795599553852,
-    "updatedAt": 1795599553852,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1iq",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "b3f54ca1",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1ir",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "5b670209",
           "at": "start"
         },
         "value": "flat"
@@ -2193,7 +760,7 @@
     "updatedAt": 1795599957280,
     "cues": [
       {
-        "id": "cue_mww3m0vy_1is",
+        "id": "cue_mww513vh_db",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2203,289 +770,11 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0vy_1it",
+        "id": "cue_mww513vh_dc",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "5a63ea27",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvxw2etd4e",
-    "title": "teste-1",
-    "theme": "Right Model, Right Job",
-    "lang": "en",
-    "hook": "teste-1",
-    "stamp": "",
-    "next": "",
-    "lines": [
-      {
-        "id": "025dc912",
-        "s": "",
-        "h": 1000
-      }
-    ],
-    "onLanding": false,
-    "order": 28,
-    "createdAt": 1795600019765,
-    "updatedAt": 1795600019765,
-    "cues": []
-  },
-  {
-    "id": "rmwvxwrss65a",
-    "title": "Exhibit A",
-    "theme": "Don't Argue With Colours",
-    "lang": "en",
-    "hook": "Exhibit A: it’s browny blondish.",
-    "stamp": "Overruled before I finished the sentence.",
-    "next": "Next: the palettes.",
-    "lines": [
-      {
-        "id": "a13e8e21",
-        "s": "I sent my mate the evidence. Hair. Close-up. Good lighting. It’s browny blondish. Case closed.",
-        "h": 1300,
-        "d": "holding up a close-up of his ear",
-        "m": "flat",
-        "log": [
-          "hair.colour = browny blondish",
-          "confidence = 100%"
-        ]
-      },
-      {
-        "id": "fada238a",
-        "s": "She says it’s grey. Grey! There are bits of grey around the ear, sure. Bits. Tiny, distinguished bits.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "grey_bits = a few",
-          "grey_bits.relevant = no"
-        ]
-      },
-      {
-        "id": "97e0a8ff",
-        "s": "I’ve just realised I used the word “browny” in court. I have no expert witnesses.",
-        "h": 1000,
-        "d": "quietly",
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 29,
-    "createdAt": 1795600052668,
-    "updatedAt": 1795600052668,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1iu",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "a13e8e21",
-          "at": "start"
-        },
-        "value": "flat"
-      },
-      {
-        "id": "cue_mww3m0vy_1iv",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "fada238a",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1iw",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "97e0a8ff",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvxxfwd170",
-    "title": "teste-1",
-    "theme": "Right Model, Right Job",
-    "lang": "en",
-    "hook": "teste-2",
-    "stamp": "vamo que vamo",
-    "next": "",
-    "lines": [
-      {
-        "id": "4802b510",
-        "s": "",
-        "h": 1000,
-        "offset": 2164
-      }
-    ],
-    "onLanding": false,
-    "order": 30,
-    "createdAt": 1795600083901,
-    "updatedAt": 1795600172765,
-    "cues": []
-  },
-  {
-    "id": "rmwvy4np9462",
-    "title": "Too Expensive",
-    "theme": "Right Model, Right Job",
-    "lang": "en",
-    "hook": "“Claude is too expensive.”",
-    "stamp": "Premium for the polish. Free for the grind.",
-    "next": "Next: twenty minutes of free grind.",
-    "lines": [
-      {
-        "id": "705b002d",
-        "s": "Yes. It’s too expensive. It’s also brilliant. Both things are true.",
-        "h": 1300,
-        "offset": 3557,
-        "d": "nodding slowly",
-        "log": [
-          "claude.quality = brilliant",
-          "claude.price = also brilliant"
-        ],
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "audio": {
-          "file": "audio/rmwvy4np9462/705b002d-7a57000f20.mp3",
-          "durationMs": 3816,
-          "key": "7a57000f20",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "Yes. It’s too expensive. It’s also brilliant. Both things are true.",
-          "voiceLabel": "EN - British - Male North"
-        }
-      },
-      {
-        "id": "9047f126",
-        "s": "So don’t spend it on the heavy lifting. Save it for the refinements, the little touches, the one hard thing that has to be right.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "use_for = polish, hard bits"
-        ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-        "audio": {
-          "file": "audio/rmwvy4np9462/9047f126-c9ca1a02d0.mp3",
-          "durationMs": 5976,
-          "key": "c9ca1a02d0",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
-          "text": "So don’t spend it on the heavy lifting. Save it for the refinements, the little touches, the one hard thing that has to be right.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      },
-      {
-        "id": "6109b372",
-        "s": "And no, you can’t run unlimited free models either. Unless you have very deep pockets. I don’t.",
-        "h": 1000,
-        "offset": 12317,
-        "d": "to camera",
-        "m": "flat",
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "audio": {
-          "file": "audio/rmwvy4np9462/6109b372-9375bcd56e.mp3",
-          "durationMs": 5424,
-          "key": "9375bcd56e",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "And no, you can’t run unlimited free models either. Unless you have very deep pockets. I don’t.",
-          "voiceLabel": "EN - British - Male North"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 31,
-    "createdAt": 1795600420605,
-    "updatedAt": 1795600535439,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1ix",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "9047f126",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1iy",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "6109b372",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvz27oz6c1",
-    "title": "Who Gave Me the Authority?",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Who gave me the authority?",
-    "stamp": "Spending limit: €0. Authority granted: none.",
-    "next": "Next: the delivery nobody recorded.",
-    "lines": [
-      {
-        "id": "64bc6efa",
-        "s": "“Finds the cheapest supplier.” Based on what? Quality? Lead time? Contract terms? Who approved the supplier list?",
-        "h": 1200,
-        "d": "increasingly baffled",
-        "m": "up",
-        "log": [
-          "Vai que vai danada"
-        ],
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "ttsInstruct": "stern, serious, authoritative"
-      },
-      {
-        "id": "a21b8f65",
-        "s": "Then “places an order automatically.” With what spending limit? Who signed off?",
-        "h": 1100,
-        "log": [
-          "spending_limit = €0",
-          "authority_granted = none"
-        ]
-      },
-      {
-        "id": "c61bb219",
-        "s": "Nobody gave me a budget, a rule or a supplier, and I’m supposed to have spent €3,000 on poultry? I’d like to see the approval trail. Oh wait. There isn’t one. Because I didn’t do it.",
-        "h": 1000,
-        "d": "deadpan",
-        "m": "flat",
-        "log": [
-          "approval_trail = none"
-        ]
-      }
-    ],
-    "onLanding": false,
-    "order": 32,
-    "createdAt": 1795601986163,
-    "updatedAt": 1795602080536,
-    "cues": [
-      {
-        "id": "cue_mww3m0vy_1iz",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "64bc6efa",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0vy_1j0",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "c61bb219",
           "at": "start"
         },
         "value": "flat"
@@ -2515,29 +804,65 @@
           "trigger = undefined"
         ],
         "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "ttsInstruct": "stern, serious, authoritative",
-        "ttsSpeed": 1.05
+        "ttsSpeed": 1.05,
+        "audio": {
+          "file": "audio/rmwvzcr8n5ad/d84aafcb-4221d1b32c.mp3",
+          "durationMs": 96048,
+          "key": "4221d1b32c",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+          "voiceLabel": "EN - British - Male North",
+          "ttsSpeed": 1.05,
+          "castSig": "||Use British English pronunciation and vocabulary. Use a masculine voice presentation, adult, Northern English accent, dry, deadpan, slightly wry courtroom witness delivery, clear articulation.||english|||||"
+        }
       },
       {
         "id": "1c88549c",
         "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
         "h": 1100,
-        "m": "flat"
+        "m": "flat",
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+        "audio": {
+          "file": "audio/rmwvzcr8n5ad/1c88549c-d85c054880.mp3",
+          "durationMs": 6624,
+          "key": "d85c054880",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+          "text": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
+          "voiceLabel": "EN - British - Male North",
+          "castSig": "||Use British English pronunciation and vocabulary. Use a masculine voice presentation, adult, Northern English accent, dry, deadpan, slightly wry courtroom witness delivery, clear articulation.||english|||||"
+        }
       },
       {
         "id": "4b626279",
         "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
         "h": 1000,
-        "d": "leans in"
+        "d": "leans in",
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+        "audio": {
+          "file": "audio/rmwvzcr8n5ad/4b626279-0de5bd14d3.mp3",
+          "durationMs": 10776,
+          "key": "0de5bd14d3",
+          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
+          "text": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
+          "voiceLabel": "EN - British - Male North",
+          "castSig": "||Use British English pronunciation and vocabulary. Use a masculine voice presentation, adult, Northern English accent, dry, deadpan, slightly wry courtroom witness delivery, clear articulation.||english|||||"
+        }
       }
     ],
+    "castSettings": {
+      "design::716c2242-3438-405d-b999-b44f5b6ea425": {
+        "name": "British Northern (Prompt-Designed)",
+        "instruct": "Use British English pronunciation and vocabulary. Use a masculine voice presentation, adult, Northern English accent, dry, deadpan, slightly wry courtroom witness delivery, clear articulation.",
+        "langCode": "english"
+      }
+    },
     "onLanding": false,
     "order": 33,
     "createdAt": 1795602478055,
-    "updatedAt": 1795602589659,
+    "updatedAt": 1795612012254,
     "cues": [
       {
-        "id": "cue_mww3m0w3_1j1",
+        "id": "cue_mww513vh_dd",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2547,7 +872,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mww3m0w3_1j2",
+        "id": "cue_mww513vh_de",
         "track": "badgeName",
         "anchor": {
           "kind": "line",
@@ -2557,7 +882,7 @@
         "value": "Goat"
       },
       {
-        "id": "cue_mww3m0w3_1j3",
+        "id": "cue_mww513vh_df",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2569,180 +894,7 @@
     ]
   },
   {
-    "id": "rmwvzlmhea5c",
-    "title": "I’ll Get Back to You",
-    "theme": "The Denial Came First",
-    "lang": "en",
-    "hook": "Six months. One “I’ll get back to you.”",
-    "stamp": "No deadline. No decision-maker named.",
-    "next": "Next: applause is not an audit.",
-    "lines": [
-      {
-        "id": "456743c5",
-        "s": "Day one: “I’ve asked for an investigation.” Lovely. We’ll be in touch.",
-        "h": 1200,
-        "d": "checking a calendar",
-        "log": [
-          "dec 30: investigation requested"
-        ]
-      },
-      {
-        "id": "bbc2b8d0",
-        "s": "Three weeks later: the technical team says the position is the same, and legal is looking at it. No deadline.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "jan 19: legal consulted",
-          "deadline = none"
-        ]
-      },
-      {
-        "id": "c1dca73c",
-        "s": "Five months after that: a formal reply restating the first reply. Who made the call? Still not named. It’s a very patient kind of silence.",
-        "h": 1100,
-        "d": "quietly",
-        "m": "flat",
-        "log": [
-          "jun 28: formal reply",
-          "decision_maker = unnamed"
-        ]
-      }
-    ],
-    "onLanding": false,
-    "order": 34,
-    "createdAt": 1795602891794,
-    "updatedAt": 1795602891794,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1j4",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "bbc2b8d0",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1j5",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "c1dca73c",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmwvznuri73d",
-    "title": "Out of Jurisdiction",
-    "theme": "The Denial Came First - Volume II",
-    "lang": "en",
-    "hook": "“That is outside our jurisdiction.”",
-    "stamp": "Jurisdiction: somewhere else, ideally.",
-    "next": "Next: I’ll get back to you.",
-    "lines": [
-      {
-        "id": "8bd39122",
-        "s": "The incident happened in another country. Therefore: not our department. Case closed.",
-        "h": 1300,
-        "d": "gesturing at a map",
-        "fx": {
-          "badgeName": "Me?"
-        },
-        "log": [
-          "incident.location = abroad",
-          "jurisdiction = elsewhere"
-        ],
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-        "ttsInstruct": "deadpan, dry, understated",
-        "audio": {
-          "file": "audio/rmwvznuri73d/8bd39122-2481bfed16.mp3",
-          "durationMs": 6864,
-          "key": "2481bfed16",
-          "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425",
-          "text": "The incident happened in another country. Therefore: not our department. Case closed.",
-          "voiceLabel": "EN - British - Male North",
-          "ttsInstruct": "deadpan, dry, understated"
-        }
-      },
-      {
-        "id": "250ddbfb",
-        "s": "Then, after months, one question: was the ticket bought in this country? He said yes. In the correspondence on file, that’s where the replies stop.",
-        "h": 1500,
-        "m": "up",
-        "log": [
-          "ticket.bought_in = home country",
-          "reply_to_followups = none on file"
-        ],
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "audio": {
-          "file": "audio/rmwvznuri73d/250ddbfb-f556a3d394.mp3",
-          "durationMs": 10224,
-          "key": "f556a3d394",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "Then, after months, one question: was the ticket bought in this country? He said yes. In the correspondence on file, that’s where the replies stop.",
-          "voiceLabel": "THE  Lord Pig"
-        }
-      },
-      {
-        "id": "9ef9586d",
-        "s": "Jurisdiction is a lovely word. It means the problem has a postcode, and it isn’t ours.",
-        "h": 1000,
-        "d": "deadpan",
-        "m": "flat",
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "audio": {
-          "file": "audio/rmwvznuri73d/9ef9586d-ac244dce5e.mp3",
-          "durationMs": 7488,
-          "key": "ac244dce5e",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "Jurisdiction is a lovely word. It means the problem has a postcode, and it isn’t ours.",
-          "voiceLabel": "THE  Lord Pig"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 35,
-    "createdAt": 1795602995838,
-    "updatedAt": 1795603212757,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1j6",
-        "track": "badgeName",
-        "anchor": {
-          "kind": "line",
-          "line": "8bd39122",
-          "at": "start"
-        },
-        "value": "Me?"
-      },
-      {
-        "id": "cue_mww3m0w3_1j7",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "250ddbfb",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1j8",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "9ef9586d",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmww0yfn0745",
+    "id": "rmww3w8xb897",
     "title": "Where Was I at 3 a.m.?",
     "theme": "The Agent Takes the Stand",
     "lang": "en",
@@ -2751,93 +903,7 @@
     "next": "Next: who gave me the authority?",
     "lines": [
       {
-        "id": "e6decb23",
-        "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
-        "h": 1200,
-        "d": "being questioned",
-        "m": "up",
-        "fx": {
-          "badgeName": "Bob"
-        },
-        "log": [
-          "schedule = undefined",
-          "trigger = undefined"
-        ],
-        "voiceId": "design::f0b18c06-444b-49cf-adfb-3955c6597b3a",
-        "ttsInstruct": "deadpan, dry, understated",
-        "audio": {
-          "file": "audio/rmww0yfn0745/e6decb23-1654e02c3e.mp3",
-          "durationMs": 19968,
-          "key": "1654e02c3e",
-          "voiceId": "design::f0b18c06-444b-49cf-adfb-3955c6597b3a",
-          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
-          "voiceLabel": "EN Jimmy Carr",
-          "ttsInstruct": "deadpan, dry, understated"
-        }
-      },
-      {
-        "id": "bc93ee12",
-        "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
-        "h": 1100,
-        "m": "flat",
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819"
-      },
-      {
-        "id": "1cbe95bd",
-        "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
-        "h": 1000,
-        "d": "leans in",
-        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425"
-      }
-    ],
-    "onLanding": false,
-    "order": 36,
-    "createdAt": 1795605169068,
-    "updatedAt": 1795605795890,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1j9",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "e6decb23",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1ja",
-        "track": "badgeName",
-        "anchor": {
-          "kind": "line",
-          "line": "e6decb23",
-          "at": "start"
-        },
-        "value": "Bob"
-      },
-      {
-        "id": "cue_mww3m0w3_1jb",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "bc93ee12",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmww2knfo8e2",
-    "title": "Where Was I at 3 a.m.?",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Where was I at 3 a.m.?",
-    "stamp": "No schedule. No trigger. No agent.",
-    "next": "Next: who gave me the authority?",
-    "lines": [
-      {
-        "id": "2cc9aa2a",
+        "id": "8e9571f0",
         "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
         "h": 1200,
         "d": "being questioned",
@@ -2846,297 +912,74 @@
           "schedule = undefined",
           "trigger = undefined"
         ],
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "up, being questioned",
         "audio": {
-          "file": "audio/rmww2knfo8e2/2cc9aa2a-cec5ba45c2.mp3",
-          "durationMs": 18144,
-          "key": "cec5ba45c2",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "file": "audio/rmww3w8xb897/8e9571f0-6689ea6d0b.mp3",
+          "durationMs": 12456,
+          "key": "6689ea6d0b",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
           "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
-          "voiceLabel": "EN - British - Male Calm"
+          "voiceLabel": "THE  Lord Pig",
+          "ttsInstruct": "up, being questioned"
         }
       },
       {
-        "id": "9f56369f",
+        "id": "f8a620a8",
         "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
         "h": 1100,
         "m": "flat",
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "flat",
         "audio": {
-          "file": "audio/rmww2knfo8e2/9f56369f-b5bc8361d2.mp3",
-          "durationMs": 9168,
-          "key": "b5bc8361d2",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "file": "audio/rmww3w8xb897/f8a620a8-1727f9bcb0.mp3",
+          "durationMs": 7728,
+          "key": "1727f9bcb0",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
           "text": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
-          "voiceLabel": "EN - British - Male Calm"
+          "voiceLabel": "THE  Lord Pig",
+          "ttsInstruct": "flat"
         }
       },
       {
-        "id": "1481045b",
+        "id": "e0388de3",
         "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
         "h": 1000,
         "d": "leans in",
-        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "leans in",
         "audio": {
-          "file": "audio/rmww2knfo8e2/1481045b-435263f205.mp3",
-          "durationMs": 12144,
-          "key": "435263f205",
-          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "file": "audio/rmww3w8xb897/e0388de3-3a3de89f42.mp3",
+          "durationMs": 11496,
+          "key": "3a3de89f42",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
           "text": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
-          "voiceLabel": "EN - British - Male Calm"
-        }
-      }
-    ],
-    "onLanding": false,
-    "order": 37,
-    "createdAt": 1795607885220,
-    "updatedAt": 1795608739658,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1jc",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "2cc9aa2a",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1jd",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "9f56369f",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmww3420cf7b",
-    "title": "The Timeline That Wasn’t",
-    "theme": "The Denial Came First - Volume III",
-    "lang": "en",
-    "hook": "Six months. One calendar. Zero names.",
-    "stamp": "No deadline. No decision-maker named.",
-    "next": "Next: compliance on the shelf.",
-    "lines": [
-      {
-        "id": "964c1712",
-        "s": "30 December: I’ve asked for an investigation. We’ll be in touch.",
-        "h": 1200,
-        "d": "checking a message thread",
-        "log": [
-          "dec 30: investigation requested"
-        ],
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "ttsInstruct": "checking a message thread",
-        "audio": {
-          "file": "audio/rmww3420cf7b/964c1712-0ce8a5d309.mp3",
-          "durationMs": 5496,
-          "key": "0ce8a5d309",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "30 December: I’ve asked for an investigation. We’ll be in touch.",
           "voiceLabel": "THE  Lord Pig",
-          "ttsInstruct": "checking a message thread"
-        }
-      },
-      {
-        "id": "4c59da2a",
-        "s": "19 January: Technical position unchanged. Legal is looking at it. No deadline. You can also use FalaBR.",
-        "h": 1300,
-        "m": "up",
-        "log": [
-          "jan 19: legal consulted",
-          "deadline = none"
-        ],
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "ttsInstruct": "up",
-        "audio": {
-          "file": "audio/rmww3420cf7b/4c59da2a-dac1f26a56.mp3",
-          "durationMs": 12144,
-          "key": "dac1f26a56",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "19 January: Technical position unchanged. Legal is looking at it. No deadline. You can also use FalaBR.",
-          "voiceLabel": "THE  Lord Pig",
-          "ttsInstruct": "up"
-        }
-      },
-      {
-        "id": "621912bd",
-        "s": "May arrives. The same position. Who decided the lack of jurisdiction? Still not named. The calendar moved. The decision-maker did not.",
-        "h": 1200,
-        "d": "quietly",
-        "m": "flat",
-        "log": [
-          "decision_maker = unnamed",
-          "months_elapsed = 5+"
-        ],
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "ttsInstruct": "flat, quietly",
-        "audio": {
-          "file": "audio/rmww3420cf7b/621912bd-d2ee37f274.mp3",
-          "durationMs": 10848,
-          "key": "d2ee37f274",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "May arrives. The same position. Who decided the lack of jurisdiction? Still not named. The calendar moved. The decision-maker did not.",
-          "voiceLabel": "THE  Lord Pig",
-          "ttsInstruct": "flat, quietly"
+          "ttsInstruct": "leans in"
         }
       }
     ],
     "onLanding": false,
-    "order": 38,
-    "createdAt": 1795608790572,
-    "updatedAt": 1795609119798,
+    "order": 13,
+    "createdAt": 1795610105903,
+    "updatedAt": 1795610200270,
     "cues": [
       {
-        "id": "cue_mww3m0w3_1je",
+        "id": "cue_mww513vh_dg",
         "track": "mood",
         "anchor": {
           "kind": "line",
-          "line": "4c59da2a",
+          "line": "8e9571f0",
           "at": "start"
         },
         "value": "up"
       },
       {
-        "id": "cue_mww3m0w3_1jf",
+        "id": "cue_mww513vh_dh",
         "track": "mood",
         "anchor": {
           "kind": "line",
-          "line": "621912bd",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmww3hdia95c",
-    "title": "The Accusation",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Accused of ordering 2x chicken.",
-    "stamp": "Evidence: a LinkedIn post.",
-    "next": "Next: where was I at 3 a.m.?",
-    "lines": [
-      {
-        "id": "baf85467",
-        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
-        "h": 1300,
-        "d": "serious, reading from a phone"
-      },
-      {
-        "id": "a7efd226",
-        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
-        "h": 1300,
-        "d": "long beat",
-        "m": "up",
-        "log": [
-          "cards_issued = 0",
-          "orders_placed = 0"
-        ]
-      },
-      {
-        "id": "d7c3c264",
-        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
-        "h": 1000,
-        "m": "flat"
-      }
-    ],
-    "onLanding": false,
-    "order": 39,
-    "createdAt": 1795609412002,
-    "updatedAt": 1795609412002,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1jg",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "a7efd226",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1jh",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "d7c3c264",
-          "at": "start"
-        },
-        "value": "flat"
-      }
-    ]
-  },
-  {
-    "id": "rmww3hep607c",
-    "title": "Where Was I at 3 a.m.?",
-    "theme": "The Agent Takes the Stand",
-    "lang": "en",
-    "hook": "Where was I at 3 a.m.?",
-    "stamp": "No schedule. No trigger. No agent.",
-    "next": "Next: who gave me the authority?",
-    "lines": [
-      {
-        "id": "54db1117",
-        "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
-        "h": 1200,
-        "d": "being questioned",
-        "m": "up",
-        "log": [
-          "schedule = undefined",
-          "trigger = undefined"
-        ],
-        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-        "audio": {
-          "file": "audio/rmww3hep607c/54db1117-9f5a4410e1.mp3",
-          "durationMs": 96048,
-          "key": "9f5a4410e1",
-          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
-          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
-          "voiceLabel": "THE  Lord Pig"
-        }
-      },
-      {
-        "id": "1ea107d0",
-        "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
-        "h": 1100,
-        "m": "flat"
-      },
-      {
-        "id": "74a7c01e",
-        "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
-        "h": 1000,
-        "d": "leans in"
-      }
-    ],
-    "onLanding": false,
-    "order": 40,
-    "createdAt": 1795609413546,
-    "updatedAt": 1795609628935,
-    "cues": [
-      {
-        "id": "cue_mww3m0w3_1ji",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "54db1117",
-          "at": "start"
-        },
-        "value": "up"
-      },
-      {
-        "id": "cue_mww3m0w3_1jj",
-        "track": "mood",
-        "anchor": {
-          "kind": "line",
-          "line": "1ea107d0",
+          "line": "f8a620a8",
           "at": "start"
         },
         "value": "flat"

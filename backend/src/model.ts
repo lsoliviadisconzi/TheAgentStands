@@ -278,6 +278,7 @@ function normalize(r: any): Reel {
     stamp: String(r.stamp || ''),
     next: String(r.next || ''),
     lines: lines.map((l) => ({ ...l, id: l.id || newId(), s: String(l.s ?? ''), h: Number.isFinite(l.h) ? l.h : 1000 })),
+    ...(r.castSettings && typeof r.castSettings === 'object' ? { castSettings: r.castSettings } : {}),
     music: r.music,
     coverFile: r.coverFile || legacyCover,
     coverAuto: r.coverAuto,
