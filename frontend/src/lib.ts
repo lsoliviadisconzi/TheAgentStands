@@ -17,13 +17,23 @@ export const shortVoice = (label?: string) => (label || '').replace(/\s*·\s*des
 
 export type LineState = 'empty' | 'novoice' | 'new' | 'stale' | 'ready'
 
-// Mirrors the server: audio is "stale" as soon as the text or the voice differs from what was generated.
+// Mirrors the server: audio is "stale" as soon as the text, voice, or delivery differs from what was generated.
 export function lineState(l: Line): LineState {
   if (!l.s.trim()) return 'empty'
   if (!l.voiceId) return 'novoice'
   if (!l.audio) return 'new'
   const a = l.audio
-  if ((a.text !== undefined && a.text.trim() !== l.s.trim()) || (a.voiceId && a.voiceId !== l.voiceId)) return 'stale'
+  const speed = l.ttsSpeed && l.ttsSpeed !== 1 ? l.ttsSpeed : undefined
+  const aSpeed = a.ttsSpeed && a.ttsSpeed !== 1 ? a.ttsSpeed : undefined
+  if (
+    (a.text !== undefined && a.text.trim() !== l.s.trim()) ||
+    (a.voiceId && a.voiceId !== l.voiceId) ||
+    (a.ttsInstruct || '') !== (l.ttsInstruct || '') ||
+    aSpeed !== speed ||
+    (a.ttsAccent || '') !== (l.ttsAccent || '')
+  ) {
+    return 'stale'
+  }
   return l.stale ? 'stale' : 'ready'
 }
 
@@ -31,8 +41,42 @@ export const STATE_LABEL: Record<LineState, string> = {
   empty: 'Write some text',
   novoice: 'Choose a voice',
   new: 'Ready to generate',
-  stale: 'Text or voice changed. Regenerate',
+  stale: 'Settings or text changed. Regenerate',
   ready: 'Ready',
+}
+
+export const EMOTION_PRESETS: { label: string; value: string }[] = [
+  { label: 'Calm & measured', value: 'calm, measured, conversational' },
+  { label: 'Dry / deadpan', value: 'deadpan, dry, understated' },
+  { label: 'Stern / serious', value: 'stern, serious, authoritative' },
+  { label: 'Sarcastic / wry', value: 'sarcastic, wry, slightly amused' },
+  { label: 'Warm & friendly', value: 'warm, friendly, natural' },
+  { label: 'Excited / upbeat', value: 'upbeat, energetic, enthusiastic' },
+  { label: 'Urgent / tense', value: 'urgent, tense, focused' },
+  { label: 'Whispering / quiet', value: 'soft, quiet, conspiratorial' },
+]
+
+export const ACCENTS_BY_LANG: Record<string, string[]> = {
+  en: [
+    'American',
+    'British (RP)',
+    'British - Northern',
+    'British - Scottish',
+    'British - Cockney',
+    'British - Welsh',
+    'Irish',
+    'Australian',
+  ],
+  pt: ['Brazilian (PT-BR)', 'European (PT-PT)'],
+  es: ['Castilian (Spain)', 'Mexican', 'Rioplatense (Argentina)', 'Colombian'],
+  fr: ['Metropolitan French', 'Québécois', 'Belgian French'],
+  it: ['Standard Italian', 'Northern Italian', 'Southern Italian'],
+  de: ['Standard German', 'Austrian', 'Swiss German'],
+}
+
+export function accentsForLang(lang?: string): string[] {
+  const base = (lang || 'en').toLowerCase().split('-')[0]
+  return ACCENTS_BY_LANG[base] || []
 }
 
 /** Set or clear one stage effect; returns undefined when nothing is left so the field is dropped on save. */
@@ -102,7 +146,10 @@ export function savePayload(r: Reel) {
     next: r.next,
     lang: r.lang,
     music: r.music ? { volume: r.music.volume } : undefined,
-    lines: r.lines.map((l) => ({ id: l.id, s: l.s, h: l.h, d: l.d, m: l.m, log: l.log, sw: l.sw, fx: l.fx, voiceId: l.voiceId, offset: l.offset })),
+    lines: r.lines.map((l) => ({
+      id: l.id, s: l.s, h: l.h, d: l.d, m: l.m, log: l.log, sw: l.sw, fx: l.fx,
+      voiceId: l.voiceId, ttsInstruct: l.ttsInstruct, ttsSpeed: l.ttsSpeed, ttsAccent: l.ttsAccent, offset: l.offset,
+    })),
   }
 }
 
@@ -125,7 +172,12 @@ export function mergeServer(local: Reel, server: Reel): Reel {
     lines: local.lines.map((l) => {
       const s = byId.get(l.id)
       if (!s) return l
-      const inSync = s.s.trim() === l.s.trim() && (s.voiceId || '') === (l.voiceId || '')
+      const inSync =
+        s.s.trim() === l.s.trim() &&
+        (s.voiceId || '') === (l.voiceId || '') &&
+        (s.ttsInstruct || '') === (l.ttsInstruct || '') &&
+        (s.ttsSpeed || 1) === (l.ttsSpeed || 1) &&
+        (s.ttsAccent || '') === (l.ttsAccent || '')
       return { ...l, audio: s.audio, stale: inSync ? s.stale : undefined }
     }),
   }

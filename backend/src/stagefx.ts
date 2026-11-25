@@ -223,7 +223,7 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
   const props = Object.fromEntries(PROPS.map((p) => [p.id, `<svg viewBox="0 0 48 48" aria-hidden="true">${p.svg}</svg>`]));
   return `
 (function(){
-  var COL=${json(colors)},ROOM=${json(rooms)},PROP=${json(props)},LIGHT=${json(LIGHTS.map((l) => l.id))};
+  var COL=${json(colors)},ROOM=${json(rooms)},PROP=${json(props)},LIGHT=${json(LIGHTS.map((l) => l.id))},FX=${json(fx)};
   var stage=document.getElementById('stage'),cap=document.getElementById('cap'),hook=document.getElementById('hook');
   if(!stage||!cap)return;
   var slots={};
@@ -290,10 +290,10 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     // Also listen for hook reset
     if (hook) new MutationObserver(function(){ if (hook.classList.contains('on')) reset(); }).observe(hook, {attributes: true, attributeFilter: ['class']});
   } else {
-    // Legacy MutationObserver approach - use the fx array passed in, not a global FX
+    // Legacy MutationObserver approach - use the FX array serialized into the runtime
     var i = -1;
     new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){
-      if (n.nodeName === 'P') { i++; apply(fx[i] || null); }
+      if (n.nodeName === 'P') { i++; apply(FX[i] || null); }
     })})}).observe(cap, {childList: true});
     if (hook) new MutationObserver(function(){ if (hook.classList.contains('on')) { i = -1; reset(); } }).observe(hook, {attributes: true, attributeFilter: ['class']});
   }

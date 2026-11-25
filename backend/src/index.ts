@@ -170,6 +170,9 @@ app.put('/api/reels/:id', (req, res) => {
           ...(Array.isArray(n.log) && n.log.length ? { log: n.log.map(String) } : {}),
           ...(Array.isArray(n.sw) && n.sw.length ? { sw: n.sw } : {}),
           ...(n.voiceId ? { voiceId: String(n.voiceId) } : {}),
+          ...(n.ttsInstruct ? { ttsInstruct: String(n.ttsInstruct) } : {}),
+          ...(Number.isFinite(n.ttsSpeed) && Number(n.ttsSpeed) > 0 && Number(n.ttsSpeed) !== 1 ? { ttsSpeed: Math.round(Number(n.ttsSpeed) * 100) / 100 } : {}),
+          ...(n.ttsAccent ? { ttsAccent: String(n.ttsAccent) } : {}),
           ...(prev?.audio ? { audio: prev.audio } : {}),
         };
       });
@@ -222,55 +225,147 @@ let voiceCache: { at: number; data: { voices: Voice[]; defaultId: string; source
 
 async function listVoices(force = false) {
   if (!force && voiceCache && Date.now() - voiceCache.at < 30000 && voiceCache.data.voices.length) return voiceCache.data;
-  let data: { voices: Voice[]; defaultId: string; source: string; error?: string };
+  const studioVoices: Voice[] = [];
+  const localVoices: Voice[] = [];
+  let studioDefaultId = '';
+  let studioOk = false;
+  let localOk = false;
+
   try {
-    // Try tts-management server first (port 3229) for designed voices
+    // 1. Fetch designed/studio voices from tts-management server (port 3229)
     const { data: j } = await axios.get(`${TTS_MGMT_BASE}/api/book/tts-voices`, { timeout: 4000 });
-    const voices: Voice[] = (j.voices || [])
-      .map((v: any) => ({
-        id: String(v.id || ''), 
-        label: String(v.label || v.id || ''), 
-        model: String(v.model || ''), 
+    studioOk = true;
+    studioDefaultId = String(j.defaultId || '');
+    for (const v of j.voices || []) {
+      const id = String(v.id || '');
+      if (!id) continue;
+      studioVoices.push({
+        id,
+        label: String(v.label || id),
+        model: String(v.model || ''),
         designModel: String(v.designModel || ''),
-        kind: String(v.kind || ''), 
-        instruct: String(v.instruct || ''), 
-        voice: String(v.voice || 'default'), 
-        langCode: String(v.langCode || ''), 
-        source: 'studio' as const,
+        kind: String(v.kind || 'designed'),
+        instruct: String(v.instruct || ''),
+        voice: String(v.voice || 'default'),
+        langCode: String(v.langCode || ''),
+        source: 'studio',
         refine: v.refine || null,
-      }))
-      .filter((v: Voice) => v.id);
-    data = { voices, defaultId: String(j.defaultId || voices[0]?.id || ''), source: 'studio' };
-  } catch (studioErr) {
-    try {
-      // Fallback to raw MLX-Audio models
-      const { data: j } = await axios.get(`${TTS_BASE}/v1/models`, { timeout: 4000 });
-      const voices: Voice[] = (j?.data || []).map((m: any) => ({
-        id: String(m.id), label: String(m.id), model: String(m.id), kind: 'model', instruct: '', voice: 'default', langCode: '', source: 'local' as const,
-      }));
-      data = { voices, defaultId: voices[0]?.id || '', source: 'local', error: `Studio voices unavailable (${TTS_MGMT_BASE}); showing raw TTS models.` };
-    } catch {
-      data = { voices: [], defaultId: '', source: 'none', error: `No TTS service reachable at ${TTS_MGMT_BASE} or ${TTS_BASE}.` };
+      });
     }
+  } catch { /* studio server optional if local MLX-Audio is up */ }
+
+  const baseModels = new Set<string>();
+  for (const v of studioVoices) {
+    if (v.model) baseModels.add(v.model);
   }
+
+  try {
+    // 2. Also fetch raw MLX-Audio base/flow models (port 8771) so user can choose either
+    const { data: j } = await axios.get(`${TTS_BASE}/v1/models`, { timeout: 4000 });
+    localOk = true;
+    for (const m of j?.data || []) {
+      const rawId = String(m.id || '');
+      if (rawId) baseModels.add(rawId);
+    }
+  } catch { /* local MLX-Audio optional if studio server is up */ }
+
+  const seen = new Set(studioVoices.map((v) => v.id));
+  for (const rawId of baseModels) {
+    const id = seen.has(rawId) ? `base:${rawId}` : rawId;
+    localVoices.push({
+      id,
+      label: rawId,
+      model: rawId,
+      kind: 'model',
+      instruct: '',
+      voice: 'default',
+      langCode: '',
+      source: 'local',
+    });
+  }
+
+  const voices = [...studioVoices, ...localVoices];
+  const defaultId = studioDefaultId || voices[0]?.id || '';
+  const source = studioOk && localOk ? 'both' : studioOk ? 'studio' : localOk ? 'local' : 'none';
+  const error = !voices.length
+    ? `No TTS service reachable at ${TTS_MGMT_BASE} or ${TTS_BASE}.`
+    : (!studioOk ? `Studio voices unavailable (${TTS_MGMT_BASE}); showing base TTS models.` : undefined);
+
+  const data = { voices, defaultId, source, ...(error ? { error } : {}) };
   voiceCache = { at: Date.now(), data };
   return data;
 }
 
-async function speak(text: string, v: Voice): Promise<Buffer> {
+const LANG_NAME: Record<string, string> = {
+  en: 'english',
+  pt: 'portuguese',
+  es: 'spanish',
+  fr: 'french',
+  it: 'italian',
+  de: 'german',
+  pl: 'polish',
+  ja: 'japanese',
+  ko: 'korean',
+  zh: 'chinese',
+  ru: 'russian',
+};
+
+function toTtsLang(lang?: string): string {
+  if (!lang) return '';
+  const base = lang.toLowerCase().split('-')[0];
+  return LANG_NAME[base] || lang;
+}
+
+interface SpeakOpts {
+  instruct?: string;
+  speed?: number;
+  accent?: string;
+  lang?: string;
+}
+
+async function speak(text: string, v: Voice, opts: SpeakOpts = {}): Promise<Buffer> {
+  const isDesigned = v.kind === 'designed';
+  const model = isDesigned ? (v.designModel || v.model) : v.model;
   const body: Record<string, unknown> = {
-    model: v.model, input: text, voice: v.kind === 'designed' ? v.id : v.voice || 'default', response_format: 'mp3',
+    model,
+    input: text,
+    voice: v.voice || 'default',
+    response_format: 'mp3',
   };
-  // For designed voices, the instruction is baked into the voice design - don't send instruct parameter
-  if (v.instruct && v.kind !== 'designed') body.instruct = v.instruct;
-  if (v.kind !== 'designed' && v.langCode) body.lang_code = v.langCode;
-  // Designed voices use MLX-Audio directly with their base model
-  const url = v.kind === 'designed' ? `${TTS_BASE}/v1/audio/speech` : (v.source === 'studio' ? `${TTS_MGMT_BASE}/api/tts/speech` : `${TTS_BASE}/v1/audio/speech`);
+
+  if (isDesigned) {
+    // Designed voices use the VoiceDesign model on MLX-Audio (:8771/v1/audio/speech) with their baked instruct + any per-line override.
+    const combinedInstruct = [v.instruct, opts.instruct].filter(Boolean).join(' ');
+    if (combinedInstruct) body.instruct = combinedInstruct;
+    const langCode = v.langCode || toTtsLang(opts.lang);
+    if (langCode) body.lang_code = langCode;
+    const speed = opts.speed && opts.speed !== 1 ? opts.speed : (typeof v.refine?.rate === 'number' && v.refine.rate !== 1 ? v.refine.rate : undefined);
+    if (speed) body.speed = speed;
+    if (typeof v.refine?.pitch === 'number' && v.refine.pitch !== 0) body.pitch = v.refine.pitch;
+  } else {
+    // Base/flow model on MLX-Audio (:8771/v1/audio/speech): apply regional accent + emotional/delivery instruct + reel language.
+    const accentPart = opts.accent ? `${opts.accent} accent` : '';
+    const combinedInstruct = [v.instruct, accentPart, opts.instruct].filter(Boolean).join(', ');
+    if (combinedInstruct) body.instruct = combinedInstruct;
+    const langCode = v.langCode || toTtsLang(opts.lang);
+    if (langCode) body.lang_code = langCode;
+    if (opts.speed && opts.speed !== 1) body.speed = opts.speed;
+  }
+
+  const url = `${TTS_BASE}/v1/audio/speech`;
   const r = await axios.post(url, body, { responseType: 'arraybuffer', timeout: 240000, validateStatus: () => true });
   if (r.status >= 400) {
+    const raw = Buffer.from(r.data).toString('utf-8');
     let msg = `${r.status}`;
-    try { const j = JSON.parse(Buffer.from(r.data).toString('utf-8')); msg = j.error || j.detail || msg; } catch { /* not JSON */ }
-    throw new Error(`TTS failed: ${String(msg).slice(0, 200)}`);
+    try {
+      const j = JSON.parse(raw);
+      const val = j.error ?? j.detail ?? j.message;
+      if (val !== undefined) msg = typeof val === 'string' ? val : JSON.stringify(val);
+    } catch {
+      if (raw.trim()) msg = raw.trim();
+    }
+    console.error(`[TTS ${r.status}] ${url}`, { voice: v.id, kind: v.kind, source: v.source, model: v.model, msg });
+    throw new Error(`TTS failed (${r.status}): ${msg.slice(0, 300)}`);
   }
   const buf = Buffer.from(r.data);
   if (!buf.length) throw new Error('The voice server returned empty audio.');
@@ -298,19 +393,23 @@ app.post('/api/reels/:id/lines/:lineId/tts', wrap(async (req, res) => {
   if (!reel || !line) return res.status(404).json({ error: 'Reel or line not found' });
   const voiceId = String(req.body?.voiceId || line.voiceId || '');
   const text = (typeof req.body?.text === 'string' ? req.body.text : line.s).trim();
+  const ttsInstruct = (typeof req.body?.ttsInstruct === 'string' ? req.body.ttsInstruct : (line.ttsInstruct || '')).trim();
+  const rawSpeed = req.body?.ttsSpeed !== undefined ? Number(req.body.ttsSpeed) : (line.ttsSpeed ?? 1);
+  const ttsSpeed = Number.isFinite(rawSpeed) && rawSpeed > 0 ? Math.round(rawSpeed * 100) / 100 : 1;
+  const ttsAccent = (typeof req.body?.ttsAccent === 'string' ? req.body.ttsAccent : (line.ttsAccent || '')).trim();
   if (!text) return res.status(400).json({ error: 'This line has no text yet.' });
   const { voices } = await listVoices();
   const voice = voices.find((v) => v.id === voiceId);
   if (!voice) return res.status(400).json({ error: 'Choose a voice first.' });
 
-  const key = lineKey(text, voice.id);
+  const key = lineKey(text, voice.id, ttsInstruct, ttsSpeed, ttsAccent);
   const rel = `audio/${reelId}/${lineId}-${key}.mp3`;
   const abs = path.join(DATA_DIR, rel);
   fs.mkdirSync(path.dirname(abs), { recursive: true });
   const isNewFile = !fs.existsSync(abs);
   let durationMs: number;
   try {
-    fs.writeFileSync(abs, await speak(text, voice));
+    fs.writeFileSync(abs, await speak(text, voice, { instruct: ttsInstruct, speed: ttsSpeed, accent: ttsAccent, lang: reel.lang }));
     durationMs = await probeDurationMs(abs);
   } catch (e) {
     if (isNewFile) fs.rmSync(abs, { force: true }); // never leave an unreferenced / unreadable mp3 behind
@@ -324,7 +423,20 @@ app.post('/api/reels/:id/lines/:lineId/tts', wrap(async (req, res) => {
     if (l.audio && l.audio.file !== rel) fs.rmSync(path.join(DATA_DIR, l.audio.file), { force: true });
     l.s = text;
     l.voiceId = voice.id;
-    l.audio = { file: rel, durationMs, key, voiceId: voice.id, text, voiceLabel: voice.label.replace(/\s*·\s*designed voice$/i, '') };
+    if (ttsInstruct) l.ttsInstruct = ttsInstruct; else delete l.ttsInstruct;
+    if (ttsSpeed !== 1) l.ttsSpeed = ttsSpeed; else delete l.ttsSpeed;
+    if (ttsAccent) l.ttsAccent = ttsAccent; else delete l.ttsAccent;
+    l.audio = {
+      file: rel,
+      durationMs,
+      key,
+      voiceId: voice.id,
+      text,
+      voiceLabel: voice.label.replace(/\s*·\s*designed voice$/i, ''),
+      ...(ttsInstruct ? { ttsInstruct } : {}),
+      ...(ttsSpeed !== 1 ? { ttsSpeed } : {}),
+      ...(ttsAccent ? { ttsAccent } : {}),
+    };
     applied = true;
   });
   if (!updated) { if (isNewFile) fs.rmSync(abs, { force: true }); return res.status(404).json({ error: 'Reel was deleted while generating.' }); }

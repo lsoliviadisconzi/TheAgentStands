@@ -34,23 +34,32 @@ function App() {
   const playerRef = useRef<HTMLIFrameElement | null>(null)
   const pollRef = useRef<ReturnType<typeof setInterval>>(null)
   const [isResizing, setIsResizing] = useState(false)
-  const [drawerWidth, setDrawerWidth] = useState(360)
+  const [drawerLWidth, setDrawerLWidth] = useState(300)
+  const [drawerRWidth, setDrawerRWidth] = useState(300)
   const studioRef = useRef<HTMLDivElement | null>(null)
   const timelineRef = useRef<HTMLDivElement | null>(null)
   const [drag, setDrag] = useState<{ lineId: string; index: number; startX: number; startOffset: number; delta: number } | null>(null)
   
-  const handleResizeStart = (e: React.MouseEvent) => {
+  const handleResizeStart = (side: 'left' | 'right') => (e: React.MouseEvent) => {
     e.preventDefault()
     setIsResizing(true)
     const startX = e.clientX
-    const startWidth = drawerWidth
+    const startWidth = side === 'left' ? drawerLWidth : drawerRWidth
     
     const handleMouseMove = (moveEvent: MouseEvent) => {
       const delta = moveEvent.clientX - startX
-      const newWidth = Math.max(160, Math.min(480, startWidth + delta))
-      setDrawerWidth(newWidth)
-      if (studioRef.current) {
-        studioRef.current.style.setProperty('--drawer-w', `${newWidth}px`)
+      if (side === 'left') {
+        const newWidth = Math.max(160, Math.min(480, startWidth + delta))
+        setDrawerLWidth(newWidth)
+        if (studioRef.current) {
+          studioRef.current.style.setProperty('--drawer-l-w', `${newWidth}px`)
+        }
+      } else {
+        const newWidth = Math.max(160, Math.min(480, startWidth - delta))
+        setDrawerRWidth(newWidth)
+        if (studioRef.current) {
+          studioRef.current.style.setProperty('--drawer-r-w', `${newWidth}px`)
+        }
       }
     }
     
@@ -69,41 +78,11 @@ function App() {
   // moves without changing its length. The plan re-measures and clamps as needed.
 
   const onDragStart = (e: React.MouseEvent, i: number, lineId: string) => {
-    const tl = timelineRef.current
-    if (!tl) return
-    const rect = tl.getBoundingClientRect()
-    const startMs = selectedReel.plan.starts[i]
-    const cur = selectedReel.lines[i].offset ?? 0
+    if (!timelineRef.current || !selectedReel) return
+    const cur = Math.max(selectedReel.lines[i]?.offset ?? 0, selectedReel.plan.starts[i] ?? 0)
     setDrag({ lineId, index: i, startX: e.clientX, startOffset: cur, delta: 0 })
     e.preventDefault()
-  }
-
-  const onDragMove = (e: MouseEvent) => {
-    if (!drag || !timelineRef.current) return
-    const rect = timelineRef.current.getBoundingClientRect()
-    const total = selectedReel.plan.totalMs || 1
-    const pxPerMs = rect.width / total
-    const deltaMs = Math.round((e.clientX - drag.startX) / pxPerMs)
-    const newOffset = Math.max(0, drag.startOffset + deltaMs)
-    setDrag((d) => d ? { ...d, delta: newOffset - drag.startOffset } : null)
-    handleEdit((r) => ({
-      ...r,
-      lines: r.lines.map((l, i) =>
-        i === drag.index ? { ...l, offset: newOffset } : l
-      ),
-    }))
-  }
-
-  const onDragEnd = () => {
-    if (drag) {
-      handleEdit((r) => ({
-        ...r,
-        lines: r.lines.map((l, i) =>
-          i === drag.index && l.offset === 0 ? { ...l, offset: undefined } : l
-        ),
-      }))
-    }
-    setDrag(null)
+    e.stopPropagation()
   }
 
   // ---- boot ----
@@ -130,6 +109,40 @@ function App() {
     saveState, busy, lineErr, generatingAll, generate: onGenerate, generateAll: onGenerateAll,
     previewNonce, reloadPreview, previewStale,
   } = useReelEditor(fetchReels)
+
+  useEffect(() => {
+    if (!drag) return
+    const handleMove = (e: MouseEvent) => {
+      if (!timelineRef.current || !selectedReel) return
+      const rect = timelineRef.current.getBoundingClientRect()
+      const total = selectedReel.plan.totalMs || 1
+      const pxPerMs = rect.width / total
+      const deltaMs = Math.round((e.clientX - drag.startX) / pxPerMs)
+      const newOffset = Math.max(0, drag.startOffset + deltaMs)
+      setDrag((d) => d ? { ...d, delta: newOffset - drag.startOffset } : null)
+      handleEdit((r) => ({
+        ...r,
+        lines: r.lines.map((l, i) =>
+          i === drag.index ? { ...l, offset: newOffset } : l
+        ),
+      }))
+    }
+    const handleUp = () => {
+      handleEdit((r) => ({
+        ...r,
+        lines: r.lines.map((l, i) =>
+          i === drag.index && l.offset === 0 ? { ...l, offset: undefined } : l
+        ),
+      }))
+      setDrag(null)
+    }
+    window.addEventListener('mousemove', handleMove)
+    window.addEventListener('mouseup', handleUp)
+    return () => {
+      window.removeEventListener('mousemove', handleMove)
+      window.removeEventListener('mouseup', handleUp)
+    }
+  }, [drag, selectedReel, handleEdit])
 
   const fetchVoices = async () => {
     try {
@@ -464,8 +477,9 @@ function App() {
         <h1>TheAgentStands · Reel Manager</h1>
       </header>
 
-      <div className="studio" ref={studioRef} data-resizing={isResizing}>
-        <div className="resize-handle" onMouseDown={handleResizeStart} />
+      <div className="studio" ref={studioRef} data-resizing={isResizing || !!drag}>
+        <div className="resize-handle left" onMouseDown={handleResizeStart('left')} />
+        <div className="resize-handle right" onMouseDown={handleResizeStart('right')} />
         {/* ---------- LEFT: Library ---------- */}
         <aside className="drawer left" aria-label="Reel library">
           <div className="dh">
@@ -474,7 +488,7 @@ function App() {
           <div className="db">
             {/* --- Create new --- */}
             <form className="sec first" onSubmit={handleCreate}>
-              <input className="lib-in" name="title" placeholder="Title" required />
+              <input className="vo-in lib-in" type="text" name="title" placeholder="Title" required />
               <div className="lib-pick">
                 <select name="theme" className="vo-in">
                   <option value="">Theme (optional)</option>
@@ -498,7 +512,7 @@ function App() {
                   <select className="vo-in" name="narrationTheme" value={selectedNarrationThemeSlug} onChange={(e) => handleNarrationThemeSelect(e.target.value)}>
                     <option value="">-- Select Theme --</option>
                     {Object.entries(narrationThemes).map(([slug, data]) => (
-                      <option key={slug} value={slug}>{data.title} <small>({data.languages.length} langs)</small></option>
+                      <option key={slug} value={slug}>{data.title} ({data.languages.length} langs)</option>
                     ))}
                   </select>
                   <select className="vo-in" name="narrationLanguage" value={selectedNarrationLanguage} onChange={(e) => handleNarrationLanguageSelect(e.target.value)} disabled={!selectedNarrationThemeSlug}>
@@ -529,11 +543,11 @@ function App() {
             {/* --- Theme browser (legacy HTML) --- */}
             <div className="sec">Theme browser (HTML)</div>
             <div className="lib-pick">
-              <select className="vo-in" value={selectedTheme} onChange={(e) => handleThemeChange(e.target.value)}>
+              <select className="vo-in" name="themeBrowserTheme" value={selectedTheme} onChange={(e) => handleThemeChange(e.target.value)}>
                 <option value="">-- Select Theme --</option>
                 {themes.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
-              <select className="vo-in" value={selectedLanguage} onChange={(e) => handleLanguageChange(e.target.value)} disabled={!selectedTheme}>
+              <select className="vo-in" name="themeBrowserLanguage" value={selectedLanguage} onChange={(e) => handleLanguageChange(e.target.value)} disabled={!selectedTheme}>
                 <option value="">-- Language --</option>
                 {languages.map((l) => <option key={l} value={l}>{l.toUpperCase()}</option>)}
               </select>
@@ -579,7 +593,7 @@ function App() {
                     <small>{r.theme || 'custom'} · {r.lang} · {r.lines.length} lines · {(r.plan.totalMs / 1000).toFixed(1)} s</small>
                   </div>
                   <label className="tb-check">
-                    <input type="checkbox" checked={r.onLanding} onChange={() => handleToggleLanding(r)} onClick={(e) => e.stopPropagation()} />
+                    <input type="checkbox" name={`onLanding-${r.id}`} checked={r.onLanding} onChange={() => handleToggleLanding(r)} onClick={(e) => e.stopPropagation()} />
                     <span>Landing</span>
                   </label>
                 </div>
@@ -598,10 +612,10 @@ function App() {
                   {{ idle: 'Saved', dirty: 'Unsaved…', saving: 'Saving…', error: 'Save failed, will retry on next edit' }[saveState]}
                 </span>
                 <label className="tb-check">
-                  <input type="checkbox" checked={selectedReel.onLanding} onChange={() => handleToggleLanding(selectedReel)} />
+                  <input type="checkbox" name="selectedReelOnLanding" checked={selectedReel.onLanding} onChange={() => handleToggleLanding(selectedReel)} />
                   <span>On Landing</span>
                 </label>
-                <select className="vo-in" value={selectedReel.lang} onChange={(e) => handleEdit((r) => ({ ...r, lang: e.target.value }))}>
+                <select className="vo-in" name="selectedReelLang" value={selectedReel.lang} onChange={(e) => handleEdit((r) => ({ ...r, lang: e.target.value }))}>
                   {Array.from(new Set([selectedReel.lang, ...languages])).map((l) => <option key={l} value={l}>{l}</option>)}
                 </select>
                 <button className={`vo-btn${previewStale ? ' primary' : ''}`} onClick={() => void reloadPreview()} title="Rebuild the preview from the saved reel and play it from the start">
@@ -631,7 +645,7 @@ function App() {
                 selectedReel.lines.forEach((l) => { if (!voices.includes(l.voiceId || '')) voices.push(l.voiceId || '') })
                 return (
                   <div className="timeline-container">
-                    <div className="timeline" role="group" aria-label="Reel timeline" ref={timelineRef} onMouseUp={onDragEnd} onMouseMove={onDragMove as any}>
+                    <div className="timeline" role="group" aria-label="Reel timeline" ref={timelineRef}>
                       <div className="tl-band tl-hook" style={{ left: 0, width: pct(plan.starts[0] ?? 0) }} title="Hook card" />
                       {selectedReel.lines.map((l, i) => {
                         const st = lineState(l)
@@ -646,11 +660,16 @@ function App() {
                             data-clamped={plan.clamped.includes(i)}
                             data-dragging={isDragging ? '' : undefined}
                             style={{ left: pct(plan.starts[i]), width: pct(span), ['--c' as string]: hue(voices.indexOf(l.voiceId || '')) }}
-                            title={`Line ${i + 1} · ${fmt(plan.starts[i])}\n${l.s.slice(0, 80)}${st === 'ready' ? '\nClick to listen' : '\n' + (st === 'stale' ? 'Narration is out of date' : 'No narration yet')}\nDrag to move`}
+                            title={`Line ${i + 1} · ${fmt(plan.starts[i])}\n${l.s.slice(0, 80)}${st === 'ready' ? '\nClick to listen' : '\n' + (st === 'stale' ? 'Narration is out of date' : 'No narration yet')}\nDrag handle to move`}
                             onClick={() => l.audio && st === 'ready' && audition(l.audio.url)}
-                            onMouseDown={(e) => onDragStart(e, i, l.id)}
                           >
                             <span className="tl-speech" style={{ width: `${Math.min(100, ((plan.speechEnds[i] - plan.starts[i]) / span) * 100)}%` }} />
+                            <span
+                              className="tl-handle"
+                              title={`Drag to adjust line ${i + 1} timing`}
+                              onMouseDown={(e) => onDragStart(e, i, l.id)}
+                              onClick={(e) => e.stopPropagation()}
+                            />
                             <span className="tl-num">{i + 1}</span>
                             {l.offset !== undefined && <small className="tl-offset">{fmt(l.offset)}</small>}
                           </button>

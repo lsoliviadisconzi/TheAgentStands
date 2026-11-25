@@ -110,11 +110,23 @@ export function useReelEditor(onListChanged: () => void) {
   }, [flush])
 
   /* ---- narration ---- */
-  const generateOne = useCallback(async (reelId: string, lineId: string, voiceId: string, text: string) => {
+  const generateOne = useCallback(async (
+    reelId: string,
+    lineId: string,
+    voiceId: string,
+    text: string,
+    opts?: { ttsInstruct?: string; ttsSpeed?: number; ttsAccent?: string },
+  ) => {
     setBusy((b) => ({ ...b, [lineId]: true }))
     setLineErr((e) => ({ ...e, [lineId]: '' }))
     try {
-      const { data } = await axios.post<Reel>(`${API}/reels/${encodeURIComponent(reelId)}/lines/${encodeURIComponent(lineId)}/tts`, { voiceId, text })
+      const { data } = await axios.post<Reel>(`${API}/reels/${encodeURIComponent(reelId)}/lines/${encodeURIComponent(lineId)}/tts`, {
+        voiceId,
+        text,
+        ...(opts?.ttsInstruct ? { ttsInstruct: opts.ttsInstruct } : {}),
+        ...(opts?.ttsSpeed && opts.ttsSpeed !== 1 ? { ttsSpeed: opts.ttsSpeed } : {}),
+        ...(opts?.ttsAccent ? { ttsAccent: opts.ttsAccent } : {}),
+      })
       applyServer(data)
       return true
     } catch (e) {
@@ -133,7 +145,11 @@ export function useReelEditor(onListChanged: () => void) {
     // Re-read: the person may have kept typing while the save was in flight.
     const latest = reelRef.current?.lines.find((l) => l.id === lineId)
     if (!latest) return
-    if (await generateOne(cur.id, lineId, voiceId, latest.s)) await reloadPreview()
+    if (await generateOne(cur.id, lineId, voiceId, latest.s, {
+      ttsInstruct: latest.ttsInstruct,
+      ttsSpeed: latest.ttsSpeed,
+      ttsAccent: latest.ttsAccent,
+    })) await reloadPreview()
   }, [flush, generateOne, reloadPreview])
 
   /** Every line that still needs audio, each with ITS OWN voice. */
@@ -148,7 +164,11 @@ export function useReelEditor(onListChanged: () => void) {
       for (const l of todo) {
         const latest = reelRef.current?.lines.find((x) => x.id === l.id)
         if (!latest?.voiceId) continue
-        if (!(await generateOne(cur.id, latest.id, latest.voiceId, latest.s))) break // keep the error on that line, stop the run
+        if (!(await generateOne(cur.id, latest.id, latest.voiceId, latest.s, {
+          ttsInstruct: latest.ttsInstruct,
+          ttsSpeed: latest.ttsSpeed,
+          ttsAccent: latest.ttsAccent,
+        }))) break // keep the error on that line, stop the run
         ok++
       }
       if (ok) await reloadPreview()

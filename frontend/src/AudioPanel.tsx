@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import type { ChangeEvent } from 'react'
 import type { Line, Reel, StageCatalog, StageLook, VoicesResponse } from './types'
-import { audition, FALLBACK_MOODS, fmt, hue, lineState, nextFx, resolveLook, shortVoice, STATE_LABEL, uid } from './lib'
+import { accentsForLang, audition, EMOTION_PRESETS, FALLBACK_MOODS, fmt, hue, lineState, nextFx, resolveLook, shortVoice, STATE_LABEL, uid } from './lib'
 
 type Tab = 'cast' | 'write' | 'music'
 const VOICE_KEY = 'tas.voice'
@@ -203,10 +203,10 @@ export default function AudioPanel(p: Props) {
 
             <div className="sec">Reel</div>
             <div className="vo-card">
-              <input className="vo-in" aria-label="Title" placeholder="Title" value={reel.title} onChange={(e) => p.onEdit((r) => ({ ...r, title: e.target.value }))} />
-              <input className="vo-in" aria-label="Hook card" placeholder="Hook card (first 2 seconds)" value={reel.hook} onChange={(e) => p.onEdit((r) => ({ ...r, hook: e.target.value }))} />
-              <input className="vo-in" aria-label="Stamp" placeholder="Closing stamp" value={reel.stamp} onChange={(e) => p.onEdit((r) => ({ ...r, stamp: e.target.value }))} />
-              <input className="vo-in" aria-label="Next line" placeholder="“Next:” teaser" value={reel.next} onChange={(e) => p.onEdit((r) => ({ ...r, next: e.target.value }))} />
+              <input className="vo-in" name="reelTitle" aria-label="Title" placeholder="Title" value={reel.title} onChange={(e) => p.onEdit((r) => ({ ...r, title: e.target.value }))} />
+              <input className="vo-in" name="reelHook" aria-label="Hook card" placeholder="Hook card (first 2 seconds)" value={reel.hook} onChange={(e) => p.onEdit((r) => ({ ...r, hook: e.target.value }))} />
+              <input className="vo-in" name="reelStamp" aria-label="Stamp" placeholder="Closing stamp" value={reel.stamp} onChange={(e) => p.onEdit((r) => ({ ...r, stamp: e.target.value }))} />
+              <input className="vo-in" name="reelNext" aria-label="Next line" placeholder="“Next:” teaser" value={reel.next} onChange={(e) => p.onEdit((r) => ({ ...r, next: e.target.value }))} />
             </div>
 
             <div className="vo-sec">
@@ -219,17 +219,36 @@ export default function AudioPanel(p: Props) {
             {reel.lines.map((l, i) => {
               const st = lineState(l)
               const isBusy = !!p.busy[l.id]
+              const selectedVoice = voices?.voices.find((v) => v.id === l.voiceId)
+              const studioVoices = voices?.voices.filter((v) => v.source === 'studio') || []
+              const localVoices = voices?.voices.filter((v) => v.source === 'local') || []
+              const langAccents = accentsForLang(reel.lang)
+              const isCustomAccent = !!l.ttsAccent && !langAccents.includes(l.ttsAccent)
+              const speedVal = l.ttsSpeed ?? 1
               return (
                 <div key={l.id} className="vo-card" style={{ ['--c' as string]: hue(i) }} data-live={p.liveLine === i ? '' : undefined}>
                   <div className="vo-head">
                     <span className="line-num">{String(i + 1).padStart(2, '0')}</span>
-                    <select className="vo-in" aria-label="Voice" value={l.voiceId || ''} disabled={!voices?.voices.length} onChange={(e: ChangeEvent<HTMLSelectElement>) => chooseVoice(l.id, e.target.value)}>
+                    <select className="vo-in" name={`lineVoice-${l.id}`} aria-label="Voice" value={l.voiceId || ''} disabled={!voices?.voices.length} onChange={(e: ChangeEvent<HTMLSelectElement>) => chooseVoice(l.id, e.target.value)}>
                       <option value="">{voices ? 'Choose a voice…' : 'Loading voices…'}</option>
-                      {voices?.voices.map((v) => (
-                        <option key={v.id} value={v.id}>
-                          {v.label}
-                        </option>
-                      ))}
+                      {studioVoices.length > 0 && (
+                        <optgroup label="Designed voices">
+                          {studioVoices.map((v) => (
+                            <option key={v.id} value={v.id}>
+                              {shortVoice(v.label)}
+                            </option>
+                          ))}
+                        </optgroup>
+                      )}
+                      {localVoices.length > 0 && (
+                        <optgroup label="Base models (flow)">
+                          {localVoices.map((v) => (
+                            <option key={v.id} value={v.id}>
+                              {v.label}
+                            </option>
+                          ))}
+                        </optgroup>
+                      )}
                     </select>
                     <button className="vo-btn quiet" title="Move up" disabled={i === 0} onClick={() => moveLine(i, -1)}>
                       ↑
@@ -242,15 +261,108 @@ export default function AudioPanel(p: Props) {
                     </button>
                   </div>
 
-                  <textarea rows={3} maxLength={2000} placeholder="What should be said…" aria-label="Text" value={l.s} onChange={(e) => patchLine(l.id, { s: e.target.value })} />
+                  <textarea name={`lineText-${l.id}`} rows={3} maxLength={2000} placeholder="What should be said…" aria-label="Text" value={l.s} onChange={(e) => patchLine(l.id, { s: e.target.value })} />
+
+                  <div className="vo-tts">
+                    <div className="vo-tts-row">
+                      <input
+                        className="vo-in"
+                        type="text"
+                        name={`lineTtsInstruct-${l.id}`}
+                        aria-label="Voice delivery / emotion"
+                        placeholder="Delivery / emotion (e.g. calm, sarcastic, urgent)…"
+                        value={l.ttsInstruct || ''}
+                        onChange={(e) => patchLine(l.id, { ttsInstruct: e.target.value || undefined })}
+                      />
+                      <select
+                        className="vo-in vo-tts-preset"
+                        name={`lineTtsPreset-${l.id}`}
+                        aria-label="Emotion preset"
+                        value=""
+                        onChange={(e) => {
+                          if (e.target.value) patchLine(l.id, { ttsInstruct: e.target.value })
+                        }}
+                      >
+                        <option value="">Presets…</option>
+                        {EMOTION_PRESETS.map((pr) => (
+                          <option key={pr.label} value={pr.value}>{pr.label}</option>
+                        ))}
+                      </select>
+                      {(l.m || l.d) && (
+                        <button
+                          type="button"
+                          className="vo-btn quiet"
+                          title="Fill delivery from this line's stage mood and direction"
+                          onClick={() => {
+                            const parts = [l.m, l.d].filter(Boolean).join(', ')
+                            if (parts) patchLine(l.id, { ttsInstruct: parts })
+                          }}
+                        >
+                          From mood
+                        </button>
+                      )}
+                    </div>
+
+                    <div className="vo-tts-row">
+                      <label className="vo-speed">
+                        <span>Speed</span>
+                        <input
+                          name={`lineTtsSpeed-${l.id}`}
+                          type="range"
+                          min={0.75}
+                          max={1.35}
+                          step={0.05}
+                          value={speedVal}
+                          onChange={(e) => {
+                            const n = Number(e.target.value)
+                            patchLine(l.id, { ttsSpeed: n === 1 ? undefined : n })
+                          }}
+                        />
+                        <span>{speedVal.toFixed(2)}×</span>
+                      </label>
+
+                      {selectedVoice?.source === 'local' && (
+                        <div className="vo-accent">
+                          <select
+                            className="vo-in"
+                            name={`lineTtsAccent-${l.id}`}
+                            aria-label="Regional accent"
+                            value={isCustomAccent ? '__custom__' : (l.ttsAccent || '')}
+                            onChange={(e) => {
+                              const v = e.target.value
+                              if (v === '__custom__') patchLine(l.id, { ttsAccent: l.ttsAccent || 'British - ' })
+                              else patchLine(l.id, { ttsAccent: v || undefined })
+                            }}
+                          >
+                            <option value="">Accent (default for {reel.lang})</option>
+                            {langAccents.map((a) => (
+                              <option key={a} value={a}>{a}</option>
+                            ))}
+                            <option value="__custom__">Custom accent…</option>
+                          </select>
+                          {isCustomAccent && (
+                            <input
+                              className="vo-in"
+                              type="text"
+                              name={`lineTtsAccentCustom-${l.id}`}
+                              aria-label="Custom regional accent"
+                              placeholder="e.g. en-british scottish"
+                              value={l.ttsAccent || ''}
+                              onChange={(e) => patchLine(l.id, { ttsAccent: e.target.value || undefined })}
+                            />
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
                   <details className="vo-more">
                     <summary>Stage details</summary>
-                    <input className="vo-in" placeholder="Direction, e.g. “long pause”" aria-label="Direction" value={l.d || ''} onChange={(e) => patchLine(l.id, { d: e.target.value })} />
+                    <input className="vo-in" name={`lineDirection-${l.id}`} placeholder="Direction, e.g. “long pause”" aria-label="Direction" value={l.d || ''} onChange={(e) => patchLine(l.id, { d: e.target.value })} />
                     <div className="vo-row">
                       <label>
                         Mood{' '}
-                        <select className="vo-in" value={l.m || ''} onChange={(e) => patchAndTry(l.id, { m: e.target.value })}>
+                        <select className="vo-in" name={`lineMood-${l.id}`} value={l.m || ''} onChange={(e) => patchAndTry(l.id, { m: e.target.value })}>
                           <option value="">keep previous</option>
                           {(stage?.moods || FALLBACK_MOODS).map((o) => (
                             <option key={o.id} value={o.id}>{o.label}</option>
@@ -259,11 +371,11 @@ export default function AudioPanel(p: Props) {
                       </label>
                       <label>
                         Beat after{' '}
-                        <SecondsInput valueMs={l.h} onCommit={(ms) => patchLine(l.id, { h: ms ?? 0 })} /> s
+                        <SecondsInput name={`lineBeat-${l.id}`} valueMs={l.h} onCommit={(ms) => patchLine(l.id, { h: ms ?? 0 })} /> s
                       </label>
                       <label title="The line starts no earlier than this time from the start of the reel. Empty = straight after the previous line.">
                         Start no earlier than{' '}
-                        <SecondsInput valueMs={l.offset} placeholder="auto" allowEmpty onCommit={(ms) => patchLine(l.id, { offset: ms || undefined })} /> s
+                        <SecondsInput name={`lineOffset-${l.id}`} valueMs={l.offset} placeholder="auto" allowEmpty onCommit={(ms) => patchLine(l.id, { offset: ms || undefined })} /> s
                       </label>
                     </div>
                     {stage && (
@@ -276,7 +388,7 @@ export default function AudioPanel(p: Props) {
                         ] as const).map(([label, key, opts]) => (
                           <label key={key}>
                             {label}{' '}
-                            <select className="vo-in" value={l.fx?.[key] || ''} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, key, e.target.value) })}>
+                            <select className="vo-in" name={`lineFx-${key}-${l.id}`} value={l.fx?.[key] || ''} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, key, e.target.value) })}>
                               <option value="">keep previous</option>
                               {opts.map((o) => (
                                 <option key={o.id} value={o.id}>{o.label}</option>
@@ -286,7 +398,7 @@ export default function AudioPanel(p: Props) {
                         ))}
                         <label>
                           Room
-                          <select className="vo-in" value={l.fx?.room || ''} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })}>
+                          <select className="vo-in" name={`lineFxRoom-${l.id}`} value={l.fx?.room || ''} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })}>
                             <option value="">keep previous</option>
                             {stage.rooms.map((o) => (
                               <option key={o.id} value={o.id}>{o.label}</option>
@@ -295,7 +407,7 @@ export default function AudioPanel(p: Props) {
                         </label>
                         <label className="vo-colorfield">
                           Room colour
-                          <input className="vo-color" type="color" value={l.fx?.room || '#1d1b24'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })} />
+                          <input className="vo-color" name={`lineFxRoomColor-${l.id}`} type="color" value={l.fx?.room || '#1d1b24'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'room', e.target.value) })} />
                         </label>
                         <button type="button" className="vo-btn" title="Show this line's look in the preview now. Earlier lines' settings are included. Press Replay to watch it in sequence." onClick={() => tryLine(l.id)}>
                           Try now
@@ -305,18 +417,18 @@ export default function AudioPanel(p: Props) {
                     <div className="vo-row">
                       <label className="vo-colorfield">
                         Badge colour
-                        <input className="vo-color" type="color" value={l.fx?.badgeColor || '#f2c230'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeColor', e.target.value) })} />
+                        <input className="vo-color" name={`lineFxBadgeColor-${l.id}`} type="color" value={l.fx?.badgeColor || '#f2c230'} onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeColor', e.target.value) })} />
                       </label>
                       <label>
                         Badge name
-                        <input className="vo-in" type="text" value={l.fx?.badgeName || ''} placeholder="e.g. AGENT" onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeName', e.target.value) })} />
+                        <input className="vo-in" name={`lineFxBadgeName-${l.id}`} type="text" value={l.fx?.badgeName || ''} placeholder="e.g. AGENT" onChange={(e) => patchAndTry(l.id, { fx: nextFx(l.fx, 'badgeName', e.target.value) })} />
                       </label>
                     </div>
                     <small className="vo-status" data-s={reel.plan.clamped.includes(i) ? 'stale' : ''}>
                       Plays at {fmt(reel.plan.starts[i] ?? 0)}
                       {reel.plan.clamped.includes(i) && (i === 0 ? ' · the first line always follows the hook card' : ' · can\'t start before the previous line ends')}
                     </small>
-                    <textarea rows={2} placeholder="Terminal panel, one line each (e.g. orders_placed = 0)" aria-label="Panel lines" value={(l.log || []).join('\n')} onChange={(e) => patchLine(l.id, { log: e.target.value ? e.target.value.split('\n') : [] })} />
+                    <textarea name={`lineLog-${l.id}`} rows={2} placeholder="Terminal panel, one line each (e.g. orders_placed = 0)" aria-label="Panel lines" value={(l.log || []).join('\n')} onChange={(e) => patchLine(l.id, { log: e.target.value ? e.target.value.split('\n') : [] })} />
                   </details>
 
                   <div className="vo-foot">
@@ -332,6 +444,7 @@ export default function AudioPanel(p: Props) {
                       {isBusy ? 'Generating…' : l.audio ? 'Regenerate' : 'Generate narration'}
                     </button>
                     <input
+                      name={`lineAudioUpload-${l.id}`}
                       type="file"
                       accept="audio/*"
                       hidden
@@ -379,7 +492,7 @@ function MusicTab(p: { reel: Reel; onEdit: Props['onEdit']; onFile: (f: File) =>
             <audio src={m.url} controls preload="none" style={{ width: '100%' }} />
             <label className="vo-row">
               Volume
-              <input type="range" min={0} max={100} value={Math.round(m.volume * 100)} onChange={(e) => p.onEdit((r) => (r.music ? { ...r, music: { ...r.music, volume: Number(e.target.value) / 100 } } : r))} />
+              <input name="musicVolume" type="range" min={0} max={100} value={Math.round(m.volume * 100)} onChange={(e) => p.onEdit((r) => (r.music ? { ...r, music: { ...r.music, volume: Number(e.target.value) / 100 } } : r))} />
               <span>{Math.round(m.volume * 100)}%</span>
             </label>
             <div className="vo-foot">
@@ -402,6 +515,7 @@ function MusicTab(p: { reel: Reel; onEdit: Props['onEdit']; onFile: (f: File) =>
         )}
         <input
           ref={input}
+          name="musicFile"
           type="file"
           accept="audio/*"
           hidden
@@ -417,12 +531,13 @@ function MusicTab(p: { reel: Reel; onEdit: Props['onEdit']; onFile: (f: File) =>
 }
 
 /** Seconds field that keeps what you type until you leave it (a number input rewritten on every keystroke can't take "0.5"). */
-function SecondsInput(p: { valueMs?: number; onCommit: (ms: number | null) => void; placeholder?: string; allowEmpty?: boolean }) {
+function SecondsInput(p: { name?: string; valueMs?: number; onCommit: (ms: number | null) => void; placeholder?: string; allowEmpty?: boolean }) {
   const [text, setText] = useState<string | null>(null) // null = not being edited
   const fromProps = p.valueMs === undefined || (p.allowEmpty && p.valueMs === 0) ? '' : String(Math.round(p.valueMs / 10) / 100)
   return (
     <input
       className="vo-in"
+      name={p.name}
       inputMode="decimal"
       placeholder={p.placeholder}
       value={text ?? fromProps}

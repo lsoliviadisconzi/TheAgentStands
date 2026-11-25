@@ -6,6 +6,9 @@ export interface LineAudio {
   voiceLabel?: string
   voiceId?: string
   text?: string
+  ttsInstruct?: string
+  ttsSpeed?: number
+  ttsAccent?: string
 }
 
 export interface LineFx {
@@ -77,6 +80,9 @@ export interface Line {
   log?: string[] // terminal panel lines
   sw?: [string, string][] // colour swatches (kept as-is, not editable here)
   voiceId?: string
+  ttsInstruct?: string
+  ttsSpeed?: number
+  ttsAccent?: string
   offset?: number // start no earlier than (ms from reel start); empty = follow the previous line
   audio?: LineAudio
   stale?: boolean

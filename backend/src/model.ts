@@ -23,10 +23,13 @@ export const MEDIA_URL = '/api/data'; // express.static(DATA_DIR) is mounted her
 export interface LineAudio {
   file: string; // relative to DATA_DIR, e.g. audio/<reelId>/<lineId>-<key>.mp3
   durationMs: number;
-  key: string; // hash of text + voice at generation time; a mismatch means "stale"
+  key: string; // hash of text + voice + delivery at generation time; a mismatch means "stale"
   voiceLabel?: string;
   voiceId?: string; // what it was generated from, so the UI can flag "stale" without hashing
   text?: string;
+  ttsInstruct?: string;
+  ttsSpeed?: number;
+  ttsAccent?: string;
 }
 
 export interface Line {
@@ -39,6 +42,9 @@ export interface Line {
   log?: string[]; // terminal panel lines
   sw?: [string, string][]; // colour swatches (colours theme)
   voiceId?: string;
+  ttsInstruct?: string; // per-line emotional / delivery instruction for TTS
+  ttsSpeed?: number; // per-line speed multiplier (default 1)
+  ttsAccent?: string; // regional accent for base/flow models
   offset?: number; // start offset in ms from reel start
   audio?: LineAudio;
 }
@@ -212,10 +218,15 @@ export function narrationReelToReel(theme: string, lang: string, nr: NarrationRe
 
 export const newId = () => crypto.randomBytes(4).toString('hex');
 
-export const lineKey = (text: string, voiceId?: string) =>
-  crypto.createHash('sha1').update(`${text.trim()}|${voiceId || ''}`).digest('hex').slice(0, 10);
+export const lineKey = (text: string, voiceId?: string, ttsInstruct?: string, ttsSpeed?: number, ttsAccent?: string) => {
+  const extra = (ttsInstruct || ttsAccent || (ttsSpeed && ttsSpeed !== 1))
+    ? `|${(ttsInstruct || '').trim()}|${ttsSpeed && ttsSpeed !== 1 ? ttsSpeed : ''}|${(ttsAccent || '').trim()}`
+    : '';
+  return crypto.createHash('sha1').update(`${text.trim()}|${voiceId || ''}${extra}`).digest('hex').slice(0, 10);
+};
 
-export const isStale = (l: Line) => !!l.audio && l.audio.key !== lineKey(l.s, l.voiceId);
+export const isStale = (l: Line) =>
+  !!l.audio && l.audio.key !== lineKey(l.s, l.voiceId, l.ttsInstruct, l.ttsSpeed, l.ttsAccent);
 
 function normalize(r: any): Reel {
   const lines: Line[] =
@@ -431,7 +442,7 @@ export function planReel(reel: Reel): Plan {
 const jsonForScript = (v: unknown) =>
   JSON.stringify(v).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
-const BASE_CSS = `h1,.sub,.tabs{display:none!important}` + stageFxCss();
+const BASE_CSS = `h1,.sub,.tabs{display:none!important}html,body{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}` + stageFxCss();
 const CAPTURE_CSS = `
 :root{padding:0!important}
 html,body{margin:0!important;padding:0!important;background:#000!important;min-height:0!important;display:block!important}

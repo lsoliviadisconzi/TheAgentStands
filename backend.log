@@ -2,13 +2,5 @@
 > backend@1.0.0 dev
 > ts-node-dev --respawn src/index.ts
 
-[INFO] 04:09:54 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
-Backend listening on port 4000
-[INFO] 04:16:38 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/stagefx.ts has been modified
-Backend listening on port 4000
-[INFO] 04:18:22 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/index.ts has been modified
-Backend listening on port 4000
-[INFO] 04:41:49 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/stagefx.ts has been modified
-Backend listening on port 4000
-[INFO] 04:47:50 Restarting: /Users/leandrodisconzi/repos/TheAgentStands/backend/src/stagefx.ts has been modified
+[INFO] 07:34:36 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
 Backend listening on port 4000
