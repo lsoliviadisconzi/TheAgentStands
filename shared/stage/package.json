@@ -1,0 +1,56 @@
+{
+  "name": "@theagentstands/stage",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./timeline": {
+      "import": "./dist/timeline.js",
+      "require": "./dist/timeline.js",
+      "types": "./dist/timeline.d.ts"
+    },
+    "./ease": {
+      "import": "./dist/ease.js",
+      "require": "./dist/ease.js",
+      "types": "./dist/ease.d.ts"
+    },
+    "./cues": {
+      "import": "./dist/cues.js",
+      "require": "./dist/cues.js",
+      "types": "./dist/cues.d.ts"
+    },
+    "./typed": {
+      "import": "./dist/typed.js",
+      "require": "./dist/typed.js",
+      "types": "./dist/typed.d.ts"
+    },
+    "./mouth": {
+      "import": "./dist/mouth.js",
+      "require": "./dist/mouth.js",
+      "types": "./dist/mouth.d.ts"
+    },
+    "./scene": {
+      "import": "./dist/scene.js",
+      "require": "./dist/scene.js",
+      "types": "./dist/scene.d.ts"
+    },
+    "./migrate": {
+      "import": "./dist/migrate.js",
+      "require": "./dist/migrate.js",
+      "types": "./dist/migrate.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^3.0.0"
+  }
+}

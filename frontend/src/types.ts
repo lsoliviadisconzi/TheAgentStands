@@ -39,6 +39,34 @@ export interface StageCatalog {
   props: StageOption[]
 }
 
+/* ---------------------------------------------------------------- cues */
+
+export type TrackId =
+  | 'mood' | 'light' | 'lightColor' | 'room' | 'accent' | 'propL' | 'propR'
+  | 'badge' | 'name' | 'direction' | 'panel'
+  | 'tension' | 'vignette' | 'grain';
+
+export type Anchor =
+  | { kind: 'reel'; ms: number }
+  | { kind: 'hook'; offsetMs?: number }
+  | { kind: 'stamp'; offsetMs?: number }
+  | {
+      kind: 'line';
+      line: string;
+      at: 'start' | 'end' | 'speechEnd' | 'word';
+      word?: number;
+      offsetMs?: number;
+    };
+
+export interface Cue {
+  id: string;
+  track: TrackId;
+  anchor: Anchor;
+  value: unknown;
+  durMs?: number;
+  ease?: string;
+}
+
 export interface Line {
   id: string
   s: string // text, spoken and typed
@@ -88,6 +116,7 @@ export interface Reel {
   order: number
   updatedAt: number
   plan: Plan
+  cues?: Cue[]
 }
 
 export interface Voice {

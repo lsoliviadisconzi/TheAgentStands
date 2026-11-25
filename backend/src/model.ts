@@ -4,6 +4,9 @@ import vm from 'vm';
 import { cleanFx, stageFxCss, stageFxScript } from './stagefx';
 import type { LineFx } from './stagefx';
 import crypto from 'crypto';
+import { buildTimeline, type TimedLine } from '@theagentstands/stage/timeline';
+import { migrateStagefx } from '@theagentstands/stage/migrate';
+import type { Cue } from '@theagentstands/stage/cues';
 
 /* ---------------------------------------------------------------- paths */
 
@@ -63,6 +66,7 @@ export interface Reel {
   order: number;
   createdAt: number;
   updatedAt: number;
+  cues?: Cue[];
 }
 
 export interface ThemeReel {
@@ -219,7 +223,7 @@ function normalize(r: any): Reel {
       ? r.lines
       : [{ id: newId(), s: String(r.script || ''), h: 1000 }]; // legacy reels had one flat script
   const legacyCover = typeof r.coverPath === 'string' ? r.coverPath.replace(/^\/data\//, '') : undefined;
-  return {
+  const reel = {
     id: String(r.id),
     title: String(r.title || 'Untitled'),
     theme: String(r.theme || ''),
@@ -237,6 +241,8 @@ function normalize(r: any): Reel {
     createdAt: r.createdAt || Date.now(),
     updatedAt: r.updatedAt || Date.now(),
   };
+  ensureCues(reel);
+  return reel;
 }
 
 export function loadReels(): Reel[] {
@@ -271,6 +277,7 @@ export function updateReel(id: string, fn: (r: Reel) => void): Reel | null {
 
 export function addReel(reel: Reel) {
   const reels = loadReels();
+  ensureCues(reel);
   reels.push(reel);
   saveReels(reels);
 }
@@ -395,35 +402,26 @@ export interface Plan {
  * What an offset cannot do is pull a line earlier than the previous line allows, or move the
  * first line (the hook card has a fixed length); those are reported in `clamped`. */
 export function planReel(reel: Reel): Plan {
-  const plan: Plan = { holds: [], starts: [], speechEnds: [], ends: [], stampAt: 0, totalMs: 0, missingAudio: [], clamped: [] };
-  const lines = reel.lines;
-  const wanted = (l?: Line) => (l && Number.isFinite(l.offset) && (l.offset as number) > 0 ? (l.offset as number) : 0);
-  let t = HOOK_MS;
-  lines.forEach((l, i) => {
-    const start = t;
-    const typing = [...l.s].length * TICK;
-    const usable = !!l.audio && !isStale(l);
-    if (!usable) plan.missingAudio.push(i);
-    const speech = usable ? l.audio!.durationMs : 0;
-
-    // Honour this line's own request (only reportable here, the gap was added to the previous hold).
-    const req = wanted(l);
-    if (req && (i === 0 ? Math.abs(req - start) >= TICK : start - req >= TICK)) plan.clamped.push(i);
-
-    // Natural hold: let the voice finish, then the author's beat. Then stretch it if the NEXT line asks to start later.
-    const natural = ceilTick(Math.max(0, speech - typing) + Math.max(0, l.h));
-    const nextReq = wanted(lines[i + 1]);
-    const hold = nextReq ? Math.max(natural, ceilTick(nextReq - start - typing)) : natural;
-
-    plan.holds.push(hold);
-    plan.starts.push(start);
-    plan.speechEnds.push(start + Math.max(typing, speech));
-    plan.ends.push(start + typing + hold);
-    t = start + typing + hold;
-  });
-  plan.stampAt = t;
-  plan.totalMs = t + STAMP_MS;
-  return plan;
+  const timed: TimedLine[] = reel.lines.map((l) => ({
+    id: l.id,
+    s: l.s,
+    h: l.h,
+    offset: l.offset,
+    speechMs: l.audio && !isStale(l) ? (l.audio.durationMs || 0) : 0,
+  }));
+  const tl = buildTimeline(timed, { pace: 'classic' });
+  const missingAudio: number[] = [];
+  timed.forEach((l, i) => { if (l.speechMs <= 0) missingAudio.push(i); });
+  return {
+    holds: tl.holds,
+    starts: tl.starts,
+    speechEnds: tl.speechEnds,
+    ends: tl.ends,
+    stampAt: tl.stampAt,
+    totalMs: tl.totalMs,
+    missingAudio,
+    clamped: tl.clamped,
+  };
 }
 
 /* --------------------------------------------------------- player HTML */
@@ -471,7 +469,15 @@ const PREVIEW_JS = (urls: (string | null)[]) => `
   });
 })();`;
 
-export function buildPlayerHtml(reel: Reel, mode: 'preview' | 'capture'): string {
+export interface PlayerOptions {
+  engine?: boolean;
+}
+
+export function buildPlayerHtml(
+  reel: Reel,
+  mode: 'preview' | 'capture',
+  opts: PlayerOptions = {},
+): string {
   const file = themeFile(reel.theme, reel.lang) || fallbackThemeFile();
   if (!file) throw new Error('No theme HTML files found in /themes');
   let html = fs.readFileSync(file, 'utf-8');
@@ -509,7 +515,47 @@ export function buildPlayerHtml(reel: Reel, mode: 'preview' | 'capture'): string
       html += `<script>${js}</script>`;
     }
   }
+
+  if (opts.engine) {
+    const engineJs = readEngineBundle();
+    if (engineJs) {
+      html = html.replace('</head>', () => `<script>${engineJs}</script></head>`);
+      const wire =
+        `window.addEventListener('message',function(e){` +
+        `if(!e.data||e.data.t!=='setTime')return;` +
+        `if(window.__stage&&window.__stage.setTime)window.__stage.setTime(e.data.value);` +
+        `});`;
+      html = html.replace('</body>', () => `<script>${wire}</script></body>`);
+    }
+    // Inject cues as const C = [...]
+    const jsonForScript = (v: unknown) =>
+      JSON.stringify(v).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+    html = html.replace('</head>', () => `<script>const C=${jsonForScript(reel.cues || [])};</script></head>`);
+    // Inject setTime handler into theme's player
+    const setTimeHandler = `
+(function(){
+  if (window.__stage && window.__stage.setTime) {
+    window.setTime = function(t) { window.__stage.setTime(t); };
+  }
+})();`;
+    html = html.replace('</body>', () => `<script>${setTimeHandler}</script></body>`);
+  }
   return html;
+}
+
+let _engineJs: string | null = null;
+function readEngineBundle(): string {
+  if (_engineJs !== null) return _engineJs;
+  const p = path.join(__dirname, '..', 'dist', 'stage.iife.js');
+  _engineJs = fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '';
+  return _engineJs;
+}
+
+// Called on load so old reels pick up cues without a rewrite.
+export function ensureCues(reel: Reel): void {
+  if (!reel.cues) {
+    reel.cues = migrateStagefx(reel.lines as any);
+  }
 }
 
 function fallbackThemeFile(): string | null {

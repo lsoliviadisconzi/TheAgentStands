@@ -190,18 +190,18 @@ export const stageFxCss = () => MOOD_CSS + STAGE_CSS;
 
 const json = (v: unknown) => JSON.stringify(v).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
-// Runs inside the theme page. It never touches the theme's own state: it only watches #cap for the
-// next <p> (a new line starting to type, the same signal render.ts uses) and sets attributes/vars on #stage.
+// Runs inside the theme page. Uses the shared stage engine (window.__stage) for cue evaluation.
+// Falls back to legacy MutationObserver approach if engine is not available.
 const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
   const colors = Object.fromEntries(COLORS.map((c) => [c.id, c.rgb]));
   const rooms = Object.fromEntries(ROOMS.map((r) => [r.id, r.hex]));
   const props = Object.fromEntries(PROPS.map((p) => [p.id, `<svg viewBox="0 0 48 48" aria-hidden="true">${p.svg}</svg>`]));
   return `
 (function(){
-  var FX=${json(fx)},COL=${json(colors)},ROOM=${json(rooms)},PROP=${json(props)},LIGHT=${json(LIGHTS.map((l) => l.id))};
+  var COL=${json(colors)},ROOM=${json(rooms)},PROP=${json(props)},LIGHT=${json(LIGHTS.map((l) => l.id))};
   var stage=document.getElementById('stage'),cap=document.getElementById('cap'),hook=document.getElementById('hook');
   if(!stage||!cap)return;
-  var slots={},i=-1;
+  var slots={};
   ['l','r'].forEach(function(k){var d=document.createElement('div');d.className='fx-slot fx-'+k;stage.appendChild(d);slots[k]=d});
   function prop(k,id){
     var s=slots[k]; if((s.getAttribute('data-p')||'')===(id||''))return;
@@ -212,7 +212,6 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     stage.removeAttribute('data-light');stage.style.removeProperty('--lamp-rgb');stage.style.removeProperty('--room');stage.style.removeProperty('--badge-color');
     prop('l','');prop('r','');
   }
-  function reset(){i=-1;clear()}
   function apply(f){
     if(!f)return;
     if(f.light){ if(f.light==='sway')stage.removeAttribute('data-light'); else stage.setAttribute('data-light',f.light); }
@@ -229,9 +228,7 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
         if(textElement){
           if(f.badgeName) textElement.textContent=f.badgeName;
           if(f.badgeColor) {
-            // Set badge text fill color
             textElement.setAttribute('fill', f.badgeColor);
-            // Also set the background rect fill (sibling before the text)
             var rectElement=textElement.previousElementSibling;
             if(rectElement && rectElement.tagName==='rect') rectElement.setAttribute('fill', f.badgeColor);
           }
@@ -241,20 +238,51 @@ const RUNTIME = (fx: (LineFx | null)[], listen: boolean) => {
     if(f.propL!==undefined)prop('l',f.propL);
     if(f.propR!==undefined)prop('r',f.propR);
   }
-  new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){
-    if(n.nodeName==='P'){i++;apply(FX[i])}
-  })})}).observe(cap,{childList:true});
-  if(hook)new MutationObserver(function(){if(hook.classList.contains('on'))reset()}).observe(hook,{attributes:true,attributeFilter:['class']});
+  function reset(){clear()}
+  
+  // Use engine if available (Phase 2+), otherwise fall back to legacy MutationObserver
+  var engine = window.__stage;
+  var cues = (typeof C !== 'undefined' ? C : []);
+  var timeline = (typeof R !== 'undefined' && R[0] ? { 
+    starts: R[0].l.map((_, i) => R[0].l.slice(0, i+1).reduce((acc, l, idx) => acc + (idx===0?2320:0) + l.h + [...l.s].length*40, 0)), // approximate
+    ends: [],
+    stampAt: 0,
+    speechEnds: [],
+    typingMs: R[0].l.map(l => [...l.s].length*40)
+  } : null);
+  
+  if (engine && engine.sceneAt && cues.length > 0 && timeline) {
+    // Engine-based cue evaluation - called on each frame via setTime
+    window.addEventListener('message', function(e) {
+      if (!e.data || e.data.t !== 'setTime') return;
+      var t = e.data.value;
+      var scene = engine.sceneAt(cues, timeline, R[0].l.map(l => ({id: l.id || '', s: l.s})), t);
+      apply(scene);
+      // Also update avatar mood
+      var av = document.getElementById('av');
+      if (av && scene.mood) av.setAttribute('data-mood', scene.mood);
+    });
+    // Also listen for hook reset
+    if (hook) new MutationObserver(function(){ if (hook.classList.contains('on')) reset(); }).observe(hook, {attributes: true, attributeFilter: ['class']});
+  } else {
+    // Legacy MutationObserver approach
+    var i = -1;
+    new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){
+      if (n.nodeName === 'P') { i++; apply(FX[i] || null); }
+    })})}).observe(cap, {childList: true});
+    if (hook) new MutationObserver(function(){ if (hook.classList.contains('on')) { i = -1; reset(); } }).observe(hook, {attributes: true, attributeFilter: ['class']});
+  }
+  
   ${listen ? `
   // "Try now": the studio sends the fully resolved look of one line and we show it immediately.
   // Same-origin, from our parent only. The line counter is left alone, so a playing reel carries on.
-  window.addEventListener('message',function(e){
-    if(e.source!==parent||e.origin!==location.origin)return;
-    var d=e.data,k=d&&d.t==='fx-try'&&d.look; if(!k)return;
-    var av=document.getElementById('av');
-    if(av&&typeof k.mood==='string'&&/^[a-z]{2,12}$/.test(k.mood))av.setAttribute('data-mood',k.mood);
+  window.addEventListener('message', function(e) {
+    if (e.source !== parent || e.origin !== location.origin) return;
+    var d = e.data, k = d && d.t === 'fx-try' && d.look; if (!k) return;
+    var av = document.getElementById('av');
+    if (av && typeof k.mood === 'string' && /^[a-z]{2,12}$/.test(k.mood)) av.setAttribute('data-mood', k.mood);
     clear();
-    apply({light:LIGHT.indexOf(k.light)>=0?k.light:'sway',color:k.color||'',room:k.room||'',badgeColor:k.badgeColor||'',badgeName:k.badgeName||'',propL:k.propL||'',propR:k.propR||''});
+    apply({ light: LIGHT.indexOf(k.light) >= 0 ? k.light : 'sway', color: k.color || '', room: k.room || '', badgeColor: k.badgeColor || '', badgeName: k.badgeName || '', propL: k.propL || '', propR: k.propR || '' });
   });` : ''}
 })();`;
 };

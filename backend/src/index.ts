@@ -9,6 +9,7 @@ import {
   DATA_DIR, PAGES_DIR, MEDIA_URL, Reel, Line, newId, lineKey, isStale, planReel, loadReels, getReel, updateReel,
   addReel, removeReel, listThemes, listLanguages, themeFile, parseThemeFile, themeReelToReel, buildPlayerHtml,
   listNarrationThemes, getNarrationTheme, getNarrationLanguage, getNarrationReel, narrationReelToReel, NARRATIONS_DIR,
+  ensureCues,
 } from './model';
 import { renderReel } from './render';
 import { catalogForClient, cleanFx } from './stagefx';
@@ -189,7 +190,10 @@ app.get('/api/reels/:id/player', (req, res) => {
   const r = getReel(P(req.params.id));
   if (!r) return res.status(404).send('Not found');
   try {
-    res.set('Cache-Control', 'no-store').type('html').send(buildPlayerHtml(r, 'preview'));
+    ensureCues(r);
+    const mode = req.query.mode === 'capture' ? 'capture' : 'preview';
+    const engine = req.query.engine === '1';
+    res.set('Cache-Control', 'no-store').type('html').send(buildPlayerHtml(r, mode, { engine }));
   } catch (e) {
     res.status(500).send(String(e));
   }

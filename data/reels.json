@@ -66,7 +66,29 @@
     "onLanding": false,
     "order": 0,
     "createdAt": 1795491317898,
-    "updatedAt": 1795491570901
+    "updatedAt": 1795588604681,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_4u",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "c12e3533",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_4v",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "82884f4e",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwu5c5e983a",
@@ -135,7 +157,29 @@
     "onLanding": false,
     "order": 1,
     "createdAt": 1795491595089,
-    "updatedAt": 1795493061132
+    "updatedAt": 1795493061132,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_4w",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "337e519e",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_4x",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "5228525e",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwu7ksvb374",
@@ -209,7 +253,29 @@
     "onLanding": false,
     "order": 2,
     "createdAt": 1795495357991,
-    "updatedAt": 1795496250988
+    "updatedAt": 1795496250988,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_4y",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "58f48eb3",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_4z",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f8cff1ab",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwu8k4e032d",
@@ -265,7 +331,29 @@
     "onLanding": false,
     "order": 3,
     "createdAt": 1795497005880,
-    "updatedAt": 1795497107779
+    "updatedAt": 1795497107779,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_50",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "a8c4ca8b",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_51",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "1f2f29fd",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwu8qcec505",
@@ -333,7 +421,29 @@
     "onLanding": false,
     "order": 4,
     "createdAt": 1795497296196,
-    "updatedAt": 1795497544159
+    "updatedAt": 1795497544159,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_52",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "cb408fd0",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_53",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f76ef8fe",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwu9gb6b929",
@@ -398,7 +508,39 @@
     "onLanding": false,
     "order": 5,
     "createdAt": 1795498507667,
-    "updatedAt": 1795499301188
+    "updatedAt": 1795499301188,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_54",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "0a5fd6cb",
+          "at": "start"
+        },
+        "value": "flat"
+      },
+      {
+        "id": "cue_mwvr3eh4_55",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "1d605983",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_56",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "cd3f4875",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwujd54d014",
@@ -439,7 +581,29 @@
     "onLanding": false,
     "order": 6,
     "createdAt": 1795515156013,
-    "updatedAt": 1795515156013
+    "updatedAt": 1795515156013,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_57",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f2d8bd27",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_58",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "c9f17b56",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwujga0e3d4",
@@ -480,7 +644,29 @@
     "onLanding": false,
     "order": 7,
     "createdAt": 1795515302318,
-    "updatedAt": 1795515302318
+    "updatedAt": 1795515302318,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_59",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "981fd067",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5a",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "3322150a",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwujkuaa145",
@@ -522,7 +708,39 @@
     "onLanding": false,
     "order": 8,
     "createdAt": 1795515515218,
-    "updatedAt": 1795515554300
+    "updatedAt": 1795515554300,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5b",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "7e375259",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5c",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "d4e8931d",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5d",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "81dbef06",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwukvnlyd83",
@@ -563,7 +781,19 @@
     "onLanding": false,
     "order": 9,
     "createdAt": 1795517699398,
-    "updatedAt": 1795517722510
+    "updatedAt": 1795517722510,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5e",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "55414f78",
+          "at": "start"
+        },
+        "value": "up"
+      }
+    ]
   },
   {
     "id": "rmwukwnw458d",
@@ -608,7 +838,29 @@
     "onLanding": false,
     "order": 10,
     "createdAt": 1795517746420,
-    "updatedAt": 1795517746420
+    "updatedAt": 1795517746420,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5f",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f88d2137",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5g",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "048b14a5",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwul1s7f24d",
@@ -680,7 +932,79 @@
     "onLanding": false,
     "order": 11,
     "createdAt": 1795517985291,
-    "updatedAt": 1795518737983
+    "updatedAt": 1795518737983,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5h",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "66917e5d",
+          "at": "start"
+        },
+        "value": "flat"
+      },
+      {
+        "id": "cue_mwvr3eh4_5i",
+        "track": "light",
+        "anchor": {
+          "kind": "line",
+          "line": "66917e5d",
+          "at": "start"
+        },
+        "value": "flicker"
+      },
+      {
+        "id": "cue_mwvr3eh4_5j",
+        "track": "lightColor",
+        "anchor": {
+          "kind": "line",
+          "line": "66917e5d",
+          "at": "start"
+        },
+        "value": "warm"
+      },
+      {
+        "id": "cue_mwvr3eh4_5k",
+        "track": "room",
+        "anchor": {
+          "kind": "line",
+          "line": "66917e5d",
+          "at": "start"
+        },
+        "value": "night"
+      },
+      {
+        "id": "cue_mwvr3eh4_5l",
+        "track": "propL",
+        "anchor": {
+          "kind": "line",
+          "line": "66917e5d",
+          "at": "start"
+        },
+        "value": "question"
+      },
+      {
+        "id": "cue_mwvr3eh4_5m",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "080924c7",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5n",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "19e2dbc3",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwulxzyf3fe",
@@ -722,7 +1046,29 @@
     "onLanding": false,
     "order": 12,
     "createdAt": 1795519488327,
-    "updatedAt": 1795519488327
+    "updatedAt": 1795519488327,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5o",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "23c827e7",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5p",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f3501d65",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwum1r0sfbd",
@@ -767,7 +1113,39 @@
     "onLanding": false,
     "order": 13,
     "createdAt": 1795519663372,
-    "updatedAt": 1795519731030
+    "updatedAt": 1795519731030,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5q",
+        "track": "lightColor",
+        "anchor": {
+          "kind": "line",
+          "line": "116a6090",
+          "at": "start"
+        },
+        "value": "alarm"
+      },
+      {
+        "id": "cue_mwvr3eh4_5r",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "4943a3f1",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5s",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "ca073a50",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwum8lnn458",
@@ -809,7 +1187,29 @@
     "onLanding": true,
     "order": 14,
     "createdAt": 1795519983011,
-    "updatedAt": 1795542156982
+    "updatedAt": 1795542156982,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh4_5t",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "d0ace7d1",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh4_5u",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "f6f9012d",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwumq5a0768",
@@ -876,7 +1276,99 @@
     "onLanding": false,
     "order": 15,
     "createdAt": 1795520801592,
-    "updatedAt": 1795521151078
+    "updatedAt": 1795521151078,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh5_5v",
+        "track": "room",
+        "anchor": {
+          "kind": "line",
+          "line": "419bf496",
+          "at": "start"
+        },
+        "value": "#121112"
+      },
+      {
+        "id": "cue_mwvr3eh5_5w",
+        "track": "propL",
+        "anchor": {
+          "kind": "line",
+          "line": "419bf496",
+          "at": "start"
+        },
+        "value": "clock"
+      },
+      {
+        "id": "cue_mwvr3eh5_5x",
+        "track": "badgeColor",
+        "anchor": {
+          "kind": "line",
+          "line": "419bf496",
+          "at": "start"
+        },
+        "value": "#efc74d"
+      },
+      {
+        "id": "cue_mwvr3eh5_5y",
+        "track": "badgeName",
+        "anchor": {
+          "kind": "line",
+          "line": "419bf496",
+          "at": "start"
+        },
+        "value": "AGENT"
+      },
+      {
+        "id": "cue_mwvr3eh5_5z",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "20b3daef",
+          "at": "start"
+        },
+        "value": "sleepy"
+      },
+      {
+        "id": "cue_mwvr3eh5_60",
+        "track": "light",
+        "anchor": {
+          "kind": "line",
+          "line": "20b3daef",
+          "at": "start"
+        },
+        "value": "flicker"
+      },
+      {
+        "id": "cue_mwvr3eh5_61",
+        "track": "room",
+        "anchor": {
+          "kind": "line",
+          "line": "20b3daef",
+          "at": "start"
+        },
+        "value": "plum"
+      },
+      {
+        "id": "cue_mwvr3eh5_62",
+        "track": "propL",
+        "anchor": {
+          "kind": "line",
+          "line": "20b3daef",
+          "at": "start"
+        },
+        "value": "question"
+      },
+      {
+        "id": "cue_mwvr3eh5_63",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "43556dc2",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwumzv1pece",
@@ -915,7 +1407,39 @@
     "onLanding": false,
     "order": 16,
     "createdAt": 1795521254893,
-    "updatedAt": 1795521254893
+    "updatedAt": 1795521254893,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh5_64",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "fa1d6a14",
+          "at": "start"
+        },
+        "value": "flat"
+      },
+      {
+        "id": "cue_mwvr3eh5_65",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "1d287f92",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh5_66",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "5528e439",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   },
   {
     "id": "rmwunh8wtc28",
@@ -988,7 +1512,79 @@
     "onLanding": false,
     "order": 17,
     "createdAt": 1795522066013,
-    "updatedAt": 1795522516707
+    "updatedAt": 1795522516707,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh5_67",
+        "track": "propL",
+        "anchor": {
+          "kind": "line",
+          "line": "eb5e552d",
+          "at": "start"
+        },
+        "value": "clock"
+      },
+      {
+        "id": "cue_mwvr3eh5_68",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "a0c768f8",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh5_69",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "35791a50",
+          "at": "start"
+        },
+        "value": "flat"
+      },
+      {
+        "id": "cue_mwvr3eh5_6a",
+        "track": "light",
+        "anchor": {
+          "kind": "line",
+          "line": "35791a50",
+          "at": "start"
+        },
+        "value": "flicker"
+      },
+      {
+        "id": "cue_mwvr3eh5_6b",
+        "track": "room",
+        "anchor": {
+          "kind": "line",
+          "line": "35791a50",
+          "at": "start"
+        },
+        "value": "#15131b"
+      },
+      {
+        "id": "cue_mwvr3eh5_6c",
+        "track": "propL",
+        "anchor": {
+          "kind": "line",
+          "line": "35791a50",
+          "at": "start"
+        },
+        "value": "none"
+      },
+      {
+        "id": "cue_mwvr3eh5_6d",
+        "track": "propR",
+        "anchor": {
+          "kind": "line",
+          "line": "35791a50",
+          "at": "start"
+        },
+        "value": "question"
+      }
+    ]
   },
   {
     "id": "rmwvmgibnbf1",
@@ -1029,6 +1625,28 @@
     "onLanding": false,
     "order": 18,
     "createdAt": 1795580818115,
-    "updatedAt": 1795580818115
+    "updatedAt": 1795580818115,
+    "cues": [
+      {
+        "id": "cue_mwvr3eh5_6e",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "82e862b1",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mwvr3eh5_6f",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "a5da5ecf",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
   }
 ]
