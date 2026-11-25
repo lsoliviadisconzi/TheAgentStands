@@ -989,5 +989,46 @@
     "order": 17,
     "createdAt": 1795522066013,
     "updatedAt": 1795522516707
+  },
+  {
+    "id": "rmwvmgibnbf1",
+    "title": "A Trophy Isn’t an Audit",
+    "theme": "Elected By Rule",
+    "lang": "en",
+    "hook": "A trophy for governance. A question about one file.",
+    "stamp": "A prize says nothing about this file.",
+    "next": "Next: two scoreboards.",
+    "lines": [
+      {
+        "id": "bf60f837",
+        "s": "The agency won a governance award last week. Risk management. Compliance. Responsible innovation. Lovely photo.",
+        "h": 1500,
+        "d": "polishing a trophy",
+        "log": [
+          "award = governance prize (7th edition)",
+          "given by = a non-profit volunteer association"
+        ]
+      },
+      {
+        "id": "82e862b1",
+        "s": "The prize comes from a volunteer association founded in 2019. Credible, sure. It’s also not an investigation into any particular complaint.",
+        "h": 1400,
+        "m": "up",
+        "log": [
+          "agency also placed 2nd in 2022"
+        ]
+      },
+      {
+        "id": "a5da5ecf",
+        "s": "Fair both ways: one trophy doesn’t prove everything is fine, and one file doesn’t prove everything is broken. But a named decision-maker would settle this faster than a gala.",
+        "h": 1200,
+        "d": "deadpan",
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 18,
+    "createdAt": 1795580818115,
+    "updatedAt": 1795580818115
   }
 ]
