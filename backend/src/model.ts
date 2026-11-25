@@ -20,6 +20,21 @@ export const MEDIA_URL = '/api/data'; // express.static(DATA_DIR) is mounted her
 
 /* ---------------------------------------------------------------- types */
 
+export interface CastProfile {
+  name?: string;
+  refAudio?: string;
+  refAudioName?: string;
+  refText?: string;
+  instruct?: string;
+  accent?: string;
+  langCode?: string;
+  speed?: number;
+  pitch?: number;
+  temperature?: number;
+  topP?: number;
+  repetitionPenalty?: number;
+}
+
 export interface LineAudio {
   file: string; // relative to DATA_DIR, e.g. audio/<reelId>/<lineId>-<key>.mp3
   durationMs: number;
@@ -30,6 +45,7 @@ export interface LineAudio {
   ttsInstruct?: string;
   ttsSpeed?: number;
   ttsAccent?: string;
+  castSig?: string;
 }
 
 export interface Line {
@@ -73,6 +89,7 @@ export interface Reel {
   createdAt: number;
   updatedAt: number;
   cues?: Cue[];
+  castSettings?: Record<string, CastProfile>;
 }
 
 export interface ThemeReel {
@@ -218,15 +235,33 @@ export function narrationReelToReel(theme: string, lang: string, nr: NarrationRe
 
 export const newId = () => crypto.randomBytes(4).toString('hex');
 
-export const lineKey = (text: string, voiceId?: string, ttsInstruct?: string, ttsSpeed?: number, ttsAccent?: string) => {
-  const extra = (ttsInstruct || ttsAccent || (ttsSpeed && ttsSpeed !== 1))
-    ? `|${(ttsInstruct || '').trim()}|${ttsSpeed && ttsSpeed !== 1 ? ttsSpeed : ''}|${(ttsAccent || '').trim()}`
+export const castSig = (c?: CastProfile): string => {
+  if (!c) return '';
+  const parts = [
+    c.refAudio || '',
+    c.refText || '',
+    c.instruct || '',
+    c.accent || '',
+    c.langCode || '',
+    c.speed && c.speed !== 1 ? String(c.speed) : '',
+    c.pitch ? String(c.pitch) : '',
+    c.temperature !== undefined ? String(c.temperature) : '',
+    c.topP !== undefined ? String(c.topP) : '',
+    c.repetitionPenalty !== undefined ? String(c.repetitionPenalty) : '',
+  ];
+  return parts.some(Boolean) ? parts.join('|') : '';
+};
+
+export const lineKey = (text: string, voiceId?: string, ttsInstruct?: string, ttsSpeed?: number, ttsAccent?: string, cast?: CastProfile) => {
+  const cs = castSig(cast);
+  const extra = (ttsInstruct || ttsAccent || (ttsSpeed && ttsSpeed !== 1) || cs)
+    ? `|${(ttsInstruct || '').trim()}|${ttsSpeed && ttsSpeed !== 1 ? ttsSpeed : ''}|${(ttsAccent || '').trim()}|${cs}`
     : '';
   return crypto.createHash('sha1').update(`${text.trim()}|${voiceId || ''}${extra}`).digest('hex').slice(0, 10);
 };
 
-export const isStale = (l: Line) =>
-  !!l.audio && l.audio.key !== lineKey(l.s, l.voiceId, l.ttsInstruct, l.ttsSpeed, l.ttsAccent);
+export const isStale = (l: Line, cast?: CastProfile) =>
+  !!l.audio && l.audio.key !== lineKey(l.s, l.voiceId, l.ttsInstruct, l.ttsSpeed, l.ttsAccent, cast);
 
 function normalize(r: any): Reel {
   const lines: Line[] =
@@ -418,7 +453,7 @@ export function planReel(reel: Reel): Plan {
     s: l.s,
     h: l.h,
     offset: l.offset,
-    speechMs: l.audio && !isStale(l) ? (l.audio.durationMs || 0) : 0,
+    speechMs: l.audio && !isStale(l, reel.castSettings?.[l.voiceId || '']) ? (l.audio.durationMs || 0) : 0,
   }));
   const tl = buildTimeline(timed, { pace: 'classic' });
   const missingAudio: number[] = [];
@@ -453,15 +488,29 @@ html,body{margin:0!important;padding:0!important;background:#000!important;min-h
 // typing, and tells the studio what is happening so its playhead can follow the real player.
 const PREVIEW_JS = (urls: (string | null)[]) => `
 (function(){
-  var URLS=${jsonForScript(urls)}, idx=-1, cur=null;
+  var URLS=${jsonForScript(urls)}, idx=-1, cur=null, audioPlaying=false;
   var send=function(o){try{parent.postMessage(o,'*')}catch(e){}};
-  var stop=function(){if(cur){try{cur.pause()}catch(e){}cur=null}};
+  var av=document.getElementById('av');
+  var syncTalk=function(on){
+    audioPlaying=on;
+    if(!av)return;
+    if(on)av.classList.add('talk'); else av.classList.remove('talk');
+  };
+  if(av){
+    new MutationObserver(function(){
+      if(audioPlaying && !av.classList.contains('talk')) av.classList.add('talk');
+    }).observe(av,{attributes:true,attributeFilter:['class']});
+  }
+  var stop=function(){if(cur){try{cur.pause()}catch(e){}cur=null;} syncTalk(false);};
   var speak=function(i){
     stop();
     if(!URLS[i])return;
     cur=new Audio(URLS[i]);
+    cur.addEventListener('playing',function(){syncTalk(true);});
+    cur.addEventListener('ended',function(){syncTalk(false);});
+    cur.addEventListener('pause',function(){syncTalk(false);});
     var p=cur.play();
-    if(p&&p.catch)p.catch(function(){send({t:'audioblocked'})});
+    if(p&&p.catch)p.catch(function(){syncTalk(false);send({t:'audioblocked'})});
   };
   new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){
     if(n.nodeName!=='P')return; idx++; send({t:'line',i:idx}); speak(idx);
@@ -469,14 +518,14 @@ const PREVIEW_JS = (urls: (string | null)[]) => `
   new MutationObserver(function(){
     if(document.getElementById('hook').classList.contains('on')){idx=-1;stop();send({t:'start'});}
   }).observe(document.getElementById('hook'),{attributes:true,attributeFilter:['class']});
-  new MutationObserver(function(){ if(document.getElementById('tag').classList.contains('on'))send({t:'end'}); })
+  new MutationObserver(function(){ if(document.getElementById('tag').classList.contains('on')){syncTalk(false);send({t:'end'});} })
     .observe(document.getElementById('tag'),{attributes:true,attributeFilter:['class']});
   send({t:'start'}); // the theme's own play(0) already ran before these observers existed
   var pp=document.getElementById('pp');
   if(pp)pp.addEventListener('click',function(){
     if(typeof paused==='undefined')return; // the theme's handler runs first and has already toggled it
     var p=!!paused; send({t:'pause',paused:p});
-    if(cur){ if(p)cur.pause(); else cur.play().catch(function(){}); }
+    if(cur){ if(p){cur.pause();syncTalk(false);} else cur.play().catch(function(){}); }
   });
 })();`;
 
@@ -516,7 +565,7 @@ export function buildPlayerHtml(
   if (fxScript) html = /<\/body>/i.test(html) ? html.replace(/<\/body>/i, () => fxScript + '</body>') : html + fxScript;
 
   if (mode === 'preview') {
-    const urls = reel.lines.map((l) => (l.audio && !isStale(l) ? `${MEDIA_URL}/${l.audio.file}` : null));
+    const urls = reel.lines.map((l) => (l.audio && !isStale(l, reel.castSettings?.[l.voiceId || '']) ? `${MEDIA_URL}/${l.audio.file}` : null));
     const js = PREVIEW_JS(urls);
     if (/play\(0\);\s*<\/script>/.test(html)) {
       html = html.replace(/play\(0\);\s*<\/script>/, () => `play(0);\n${js}\n</script>`);

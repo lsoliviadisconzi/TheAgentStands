@@ -1213,3 +1213,83 @@ textarea { resize: vertical; min-height: 60px; }
   flex: 1;
   min-width: 0;
 }
+
+/* Expandable Cast / Character Profile Editor */
+.cast-item {
+  display: flex;
+  flex-direction: column;
+}
+.cast-card.expandable {
+  width: 100%;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: inherit;
+  text-align: left;
+  transition: border-color var(--trans), background var(--trans);
+}
+.cast-card.expandable:hover:not(:disabled) {
+  border-color: var(--c, var(--ac));
+  background: var(--sel);
+}
+.cast-card.expandable:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.cast-badge {
+  font-size: 10px;
+  color: var(--ac);
+  background: var(--ac-dim);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-weight: 500;
+}
+.cast-chev {
+  font-size: 11px;
+  color: var(--mu);
+}
+.cast-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  margin-top: -2px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.cast-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--mu);
+}
+.cast-label-row,
+.cast-ref-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--mu);
+}
+.cast-ref {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.cast-grid.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.cast-grid .vo-speed {
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+}

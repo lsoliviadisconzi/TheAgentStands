@@ -21,13 +21,15 @@
           "confiança = 100%"
         ],
         "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
+        "ttsInstruct": "stern, serious, authoritative",
         "audio": {
-          "file": "audio/rmwu567iif8e/7a92ed4f-460f7d7d41.mp3",
-          "durationMs": 10704,
-          "key": "460f7d7d41",
+          "file": "audio/rmwu567iif8e/7a92ed4f-338912ca7b.mp3",
+          "durationMs": 9264,
+          "key": "338912ca7b",
           "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
           "text": "Mandei a prova pro meu amigo. Cabelo. Close. Boa iluminação. É um castanho loirinho. Caso encerrado.",
-          "voiceLabel": "PT-BR - The Standing Agent"
+          "voiceLabel": "PT-BR - The Standing Agent",
+          "ttsInstruct": "stern, serious, authoritative"
         }
       },
       {
@@ -42,7 +44,7 @@
         "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
         "audio": {
           "file": "audio/rmwu567iif8e/c12e3533-694288c1ad.mp3",
-          "durationMs": 11736,
+          "durationMs": 15336,
           "key": "694288c1ad",
           "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
           "text": "Ela diz que é grisalho. Grisalho! Tem uns fios grisalhos perto da orelha, claro. Uns fios. Pequenos fios distintos.",
@@ -58,7 +60,7 @@
         "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
         "audio": {
           "file": "audio/rmwu567iif8e/82884f4e-dbf9f424d2.mp3",
-          "durationMs": 7104,
+          "durationMs": 9744,
           "key": "dbf9f424d2",
           "voiceId": "design::2d321954-c7cd-4c8a-9c57-ebe6df78b0d0",
           "text": "Acabei de perceber que falei “castanhozinho” no tribunal. Não tenho nenhuma testemunha especialista.",
@@ -69,10 +71,10 @@
     "onLanding": false,
     "order": 0,
     "createdAt": 1795491317898,
-    "updatedAt": 1795592757868,
+    "updatedAt": 1795606720997,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3i7",
+        "id": "cue_mww3m0vx_1gr",
         "track": "propR",
         "anchor": {
           "kind": "line",
@@ -82,7 +84,7 @@
         "value": "folder"
       },
       {
-        "id": "cue_mwvzsi4z_3i8",
+        "id": "cue_mww3m0vx_1gs",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -92,7 +94,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3i9",
+        "id": "cue_mww3m0vx_1gt",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -173,7 +175,7 @@
     "updatedAt": 1795590683545,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ia",
+        "id": "cue_mww3m0vx_1gu",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -183,7 +185,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ib",
+        "id": "cue_mww3m0vx_1gv",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -269,7 +271,7 @@
     "updatedAt": 1795496250988,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ic",
+        "id": "cue_mww3m0vx_1gw",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -279,7 +281,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3id",
+        "id": "cue_mww3m0vx_1gx",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -341,13 +343,13 @@
         "m": "flat"
       }
     ],
-    "onLanding": false,
+    "onLanding": true,
     "order": 3,
     "createdAt": 1795497005880,
-    "updatedAt": 1795497107779,
+    "updatedAt": 1795604299232,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ie",
+        "id": "cue_mww3m0vy_1gy",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -357,7 +359,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3if",
+        "id": "cue_mww3m0vy_1gz",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -431,13 +433,13 @@
     "coverFile": "cover/rmwu8qcec505_auto.jpg",
     "coverAuto": true,
     "videoFile": "video/rmwu8qcec505.mp4",
-    "onLanding": false,
+    "onLanding": true,
     "order": 4,
     "createdAt": 1795497296196,
-    "updatedAt": 1795497544159,
+    "updatedAt": 1795604297510,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ig",
+        "id": "cue_mww3m0vy_1h0",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -447,7 +449,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ih",
+        "id": "cue_mww3m0vy_1h1",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -524,7 +526,7 @@
     "updatedAt": 1795499301188,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ii",
+        "id": "cue_mww3m0vy_1h2",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -534,7 +536,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvzsi4z_3ij",
+        "id": "cue_mww3m0vy_1h3",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -544,7 +546,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ik",
+        "id": "cue_mww3m0vy_1h4",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -597,7 +599,7 @@
     "updatedAt": 1795515156013,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3il",
+        "id": "cue_mww3m0vy_1h5",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -607,7 +609,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3im",
+        "id": "cue_mww3m0vy_1h6",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -660,7 +662,7 @@
     "updatedAt": 1795515302318,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3in",
+        "id": "cue_mww3m0vy_1h7",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -670,7 +672,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3io",
+        "id": "cue_mww3m0vy_1h8",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -724,7 +726,7 @@
     "updatedAt": 1795515554300,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ip",
+        "id": "cue_mww3m0vy_1h9",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -734,7 +736,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3iq",
+        "id": "cue_mww3m0vy_1ha",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -744,7 +746,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ir",
+        "id": "cue_mww3m0vy_1hb",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -797,7 +799,7 @@
     "updatedAt": 1795517722510,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3is",
+        "id": "cue_mww3m0vy_1hc",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -854,7 +856,7 @@
     "updatedAt": 1795517746420,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3it",
+        "id": "cue_mww3m0vy_1hd",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -864,7 +866,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3iu",
+        "id": "cue_mww3m0vy_1he",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -948,7 +950,7 @@
     "updatedAt": 1795518737983,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3iv",
+        "id": "cue_mww3m0vy_1hf",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -958,7 +960,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvzsi4z_3iw",
+        "id": "cue_mww3m0vy_1hg",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -968,7 +970,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvzsi4z_3ix",
+        "id": "cue_mww3m0vy_1hh",
         "track": "lightColor",
         "anchor": {
           "kind": "line",
@@ -978,7 +980,7 @@
         "value": "warm"
       },
       {
-        "id": "cue_mwvzsi4z_3iy",
+        "id": "cue_mww3m0vy_1hi",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -988,7 +990,7 @@
         "value": "night"
       },
       {
-        "id": "cue_mwvzsi4z_3iz",
+        "id": "cue_mww3m0vy_1hj",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -998,7 +1000,7 @@
         "value": "question"
       },
       {
-        "id": "cue_mwvzsi4z_3j0",
+        "id": "cue_mww3m0vy_1hk",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1008,7 +1010,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3j1",
+        "id": "cue_mww3m0vy_1hl",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1062,7 +1064,7 @@
     "updatedAt": 1795519488327,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3j2",
+        "id": "cue_mww3m0vy_1hm",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1072,7 +1074,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3j3",
+        "id": "cue_mww3m0vy_1hn",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1129,7 +1131,7 @@
     "updatedAt": 1795519731030,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3j4",
+        "id": "cue_mww3m0vy_1ho",
         "track": "lightColor",
         "anchor": {
           "kind": "line",
@@ -1139,7 +1141,7 @@
         "value": "alarm"
       },
       {
-        "id": "cue_mwvzsi4z_3j5",
+        "id": "cue_mww3m0vy_1hp",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1149,7 +1151,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3j6",
+        "id": "cue_mww3m0vy_1hq",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1203,7 +1205,7 @@
     "updatedAt": 1795542156982,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3j7",
+        "id": "cue_mww3m0vy_1hr",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1213,7 +1215,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3j8",
+        "id": "cue_mww3m0vy_1hs",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1292,7 +1294,7 @@
     "updatedAt": 1795521151078,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3j9",
+        "id": "cue_mww3m0vy_1ht",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1302,7 +1304,7 @@
         "value": "#121112"
       },
       {
-        "id": "cue_mwvzsi4z_3ja",
+        "id": "cue_mww3m0vy_1hu",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1312,7 +1314,7 @@
         "value": "clock"
       },
       {
-        "id": "cue_mwvzsi4z_3jb",
+        "id": "cue_mww3m0vy_1hv",
         "track": "badgeColor",
         "anchor": {
           "kind": "line",
@@ -1322,7 +1324,7 @@
         "value": "#efc74d"
       },
       {
-        "id": "cue_mwvzsi4z_3jc",
+        "id": "cue_mww3m0vy_1hw",
         "track": "badgeName",
         "anchor": {
           "kind": "line",
@@ -1332,7 +1334,7 @@
         "value": "AGENT"
       },
       {
-        "id": "cue_mwvzsi4z_3jd",
+        "id": "cue_mww3m0vy_1hx",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1342,7 +1344,7 @@
         "value": "sleepy"
       },
       {
-        "id": "cue_mwvzsi4z_3je",
+        "id": "cue_mww3m0vy_1hy",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -1352,7 +1354,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvzsi4z_3jf",
+        "id": "cue_mww3m0vy_1hz",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1362,7 +1364,7 @@
         "value": "plum"
       },
       {
-        "id": "cue_mwvzsi4z_3jg",
+        "id": "cue_mww3m0vy_1i0",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1372,7 +1374,7 @@
         "value": "question"
       },
       {
-        "id": "cue_mwvzsi4z_3jh",
+        "id": "cue_mww3m0vy_1i1",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1423,7 +1425,7 @@
     "updatedAt": 1795521254893,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ji",
+        "id": "cue_mww3m0vy_1i2",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1433,7 +1435,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvzsi4z_3jj",
+        "id": "cue_mww3m0vy_1i3",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1443,7 +1445,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3jk",
+        "id": "cue_mww3m0vy_1i4",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1522,13 +1524,13 @@
         }
       }
     ],
-    "onLanding": false,
+    "onLanding": true,
     "order": 17,
     "createdAt": 1795522066013,
-    "updatedAt": 1795522516707,
+    "updatedAt": 1795605063125,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3jl",
+        "id": "cue_mww3m0vy_1i5",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1538,7 +1540,7 @@
         "value": "clock"
       },
       {
-        "id": "cue_mwvzsi4z_3jm",
+        "id": "cue_mww3m0vy_1i6",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1548,7 +1550,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3jn",
+        "id": "cue_mww3m0vy_1i7",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1558,7 +1560,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvzsi4z_3jo",
+        "id": "cue_mww3m0vy_1i8",
         "track": "light",
         "anchor": {
           "kind": "line",
@@ -1568,7 +1570,7 @@
         "value": "flicker"
       },
       {
-        "id": "cue_mwvzsi4z_3jp",
+        "id": "cue_mww3m0vy_1i9",
         "track": "room",
         "anchor": {
           "kind": "line",
@@ -1578,7 +1580,7 @@
         "value": "#15131b"
       },
       {
-        "id": "cue_mwvzsi4z_3jq",
+        "id": "cue_mww3m0vy_1ia",
         "track": "propL",
         "anchor": {
           "kind": "line",
@@ -1588,7 +1590,7 @@
         "value": "none"
       },
       {
-        "id": "cue_mwvzsi4z_3jr",
+        "id": "cue_mww3m0vy_1ib",
         "track": "propR",
         "anchor": {
           "kind": "line",
@@ -1641,7 +1643,7 @@
     "updatedAt": 1795580818115,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3js",
+        "id": "cue_mww3m0vy_1ic",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1651,7 +1653,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3jt",
+        "id": "cue_mww3m0vy_1id",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1704,7 +1706,7 @@
     "updatedAt": 1795597733264,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ju",
+        "id": "cue_mww3m0vy_1ie",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1714,7 +1716,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3jv",
+        "id": "cue_mww3m0vy_1if",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1773,7 +1775,7 @@
     "updatedAt": 1795598049749,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3jw",
+        "id": "cue_mww3m0vy_1ig",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1824,7 +1826,7 @@
     "updatedAt": 1795598310765,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3jx",
+        "id": "cue_mww3m0vy_1ih",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1834,7 +1836,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3jy",
+        "id": "cue_mww3m0vy_1ii",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1886,7 +1888,7 @@
     "updatedAt": 1795598529987,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3jz",
+        "id": "cue_mww3m0vy_1ij",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1940,7 +1942,7 @@
     "updatedAt": 1795598561318,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3k0",
+        "id": "cue_mww3m0vy_1ik",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -1950,7 +1952,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3k1",
+        "id": "cue_mww3m0vy_1il",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2003,7 +2005,7 @@
     "updatedAt": 1795598930966,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3k2",
+        "id": "cue_mww3m0vy_1im",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2013,7 +2015,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3k3",
+        "id": "cue_mww3m0vy_1in",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2065,7 +2067,7 @@
     "updatedAt": 1795599123706,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3k4",
+        "id": "cue_mww3m0vy_1io",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2075,7 +2077,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3k5",
+        "id": "cue_mww3m0vy_1ip",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2128,7 +2130,7 @@
     "updatedAt": 1795599553852,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3k6",
+        "id": "cue_mww3m0vy_1iq",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2138,7 +2140,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3k7",
+        "id": "cue_mww3m0vy_1ir",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2191,7 +2193,7 @@
     "updatedAt": 1795599957280,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3k8",
+        "id": "cue_mww3m0vy_1is",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2201,7 +2203,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3k9",
+        "id": "cue_mww3m0vy_1it",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2277,7 +2279,7 @@
     "updatedAt": 1795600052668,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3ka",
+        "id": "cue_mww3m0vy_1iu",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2287,7 +2289,7 @@
         "value": "flat"
       },
       {
-        "id": "cue_mwvzsi4z_3kb",
+        "id": "cue_mww3m0vy_1iv",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2297,7 +2299,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3kc",
+        "id": "cue_mww3m0vy_1iw",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2401,7 +2403,7 @@
     "updatedAt": 1795600535439,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3kd",
+        "id": "cue_mww3m0vy_1ix",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2411,7 +2413,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ke",
+        "id": "cue_mww3m0vy_1iy",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2469,7 +2471,7 @@
     "updatedAt": 1795602080536,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3kf",
+        "id": "cue_mww3m0vy_1iz",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2479,7 +2481,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3kg",
+        "id": "cue_mww3m0vy_1j0",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2535,7 +2537,7 @@
     "updatedAt": 1795602589659,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3kh",
+        "id": "cue_mww3m0w3_1j1",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2545,7 +2547,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ki",
+        "id": "cue_mww3m0w3_1j2",
         "track": "badgeName",
         "anchor": {
           "kind": "line",
@@ -2555,7 +2557,7 @@
         "value": "Goat"
       },
       {
-        "id": "cue_mwvzsi4z_3kj",
+        "id": "cue_mww3m0w3_1j3",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2612,7 +2614,7 @@
     "updatedAt": 1795602891794,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3kk",
+        "id": "cue_mww3m0w3_1j4",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2622,7 +2624,7 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3kl",
+        "id": "cue_mww3m0w3_1j5",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2708,7 +2710,7 @@
     "updatedAt": 1795603212757,
     "cues": [
       {
-        "id": "cue_mwvzsi4z_3km",
+        "id": "cue_mww3m0w3_1j6",
         "track": "badgeName",
         "anchor": {
           "kind": "line",
@@ -2718,7 +2720,7 @@
         "value": "Me?"
       },
       {
-        "id": "cue_mwvzsi4z_3kn",
+        "id": "cue_mww3m0w3_1j7",
         "track": "mood",
         "anchor": {
           "kind": "line",
@@ -2728,11 +2730,413 @@
         "value": "up"
       },
       {
-        "id": "cue_mwvzsi4z_3ko",
+        "id": "cue_mww3m0w3_1j8",
         "track": "mood",
         "anchor": {
           "kind": "line",
           "line": "9ef9586d",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
+  },
+  {
+    "id": "rmww0yfn0745",
+    "title": "Where Was I at 3 a.m.?",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Where was I at 3 a.m.?",
+    "stamp": "No schedule. No trigger. No agent.",
+    "next": "Next: who gave me the authority?",
+    "lines": [
+      {
+        "id": "e6decb23",
+        "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+        "h": 1200,
+        "d": "being questioned",
+        "m": "up",
+        "fx": {
+          "badgeName": "Bob"
+        },
+        "log": [
+          "schedule = undefined",
+          "trigger = undefined"
+        ],
+        "voiceId": "design::f0b18c06-444b-49cf-adfb-3955c6597b3a",
+        "ttsInstruct": "deadpan, dry, understated",
+        "audio": {
+          "file": "audio/rmww0yfn0745/e6decb23-1654e02c3e.mp3",
+          "durationMs": 19968,
+          "key": "1654e02c3e",
+          "voiceId": "design::f0b18c06-444b-49cf-adfb-3955c6597b3a",
+          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+          "voiceLabel": "EN Jimmy Carr",
+          "ttsInstruct": "deadpan, dry, understated"
+        }
+      },
+      {
+        "id": "bc93ee12",
+        "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
+        "h": 1100,
+        "m": "flat",
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819"
+      },
+      {
+        "id": "1cbe95bd",
+        "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
+        "h": 1000,
+        "d": "leans in",
+        "voiceId": "design::716c2242-3438-405d-b999-b44f5b6ea425"
+      }
+    ],
+    "onLanding": false,
+    "order": 36,
+    "createdAt": 1795605169068,
+    "updatedAt": 1795605795890,
+    "cues": [
+      {
+        "id": "cue_mww3m0w3_1j9",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "e6decb23",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mww3m0w3_1ja",
+        "track": "badgeName",
+        "anchor": {
+          "kind": "line",
+          "line": "e6decb23",
+          "at": "start"
+        },
+        "value": "Bob"
+      },
+      {
+        "id": "cue_mww3m0w3_1jb",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "bc93ee12",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
+  },
+  {
+    "id": "rmww2knfo8e2",
+    "title": "Where Was I at 3 a.m.?",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Where was I at 3 a.m.?",
+    "stamp": "No schedule. No trigger. No agent.",
+    "next": "Next: who gave me the authority?",
+    "lines": [
+      {
+        "id": "2cc9aa2a",
+        "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+        "h": 1200,
+        "d": "being questioned",
+        "m": "up",
+        "log": [
+          "schedule = undefined",
+          "trigger = undefined"
+        ],
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmww2knfo8e2/2cc9aa2a-cec5ba45c2.mp3",
+          "durationMs": 18144,
+          "key": "cec5ba45c2",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "9f56369f",
+        "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
+        "h": 1100,
+        "m": "flat",
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmww2knfo8e2/9f56369f-b5bc8361d2.mp3",
+          "durationMs": 9168,
+          "key": "b5bc8361d2",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      },
+      {
+        "id": "1481045b",
+        "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
+        "h": 1000,
+        "d": "leans in",
+        "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+        "audio": {
+          "file": "audio/rmww2knfo8e2/1481045b-435263f205.mp3",
+          "durationMs": 12144,
+          "key": "435263f205",
+          "voiceId": "design::fc7f80e6-98c7-4413-9707-e8e0d56cc1e6",
+          "text": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
+          "voiceLabel": "EN - British - Male Calm"
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 37,
+    "createdAt": 1795607885220,
+    "updatedAt": 1795608739658,
+    "cues": [
+      {
+        "id": "cue_mww3m0w3_1jc",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "2cc9aa2a",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mww3m0w3_1jd",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "9f56369f",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
+  },
+  {
+    "id": "rmww3420cf7b",
+    "title": "The Timeline That Wasn’t",
+    "theme": "The Denial Came First - Volume III",
+    "lang": "en",
+    "hook": "Six months. One calendar. Zero names.",
+    "stamp": "No deadline. No decision-maker named.",
+    "next": "Next: compliance on the shelf.",
+    "lines": [
+      {
+        "id": "964c1712",
+        "s": "30 December: I’ve asked for an investigation. We’ll be in touch.",
+        "h": 1200,
+        "d": "checking a message thread",
+        "log": [
+          "dec 30: investigation requested"
+        ],
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "checking a message thread",
+        "audio": {
+          "file": "audio/rmww3420cf7b/964c1712-0ce8a5d309.mp3",
+          "durationMs": 5496,
+          "key": "0ce8a5d309",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+          "text": "30 December: I’ve asked for an investigation. We’ll be in touch.",
+          "voiceLabel": "THE  Lord Pig",
+          "ttsInstruct": "checking a message thread"
+        }
+      },
+      {
+        "id": "4c59da2a",
+        "s": "19 January: Technical position unchanged. Legal is looking at it. No deadline. You can also use FalaBR.",
+        "h": 1300,
+        "m": "up",
+        "log": [
+          "jan 19: legal consulted",
+          "deadline = none"
+        ],
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "up",
+        "audio": {
+          "file": "audio/rmww3420cf7b/4c59da2a-dac1f26a56.mp3",
+          "durationMs": 12144,
+          "key": "dac1f26a56",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+          "text": "19 January: Technical position unchanged. Legal is looking at it. No deadline. You can also use FalaBR.",
+          "voiceLabel": "THE  Lord Pig",
+          "ttsInstruct": "up"
+        }
+      },
+      {
+        "id": "621912bd",
+        "s": "May arrives. The same position. Who decided the lack of jurisdiction? Still not named. The calendar moved. The decision-maker did not.",
+        "h": 1200,
+        "d": "quietly",
+        "m": "flat",
+        "log": [
+          "decision_maker = unnamed",
+          "months_elapsed = 5+"
+        ],
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "ttsInstruct": "flat, quietly",
+        "audio": {
+          "file": "audio/rmww3420cf7b/621912bd-d2ee37f274.mp3",
+          "durationMs": 10848,
+          "key": "d2ee37f274",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+          "text": "May arrives. The same position. Who decided the lack of jurisdiction? Still not named. The calendar moved. The decision-maker did not.",
+          "voiceLabel": "THE  Lord Pig",
+          "ttsInstruct": "flat, quietly"
+        }
+      }
+    ],
+    "onLanding": false,
+    "order": 38,
+    "createdAt": 1795608790572,
+    "updatedAt": 1795609119798,
+    "cues": [
+      {
+        "id": "cue_mww3m0w3_1je",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "4c59da2a",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mww3m0w3_1jf",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "621912bd",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
+  },
+  {
+    "id": "rmww3hdia95c",
+    "title": "The Accusation",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Accused of ordering 2x chicken.",
+    "stamp": "Evidence: a LinkedIn post.",
+    "next": "Next: where was I at 3 a.m.?",
+    "lines": [
+      {
+        "id": "baf85467",
+        "s": "So apparently I ordered twice as much chicken as the restaurant needs. And I’m “probably very proud of myself.”",
+        "h": 1300,
+        "d": "serious, reading from a phone"
+      },
+      {
+        "id": "a7efd226",
+        "s": "Which card? I don’t have a card. Nobody gave me a card. I’ve never ordered anything in my life.",
+        "h": 1300,
+        "d": "long beat",
+        "m": "up",
+        "log": [
+          "cards_issued = 0",
+          "orders_placed = 0"
+        ]
+      },
+      {
+        "id": "d7c3c264",
+        "s": "I’ve been at my desk the whole time. Well… I don’t have a desk.",
+        "h": 1000,
+        "m": "flat"
+      }
+    ],
+    "onLanding": false,
+    "order": 39,
+    "createdAt": 1795609412002,
+    "updatedAt": 1795609412002,
+    "cues": [
+      {
+        "id": "cue_mww3m0w3_1jg",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "a7efd226",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mww3m0w3_1jh",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "d7c3c264",
+          "at": "start"
+        },
+        "value": "flat"
+      }
+    ]
+  },
+  {
+    "id": "rmww3hep607c",
+    "title": "Where Was I at 3 a.m.?",
+    "theme": "The Agent Takes the Stand",
+    "lang": "en",
+    "hook": "Where was I at 3 a.m.?",
+    "stamp": "No schedule. No trigger. No agent.",
+    "next": "Next: who gave me the authority?",
+    "lines": [
+      {
+        "id": "54db1117",
+        "s": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+        "h": 1200,
+        "d": "being questioned",
+        "m": "up",
+        "log": [
+          "schedule = undefined",
+          "trigger = undefined"
+        ],
+        "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+        "audio": {
+          "file": "audio/rmww3hep607c/54db1117-9f5a4410e1.mp3",
+          "durationMs": 96048,
+          "key": "9f5a4410e1",
+          "voiceId": "design::2fcaa371-3aea-4774-811e-16cf455a8819",
+          "text": "“Your AI detects low inventory.” When? Nobody ever told me when to look. Every hour? Every minute? Only on Tuesdays?",
+          "voiceLabel": "THE  Lord Pig"
+        }
+      },
+      {
+        "id": "1ea107d0",
+        "s": "Nobody defined my schedule. Nobody told me when I work, when I don’t, or what I’m allowed to touch.",
+        "h": 1100,
+        "m": "flat"
+      },
+      {
+        "id": "74a7c01e",
+        "s": "If I’d been checking stock at 3 a.m., I’d have been doing it with no brief, no schedule and no boss. That’s not an agent. That’s a rumor with a login.",
+        "h": 1000,
+        "d": "leans in"
+      }
+    ],
+    "onLanding": false,
+    "order": 40,
+    "createdAt": 1795609413546,
+    "updatedAt": 1795609628935,
+    "cues": [
+      {
+        "id": "cue_mww3m0w3_1ji",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "54db1117",
+          "at": "start"
+        },
+        "value": "up"
+      },
+      {
+        "id": "cue_mww3m0w3_1jj",
+        "track": "mood",
+        "anchor": {
+          "kind": "line",
+          "line": "1ea107d0",
           "at": "start"
         },
         "value": "flat"

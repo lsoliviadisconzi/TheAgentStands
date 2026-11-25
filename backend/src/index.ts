@@ -6,11 +6,12 @@ import axios from 'axios';
 import multer from 'multer';
 import cors from 'cors';
 import {
-  DATA_DIR, PAGES_DIR, MEDIA_URL, Reel, Line, newId, lineKey, isStale, planReel, loadReels, getReel, updateReel,
+  DATA_DIR, PAGES_DIR, MEDIA_URL, Reel, Line, CastProfile, castSig, newId, lineKey, isStale, planReel, loadReels, getReel, updateReel,
   addReel, removeReel, listThemes, listLanguages, themeFile, parseThemeFile, themeReelToReel, buildPlayerHtml,
   listNarrationThemes, getNarrationTheme, getNarrationLanguage, getNarrationReel, narrationReelToReel, NARRATIONS_DIR,
   ensureCues,
 } from './model';
+import crypto from 'crypto';
 import { renderReel } from './render';
 import { catalogForClient, cleanFx } from './stagefx';
 
@@ -34,7 +35,7 @@ function serialize(r: Reel) {
     lines: r.lines.map((l) => ({
       ...l,
       audio: l.audio ? { ...l.audio, url: `${MEDIA_URL}/${l.audio.file}` } : undefined,
-      stale: isStale(l),
+      stale: isStale(l, r.castSettings?.[l.voiceId || '']),
     })),
     music: r.music ? { ...r.music, url: `${MEDIA_URL}/${r.music.file}` } : undefined,
     coverUrl: r.coverFile ? `${MEDIA_URL}/${r.coverFile}?v=${r.updatedAt}` : undefined,
@@ -110,8 +111,41 @@ app.post('/api/reels/import-narration', (req, res) => {
 app.get('/api/reels', (_req, res) => res.json(loadReels().map(serialize)));
 
 app.get('/api/landing', (_req, res) =>
-  res.json(loadReels().filter((r) => r.onLanding && r.videoFile).sort((a, b) => a.order - b.order).map(serialize))
+  res.json(
+    loadReels()
+      .filter((r) => r.onLanding)
+      .sort((a, b) => a.order - b.order)
+      .map((r) => ({ ...serialize(r), playerUrl: `/api/reels/${encodeURIComponent(r.id)}/player` })),
+  ),
 );
+
+app.get('/api/landing/themes', (_req, res) => {
+  const out = listThemes().map((name) => {
+    const langs = listLanguages(name);
+    const preferred = langs.includes('en') ? 'en' : langs[0];
+    const f = preferred ? themeFile(name, preferred) : null;
+    let subtitle = '';
+    let room = '#1c2629';
+    let paper = '#ece7d8';
+    let tag = '#f2c230';
+    let dim = '#7f9296';
+    if (f && fs.existsSync(f)) {
+      const html = fs.readFileSync(f, 'utf-8');
+      const subMatch = html.match(/<p[^>]*class=["']sub["'][^>]*>([\s\S]*?)<\/p>/i);
+      if (subMatch) subtitle = subMatch[1].replace(/<[^>]+>/g, '').trim();
+      const stageMatch = html.match(/\.stage\{([^}]+)\}/);
+      if (stageMatch) {
+        const css = stageMatch[1];
+        room = css.match(/--room:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || room;
+        paper = css.match(/--paper:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || paper;
+        tag = css.match(/--tag:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || tag;
+        dim = css.match(/--dim:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || dim;
+      }
+    }
+    return { name, subtitle, room, paper, tag, dim, languages: langs };
+  });
+  res.json(out);
+});
 
 // Import one reel from a theme file, keeping its full structure (lines, moods, panels, stamp, next...).
 app.post('/api/reels/import', (req, res) => {
@@ -153,6 +187,27 @@ app.put('/api/reels/:id', (req, res) => {
     if (typeof b.onLanding === 'boolean') reel.onLanding = b.onLanding;
     if (Number.isFinite(b.order)) reel.order = b.order;
     if (b.music && reel.music && Number.isFinite(b.music.volume)) reel.music.volume = Math.max(0, Math.min(1, b.music.volume));
+    if (b.castSettings && typeof b.castSettings === 'object' && !Array.isArray(b.castSettings)) {
+      const nextCast: Record<string, CastProfile> = {};
+      for (const [vid, raw] of Object.entries(b.castSettings as Record<string, any>)) {
+        if (!raw || typeof raw !== 'object') continue;
+        const c: CastProfile = {};
+        if (typeof raw.name === 'string' && raw.name.trim()) c.name = raw.name.trim();
+        if (typeof raw.refAudio === 'string' && raw.refAudio.trim()) c.refAudio = raw.refAudio.trim();
+        if (typeof raw.refAudioName === 'string' && raw.refAudioName.trim()) c.refAudioName = raw.refAudioName.trim();
+        if (typeof raw.refText === 'string' && raw.refText.trim()) c.refText = raw.refText.trim();
+        if (typeof raw.instruct === 'string' && raw.instruct.trim()) c.instruct = raw.instruct.trim();
+        if (typeof raw.accent === 'string' && raw.accent.trim()) c.accent = raw.accent.trim();
+        if (typeof raw.langCode === 'string' && raw.langCode.trim()) c.langCode = raw.langCode.trim();
+        if (Number.isFinite(raw.speed) && Number(raw.speed) > 0 && Number(raw.speed) !== 1) c.speed = Math.round(Number(raw.speed) * 100) / 100;
+        if (Number.isFinite(raw.pitch) && Number(raw.pitch) !== 0) c.pitch = Math.round(Number(raw.pitch) * 10) / 10;
+        if (Number.isFinite(raw.temperature) && Number(raw.temperature) > 0) c.temperature = Math.round(Number(raw.temperature) * 100) / 100;
+        if (Number.isFinite(raw.topP) && Number(raw.topP) > 0) c.topP = Math.round(Number(raw.topP) * 100) / 100;
+        if (Number.isFinite(raw.repetitionPenalty) && Number(raw.repetitionPenalty) > 0) c.repetitionPenalty = Math.round(Number(raw.repetitionPenalty) * 100) / 100;
+        if (Object.keys(c).length) nextCast[vid] = c;
+      }
+      if (Object.keys(nextCast).length) reel.castSettings = nextCast; else delete reel.castSettings;
+    }
     if (Array.isArray(b.lines) && b.lines.length) { // never wipe a reel down to zero lines
       const old = new Map(reel.lines.map((l) => [l.id, l]));
       reel.lines = (b.lines as Partial<Line>[]).map((n) => {
@@ -220,6 +275,7 @@ interface Voice {
   langCode: string; 
   source: 'studio' | 'local';
   refine?: Record<string, any> | null;
+  previewUrl?: string;
 }
 let voiceCache: { at: number; data: { voices: Voice[]; defaultId: string; source: string; error?: string } } | null = null;
 
@@ -250,6 +306,7 @@ async function listVoices(force = false) {
         langCode: String(v.langCode || ''),
         source: 'studio',
         refine: v.refine || null,
+        ...(v.previewUrl ? { previewUrl: String(v.previewUrl) } : {}),
       });
     }
   } catch { /* studio server optional if local MLX-Audio is up */ }
@@ -321,11 +378,37 @@ interface SpeakOpts {
   speed?: number;
   accent?: string;
   lang?: string;
+  cast?: CastProfile;
+}
+
+async function resolveRefAudio(refAudio?: string): Promise<string | undefined> {
+  if (!refAudio) return undefined;
+  if (refAudio.startsWith('ref/')) {
+    const abs = path.join(DATA_DIR, refAudio);
+    return fs.existsSync(abs) ? abs : undefined;
+  }
+  if (refAudio.startsWith('/book_files/')) {
+    const hash = crypto.createHash('sha1').update(refAudio).digest('hex').slice(0, 12);
+    const ext = path.extname(refAudio) || '.mp3';
+    const abs = path.join(DATA_DIR, 'ref', `cache-${hash}${ext}`);
+    if (!fs.existsSync(abs)) {
+      fs.mkdirSync(path.dirname(abs), { recursive: true });
+      const r = await axios.get(`${TTS_MGMT_BASE}${refAudio}`, { responseType: 'arraybuffer', timeout: 15000 });
+      fs.writeFileSync(abs, Buffer.from(r.data));
+    }
+    return abs;
+  }
+  if (fs.existsSync(refAudio)) return refAudio;
+  return undefined;
 }
 
 async function speak(text: string, v: Voice, opts: SpeakOpts = {}): Promise<Buffer> {
-  const isDesigned = v.kind === 'designed';
-  const model = isDesigned ? (v.designModel || v.model) : v.model;
+  const cast = opts.cast;
+  const refPath = await resolveRefAudio(cast?.refAudio);
+  const isCloning = !!refPath;
+  const isDesigned = v.kind === 'designed' && !isCloning;
+  // Voice cloning uses the Qwen Base model (v.model); uncloned designed voices fall back to designModel.
+  const model = isCloning ? (v.model || v.designModel) : (isDesigned ? (v.designModel || v.model) : v.model);
   const body: Record<string, unknown> = {
     model,
     input: text,
@@ -333,24 +416,33 @@ async function speak(text: string, v: Voice, opts: SpeakOpts = {}): Promise<Buff
     response_format: 'mp3',
   };
 
-  if (isDesigned) {
-    // Designed voices use the VoiceDesign model on MLX-Audio (:8771/v1/audio/speech) with their baked instruct + any per-line override.
-    const combinedInstruct = [v.instruct, opts.instruct].filter(Boolean).join(' ');
-    if (combinedInstruct) body.instruct = combinedInstruct;
-    const langCode = v.langCode || toTtsLang(opts.lang);
-    if (langCode) body.lang_code = langCode;
-    const speed = opts.speed && opts.speed !== 1 ? opts.speed : (typeof v.refine?.rate === 'number' && v.refine.rate !== 1 ? v.refine.rate : undefined);
-    if (speed) body.speed = speed;
-    if (typeof v.refine?.pitch === 'number' && v.refine.pitch !== 0) body.pitch = v.refine.pitch;
-  } else {
-    // Base/flow model on MLX-Audio (:8771/v1/audio/speech): apply regional accent + emotional/delivery instruct + reel language.
-    const accentPart = opts.accent ? `${opts.accent} accent` : '';
-    const combinedInstruct = [v.instruct, accentPart, opts.instruct].filter(Boolean).join(', ');
-    if (combinedInstruct) body.instruct = combinedInstruct;
-    const langCode = v.langCode || toTtsLang(opts.lang);
-    if (langCode) body.lang_code = langCode;
-    if (opts.speed && opts.speed !== 1) body.speed = opts.speed;
+  if (isCloning && refPath) {
+    body.ref_audio = refPath;
+    if (cast?.refText) body.ref_text = cast.refText;
   }
+
+  const accentPart = (opts.accent || cast?.accent) ? `${opts.accent || cast?.accent} accent` : '';
+  // When cloning from reference audio, only send instruct if the user explicitly configured it (don't leak VoiceDesign prompts into Base cloning).
+  const baseInstruct = cast?.instruct !== undefined ? cast.instruct : (isCloning ? '' : v.instruct);
+  const combinedInstruct = [accentPart, baseInstruct, opts.instruct].filter(Boolean).join('. ');
+  if (combinedInstruct) body.instruct = combinedInstruct;
+
+  const langCode = cast?.langCode || v.langCode || toTtsLang(opts.lang);
+  if (langCode) body.lang_code = langCode;
+
+  const speed = opts.speed && opts.speed !== 1
+    ? opts.speed
+    : (cast?.speed && cast.speed !== 1
+      ? cast.speed
+      : (typeof v.refine?.rate === 'number' && v.refine.rate !== 1 ? v.refine.rate : undefined));
+  if (speed) body.speed = speed;
+
+  const pitch = cast?.pitch !== undefined ? cast.pitch : (typeof v.refine?.pitch === 'number' && v.refine.pitch !== 0 ? v.refine.pitch : undefined);
+  if (pitch !== undefined && pitch !== 0) body.pitch = pitch;
+
+  if (cast?.temperature !== undefined) body.temperature = cast.temperature;
+  if (cast?.topP !== undefined) body.top_p = cast.topP;
+  if (cast?.repetitionPenalty !== undefined) body.repetition_penalty = cast.repetitionPenalty;
 
   const url = `${TTS_BASE}/v1/audio/speech`;
   const r = await axios.post(url, body, { responseType: 'arraybuffer', timeout: 240000, validateStatus: () => true });
@@ -402,14 +494,15 @@ app.post('/api/reels/:id/lines/:lineId/tts', wrap(async (req, res) => {
   const voice = voices.find((v) => v.id === voiceId);
   if (!voice) return res.status(400).json({ error: 'Choose a voice first.' });
 
-  const key = lineKey(text, voice.id, ttsInstruct, ttsSpeed, ttsAccent);
+  const cast = reel.castSettings?.[voice.id];
+  const key = lineKey(text, voice.id, ttsInstruct, ttsSpeed, ttsAccent, cast);
   const rel = `audio/${reelId}/${lineId}-${key}.mp3`;
   const abs = path.join(DATA_DIR, rel);
   fs.mkdirSync(path.dirname(abs), { recursive: true });
   const isNewFile = !fs.existsSync(abs);
   let durationMs: number;
   try {
-    fs.writeFileSync(abs, await speak(text, voice, { instruct: ttsInstruct, speed: ttsSpeed, accent: ttsAccent, lang: reel.lang }));
+    fs.writeFileSync(abs, await speak(text, voice, { instruct: ttsInstruct, speed: ttsSpeed, accent: ttsAccent, lang: reel.lang, cast }));
     durationMs = await probeDurationMs(abs);
   } catch (e) {
     if (isNewFile) fs.rmSync(abs, { force: true }); // never leave an unreferenced / unreadable mp3 behind
@@ -426,6 +519,7 @@ app.post('/api/reels/:id/lines/:lineId/tts', wrap(async (req, res) => {
     if (ttsInstruct) l.ttsInstruct = ttsInstruct; else delete l.ttsInstruct;
     if (ttsSpeed !== 1) l.ttsSpeed = ttsSpeed; else delete l.ttsSpeed;
     if (ttsAccent) l.ttsAccent = ttsAccent; else delete l.ttsAccent;
+    const cs = castSig(r.castSettings?.[voice.id]);
     l.audio = {
       file: rel,
       durationMs,
@@ -436,6 +530,7 @@ app.post('/api/reels/:id/lines/:lineId/tts', wrap(async (req, res) => {
       ...(ttsInstruct ? { ttsInstruct } : {}),
       ...(ttsSpeed !== 1 ? { ttsSpeed } : {}),
       ...(ttsAccent ? { ttsAccent } : {}),
+      ...(cs ? { castSig: cs } : {}),
     };
     applied = true;
   });
@@ -458,6 +553,38 @@ const uploadAudio = (dir: (id: string) => string) =>
     }),
     limits: { fileSize: 60 * 1024 * 1024 },
   });
+
+app.get('/api/tts/ref-preview', wrap(async (req, res) => {
+  const p = String(req.query.path || '');
+  if (!p.startsWith('/book_files/')) return res.status(400).json({ error: 'Invalid preview path' });
+  const abs = await resolveRefAudio(p);
+  if (!abs) return res.status(404).json({ error: 'Preview audio not found' });
+  res.sendFile(abs);
+}));
+
+app.post('/api/reels/:id/cast/test', wrap(async (req, res) => {
+  const reelId = P(req.params.id);
+  const reel = getReel(reelId);
+  if (!reel) return res.status(404).json({ error: 'Reel not found' });
+  const voiceId = String(req.body?.voiceId || '');
+  const text = String(req.body?.text || '').trim();
+  if (!text) return res.status(400).json({ error: 'Enter a test sentence first.' });
+  const { voices } = await listVoices();
+  const voice = voices.find((v) => v.id === voiceId);
+  if (!voice) return res.status(400).json({ error: 'Voice not found.' });
+  const cast = (req.body?.cast && typeof req.body.cast === 'object') ? (req.body.cast as CastProfile) : reel.castSettings?.[voice.id];
+  const buf = await speak(text, voice, { lang: reel.lang, cast });
+  res.setHeader('Content-Type', 'audio/mpeg');
+  res.send(buf);
+}));
+
+app.post('/api/reels/:id/cast/ref-audio', uploadAudio((id) => `ref/${id}`).single('audio'), (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'No audio file uploaded' });
+  const reelId = P(req.params.id);
+  const reel = getReel(reelId);
+  if (!reel) { fs.rmSync(req.file.path, { force: true }); return res.status(404).json({ error: 'Reel not found' }); }
+  res.json({ refAudio: `ref/${reelId}/${req.file.filename}`, refAudioName: req.file.originalname });
+});
 
 app.post('/api/reels/:id/lines/:lineId/audio', uploadAudio(() => 'audio').single('audio'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No audio file uploaded' });

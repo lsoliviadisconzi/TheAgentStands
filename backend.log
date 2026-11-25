@@ -2,5 +2,5 @@
 > backend@1.0.0 dev
 > ts-node-dev --respawn src/index.ts
 
-[INFO] 07:34:36 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+[INFO] 09:23:18 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
 Backend listening on port 4000

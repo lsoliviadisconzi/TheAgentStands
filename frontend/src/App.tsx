@@ -475,6 +475,9 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>TheAgentStands · Reel Manager</h1>
+        <a className="vo-btn quiet" href="/pages/TheAgentStands.html" target="_blank" rel="noopener">
+          ↗ Landing Page
+        </a>
       </header>
 
       <div className="studio" ref={studioRef} data-resizing={isResizing || !!drag}>

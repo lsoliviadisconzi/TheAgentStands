@@ -159,7 +159,7 @@ export function useReelEditor(onListChanged: () => void) {
     setGeneratingAll(true)
     try {
       await flush()
-      const todo = (reelRef.current?.lines || []).filter((l) => ['new', 'stale'].includes(lineState(l)))
+      const todo = (reelRef.current?.lines || []).filter((l) => ['new', 'stale'].includes(lineState(l, reelRef.current?.castSettings?.[l.voiceId || ''])))
       let ok = 0
       for (const l of todo) {
         const latest = reelRef.current?.lines.find((x) => x.id === l.id)

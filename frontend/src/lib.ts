@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { Line, LineFx, Reel, StageLook } from './types'
+import type { CastProfile, Line, LineFx, Reel, StageLook } from './types'
 
 export const errMsg = (e: unknown): string =>
   axios.isAxiosError(e) ? (e.response?.data?.error as string) || e.message : String(e)
@@ -17,8 +17,25 @@ export const shortVoice = (label?: string) => (label || '').replace(/\s*·\s*des
 
 export type LineState = 'empty' | 'novoice' | 'new' | 'stale' | 'ready'
 
+export function castSig(c?: CastProfile): string {
+  if (!c) return ''
+  const parts = [
+    c.refAudio || '',
+    c.refText || '',
+    c.instruct || '',
+    c.accent || '',
+    c.langCode || '',
+    c.speed && c.speed !== 1 ? String(c.speed) : '',
+    c.pitch ? String(c.pitch) : '',
+    c.temperature !== undefined ? String(c.temperature) : '',
+    c.topP !== undefined ? String(c.topP) : '',
+    c.repetitionPenalty !== undefined ? String(c.repetitionPenalty) : '',
+  ]
+  return parts.some(Boolean) ? parts.join('|') : ''
+}
+
 // Mirrors the server: audio is "stale" as soon as the text, voice, or delivery differs from what was generated.
-export function lineState(l: Line): LineState {
+export function lineState(l: Line, cast?: CastProfile): LineState {
   if (!l.s.trim()) return 'empty'
   if (!l.voiceId) return 'novoice'
   if (!l.audio) return 'new'
@@ -30,7 +47,8 @@ export function lineState(l: Line): LineState {
     (a.voiceId && a.voiceId !== l.voiceId) ||
     (a.ttsInstruct || '') !== (l.ttsInstruct || '') ||
     aSpeed !== speed ||
-    (a.ttsAccent || '') !== (l.ttsAccent || '')
+    (a.ttsAccent || '') !== (l.ttsAccent || '') ||
+    (a.castSig || '') !== castSig(cast)
   ) {
     return 'stale'
   }
@@ -56,10 +74,44 @@ export const EMOTION_PRESETS: { label: string; value: string }[] = [
   { label: 'Whispering / quiet', value: 'soft, quiet, conspiratorial' },
 ]
 
+export const TTS_LANGUAGES: { code: string; label: string }[] = [
+  { code: 'english', label: 'English' },
+  { code: 'portuguese', label: 'Portuguese' },
+  { code: 'spanish', label: 'Spanish' },
+  { code: 'french', label: 'French' },
+  { code: 'italian', label: 'Italian' },
+  { code: 'german', label: 'German' },
+  { code: 'polish', label: 'Polish' },
+  { code: 'japanese', label: 'Japanese' },
+  { code: 'korean', label: 'Korean' },
+  { code: 'chinese', label: 'Chinese' },
+  { code: 'russian', label: 'Russian' },
+]
+
+const LANG_ALIASES: Record<string, string> = {
+  en: 'english',
+  pt: 'portuguese',
+  es: 'spanish',
+  fr: 'french',
+  it: 'italian',
+  de: 'german',
+  pl: 'polish',
+  ja: 'japanese',
+  ko: 'korean',
+  zh: 'chinese',
+  ru: 'russian',
+}
+
+export function normalizeTtsLang(lang?: string): string {
+  if (!lang) return 'english'
+  const base = lang.toLowerCase().split('-')[0]
+  return LANG_ALIASES[base] || lang.toLowerCase()
+}
+
 export const ACCENTS_BY_LANG: Record<string, string[]> = {
-  en: [
-    'American',
+  english: [
     'British (RP)',
+    'American',
     'British - Northern',
     'British - Scottish',
     'British - Cockney',
@@ -67,16 +119,15 @@ export const ACCENTS_BY_LANG: Record<string, string[]> = {
     'Irish',
     'Australian',
   ],
-  pt: ['Brazilian (PT-BR)', 'European (PT-PT)'],
-  es: ['Castilian (Spain)', 'Mexican', 'Rioplatense (Argentina)', 'Colombian'],
-  fr: ['Metropolitan French', 'Québécois', 'Belgian French'],
-  it: ['Standard Italian', 'Northern Italian', 'Southern Italian'],
-  de: ['Standard German', 'Austrian', 'Swiss German'],
+  portuguese: ['Brazilian Portuguese', 'European Portuguese (Portugal)'],
+  spanish: ['Castilian (Spain)', 'Mexican', 'Rioplatense (Argentina)', 'Colombian', 'Chilean'],
+  french: ['Metropolitan French', 'Québécois', 'Belgian French'],
+  italian: ['Standard Italian', 'Northern Italian', 'Southern Italian'],
+  german: ['Standard German', 'Austrian', 'Swiss German'],
 }
 
 export function accentsForLang(lang?: string): string[] {
-  const base = (lang || 'en').toLowerCase().split('-')[0]
-  return ACCENTS_BY_LANG[base] || []
+  return ACCENTS_BY_LANG[normalizeTtsLang(lang)] || []
 }
 
 /** Set or clear one stage effect; returns undefined when nothing is left so the field is dropped on save. */
@@ -146,6 +197,7 @@ export function savePayload(r: Reel) {
     next: r.next,
     lang: r.lang,
     music: r.music ? { volume: r.music.volume } : undefined,
+    castSettings: r.castSettings,
     lines: r.lines.map((l) => ({
       id: l.id, s: l.s, h: l.h, d: l.d, m: l.m, log: l.log, sw: l.sw, fx: l.fx,
       voiceId: l.voiceId, ttsInstruct: l.ttsInstruct, ttsSpeed: l.ttsSpeed, ttsAccent: l.ttsAccent, offset: l.offset,
@@ -177,7 +229,8 @@ export function mergeServer(local: Reel, server: Reel): Reel {
         (s.voiceId || '') === (l.voiceId || '') &&
         (s.ttsInstruct || '') === (l.ttsInstruct || '') &&
         (s.ttsSpeed || 1) === (l.ttsSpeed || 1) &&
-        (s.ttsAccent || '') === (l.ttsAccent || '')
+        (s.ttsAccent || '') === (l.ttsAccent || '') &&
+        castSig(server.castSettings?.[l.voiceId || '']) === castSig(local.castSettings?.[l.voiceId || ''])
       return { ...l, audio: s.audio, stale: inSync ? s.stale : undefined }
     }),
   }

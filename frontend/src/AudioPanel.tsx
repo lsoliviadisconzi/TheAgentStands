@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import type { ChangeEvent } from 'react'
-import type { Line, Reel, StageCatalog, StageLook, VoicesResponse } from './types'
-import { accentsForLang, audition, EMOTION_PRESETS, FALLBACK_MOODS, fmt, hue, lineState, nextFx, resolveLook, shortVoice, STATE_LABEL, uid } from './lib'
+import type { CastProfile, Line, Reel, StageCatalog, StageLook, VoicesResponse } from './types'
+import { accentsForLang, audition, EMOTION_PRESETS, errMsg, FALLBACK_MOODS, fmt, hue, lineState, nextFx, normalizeTtsLang, resolveLook, shortVoice, STATE_LABEL, TTS_LANGUAGES, uid } from './lib'
 
 type Tab = 'cast' | 'write' | 'music'
 const VOICE_KEY = 'tas.voice'
@@ -28,6 +28,11 @@ interface Props {
 export default function AudioPanel(p: Props) {
   const { reel, voices } = p
   const [tab, setTab] = useState<Tab>('cast')
+  const [expandedCast, setExpandedCast] = useState<string | null>(null)
+  const [uploadingRef, setUploadingRef] = useState<Record<string, boolean>>({})
+  const [testText, setTestText] = useState<Record<string, string>>({})
+  const [testingCast, setTestingCast] = useState<Record<string, boolean>>({})
+  const [testErr, setTestErr] = useState<Record<string, string>>({})
   const [stage, setStage] = useState<StageCatalog | null>(null)
   useEffect(() => {
     axios.get<StageCatalog>('/api/stagefx').then((r) => setStage(r.data)).catch(() => {}) // older server: just the 3 theme moods
@@ -83,16 +88,81 @@ export default function AudioPanel(p: Props) {
     patchLine(lineId, { voiceId: id })
   }
 
-  /* ------- cast: derived from the voices the lines use ------- */
-  const castNames: string[] = []
-  const nameOf = (l: Line) =>
-    shortVoice(voices?.voices.find((v) => v.id === l.voiceId)?.label) || l.audio?.voiceLabel || 'No voice yet'
+  /* ------- cast: derived from the voices the lines use, enriched by reel.castSettings ------- */
+  const castEntries: { key: string; voiceId: string; name: string }[] = []
+  const castKeyOf = (l: Line) => l.voiceId || '__none__'
+  const nameOf = (l: Line) => {
+    const vid = l.voiceId || ''
+    const custom = vid ? reel.castSettings?.[vid]?.name : undefined
+    return custom || shortVoice(voices?.voices.find((v) => v.id === vid)?.label) || l.audio?.voiceLabel || 'No voice yet'
+  }
   reel.lines.forEach((l) => {
-    const n = nameOf(l)
-    if (!castNames.includes(n)) castNames.push(n)
+    const k = castKeyOf(l)
+    if (!castEntries.some((c) => c.key === k)) {
+      castEntries.push({ key: k, voiceId: l.voiceId || '', name: nameOf(l) })
+    }
   })
+
+  const patchCast = (voiceId: string, patch: Partial<CastProfile>) => {
+    if (!voiceId) return
+    p.onEdit((r) => {
+      const cur = r.castSettings?.[voiceId] || {}
+      const next: CastProfile = { ...cur, ...patch }
+      for (const k of Object.keys(next) as (keyof CastProfile)[]) {
+        if (next[k] === undefined || next[k] === '') delete next[k]
+      }
+      const castSettings = { ...(r.castSettings || {}) }
+      if (Object.keys(next).length) castSettings[voiceId] = next
+      else delete castSettings[voiceId]
+      return { ...r, castSettings: Object.keys(castSettings).length ? castSettings : undefined }
+    })
+  }
+
+  const uploadCastRef = async (voiceId: string, file: File) => {
+    setUploadingRef((u) => ({ ...u, [voiceId]: true }))
+    try {
+      const fd = new FormData()
+      fd.append('audio', file)
+      const { data } = await axios.post<{ refAudio: string; refAudioName: string }>(
+        `/api/reels/${encodeURIComponent(reel.id)}/cast/ref-audio`,
+        fd,
+      )
+      patchCast(voiceId, { refAudio: data.refAudio, refAudioName: data.refAudioName })
+    } finally {
+      setUploadingRef((u) => ({ ...u, [voiceId]: false }))
+    }
+  }
+
+  const refAudioUrl = (refAudio?: string) => {
+    if (!refAudio) return ''
+    if (refAudio.startsWith('ref/')) return `/api/data/${refAudio}`
+    if (refAudio.startsWith('/book_files/')) return `/api/tts/ref-preview?path=${encodeURIComponent(refAudio)}`
+    return ''
+  }
+
+  const testCastVoice = async (voiceId: string, prof?: CastProfile) => {
+    const sample = (testText[voiceId] ?? prof?.refText ?? reel.lines.find((l) => l.voiceId === voiceId)?.s ?? 'Hello, this is a quick voice check.').trim()
+    if (!sample) return
+    setTestingCast((t) => ({ ...t, [voiceId]: true }))
+    setTestErr((e) => ({ ...e, [voiceId]: '' }))
+    try {
+      const res = await axios.post(
+        `/api/reels/${encodeURIComponent(reel.id)}/cast/test`,
+        { voiceId, text: sample, cast: prof },
+        { responseType: 'blob' },
+      )
+      const url = URL.createObjectURL(res.data)
+      audition(url)
+    } catch (e) {
+      setTestErr((err) => ({ ...err, [voiceId]: errMsg(e) }))
+    } finally {
+      setTestingCast((t) => ({ ...t, [voiceId]: false }))
+    }
+  }
+
   const total = reel.plan.totalMs || 1
-  const pending = reel.lines.filter((l) => ['new', 'stale'].includes(lineState(l)))
+  const lineSt = (l: Line) => lineState(l, reel.castSettings?.[l.voiceId || ''])
+  const pending = reel.lines.filter((l) => ['new', 'stale'].includes(lineSt(l)))
 
   return (
     <aside className="drawer right" aria-label="Narration, cast and audio">
@@ -125,7 +195,7 @@ export default function AudioPanel(p: Props) {
           <>
             <div className="aud-sum">
               <span className="aud-chip">
-                <b>{castNames.length}</b> {castNames.length === 1 ? 'voice' : 'voices'}
+                <b>{castEntries.length}</b> {castEntries.length === 1 ? 'voice' : 'voices'}
               </span>
               <span className="aud-chip">
                 <b>{reel.lines.length}</b> lines
@@ -144,32 +214,313 @@ export default function AudioPanel(p: Props) {
                   style={{
                     left: `${(reel.plan.starts[i] / total) * 100}%`,
                     width: `${Math.max(0.8, ((reel.plan.speechEnds[i] - reel.plan.starts[i]) / total) * 100)}%`,
-                    background: hue(Math.max(0, castNames.indexOf(nameOf(l)))),
-                    opacity: lineState(l) === 'ready' ? 1 : 0.35,
+                    background: hue(Math.max(0, castEntries.findIndex((c) => c.key === castKeyOf(l)))),
+                    opacity: lineSt(l) === 'ready' ? 1 : 0.35,
                   }}
                   title={l.s}
                 />
               ))}
             </div>
 
-            <div className="sec">Cast · {castNames.length}</div>
+            <div className="sec">Cast · {castEntries.length}</div>
             <div className="cast-list">
-              {castNames.map((name, i) => (
-                <div key={name} className="cast-card" style={{ ['--c' as string]: hue(i) }}>
-                  <span className="cast-num">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="cast-main">
-                    <b>{name}</b>
-                  </span>
-                  <span className="cast-count">{reel.lines.filter((l) => nameOf(l) === name).length}</span>
-                </div>
-              ))}
+              {castEntries.map((c, i) => {
+                const isOpen = expandedCast === c.key
+                const prof = c.voiceId ? reel.castSettings?.[c.voiceId] : undefined
+                const voiceObj = c.voiceId ? voices?.voices.find((v) => v.id === c.voiceId) : undefined
+                const lineCount = reel.lines.filter((l) => castKeyOf(l) === c.key).length
+                return (
+                  <div key={c.key} className="cast-item" style={{ ['--c' as string]: hue(i) }}>
+                    <button
+                      type="button"
+                      className="cast-card expandable"
+                      aria-expanded={isOpen}
+                      disabled={!c.voiceId}
+                      onClick={() => c.voiceId && setExpandedCast(isOpen ? null : c.key)}
+                    >
+                      <span className="cast-num">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="cast-main">
+                        <b>{c.name}</b>
+                        {prof?.refAudio && <small className="cast-badge">cloned</small>}
+                      </span>
+                      <span className="cast-count">{lineCount}</span>
+                      {c.voiceId && <span className="cast-chev">{isOpen ? '▾' : '▸'}</span>}
+                    </button>
+
+                    {isOpen && c.voiceId && (
+                      <div className="cast-editor">
+                        <label>
+                          Character name
+                          <input
+                            className="vo-in"
+                            type="text"
+                            name={`castName-${c.voiceId}`}
+                            placeholder={shortVoice(voiceObj?.label) || 'Character alias…'}
+                            value={prof?.name || ''}
+                            onChange={(e) => patchCast(c.voiceId, { name: e.target.value })}
+                          />
+                        </label>
+
+                        <div className="cast-ref">
+                          <div className="cast-ref-head">
+                            <span>Reference audio ({prof?.refAudio ? 'Base cloning active' : 'VoiceDesign prompt mode'})</span>
+                            {prof?.refAudio && (
+                              <button type="button" className="vo-btn x" onClick={() => patchCast(c.voiceId, { refAudio: undefined, refAudioName: undefined })}>
+                                Clear
+                              </button>
+                            )}
+                          </div>
+                          <div className="vo-tts-row">
+                            <input
+                              id={`castRefFile-${c.voiceId}`}
+                              name={`castRefFile-${c.voiceId}`}
+                              type="file"
+                              accept="audio/*"
+                              hidden
+                              onChange={(e) => {
+                                const f = e.target.files?.[0]
+                                e.target.value = ''
+                                if (f) void uploadCastRef(c.voiceId, f)
+                              }}
+                            />
+                            <button
+                              type="button"
+                              className="vo-btn"
+                              disabled={uploadingRef[c.voiceId]}
+                              onClick={() => document.getElementById(`castRefFile-${c.voiceId}`)?.click()}
+                            >
+                              {uploadingRef[c.voiceId] ? 'Uploading…' : (prof?.refAudioName ? `Clip: ${prof.refAudioName}` : 'Upload ref audio')}
+                            </button>
+                            {prof?.refAudio && refAudioUrl(prof.refAudio) && (
+                              <button
+                                type="button"
+                                className="vo-btn"
+                                title="Listen to the reference audio clip"
+                                onClick={() => audition(refAudioUrl(prof.refAudio))}
+                              >
+                                ▶ Play ref
+                              </button>
+                            )}
+                            {voiceObj?.previewUrl && (
+                              <button
+                                type="button"
+                                className="vo-btn"
+                                title="Use this voice pack's preview clip as the cloning reference"
+                                onClick={() => patchCast(c.voiceId, { refAudio: voiceObj.previewUrl, refAudioName: 'Voice pack preview' })}
+                              >
+                                Use pack preview
+                              </button>
+                            )}
+                          </div>
+                          <textarea
+                            name={`castRefText-${c.voiceId}`}
+                            rows={2}
+                            placeholder="Exact words spoken in the reference audio (recommended for Qwen Base cloning)…"
+                            value={prof?.refText || ''}
+                            onChange={(e) => patchCast(c.voiceId, { refText: e.target.value })}
+                          />
+                        </div>
+
+                        <div className="cast-ref">
+                          <div className="cast-ref-head">
+                            <span>Validate voice with a test sentence</span>
+                          </div>
+                          <div className="vo-tts-row">
+                            <input
+                              className="vo-in"
+                              type="text"
+                              name={`castTestText-${c.voiceId}`}
+                              placeholder={prof?.refText || 'Type a test sentence to validate…'}
+                              value={testText[c.voiceId] ?? ''}
+                              onChange={(e) => setTestText((t) => ({ ...t, [c.voiceId]: e.target.value }))}
+                            />
+                            <button
+                              type="button"
+                              className="vo-btn primary"
+                              disabled={testingCast[c.voiceId]}
+                              onClick={() => void testCastVoice(c.voiceId, prof)}
+                            >
+                              {testingCast[c.voiceId] ? 'Testing…' : '▶ Test'}
+                            </button>
+                          </div>
+                          {testErr[c.voiceId] && <small className="vo-status" data-s="err">{testErr[c.voiceId]}</small>}
+                        </div>
+
+                        <label>
+                          <span className="cast-label-row">
+                            <span>Voice description / delivery</span>
+                            <span style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                              <select
+                                className="vo-in vo-tts-preset"
+                                name={`castPreset-${c.voiceId}`}
+                                aria-label="Delivery preset"
+                                value=""
+                                onChange={(e) => { if (e.target.value) patchCast(c.voiceId, { instruct: e.target.value }) }}
+                              >
+                                <option value="">Presets…</option>
+                                {EMOTION_PRESETS.map((pr) => (
+                                  <option key={pr.label} value={pr.value}>{pr.label}</option>
+                                ))}
+                              </select>
+                              {voiceObj?.instruct && (
+                                <button type="button" className="vo-btn quiet" onClick={() => patchCast(c.voiceId, { instruct: voiceObj.instruct })}>
+                                  Load pack
+                                </button>
+                              )}
+                            </span>
+                          </span>
+                          <textarea
+                            name={`castInstruct-${c.voiceId}`}
+                            rows={2}
+                            placeholder={prof?.refAudio ? 'Optional delivery/emotion override (cloning uses reference clip)…' : (voiceObj?.instruct || 'e.g. British male, measured, dry delivery…')}
+                            value={prof?.instruct ?? ''}
+                            onChange={(e) => patchCast(c.voiceId, { instruct: e.target.value })}
+                          />
+                        </label>
+
+                        <div className="cast-grid">
+                          <label>
+                            Language
+                            <select
+                              className="vo-in"
+                              name={`castLang-${c.voiceId}`}
+                              value={prof?.langCode || normalizeTtsLang(voiceObj?.langCode || reel.lang)}
+                              onChange={(e) => patchCast(c.voiceId, { langCode: e.target.value, accent: undefined })}
+                            >
+                              {TTS_LANGUAGES.map((lg) => (
+                                <option key={lg.code} value={lg.code}>{lg.label}</option>
+                              ))}
+                            </select>
+                          </label>
+                          <label>
+                            Accent
+                            {(() => {
+                              const activeLang = prof?.langCode || voiceObj?.langCode || reel.lang
+                              const opts = accentsForLang(activeLang)
+                              const isCustom = !!prof?.accent && !opts.includes(prof.accent)
+                              return (
+                                <>
+                                  <select
+                                    className="vo-in"
+                                    name={`castAccent-${c.voiceId}`}
+                                    value={isCustom ? '__custom__' : (prof?.accent || '')}
+                                    onChange={(e) => {
+                                      const v = e.target.value
+                                      if (v === '__custom__') patchCast(c.voiceId, { accent: prof?.accent || 'Custom ' })
+                                      else patchCast(c.voiceId, { accent: v || undefined })
+                                    }}
+                                  >
+                                    <option value="">Default</option>
+                                    {opts.map((a) => (
+                                      <option key={a} value={a}>{a}</option>
+                                    ))}
+                                    <option value="__custom__">Custom…</option>
+                                  </select>
+                                  {isCustom && (
+                                    <input
+                                      className="vo-in"
+                                      type="text"
+                                      name={`castAccentCustom-${c.voiceId}`}
+                                      placeholder="Custom accent…"
+                                      value={prof?.accent || ''}
+                                      onChange={(e) => patchCast(c.voiceId, { accent: e.target.value })}
+                                    />
+                                  )}
+                                </>
+                              )
+                            })()}
+                          </label>
+                        </div>
+
+                        <div className="cast-grid">
+                          <label className="vo-speed">
+                            <span>Rate ({(prof?.speed ?? 1).toFixed(2)}×)</span>
+                            <input
+                              name={`castSpeed-${c.voiceId}`}
+                              type="range"
+                              min={0.75}
+                              max={1.35}
+                              step={0.05}
+                              value={prof?.speed ?? 1}
+                              onChange={(e) => {
+                                const n = Number(e.target.value)
+                                patchCast(c.voiceId, { speed: n === 1 ? undefined : n })
+                              }}
+                            />
+                          </label>
+                          <label className="vo-speed">
+                            <span>Pitch ({(prof?.pitch ?? 0) >= 0 ? `+${prof?.pitch ?? 0}` : prof?.pitch} st)</span>
+                            <input
+                              name={`castPitch-${c.voiceId}`}
+                              type="range"
+                              min={-6}
+                              max={6}
+                              step={0.5}
+                              value={prof?.pitch ?? 0}
+                              onChange={(e) => {
+                                const n = Number(e.target.value)
+                                patchCast(c.voiceId, { pitch: n === 0 ? undefined : n })
+                              }}
+                            />
+                          </label>
+                        </div>
+
+                        <div className="cast-grid three">
+                          <label>
+                            Temp
+                            <input
+                              className="vo-in"
+                              type="number"
+                              name={`castTemp-${c.voiceId}`}
+                              min={0.1}
+                              max={1.5}
+                              step={0.05}
+                              placeholder="auto"
+                              value={prof?.temperature ?? ''}
+                              onChange={(e) => patchCast(c.voiceId, { temperature: e.target.value ? Number(e.target.value) : undefined })}
+                            />
+                          </label>
+                          <label>
+                            Top-P
+                            <input
+                              className="vo-in"
+                              type="number"
+                              name={`castTopP-${c.voiceId}`}
+                              min={0.1}
+                              max={1}
+                              step={0.05}
+                              placeholder="auto"
+                              value={prof?.topP ?? ''}
+                              onChange={(e) => patchCast(c.voiceId, { topP: e.target.value ? Number(e.target.value) : undefined })}
+                            />
+                          </label>
+                          <label>
+                            Rep. pen
+                            <input
+                              className="vo-in"
+                              type="number"
+                              name={`castRep-${c.voiceId}`}
+                              min={1}
+                              max={1.5}
+                              step={0.05}
+                              placeholder="auto"
+                              value={prof?.repetitionPenalty ?? ''}
+                              onChange={(e) => patchCast(c.voiceId, { repetitionPenalty: e.target.value ? Number(e.target.value) : undefined })}
+                            />
+                          </label>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
 
             <div className="sec">Speeches · {reel.lines.length}</div>
             {reel.lines.map((l, i) => {
-              const st = lineState(l)
+              const st = lineSt(l)
               return (
-                <div key={l.id} className="speech" data-live={p.liveLine === i ? '' : undefined} style={{ ['--c' as string]: hue(Math.max(0, castNames.indexOf(nameOf(l)))) }}>
+                <div key={l.id} className="speech" data-live={p.liveLine === i ? '' : undefined} style={{ ['--c' as string]: hue(Math.max(0, castEntries.findIndex((c) => c.key === castKeyOf(l)))) }}>
                   <div className="speech-meta">
                     <span className="line-num">{String(i + 1).padStart(2, '0')}</span>
                     <b>{nameOf(l)}</b>
@@ -217,7 +568,7 @@ export default function AudioPanel(p: Props) {
             </div>
 
             {reel.lines.map((l, i) => {
-              const st = lineState(l)
+              const st = lineSt(l)
               const isBusy = !!p.busy[l.id]
               const selectedVoice = voices?.voices.find((v) => v.id === l.voiceId)
               const studioVoices = voices?.voices.filter((v) => v.source === 'studio') || []

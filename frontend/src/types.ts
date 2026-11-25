@@ -1,3 +1,18 @@
+export interface CastProfile {
+  name?: string
+  refAudio?: string
+  refAudioName?: string
+  refText?: string
+  instruct?: string
+  accent?: string
+  langCode?: string
+  speed?: number
+  pitch?: number
+  temperature?: number
+  topP?: number
+  repetitionPenalty?: number
+}
+
 export interface LineAudio {
   file: string
   url: string
@@ -9,6 +24,7 @@ export interface LineAudio {
   ttsInstruct?: string
   ttsSpeed?: number
   ttsAccent?: string
+  castSig?: string
 }
 
 export interface LineFx {
@@ -123,6 +139,7 @@ export interface Reel {
   updatedAt: number
   plan: Plan
   cues?: Cue[]
+  castSettings?: Record<string, CastProfile>
 }
 
 export interface Voice {
@@ -134,6 +151,7 @@ export interface Voice {
   voice: string
   langCode: string
   source: 'studio' | 'local'
+  previewUrl?: string
 }
 
 export interface VoicesResponse {
